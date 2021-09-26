@@ -75,16 +75,16 @@ export const Conditions: {[k: string]: ConditionData} = {
 				this.add('-status', target, 'slp');
 			}
 			// 2 turns
-			this.effectData.startTime = (3);
-			this.effectData.time = this.effectData.startTime;
+			this.effectState.startTime = 3;
+			this.effectState.time = this.effectState.startTime;
 		},
 		onBeforeMovePriority: 10,
 		onBeforeMove(pokemon, target, move) {
 			if (pokemon.hasAbility('earlybird')) {
-				pokemon.statusData.time--;
+				pokemon.statusState.time--;
 			}
-			pokemon.statusData.time--;
-			if (pokemon.statusData.time <= 0) {
+			pokemon.statusState.time--;
+			if (pokemon.statusState.time <= 0) {
 				pokemon.cureStatus();
 				return;
 			}
