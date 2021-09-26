@@ -1330,8 +1330,25 @@ this.modData('Learnsets', 'abomasnow').learnset.iciclecrash = ['8L1'];
 this.modData('Learnsets', 'abomasnow').learnset.closecombat = ['8L1'];
 this.modData('Learnsets', 'abomasnow').learnset.hydropump = ['8L1'];
 
+this.modData('Learnsets', 'stantler').learnset.aromatherapy = ['8L1'];
+this.modData('Learnsets', 'stantler').learnset.closecombat = ['8L1'];
+this.modData('Learnsets', 'stantler').learnset.hypervoice = ['8L1'];
+this.modData('Learnsets', 'stantler').learnset.bulkup = ['8L1'];
+this.modData('Learnsets', 'stantler').learnset.swordsdance = ['8L1'];
+this.modData('Learnsets', 'stantler').learnset.partingshot = ['8L1'];
+this.modData('Learnsets', 'stantler').learnset.aromaticmist = ['8L1'];
+this.modData('Learnsets', 'stantler').learnset.highhorsepower = ['8L1'];
+
+this.modData('Learnsets', 'girafarig').learnset.highhorsepower = ['8L1'];
+this.modData('Learnsets', 'girafarig').learnset.darkpulse = ['8L1'];
+this.modData('Learnsets', 'girafarig').learnset.knockoff = ['8L1'];
+this.modData('Learnsets', 'girafarig').learnset.fakeout = ['8L1'];
+this.modData('Learnsets', 'girafarig').learnset.pursuit = ['8L1'];
+this.modData('Learnsets', 'girafarig').learnset.superpower = ['8L1'];
+
 this.modData('Learnsets', 'mimikyu').learnset.meanlook = ['8L1'];
 this.modData('Learnsets', 'mimikyu').learnset.glare = ['8L1'];
+this.modData('Learnsets', 'mimikyu').learnset.poltergeist = ['8L1'];
 
 this.modData('Learnsets', 'froslass').learnset.nuzzle = ['8L1'];
 

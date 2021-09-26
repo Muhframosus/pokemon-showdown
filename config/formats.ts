@@ -30,7 +30,7 @@ export const Formats: FormatList = [
 		desc: `The standard format for Adventures.`,
 		mod: 'adventures',
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Moves Clause', 'Species Clause', 'Dynamax Clause', 'Sleep Clause Mod'],
-		banlist: [ 'Uber', 'AG', 'Baton Pass', ],
+		banlist: [ 'Uber', 'AG', 'Power Construct', 'Baton Pass', ],
 	},
 	{
 		name: "[Gen 8] Adventures UU",

@@ -483,7 +483,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	pikachustarter: {
 		inherit: true,
-		baseStats: {hp: 45, atk: 70, def: 50, spa: 90, spd: 60, spe: 120},
+		baseStats: {hp: 45, atk: 80, def: 50, spa: 90, spd: 60, spe: 120},
 	},
 	raichu: {
 		inherit: true,
@@ -647,7 +647,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	gallademega: {
 		inherit: true,
 		baseStats: {hp: 78, atk: 165, def: 105, spa: 52, spd: 115, spe: 110},
-		abilities: {0: "Warrior's Will"},
+		abilities: {0: "Neuroforce"},
 	},
 	blaziken: {
 		inherit: true,
@@ -1980,7 +1980,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	unown: {
 		inherit: true,
-		baseStats: {hp: 48, atk: 72, def: 48, spa: 72, spd: 48, spe: 78},
+		baseStats: {hp: 48, atk: 88, def: 48, spa: 88, spd: 48, spe: 88},
 		abilities: {0: "Levitate", H: "Mysterious Magic"},
 	},
 	braviary: {
@@ -2000,7 +2000,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	granbull: {
 		inherit: true,
 		types: ["Fairy", "Fighting"],
-		baseStats: {hp: 90, atk: 120, def: 75, spa: 60, spd: 60, spe: 60},
+		baseStats: {hp: 90, atk: 135, def: 75, spa: 60, spd: 60, spe: 75},
 		abilities: {0: "Intimidate", 1: "Quick Feet", H: "Guts"},
 	},
 	swanna: {
@@ -2043,5 +2043,15 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		baseStats: {hp: 90, atk: 115, def: 80, spa: 100, spd: 80, spe: 95},
 		abilities: {0: "Flaming Claws", 1: "Intimidate", H: "Justified"},
+	},
+	stantler: {
+		inherit: true,
+		baseStats: {hp: 83, atk: 120, def: 82, spa: 85, spd: 65, spe: 100},
+		abilities: {0: "Intimidate", 1: "Fur Coat", H: "Elusive"},
+	},
+	girafarig: {
+		inherit: true,
+		baseStats: {hp: 100, atk: 80, def: 85, spa: 105, spd: 85, spe: 105},
+		abilities: {0: "Biting Head", 1: "Inner Focus", H: "Sap Sipper"},
 	},
 };

@@ -1142,7 +1142,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		},
 		onBasePowerPriority: 7,
 		onBasePower(basePower, pokemon, target, move) {
-			if (move.multihitType === 'parentalbond' && move.hit > 1) return this.chainModify(0.5);
+			if (move.multihitType === 'parentalbond' && move.hit > 1);
 		},
 		onSourceModifySecondaries(secondaries, target, source, move) {
 			if (move.multihitType === 'parentalbond' && move.id === 'secretpower' && move.hit < 2) {
@@ -1362,7 +1362,56 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			}
 		},
 		name: "Suction Cups",
-		rating: 1,
+		rating: 2,
 		num: 21,
+	},
+	elusive: {
+		desc: "This Pokemon is switched out when damaged by another Pokemon's attack.",
+		shortdesc: "Switches out when damaged by another Pokemon's attack",
+			onDamagingHit(damage, target, source, move) {
+			if (!this.canSwitch(target.side) || target.forceSwitchFlag || target.switchFlag) return;
+			for (const side of this.sides) {
+				for (const active of side.active) {
+					active.switchFlag = false;
+				}
+			}
+			target.switchFlag = true;
+			this.add('-activate', target, 'ability: Elusive');
+		},
+		name: "Elusive",
+		rating: 1,
+		num: -75,
+	},
+	bitinghead: {
+		desc: "Whenever this Pokemon attacks or is hit by a contact move, it deals damage equal to 1/12 of the interacting Pokemon's Health.",
+		shortdesc: "Damages Pokemon by 1/12 of their max HP when it attacks or is hit by a contact move.",
+		onPrepareHit(source, target, move) {
+			if (move.category === 'Status' || move.selfdestruct) return;
+			if (['endeavor', 'fling', 'beatup'].includes(move.id)) return;
+			this.damage(target.baseMaxhp / 12, target);
+		},
+		onDamagingHitOrder: 1,
+		onDamagingHit(damage, target, source, move) {
+			if (this.checkMoveMakesContact(move, source, target, true)) {
+				this.damage(source.baseMaxhp / 12, source, target);
+			}
+		},
+	emergencyexit: {
+		desc: "This Pokemon switches out when it reaches 1/2 or less of its maximum HP. Also restores 1/3 of its HP.",
+		shortdesc: "This Pokemon switches out when it reaches 1/2 or less of its maximum HP. Also restores 1/3 of its HP.",
+		onEmergencyExit(target) {
+			if (!this.canSwitch(target.side) || target.forceSwitchFlag || target.switchFlag) return;
+			for (const side of this.sides) {
+				for (const active of side.active) {
+					active.switchFlag = false;
+				}
+			}
+			target.switchFlag = true;
+			this.heal(Math.floor(pokemon.maxhp / 3), pokemon, pokemon);
+			this.add('-activate', target, 'ability: Emergency Exit');
+		},
+		name: "Emergency Exit",
+		rating: 2,
+		num: 194,
 	},
 };
