@@ -104,9 +104,8 @@ export const Formats: FormatList = [
 	{
 		name: "[Gen 8] Adventures Multi Battle",
 
-		mod: 'gen8',
+		mod: 'adventures',
 		gameType: 'multi',
-		searchShow: false,
 		tournamentShow: false,
 		rated: false,
 		ruleset: [
