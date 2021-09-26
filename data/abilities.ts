@@ -47,25 +47,6 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		rating: 4,
 		num: 91,
 	},
-	adrenalize: {
-		onModifyAtkPriority: 5,
-		onModifyAtk(atk, attacker, defender, move) {
-			if (attacker.hp <= attacker.maxhp / 4) {
-				this.debug('Adrenalize boost');
-				return this.chainModify(1.5);
-			}
-		},
-		onModifySpAPriority: 5,
-		onModifySpA(atk, attacker, defender, move) {
-			if (attacker.hp <= attacker.maxhp / 4) {
-				this.debug('Adrenalize boost');
-				return this.chainModify(1.5);
-			}
-		},
-		name: "Adrenalize",
-		rating: 2,
-		num: -508,
-	},
 	aerilate: {
 		onModifyTypePriority: -1,
 		onModifyType(move, pokemon) {
@@ -132,38 +113,15 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 148,
 	},
 	angerpoint: {
-		onDamage(damage, target, source, effect) {
-			if (
-				effect.effectType === "Move" &&
-				!effect.multihit &&
-				(!effect.negateSecondary && !(effect.hasSheerForce && source.hasAbility('sheerforce')))
-			) {
-				target.abilityState.checkedAngerPoint = false;
-			} else {
-				target.abilityState.checkedAngerPoint = true;
-			}
-		},
-		onTryEatItem(item, pokemon) {
-			const healingItems = [
-				'aguavberry', 'enigmaberry', 'figyberry', 'iapapaberry', 'magoberry', 'sitrusberry', 'wikiberry', 'oranberry', 'berryjuice',
-			];
-			if (healingItems.includes(item.id)) {
-				return pokemon.abilityState.checkedAngerPoint;
-			}
-			return true;
-		},
-		onAfterMoveSecondary(target, source, move) {
-			target.abilityState.checkedAngerPoint = true;
-			if (!source || source === target || !target.hp || !move.totalDamage) return;
-			const lastAttackedBy = target.getLastAttackedBy();
-			if (!lastAttackedBy) return;
-			const damage = move.multihit ? move.totalDamage : lastAttackedBy.damage;
-			if (target.hp <= target.maxhp / 2 && target.hp + damage > target.maxhp / 2) {
-				this.boost({atk: 1});
+		onHit(target, source, move) {
+			if (!target.hp) return;
+			if (move?.effectType === 'Move' && target.getMoveHitData(move).crit) {
+				target.setBoost({atk: 6});
+				this.add('-setboost', target, 'atk', 12, '[from] ability: Anger Point');
 			}
 		},
 		name: "Anger Point",
-		rating: 2,
+		rating: 1.5,
 		num: 83,
 	},
 	anticipation: {
@@ -293,18 +251,6 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		rating: 1.5,
 		num: 123,
 	},
-	bagwormicade: {
-		onSourceModifyDamage(damage, source, target, move) {
-			if (target.getMoveHitData(move).typeMod > 0) {
-				this.debug('Bagwormicade neutralize');
-				return this.chainModify(0.5);
-			}
-		},
-		isBreakable: true,
-		name: "Bagwormicade",
-		rating: 5,
-		num: -510,
-	},
 	ballfetch: {
 		name: "Ball Fetch",
 		rating: 0,
@@ -341,7 +287,8 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		},
 		onModifyMovePriority: -1,
 		onModifyMove(move, attacker) {
-			if (move.id === 'watershuriken' && attacker.species.name === 'Greninja-Ash') {
+			if (move.id === 'watershuriken' && attacker.species.name === 'Greninja-Ash' &&
+				!attacker.transformed) {
 				move.multihit = 3;
 			}
 		},
@@ -601,25 +548,6 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		rating: 4.5,
 		num: 126,
 	},
-	corona: {
-		onModifyAtkPriority: 5,
-		onModifyAtk(atk, attacker, defender, move) {
-			if (move.type === 'Fire') {
-				this.debug('Corona boost');
-				return this.chainModify(1.5);
-			}
-		},
-		onModifySpAPriority: 5,
-		onModifySpA(atk, attacker, defender, move) {
-			if (move.type === 'Fire') {
-				this.debug('Corona boost');
-				return this.chainModify(1.5);
-			}
-		},
-		name: "Corona",
-		rating: 3,
-		num: -506,
-	},
 	corrosion: {
 		// Implemented in sim/pokemon.js:Pokemon#setStatus
 		name: "Corrosion",
@@ -850,7 +778,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (!['mimikyu', 'mimikyutotem'].includes(target.species.id) || target.transformed) {
 				return;
 			}
-			const hitSub = target.volatiles['substitute'] && !move.flags['authentic'] && !(move.infiltrates && this.gen >= 6);
+			const hitSub = target.volatiles['substitute'] && !move.flags['bypasssub'] && !(move.infiltrates && this.gen >= 6);
 			if (hitSub) return;
 
 			if (!target.runImmunity(move.type)) return;
@@ -862,7 +790,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				return;
 			}
 
-			const hitSub = target.volatiles['substitute'] && !move.flags['authentic'] && !(move.infiltrates && this.gen >= 6);
+			const hitSub = target.volatiles['substitute'] && !move.flags['bypasssub'] && !(move.infiltrates && this.gen >= 6);
 			if (hitSub) return;
 
 			if (!target.runImmunity(move.type)) return;
@@ -951,9 +879,8 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 				return null;
 			}
 		},
-		onFoeBasePowerPriority: 17,
-		onFoeBasePower(basePower, attacker, defender, move) {
-			if (this.effectState.target !== defender) return;
+		onSourceBasePowerPriority: 17,
+		onSourceBasePower(basePower, attacker, defender, move) {
 			if (move.type === 'Fire') {
 				return this.chainModify(1.25);
 			}
@@ -1043,7 +970,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		},
 		isBreakable: true,
 		name: "Filter",
-		rating: 3.5,
+		rating: 3,
 		num: 111,
 	},
 	flamebody: {
@@ -1196,17 +1123,6 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		name: "Fluffy",
 		rating: 3.5,
 		num: 218,
-	},
-	fluffyfuzz: {
-		onDamagingHit(damage, target, source, move) {
-			if (this.checkMoveMakesContact(move, source, target, true)) {
-				this.add('-ability', target, 'Fluffy Fuzz');
-				this.boost({spe: -1}, source, target, null, true);
-			}
-		},
-		name: "Fluffy Fuzz",
-		rating: 2,
-		num: -500,
 	},
 	forecast: {
 		onUpdate(pokemon) {
@@ -1527,17 +1443,6 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		rating: 0,
 		num: 134,
 	},
-	highcaliber: {
-		onBasePowerPriority: 19,
-		onBasePower(basePower, attacker, defender, move) {
-			if (move.flags['bullet']) {
-				return this.chainModify(1.5);
-			}
-		},
-		name: "High Caliber",
-		rating: 3,
-		num: -501,
-	},
 	honeygather: {
 		name: "Honey Gather",
 		rating: 0,
@@ -1643,7 +1548,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		onCriticalHit(target, type, move) {
 			if (!target) return;
 			if (move.category !== 'Physical' || target.species.id !== 'eiscue' || target.transformed) return;
-			if (target.volatiles['substitute'] && !(move.flags['authentic'] || move.infiltrates)) return;
+			if (target.volatiles['substitute'] && !(move.flags['bypasssub'] || move.infiltrates)) return;
 			if (!target.runImmunity(move.type)) return;
 			return false;
 		},
@@ -1651,7 +1556,7 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			if (!target) return;
 			if (move.category !== 'Physical' || target.species.id !== 'eiscue' || target.transformed) return;
 
-			const hitSub = target.volatiles['substitute'] && !move.flags['authentic'] && !(move.infiltrates && this.gen >= 6);
+			const hitSub = target.volatiles['substitute'] && !move.flags['bypasssub'] && !(move.infiltrates && this.gen >= 6);
 			if (hitSub) return;
 
 			if (!target.runImmunity(move.type)) return;
@@ -1689,14 +1594,8 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 246,
 	},
 	illuminate: {
-		onSourceModifyAccuracyPriority: -1,
-		onSourceModifyAccuracy(accuracy) {
-			if (typeof accuracy !== 'number') return;
-			this.debug('illuminate - enhancing accuracy');
-			return this.chainModify([5325, 4096]);
-		},
 		name: "Illuminate",
-		rating: 3,
+		rating: 0,
 		num: 35,
 	},
 	illusion: {
@@ -1779,19 +1678,6 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		name: "Infiltrator",
 		rating: 2.5,
 		num: 151,
-	},
-	inflate: {
-		onStart(pokemon) {
-			this.boost({def: 1}, pokemon);
-		},
-		onDamagingHit(damage, target, source, move) {
-			this.boost({def: -1}, target);
-			target.addVolatile('gastroacid');
-		},
-		isBreakable: true,
-		name: "Inflate",
-		rating: 3.5,
-		num: -509,
 	},
 	innardsout: {
 		name: "Innards Out",
@@ -1944,9 +1830,6 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 	levitate: {
 		// airborneness implemented in sim/pokemon.js:Pokemon#isGrounded
-		onStart(pokemon) {
-			this.add('-ability', pokemon, 'Levitate');
-		},
 		isBreakable: true,
 		name: "Levitate",
 		rating: 3.5,
@@ -2325,23 +2208,6 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		rating: 3,
 		num: 78,
 	},
-	mountaineer: {
-		onDamage(damage, target, source, effect) {
-			if (effect && effect.id === 'stealthrock') {
-				return false;
-			}
-		},
-		onTryHit(target, source, move) {
-			if (move.type === 'Rock' && !target.activeTurns) {
-				this.add('-immune', target, '[from] ability: Mountaineer');
-				return null;
-			}
-		},
-		isBreakable: true,
-		name: "Mountaineer",
-		rating: 3,
-		num: -2,
-	},
 	moxie: {
 		onSourceAfterFaint(length, target, source, effect) {
 			if (effect && effect.effectType === 'Move') {
@@ -2515,6 +2381,8 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			this.speedSort(sortedActive);
 			for (const pokemon of sortedActive) {
 				if (pokemon !== source) {
+					if (pokemon.getAbility().isPermanent) continue; // does not interact with e.g Ice Face, Zen Mode
+
 					// Will be suppressed by Pokemon#ignoringAbility if needed
 					this.singleEvent('Start', pokemon.getAbility(), pokemon.abilityState, pokemon);
 				}
@@ -3129,17 +2997,6 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		rating: 4.5,
 		num: 144,
 	},
-	reverberation: {
-		onDamagingHitOrder: 1,
-		onDamagingHit(damage, target, source, move) {
-			if (!move.flags['contact'] && move.category !== 'Status') {
-				this.damage(source.baseMaxhp / 8, source, target);
-			}
-		},
-		name: "Reverberation",
-		rating: 2.5,
-		num: -503,
-	},
 	ripen: {
 		onTryHeal(damage, target, source, effect) {
 			if (!effect) return;
@@ -3225,12 +3082,8 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		num: 24,
 	},
 	runaway: {
-		onTrapPokemonPriority: -10,
-		onTrapPokemon(pokemon) {
-			pokemon.trapped = pokemon.maybeTrapped = false;
-		},
 		name: "Run Away",
-		rating: 3,
+		rating: 0,
 		num: 50,
 	},
 	sandforce: {
@@ -3390,25 +3243,6 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		name: "Screen Cleaner",
 		rating: 2,
 		num: 251,
-	},
-	seismography: {
-		onModifyAtkPriority: 5,
-		onModifyAtk(atk, attacker, defender, move) {
-			if (move.type === 'Ground') {
-				this.debug('Seismography boost');
-				return this.chainModify(1.3);
-			}
-		},
-		onModifySpAPriority: 5,
-		onModifySpA(atk, attacker, defender, move) {
-			if (move.type === 'Ground') {
-				this.debug('Seismography boost');
-				return this.chainModify(1.3);
-			}
-		},
-		name: "Seismography",
-		rating: 3.5,
-		num: -505,
 	},
 	serenegrace: {
 		onModifyMovePriority: -2,
@@ -3572,29 +3406,6 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		name: "Skill Link",
 		rating: 3,
 		num: 92,
-	},
-	slowdigestion: {
-		onStart(pokemon) {
-			this.add('-ability', pokemon, 'Slow Digestion');
-		},
-		onResidualOrder: 26,
-		onResidualSubOrder: 1,
-		onResidual(pokemon) {
-			if (pokemon.activeTurns) {
-				if (!pokemon.hp) return;
-				for (const target of pokemon.side.foe.active) {
-					if (!target || !target.hp) continue;
-					if (target.hasType('Poison')) {
-						this.add('-immune', target, '[silent]');
-					} else {
-						this.damage(target.baseMaxhp / 8, target, pokemon);
-					}
-				}
-			}
-		},
-		name: "Slow Digestion",
-		rating: 4,
-		num: -502,
 	},
 	slowstart: {
 		onStart(pokemon) {
@@ -4057,25 +3868,6 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		rating: 2,
 		num: 28,
 	},
-	syzygy: {
-		onModifyAtkPriority: 5,
-		onModifyAtk(atk, attacker, defender, move) {
-			if (move.type === 'Ice') {
-				this.debug('Syzygy boost');
-				return this.chainModify(1.5);
-			}
-		},
-		onModifySpAPriority: 5,
-		onModifySpA(atk, attacker, defender, move) {
-			if (move.type === 'Ice') {
-				this.debug('Syzygy boost');
-				return this.chainModify(1.5);
-			}
-		},
-		name: "Syzygy",
-		rating: 3,
-		num: -507,
-	},
 	tangledfeet: {
 		onModifyAccuracyPriority: -1,
 		onModifyAccuracy(accuracy, target) {
@@ -4137,15 +3929,6 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		name: "Teravolt",
 		rating: 3.5,
 		num: 164,
-	},
-	terraforming: {
-		onStart(source) {
-			this.field.addPseudoWeather('gravity');
-			this.add('-ability', source, 'Terraforming');
-		},
-		name: "Terraforming",
-		rating: 4,
-		num: -511,
 	},
 	thickfat: {
 		onSourceModifyAtkPriority: 6,
@@ -4574,14 +4357,6 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		rating: 1,
 		num: 193,
 	},
-	windchime: {
-		onModifyPriority(priority, pokemon, target, move) {
-			if (move?.flags['sound']) return priority + 3;
-		},
-		name: "Wind Chime",
-		rating: 3.5,
-		num: -504,
-	},
 	wonderguard: {
 		onTryHit(target, source, move) {
 			if (target === source || move.category === 'Status' || move.type === '???' || move.id === 'struggle') return;
@@ -4656,6 +4431,24 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 	},
 
 	// CAP
+	mountaineer: {
+		onDamage(damage, target, source, effect) {
+			if (effect && effect.id === 'stealthrock') {
+				return false;
+			}
+		},
+		onTryHit(target, source, move) {
+			if (move.type === 'Rock' && !target.activeTurns) {
+				this.add('-immune', target, '[from] ability: Mountaineer');
+				return null;
+			}
+		},
+		isNonstandard: "CAP",
+		isBreakable: true,
+		name: "Mountaineer",
+		rating: 3,
+		num: -2,
+	},
 	rebound: {
 		isNonstandard: "CAP",
 		name: "Rebound",

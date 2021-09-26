@@ -85,10 +85,26 @@ export const Conditions: {[k: string]: ConditionData} = {
 				target.formeChange('Shaymin', this.effect, true);
 			}
 		},
-		// Damage reduction is handled directly in the sim/battle.js damage function
-		onResidualOrder: 10,
-		onResidual(pokemon) {
-			this.damage(pokemon.baseMaxhp / 16);
+		onBeforeMovePriority: 10,
+		onBeforeMove(pokemon, target, move) {
+			if (move.flags['defrost']) return;
+			if (this.randomChance(1, 5)) {
+				pokemon.cureStatus();
+				return;
+			}
+			this.add('cant', pokemon, 'frz');
+			return false;
+		},
+		onModifyMove(move, pokemon) {
+			if (move.flags['defrost']) {
+				this.add('-curestatus', pokemon, 'frz', '[from] move: ' + move);
+				pokemon.setStatus('');
+			}
+		},
+		onHit(target, source, move) {
+			if (move.thawsTarget || move.type === 'Fire' && move.category !== 'Status') {
+				target.cureStatus();
+			}
 		},
 	},
 	psn: {
@@ -624,14 +640,6 @@ export const Conditions: {[k: string]: ConditionData} = {
 				return 8;
 			}
 			return 5;
-		},
-		// This should be applied directly to the stat before any of the other modifiers are chained
-		// So we give it increased priority.
-		onModifyDefPriority: 10,
-		onModifyDef(def, pokemon) {
-			if (pokemon.hasType('Ice') && this.field.isWeather('hail')) {
-				return this.modify(def, 1.5);
-			}
 		},
 		onFieldStart(field, source, effect) {
 			if (effect?.effectType === 'Ability') {

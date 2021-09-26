@@ -239,14 +239,8 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	paras: {
 		name: "Paras",
 	},
-	parasfnf: {
-		name: "Paras-FnF",
-	},
 	parasect: {
 		name: "Parasect",
-	},
-	parasectfnf: {
-		name: "Parasect-FnF",
 	},
 	venonat: {
 		name: "Venonat",
@@ -800,9 +794,6 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	sunflora: {
 		name: "Sunflora",
 	},
-	sunfloramega: {
-		name: "Sunflora-Mega",
-	},
 	yanma: {
 		name: "Yanma",
 	},
@@ -844,18 +835,6 @@ export const PokedexText: {[k: string]: PokedexText} = {
 	},
 	dunsparce: {
 		name: "Dunsparce",
-	},
-	snugsparce: {
-		name: "Snugsparce",
-	},
-	soarsparce: {
-		name: "Soarsparce",
-	},
-	stucksparce: {
-		name: "Stucksparce",
-	},
-	Sledgesparce: {
-		name: "Sledgesparce",
 	},
 	gligar: {
 		name: "Gligar",

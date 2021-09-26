@@ -75,12 +75,13 @@ export const Rulesets: {[k: string]: FormatData} = {
 		name: 'Standard NatDex',
 		desc: "The standard ruleset for all National Dex tiers",
 		ruleset: [
-			'Obtainable Good', '+Unobtainable', '+Past', 'Team Preview', 'Nickname Clause', 'HP Percentage Mod', 'Cancel Mod', 'Endless Battle Clause',
+			'Obtainable', '+Unobtainable', '+Past', 'Team Preview', 'Nickname Clause', 'HP Percentage Mod', 'Cancel Mod', 'Endless Battle Clause',
 		],
 		onValidateSet(set) {
 			// These Pokemon are still unobtainable
 			const unobtainables = [
-				'Eternatus-Eternamax',
+				'Eevee-Starter', 'Floette-Eternal', 'Pichu-Spiky-eared', 'Pikachu-Belle', 'Pikachu-Cosplay', 'Pikachu-Libre',
+				'Pikachu-PhD', 'Pikachu-Pop-Star', 'Pikachu-Rock-Star', 'Pikachu-Starter', 'Eternatus-Eternamax',
 			];
 			const species = this.dex.species.get(set.species);
 			if (unobtainables.includes(species.name)) {
@@ -358,6 +359,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 	potd: {
 		effectType: 'Rule',
 		name: 'PotD',
+		desc: "Forces the Pokemon of the Day onto every random team.",
 		onBegin() {
 			if (global.Config && global.Config.potd) {
 				this.add('rule', "Pokemon of the Day: " + this.dex.species.get(Config.potd).name);
@@ -367,16 +369,16 @@ export const Rulesets: {[k: string]: FormatData} = {
 	forcemonotype: {
 		effectType: 'ValidatorRule',
 		name: 'Force Monotype',
+		desc: `Forces all teams to have the same type. Usage: Force Monotype = [Type], e.g. "Force Monotype = Water"`,
 		hasValue: true,
 		onValidateRule(value) {
 			if (!this.dex.types.get(value).exists) throw new Error(`Misspelled type "${value}"`);
-			if (!this.dex.types.isName(value)) throw new Error(`Incorrectly capitalized type "${value}"`);
 		},
 		onValidateSet(set) {
 			const species = this.dex.species.get(set.species);
-			const type = this.ruleTable.valueRules.get('forcemonotype')!;
-			if (!species.types.includes(type)) {
-				return [`${set.species} must have type ${type}`];
+			const type = this.dex.types.get(this.ruleTable.valueRules.get('forcemonotype')!);
+			if (!species.types.map(this.toID).includes(type.id)) {
+				return [`${set.species} must have type ${type.name}`];
 			}
 		},
 	},
@@ -1070,35 +1072,45 @@ export const Rulesets: {[k: string]: FormatData} = {
 		checkCanLearn(move, species, setSources, set) {
 			const nonstandard = move.isNonstandard === 'Past' && !this.ruleTable.has('standardnatdex');
 			if (!nonstandard && !move.isZ && !move.isMax && !this.ruleTable.isRestricted(`move:${move.id}`)) {
-				const dex = this.dex;
-				let types: string[];
-				if (species.forme || species.otherFormes) {
-					const baseSpecies = dex.species.get(species.baseSpecies);
-					const originalForme = dex.species.get(species.changesFrom || species.name);
-					types = originalForme.types;
-					if (baseSpecies.otherFormes) {
-						for (const formeName of baseSpecies.otherFormes) {
-							if (baseSpecies.prevo) {
-								const prevo = dex.species.get(baseSpecies.prevo);
-								if (prevo.evos.includes(formeName)) continue;
-							}
-							const forme = dex.species.get(formeName);
-							if (forme.changesFrom === originalForme.name && !forme.battleOnly) {
-								types = types.concat(forme.types);
+				const speciesTypes: string[] = [];
+				const moveTypes: string[] = [];
+				for (let i = this.dex.gen; i >= species.gen && i >= move.gen; i--) {
+					const dex = this.dex.forGen(i);
+					moveTypes.push(dex.moves.get(move.name).type);
+
+					const pokemon = dex.species.get(species.name);
+					if (pokemon.forme || pokemon.otherFormes) {
+						const baseSpecies = dex.species.get(pokemon.baseSpecies);
+						const originalForme = dex.species.get(pokemon.changesFrom || pokemon.name);
+						speciesTypes.push(...originalForme.types);
+						if (baseSpecies.otherFormes) {
+							for (const formeName of baseSpecies.otherFormes) {
+								if (baseSpecies.prevo) {
+									const prevo = dex.species.get(baseSpecies.prevo);
+									if (prevo.evos.includes(formeName)) continue;
+								}
+								const forme = dex.species.get(formeName);
+								if (
+									forme.changesFrom === originalForme.name && !forme.battleOnly &&
+									// Temporary workaround
+									forme.forme !== 'Crowned'
+								) {
+									speciesTypes.push(...forme.types);
+								}
 							}
 						}
+					} else {
+						speciesTypes.push(...pokemon.types);
 					}
-				} else {
-					types = species.types;
-				}
 
-				let prevo = species.prevo;
-				while (prevo) {
-					const prevoSpecies = dex.species.get(prevo);
-					types = types.concat(prevoSpecies.types);
-					prevo = prevoSpecies.prevo;
+					let prevo = pokemon.prevo;
+					while (prevo) {
+						const prevoSpecies = dex.species.get(prevo);
+						speciesTypes.push(...prevoSpecies.types);
+						prevo = prevoSpecies.prevo;
+					}
 				}
-				if (types.includes(move.type)) return null;
+				if (moveTypes.some(m => speciesTypes.includes(m))) return null;
 			}
 			return this.checkCanLearn(move, species, setSources, set);
 		},
@@ -1110,14 +1122,15 @@ export const Rulesets: {[k: string]: FormatData} = {
 		checkCanLearn(move, species, setSources, set) {
 			const nonstandard = move.isNonstandard === 'Past' && !this.ruleTable.has('standardnatdex');
 			if (!nonstandard && !move.isZ && !move.isMax && !this.ruleTable.isRestricted(`move:${move.id}`)) {
-				const letters = [species.id[0]];
+				const letters = [species.id.charAt(0)];
 				let prevo = species.prevo;
+				if (species.changesFrom === 'Silvally') prevo = 'Type: Null';
 				while (prevo) {
 					const prevoSpecies = this.dex.species.get(prevo);
-					letters.push(prevoSpecies.id[0]);
+					letters.push(prevoSpecies.id.charAt(0));
 					prevo = prevoSpecies.prevo;
 				}
-				if (letters.includes(move.id[0])) return null;
+				if (letters.includes(move.id.charAt(0))) return null;
 			}
 			return this.checkCanLearn(move, species, setSources, set);
 		},
@@ -1579,56 +1592,15 @@ export const Rulesets: {[k: string]: FormatData} = {
 			this.add('-start', pokemon, 'typechange', (pokemon.illusion || pokemon).getTypes(true).join('/'), '[silent]');
 		},
 	},
-	obtainablegood: {
-		effectType: 'ValidatorRule',
-		name: 'Obtainable Good',
-		desc: "Makes sure the team is possible to obtain in-game.",
-		ruleset: ['Obtainable Moves', 'Obtainable Abilities', 'Obtainable Formes', 'Obtainable Misc'],
-		// Mostly hardcoded in team-validator.ts
-		onValidateTeam(team, format) {
-			let kyuremCount = 0;
-			let necrozmaDMCount = 0;
-			let necrozmaDWCount = 0;
-			let calyrexCount = 0;
-			for (const set of team) {
-				if (set.species === 'Kyurem-White' || set.species === 'Kyurem-Black') {
-					if (kyuremCount > 0) {
-						return [
-							`You cannot have more than one Kyurem-Black/Kyurem-White.`,
-							`(It's untradeable and you can only make one with the DNA Splicers.)`,
-						];
-					}
-					kyuremCount++;
-				}
-				if (set.species === 'Necrozma-Dusk-Mane') {
-					if (necrozmaDMCount > 0) {
-						return [
-							`You cannot have more than one Necrozma-Dusk-Mane`,
-							`(It's untradeable and you can only make one with the N-Solarizer.)`,
-						];
-					}
-					necrozmaDMCount++;
-				}
-				if (set.species === 'Necrozma-Dawn-Wings') {
-					if (necrozmaDWCount > 0) {
-						return [
-							`You cannot have more than one Necrozma-Dawn-Wings`,
-							`(It's untradeable and you can only make one with the N-Lunarizer.)`,
-						];
-					}
-					necrozmaDWCount++;
-				}
-				if (set.species === 'Calyrex-Ice' || set.species === 'Calyrex-Shadow') {
-					if (calyrexCount > 0) {
-						return [
-							`You cannot have more than one Calyrex-Ice/Calyrex-Shadow.`,
-							`(It's untradeable and you can only make one with the Reins of Unity.)`,
-						];
-					}
-					calyrexCount++;
-				}
-			}
-			return [];
+	firstbloodrule: {
+		effectType: "Rule",
+		name: "First Blood Rule",
+		desc: `The first team to have a Pok&eacute;mon faint loses.`,
+		onBegin() {
+			this.add('rule', 'First Blood Rule: The first team to have a Pok\u00e9mon faint loses.');
+		},
+		onFaint(target) {
+			this.lose(target.side);
 		},
 	},
 };

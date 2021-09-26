@@ -8,11 +8,6 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		desc: "This Pokemon's moves that match one of its types have a same-type attack bonus (STAB) of 2 instead of 1.5.",
 		shortDesc: "This Pokemon's same-type attack bonus (STAB) is 2 instead of 1.5.",
 	},
-	adrenalize: {
-		name: "Adrenalize",
-		desc: "When this Pokemon has 1/4 or less of its maximum HP, rounded down, its attacking stats are multiplied by 1.5.",
-		shortDesc: "At 1/4 or less of its max HP, this Pokemon's attacking stats are 1.5x.",
-	},
 	aerilate: {
 		name: "Aerilate",
 		desc: "This Pokemon's Normal-type moves become Flying-type moves and have their power multiplied by 1.2. This effect comes after other effects that change a move's type, but before Ion Deluge and Electrify's effects.",
@@ -42,8 +37,14 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 	},
 	angerpoint: {
 		name: "Anger Point",
-		desc: "When this Pokemon has more than 1/2 its maximum HP and takes damage from an attack bringing it to 1/2 or less of its maximum HP, its Attack is raised by 1 stage. This effect applies after all hits from a multi-hit move; Sheer Force prevents it from activating if the move has a secondary effect.",
-		shortDesc: "This Pokemon's Atk is raised by 1 when it reaches 1/2 or less of its max HP.",
+		desc: "If this Pokemon, but not its substitute, is struck by a critical hit, its Attack is raised by 12 stages.",
+		shortDesc: "If this Pokemon (not its substitute) takes a critical hit, its Attack is raised 12 stages.",
+		gen4: {
+			desc: "If this Pokemon, or its substitute, is struck by a critical hit, its Attack is raised by 12 stages.",
+			shortDesc: "If this Pokemon or its substitute takes a critical hit, its Attack is raised 12 stages.",
+		},
+
+		boost: "  [POKEMON] maxed its Attack!",
 	},
 	anticipation: {
 		name: "Anticipation",
@@ -97,10 +98,6 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		shortDesc: "Causes sleeping adjacent foes to lose 1/8 of their max HP at the end of each turn.",
 
 		damage: "  [POKEMON] is tormented!",
-	},
-	bagwormicade: {
-		name: "Bagwormicade",
-		shortDesc: "This Pokemon receives 1/2 damage from supereffective attacks.",
 	},
 	ballfetch: {
 		name: "Ball Fetch",
@@ -209,10 +206,6 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		gen6: {
 			desc: "If this Pokemon has a stat stage raised it is lowered instead, and vice versa.",
 		},
-	},
-	corona: {
-		name: "Corona",
-		shortDesc: "This Pokemon's attacking stat is multiplied by 1.5 while using a Fire-type attack.",
 	},
 	corrosion: {
 		name: "Corrosion",
@@ -427,10 +420,6 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		desc: "This Pokemon receives 1/2 damage from contact moves, but double damage from Fire moves.",
 		shortDesc: "This Pokemon takes 1/2 damage from contact moves, 2x damage from Fire moves.",
 	},
-	fluffyfuzz: {
-		name: "Fluffy Fuzz",
-		shortDesc: "Pokemon making contact with this Pokemon have their Speed lowered by 1 stage.",
-	},
 	forecast: {
 		name: "Forecast",
 		desc: "If this Pokemon is a Castform, its type changes to the current weather condition's type, except Sandstorm. If this Pokemon is holding Utility Umbrella and the weather condition is Sunny Day, Desolate Land, Rain Dance, or Primordial Sea, it will not change types.",
@@ -538,11 +527,6 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		name: "Heavy Metal",
 		shortDesc: "This Pokemon's weight is doubled.",
 	},
-	highcaliber: {
-		name: "High Caliber",
-		desc: "This Pokemon's bullet moves have their power multiplied by 1.5.",
-		shortDesc: "This Pokemon's bullet moves have 1.5x power.",
-	},
 	honeygather: {
 		name: "Honey Gather",
 		shortDesc: "No competitive use.",
@@ -588,7 +572,7 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 	},
 	illuminate: {
 		name: "Illuminate",
-		shortDesc: "This Pokemon's moves have their accuracy multiplied by 1.3.",
+		shortDesc: "No competitive use.",
 	},
 	illusion: {
 		name: "Illusion",
@@ -618,14 +602,6 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 			desc: "This Pokemon's moves ignore the opposing side's Reflect, Light Screen, Safeguard, and Mist.",
 			shortDesc: "This Pokemon's moves ignore the foe's Reflect, Light Screen, Safeguard, and Mist.",
 		},
-	},
-	inflate: {
-		name: "Inflate",
-		desc: "At the start of battle, this Pokemon is immune to Ground-type attacks and the effects of Spikes, Toxic Spikes, Sticky Web, and the Arena Trap Ability. The effects of Gravity, Ingrain, Smack Down, Thousand Arrows, and Iron Ball nullify the immunity. Additionally, this pokemon's defense is multiplied by 1.5x. Upon being hit by a damaging move, this ability is nullified.",
-		shortDesc: "This Pokemon is airborne and has 1.5x Defense on switch-in until hit by a damaging move.",
-
-		start: "  [POKEMON]'s body changed in size!",
-		activate: "  [POKEMON]'s body changed in size!",
 	},
 	innardsout: {
 		name: "Innards Out",
@@ -714,7 +690,6 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 			desc: "This Pokemon is immune to Ground-type attacks and the effects of Spikes and the Arena Trap Ability.",
 			shortDesc: "This Pokemon is immune to Ground.",
 		},
-		start: "  [POKEMON] is levitating!",
 	},
 	libero: {
 		name: "Libero",
@@ -863,10 +838,6 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		name: "Motor Drive",
 		desc: "This Pokemon is immune to Electric-type moves and raises its Speed by 1 stage when hit by an Electric-type move.",
 		shortDesc: "This Pokemon's Speed is raised 1 stage if hit by an Electric move; Electric immunity.",
-	},
-	mountaineer: {
-		name: "Mountaineer",
-		shortDesc: "On switch-in, this Pokemon avoids all Rock-type attacks and Stealth Rock.",
 	},
 	moxie: {
 		name: "Moxie",
@@ -1178,13 +1149,6 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		name: "Regenerator",
 		shortDesc: "This Pokemon restores 1/3 of its maximum HP, rounded down, when it switches out.",
 	},
-	reverberation: {
-		name: "Reverberation",
-		desc: "Pokemon that attack this Pokemon with non-contact moves lose 1/8 of their maximum HP, rounded down.",
-		shortDesc: "Pokemon that hit this pokemon with non-contact moves lose 1/8th of their max HP.",
-
-		damage: "  [POKEMON] was hurt!",
-	},
 	ripen: {
 		name: "Ripen",
 		// TODO Needs research. Following berries aren't supported currently:
@@ -1219,8 +1183,7 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 	},
 	runaway: {
 		name: "Run Away",
-		desc: "This Pokemon can switch out even if it is trapped by opposing moves or abilities, or affected by Ingrain.",
-		shortDesc: "This Pokemon can switch even if it is trapped or ingrained.",
+		shortDesc: "No competitive use.",
 	},
 	sandforce: {
 		name: "Sand Force",
@@ -1271,10 +1234,6 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 	screencleaner: {
 		name: "Screen Cleaner",
 		shortDesc: "On switch-in, the effects of Aurora Veil, Light Screen, and Reflect end for both sides.",
-	},
-	seismography: {
-		name: "Seismography",
-		shortDesc: "This Pokemon's attacking stat is multiplied by 1.3 while using a Ground-type attack.",
 	},
 	serenegrace: {
 		name: "Serene Grace",
@@ -1342,16 +1301,6 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 	skilllink: {
 		name: "Skill Link",
 		shortDesc: "This Pokemon's multi-hit attacks always hit the maximum number of times.",
-	},
-	slowdigestion: {
-		name: "Slow Digestion",
-		desc: "Foes lose 1/8th of their maximum HP, rounded down, for every full turn this pokemon is on the field. Poison types are immune.",
-		shortDesc: "Foes lose 1/8th HP every turn this pokemon is active. Poison types are immune.",
-
-		start: "  [POKEMON] is oozing digestive fluids!",
-
-		damage: "  [POKEMON] was hurt by the digestive fluids!",
-
 	},
 	slowstart: {
 		name: "Slow Start",
@@ -1554,10 +1503,6 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 			desc: "If another Pokemon burns, paralyzes, or poisons this Pokemon, that Pokemon receives the same non-volatile status condition. If another Pokemon badly poisons this Pokemon, that Pokemon becomes poisoned.",
 		},
 	},
-	syzygy: {
-		name: "Syzygy",
-		shortDesc: "This Pokemon's attacking stat is multiplied by 1.5 while using a Ice-type attack.",
-	},
 	tangledfeet: {
 		name: "Tangled Feet",
 		shortDesc: "This Pokemon's evasiveness is doubled as long as it is confused.",
@@ -1592,12 +1537,6 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		},
 
 		start: "  [POKEMON] is radiating a bursting aura!",
-	},
-	terraforming: {
-		name: "Terraforming",
-		shortDesc: "On switch-in, this Pokemon summons Gravity.",
-
-		start: "  [POKEMON] modified the atmosphere!",
 	},
 	thickfat: {
 		name: "Thick Fat",
@@ -1751,10 +1690,6 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		desc: "When this Pokemon has more than 1/2 its maximum HP and takes damage bringing it to 1/2 or less of its maximum HP, it immediately switches out to a chosen ally. This effect applies after all hits from a multi-hit move; Sheer Force prevents it from activating if the move has a secondary effect. This effect applies to both direct and indirect damage, except Curse and Substitute on use, Belly Drum, Pain Split, and confusion damage.",
 		shortDesc: "This Pokemon switches out when it reaches 1/2 or less of its maximum HP.",
 	},
-	windchime: {
-		name: "Wind Chime",
-		shortDesc: "This Pokemon's sound-based moves have their priority increased by 3.",
-	},
 	wonderguard: {
 		name: "Wonder Guard",
 		shortDesc: "This Pokemon can only be damaged by supereffective moves and indirect damage.",
@@ -1783,6 +1718,10 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 	},
 
 	// CAP
+	mountaineer: {
+		name: "Mountaineer",
+		shortDesc: "On switch-in, this Pokemon avoids all Rock-type attacks and Stealth Rock.",
+	},
 	rebound: {
 		name: "Rebound",
 		desc: "On switch-in, this Pokemon blocks certain status moves and instead uses the move against the original user.",

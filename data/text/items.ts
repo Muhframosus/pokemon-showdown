@@ -471,10 +471,6 @@ export const ItemsText: {[k: string]: ItemText} = {
 		name: "Eviolite",
 		desc: "If holder's species can evolve, its Defense and Sp. Def are 1.5x.",
 	},
-	eviomight: {
-		name: "Eviomight",
-		desc: "If holder's species can evolve, its Attack and Sp. Attack are 1.5x.",
-	},
 	expertbelt: {
 		name: "Expert Belt",
 		desc: "Holder's attacks that are super effective against the target do 1.2x damage.",
@@ -929,6 +925,9 @@ export const ItemsText: {[k: string]: ItemText} = {
 	lightball: {
 		name: "Light Ball",
 		desc: "If held by a Pikachu, its Attack and Sp. Atk are doubled.",
+		gen4: {
+			desc: "If held by a Pikachu, its attacks have their power doubled.",
+		},
 		gen3: {
 			desc: "If held by a Pikachu, its Special Attack is doubled.",
 		},
@@ -1696,10 +1695,6 @@ export const ItemsText: {[k: string]: ItemText} = {
 	strawberrysweet: {
 		name: "Strawberry Sweet",
 		desc: "Evolves Milcery into Alcremie when held and spun around.",
-	},
-	sunflorite: {
-		name: "Sunflorite",
-		desc: "If held by an Sunflora, this item allows it to Mega Evolve in battle.",
 	},
 	sunstone: {
 		name: "Sun Stone",
