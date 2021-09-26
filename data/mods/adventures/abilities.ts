@@ -628,53 +628,55 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		},
 	},
 	iceface: {
-		desc: "If Eiscue, the first physical hit it takes deals 0 damage. This effect is restored in Hail.",
 		onStart(pokemon) {
 			if (this.field.isWeather('hail') && pokemon.species.id === 'eiscuenoice' && !pokemon.transformed) {
 				this.add('-activate', pokemon, 'ability: Ice Face');
-				this.effectData.busted = false;
+				this.effectState.busted = false;
 				pokemon.formeChange('Eiscue', this.effect, true);
 			}
 		},
 		onDamagePriority: 1,
 		onDamage(damage, target, source, effect) {
 			if (
-				effect && effect.effectType === 'Move' &&
 				target.species.id === 'eiscue' && !target.transformed
 			) {
 				this.add('-activate', target, 'ability: Ice Face');
-				this.effectData.busted = true;
+				this.effectState.busted = true;
 				return 0;
 			}
 		},
 		onCriticalHit(target, type, move) {
 			if (!target) return;
-			if (move.category !== 'Physical' || target.species.id !== 'eiscue' || target.transformed) return;
+			if (target.species.id !== 'eiscue' || target.transformed) return;
 			if (target.volatiles['substitute'] && !(move.flags['authentic'] || move.infiltrates)) return;
 			if (!target.runImmunity(move.type)) return;
 			return false;
 		},
 		onEffectiveness(typeMod, target, type, move) {
 			if (!target) return;
-			if (move.category !== 'Physical' || target.species.id !== 'eiscue' || target.transformed) return;
-			if (target.volatiles['substitute'] && !(move.flags['authentic'] || move.infiltrates)) return;
+			if (target.species.id !== 'eiscue' || target.transformed) return;
+
+			const hitSub = target.volatiles['substitute'] && !move.flags['authentic'] && !(move.infiltrates && this.gen >= 6);
+			if (hitSub) return;
+
 			if (!target.runImmunity(move.type)) return;
 			return 0;
 		},
 		onUpdate(pokemon) {
-			if (pokemon.species.id === 'eiscue' && this.effectData.busted) {
+			if (pokemon.species.id === 'eiscue' && this.effectState.busted) {
 				pokemon.formeChange('Eiscue-Noice', this.effect, true);
 			}
 		},
 		onAnyWeatherStart() {
-			const pokemon = this.effectData.target;
+			const pokemon = this.effectState.target;
 			if (!pokemon.hp) return;
 			if (this.field.isWeather('hail') && pokemon.species.id === 'eiscuenoice' && !pokemon.transformed) {
 				this.add('-activate', pokemon, 'ability: Ice Face');
-				this.effectData.busted = false;
+				this.effectState.busted = false;
 				pokemon.formeChange('Eiscue', this.effect, true);
 			}
 		},
+		isBreakable: true,
 		isPermanent: true,
 		name: "Ice Face",
 		rating: 3,

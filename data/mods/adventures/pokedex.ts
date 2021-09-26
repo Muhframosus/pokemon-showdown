@@ -1745,6 +1745,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	arctovish: {
 		inherit: true,
 		baseStats: {hp: 90, atk: 90, def: 100, spa: 90, spd: 100, spe: 65},
+		abilities: {0: "Water Absorb", 1: "Swift Swim", H: "Slush Rush"},
 	},
 	dracozolt: {
 		inherit: true,
