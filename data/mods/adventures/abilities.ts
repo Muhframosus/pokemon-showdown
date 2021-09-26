@@ -1394,6 +1394,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		onDamagingHit(damage, target, source, move) {
 			if (this.checkMoveMakesContact(move, source, target, true)) {
 				this.damage(source.baseMaxhp / 12, source, target);
+				}
 			}
 		},
 	emergencyexit: {
