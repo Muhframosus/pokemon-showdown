@@ -12,6 +12,9 @@ this.modData('Learnsets', 'samurott').learnset.iciclecrash = ['8L1'];
 this.modData('Learnsets', 'samurott').learnset.rockpolish = ['8L1'];
 this.modData('Learnsets', 'samurott').learnset.flipturn = ['8L1'];
 
+this.modData('Learnsets', 'kecleon').learnset.machpunch = ['8L1'];
+this.modData('Learnsets', 'kecleon').learnset.iceshard = ['8L1'];
+
 this.modData('Learnsets', 'emboar').learnset.bodypress = ['8L1'];
 this.modData('Learnsets', 'emboar').learnset.closecombat = ['8L1'];
 this.modData('Learnsets', 'emboar').learnset.counter = ['8L1'];

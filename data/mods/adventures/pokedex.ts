@@ -270,7 +270,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	aggronmega: {
 		inherit: true,
-		baseStats: {hp: 70, atk: 140, def: 200, spa: 60, spd: 80, spe: 80},
+		baseStats: {hp: 70, atk: 140, def: 220, spa: 60, spd: 80, spe: 60},
 	},
 	eelektross: {
 		inherit: true,
