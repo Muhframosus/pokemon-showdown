@@ -562,12 +562,12 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		onAnyRedirectTarget(target, source, source2, move) {
 			if (move.type !== 'Electric' || ['firepledge', 'grasspledge', 'waterpledge'].includes(move.id)) return;
 			const redirectTarget = ['randomNormal', 'adjacentFoe'].includes(move.target) ? 'normal' : move.target;
-			if (this.validTarget(this.effectData.target, source, redirectTarget)) {
+			if (this.validTarget(this.effectState.target, source, redirectTarget)) {
 				if (move.smartTarget) move.smartTarget = false;
-				if (this.effectData.target !== target) {
-					this.add('-activate', this.effectData.target, 'ability: Lightning Rod');
+				if (this.effectState.target !== target) {
+					this.add('-activate', this.effectState.target, 'ability: Lightning Rod');
 				}
-				return this.effectData.target;
+				return this.effectState.target;
 			}
 		},
 		name: "Lightning Rod",
@@ -943,7 +943,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		desc: "If user is Cherrim, while Sunny Day is active all allies have their Attack, Special Attack and Speed multiplied by 1.5x.",
 		shortDesc: "If user is Cherrim and Sunny Day is active, it and allies' Atk, SpA and Spe are 1.5x.",
 		onStart(pokemon) {
-			delete this.effectData.forme;
+			delete this.effectState.forme;
 		},
 		onUpdate(pokemon) {
 			if (!pokemon.isActive || pokemon.baseSpecies.baseSpecies !== 'Cherrim' || pokemon.transformed) return;
@@ -960,21 +960,21 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		},
 		onAllyModifyAtkPriority: 3,
 		onAllyModifyAtk(atk, pokemon) {
-			if (this.effectData.target.baseSpecies.baseSpecies !== 'Cherrim') return;
+			if (this.effectState.target.baseSpecies.baseSpecies !== 'Cherrim') return;
 			if (['sunnyday', 'desolateland'].includes(pokemon.effectiveWeather())) {
 				return this.chainModify(1.5);
 			}
 		},
 		onAllyModifySpAPriority: 3,
 		onAllyModifySpA(atk, pokemon) {
-			if (this.effectData.target.baseSpecies.baseSpecies !== 'Cherrim') return;
+			if (this.effectState.target.baseSpecies.baseSpecies !== 'Cherrim') return;
 			if (['sunnyday', 'desolateland'].includes(pokemon.effectiveWeather())) {
 				return this.chainModify(1.5);
 			}
 		},
 		onAllyModifySpePriority: 3,
 		onAllyModifySpe(spd, pokemon) {
-			if (this.effectData.target.baseSpecies.baseSpecies !== 'Cherrim') return;
+			if (this.effectState.target.baseSpecies.baseSpecies !== 'Cherrim') return;
 			if (['sunnyday', 'desolateland'].includes(pokemon.effectiveWeather())) {
 				return this.chainModify(1.5);
 			}
@@ -1017,12 +1017,12 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		onAnyRedirectTarget(target, source, source2, move) {
 			if (move.type !== 'Water' || ['firepledge', 'grasspledge', 'waterpledge'].includes(move.id)) return;
 			const redirectTarget = ['randomNormal', 'adjacentFoe'].includes(move.target) ? 'normal' : move.target;
-			if (this.validTarget(this.effectData.target, source, redirectTarget)) {
+			if (this.validTarget(this.effectState.target, source, redirectTarget)) {
 				if (move.smartTarget) move.smartTarget = false;
-				if (this.effectData.target !== target) {
-					this.add('-activate', this.effectData.target, 'ability: Storm Drain');
+				if (this.effectState.target !== target) {
+					this.add('-activate', this.effectState.target, 'ability: Storm Drain');
 				}
-				return this.effectData.target;
+				return this.effectState.target;
 			}
 		},
 		name: "Storm Drain",
@@ -1297,14 +1297,14 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		desc: "When any Pokemon faints, this copies its ability and restores 1/2 of its max HP.",
 		shortdesc: "When any Pokemon faints, this copies its ability and restores 1/2 of its max HP",
 		onAnyFaint(target, pokemon) {
-			if (!this.effectData.target.hp) return;
+			if (!this.effectState.target.hp) return;
 			const ability = target.getAbility();
 			const additionalBannedAbilities = [
 				'noability', 'flowergift', 'forecast', 'hungerswitch', 'illusion', 'imposter', 'neutralizinggas', 'powerofalchemy', 'receiver', 'trace', 'wonderguard',
 			];
 			if (target.getAbility().isPermanent || additionalBannedAbilities.includes(target.ability)) return;
-			this.add('-ability', this.effectData.target, ability, '[from] ability: Power of Alchemy', '[of] ' + target);
-			this.effectData.target.setAbility(ability);
+			this.add('-ability', this.effectState.target, ability, '[from] ability: Power of Alchemy', '[of] ' + target);
+			this.effectState.target.setAbility(ability);
 			this.heal(Math.floor(pokemon.maxhp / 2), pokemon, pokemon);
 		},
 		name: "Power of Alchemy",
