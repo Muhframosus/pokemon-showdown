@@ -488,7 +488,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	raichu: {
 		inherit: true,
 		types: ["Electric", "Fighting"],
-		baseStats: {hp: 60, atk: 110, def: 55, spa: 110, spd: 80, spe: 110},
+		baseStats: {hp: 60, atk: 115, def: 55, spa: 105, spd: 80, spe: 110},
 		abilities: {0: "Static", 1: "Scrappy", H: "Lightning Rod"},
 	},
 	raichualola: {
@@ -1866,7 +1866,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	ambipom: {
 		inherit: true,
-		baseStats: {hp: 75, atk: 115, def: 86, spa: 60, spd: 86, spe: 115},
+		baseStats: {hp: 75, atk: 100, def: 86, spa: 60, spd: 86, spe: 115},
 		abilities: {0: "Technician", 1: "Tail Fists", H: "Skill Link"},
 	},
 	farfetchd: {
