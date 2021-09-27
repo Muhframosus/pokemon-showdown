@@ -1396,6 +1396,9 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				this.damage(source.baseMaxhp / 12, source, target);
 				}
 			}
+		name: "Biting Head",
+		rating: 4,
+		num: -76,
 		},
 	emergencyexit: {
 		desc: "This Pokemon switches out when it reaches 1/2 or less of its maximum HP. Also restores 1/3 of its HP.",
@@ -1408,7 +1411,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				}
 			}
 			target.switchFlag = true;
-			this.heal(Math.floor(pokemon.maxhp / 3), pokemon, pokemon);
+			this.heal(Math.floor(target.maxhp / 3), target, target);
 			this.add('-activate', target, 'ability: Emergency Exit');
 		},
 		name: "Emergency Exit",
