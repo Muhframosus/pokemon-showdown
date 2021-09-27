@@ -1383,19 +1383,19 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		num: -75,
 	},
 	bitinghead: {
-		desc: "Whenever this Pokemon attacks or is hit by a contact move, it deals damage equal to 1/12 of the interacting Pokemon's Health.",
-		shortdesc: "Damages Pokemon by 1/12 of their max HP when it attacks or is hit by a contact move.",
+		desc: "Whenever this Pokemon attacks or is hit by a contact move, it deals damage equal to 1/8 of the interacting Pokemon's Health.",
+		shortdesc: "Damages Pokemon by 1/8 of their max HP when it attacks or is hit by a contact move.",
 		onPrepareHit(source, target, move) {
 			if (move.category === 'Status' || move.selfdestruct) return;
 			if (['endeavor', 'fling', 'beatup'].includes(move.id)) return;
-			this.damage(target.baseMaxhp / 12, target);
+			this.damage(target.baseMaxhp / 8, target);
 		},
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
 			if (this.checkMoveMakesContact(move, source, target, true)) {
-				this.damage(source.baseMaxhp / 12, source, target);
+				this.damage(source.baseMaxhp / 8, source, target);
 				}
-			},
+		},
 		name: "Biting Head",
 		rating: 4,
 		num: -76,
