@@ -981,6 +981,9 @@ this.modData('Learnsets', 'pinsir').learnset.taunt = ['8L1'];
 
 this.modData('Learnsets', 'raichu').learnset.workup = ['8L1'];
 this.modData('Learnsets', 'raichu').learnset.lowkick = ['8L1'];
+this.modData('Learnsets', 'raichu').learnset.closecombat = ['8L1'];
+this.modData('Learnsets', 'raichu').learnset.jumpkick = ['8L1'];
+this.modData('Learnsets', 'raichu').learnset.crosschop = ['8L1'];
 
 this.modData('Learnsets', 'swoobat').learnset.barrier = ['8L1'];
 this.modData('Learnsets', 'swoobat').learnset.miracleeye = ['8L1'];
