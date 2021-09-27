@@ -1866,7 +1866,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	ambipom: {
 		inherit: true,
-		baseStats: {hp: 75, atk: 100, def: 86, spa: 60, spd: 86, spe: 115},
+		baseStats: {hp: 75, atk: 105, def: 86, spa: 60, spd: 86, spe: 115},
 		abilities: {0: "Technician", 1: "Tail Fists", H: "Skill Link"},
 	},
 	farfetchd: {

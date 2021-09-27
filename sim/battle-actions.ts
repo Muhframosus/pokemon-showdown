@@ -1650,12 +1650,10 @@ export class BattleActions {
 			const bondModifier = this.battle.gen > 6 ? 0.25 : 0.5;
 			this.battle.debug(`Parental Bond modifier: ${bondModifier}`);
 			baseDamage = this.battle.modify(baseDamage, bondModifier);
-		}
-			//  Tail Fists modifier
-		  else if const fistsModifier = 0.5;
+		}   //  Tail Fists modifier
+		    else if const fistsModifier = 0.5;
 			this.battle.debug(`Tail Fists modifier: ${fistsModifier}`);
 			baseDamage = this.battle.modify(baseDamage, fistsModifier);
-		}
 
 		// weather modifier
 		baseDamage = this.battle.runEvent('WeatherModifyDamage', pokemon, target, move, baseDamage);
