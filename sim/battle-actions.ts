@@ -1645,15 +1645,17 @@ export class BattleActions {
 			const spreadModifier = move.spreadModifier || (this.battle.gameType === 'freeforall' ? 0.5 : 0.75);
 			this.battle.debug('Spread modifier: ' + spreadModifier);
 			baseDamage = this.battle.modify(baseDamage, spreadModifier);
-		} else if (move.multihitType === 'tailfists' && move.hit > 1) {
+		} else if (move.multihitType === 'parentalbond' && move.hit > 1) {
 			// Parental Bond modifier
 			const bondModifier = this.battle.gen > 6 ? 0.25 : 0.5;
 			this.battle.debug(`Parental Bond modifier: ${bondModifier}`);
 			baseDamage = this.battle.modify(baseDamage, bondModifier);
-		}   //  Tail Fists modifier
+		}  else if (move.multihitType === 'tailfists' && move.hit > 1) {
+			//  Tail Fists modifier
 		    else if const fistsModifier = 0.5;
 			this.battle.debug(`Tail Fists modifier: ${fistsModifier}`);
 			baseDamage = this.battle.modify(baseDamage, fistsModifier);
+		}
 
 		// weather modifier
 		baseDamage = this.battle.runEvent('WeatherModifyDamage', pokemon, target, move, baseDamage);
