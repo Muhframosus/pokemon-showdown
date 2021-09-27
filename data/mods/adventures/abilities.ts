@@ -1395,7 +1395,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			if (this.checkMoveMakesContact(move, source, target, true)) {
 				this.damage(source.baseMaxhp / 12, source, target);
 				}
-			}
+			},
 		name: "Biting Head",
 		rating: 4,
 		num: -76,
