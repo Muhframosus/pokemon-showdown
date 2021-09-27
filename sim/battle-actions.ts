@@ -1652,7 +1652,7 @@ export class BattleActions {
 			baseDamage = this.battle.modify(baseDamage, bondModifier);
 		}
 			//  Tail Fists modifier
-			const fistsModifier = 0.5;
+		  else if const fistsModifier = 0.5;
 			this.battle.debug(`Tail Fists modifier: ${fistsModifier}`);
 			baseDamage = this.battle.modify(baseDamage, fistsModifier);
 		}
