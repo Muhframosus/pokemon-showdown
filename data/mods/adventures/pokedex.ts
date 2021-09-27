@@ -2052,7 +2052,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	girafarig: {
 		inherit: true,
 		types: ["Psychic", "Dark"],
-		baseStats: {hp: 100, atk: 80, def: 85, spa: 105, spd: 85, spe: 105},
+		baseStats: {hp: 100, atk: 90, def: 80, spa: 105, spd: 80, spe: 95},
 		abilities: {0: "Biting Head", 1: "Inner Focus", H: "Sap Sipper"},
 	},
 };
