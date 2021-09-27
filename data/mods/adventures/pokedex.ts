@@ -190,7 +190,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	rampardos: {
 		inherit: true,
-		baseStats: {hp: 137, atk: 165, def: 60, spa: 55, spd: 50, spe: 68},
+		baseStats: {hp: 147, atk: 165, def: 60, spa: 35, spd: 50, spe: 78},
 		abilities: {0: "Rock Head", 1: "Reckless", H: "Mold Breaker"},		
 	},
 	exploud: {

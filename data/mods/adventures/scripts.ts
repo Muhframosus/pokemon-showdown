@@ -288,6 +288,8 @@ this.modData('Learnsets', 'rampardos').learnset.woodhammer = ['8L1'];
 this.modData('Learnsets', 'rampardos').learnset.wildcharge = ['8L1'];
 this.modData('Learnsets', 'rampardos').learnset.flareblitz = ['8L1'];
 this.modData('Learnsets', 'rampardos').learnset.closecombat = ['8L1'];
+this.modData('Learnsets', 'rampardos').learnset.scaleshot = ['8L1'];
+this.modData('Learnsets', 'rampardos').learnset.dragondance = ['8L1'];
 
 this.modData('Learnsets', 'exploud').learnset.thunderbolt = ['8L1'];
 this.modData('Learnsets', 'exploud').learnset.bugbuzz = ['8L1'];
