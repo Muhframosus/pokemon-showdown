@@ -1761,4 +1761,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Normal",
 		contestType: "Cool",
 	},
+	headsmash: {
+		inherit: true,
+		recoil: [1, 3],
+	},
 }
