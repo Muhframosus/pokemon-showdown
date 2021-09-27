@@ -1391,7 +1391,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		shortdesc: "Damages Pokemon by 1/8 of their max HP when it attacks or is hit by a contact move.",
 		onPrepareHit(source, target, move) {
 			if (move.category === 'Status' || move.selfdestruct) return;
-			if (['endeavor', 'fling', 'beatup'].includes(move.id)) return;
 			this.damage(target.baseMaxhp / 8, target);
 		},
 		onDamagingHitOrder: 1,
