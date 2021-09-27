@@ -1366,8 +1366,12 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		num: 21,
 	},
 	elusive: {
-		desc: "This Pokemon is switched out when damaged by another Pokemon's attack.",
-		shortdesc: "Switches out when damaged by another Pokemon's attack",
+		desc: "This Pokemon takes 1/2 of attack damage and is switched out when damaged by another Pokemon's attack.",
+		shortdesc: "Takes half damage from attacks and switches out when damaged by another Pokemon's attack.",
+		onSourceModifyDamage(damage, source, target, move) {
+				this.debug('Elusive reduce');
+				return this.chainModify(0.5);
+			},
 			onDamagingHit(damage, target, source, move) {
 			if (!this.canSwitch(target.side) || target.forceSwitchFlag || target.switchFlag) return;
 			for (const side of this.sides) {
