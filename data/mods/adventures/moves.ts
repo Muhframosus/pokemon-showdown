@@ -1612,7 +1612,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		name: "Spindance",
 		pp: 5,
 		priority: 0,
-		flags: {snatch: 1},
+		flags: {snatch: 1, dance: 1},
 		volatileStatus: 'confusion',
 		volatileStatus: 'Spindancing',
 		onTry(source, target, move) {

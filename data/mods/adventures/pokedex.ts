@@ -659,8 +659,8 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	crobat: {
 		inherit: true,
-		abilities: {0: "Inner Focus", 1: "Forewarn", H: "Infiltrator"},
-		baseStats: {hp: 90, atk: 115, def: 70, spa: 70, spd: 70, spe: 130},
+		abilities: {0: "Huge Power", 1: "Inner Focus", H: "Infiltrator"},
+		baseStats: {hp: 90, atk: 90, def: 70, spa: 70, spd: 70, spe: 130},
 	},
 	diancie: {
 		inherit: true,
@@ -760,7 +760,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	beheeyem: {
 		inherit: true,
-		baseStats: {hp: 75, atk: 75, def: 85, spa: 150, spd: 105, spe: 40},
+		baseStats: {hp: 85, atk: 55, def: 95, spa: 150, spd: 105, spe: 40},
 		abilities: {0: "Telepathy", 1: "Analytic", H: "Gravity Surge"},
 	},
 	swellow: {
