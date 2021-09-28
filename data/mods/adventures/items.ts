@@ -168,7 +168,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 		shortDesc: "Holder's use of Gravity lasts 8 turns instead of 5.",
 		spritenum: 193,
 		fling: {
-			basePower: 60,
+			basePower: 120,
 		},
 		num: 284,
 		gen: 4,
