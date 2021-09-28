@@ -60,8 +60,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		},
 		onStart(pokemon) {
 			if (!pokemon.setStatus('slp', pokemon)) return false;
-			pokemon.effectState.time = 3;
-			pokemon.effectState.startTime = 3;
+			pokemon.statusState.time = 3;
+			pokemon.statusState.startTime = 3;
 			this.heal(pokemon.maxhp); // Aesthetic only as the healing happens after you fall asleep in-game
 		},
 		name: "Slumber",
