@@ -660,7 +660,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	crobat: {
 		inherit: true,
 		abilities: {0: "Huge Power", 1: "Inner Focus", H: "Infiltrator"},
-		baseStats: {hp: 90, atk: 70, def: 70, spa: 70, spd: 70, spe: 130},
+		baseStats: {hp: 90, atk: 60, def: 70, spa: 70, spd: 70, spe: 130},
 	},
 	diancie: {
 		inherit: true,
