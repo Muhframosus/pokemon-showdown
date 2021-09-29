@@ -1370,6 +1370,7 @@ this.modData('Learnsets', 'xerneas').learnset.powergem = ['8L1'];
 this.modData('Learnsets', 'yveltal').learnset.sludgewave = ['8L1'];
 
 this.modData('Learnsets', 'sharpedo').learnset.obstruct = ['8L1'];
+this.modData('Learnsets', 'sharpedo').learnset.pursuit = ['8L1'];
 
 this.modData('Learnsets', 'giratina').learnset.dragondance = ['8L1'];
 this.modData('Learnsets', 'giratina').learnset.poltergeist = ['8L1'];

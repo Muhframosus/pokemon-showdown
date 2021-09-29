@@ -2055,4 +2055,13 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 100, atk: 90, def: 80, spa: 105, spd: 80, spe: 95},
 		abilities: {0: "Biting Head", 1: "Inner Focus", H: "Sap Sipper"},
 	},
+	sharpedo: {
+		inherit: true,
+		baseStats: {hp: 70, atk: 125, def: 40, spa: 110, spd: 40, spe: 95},
+		abilities: {0: "Rough Skin", 1: "", H: "Speed Boost"},
+	},
+	sharpedomega: {
+		inherit: true,
+		baseStats: {hp: 70, atk: 145, def: 70, spa: 125, spd: 65, spe: 105},
+	},
 };

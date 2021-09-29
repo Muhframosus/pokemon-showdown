@@ -1645,7 +1645,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		name: "Terrain Punch",
 		pp: 10,
 		priority: 0,
-		flags: {protect: 1, mirror: 1, pulse: 1},
+		flags: {protect: 1, mirror: 1, contact: 1, punch: 1},
 		onModifyType(move, pokemon) {
 			if (!pokemon.isGrounded()) return;
 			switch (this.field.terrain) {
