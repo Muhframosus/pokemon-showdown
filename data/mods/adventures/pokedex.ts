@@ -1902,6 +1902,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 75, atk: 98, def: 70, spa: 114, spd: 70, spe: 95},
 		abilities: {0: "Punk Rock", 1: "Galvanize", H: "Technician"},
 	},
+	toxtricitylowkey: {
+		inherit: true,
+		baseStats: {hp: 75, atk: 98, def: 70, spa: 114, spd: 70, spe: 95},
+		abilities: {0: "Punk Rock", 1: "Magnet Pull", H: "Technician"},
+	},
 	luxray: {
 		inherit: true,
 		types: ["Electric", "Dark"],
