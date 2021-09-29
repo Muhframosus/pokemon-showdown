@@ -1436,7 +1436,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		isNonstandard: "LGPE",
 		name: "Zippy Zap",
 		pp: 10,
-		priority: 2,
+		priority: 1,
 		flags: {contact: 1, protect: 1},
 		target: "normal",
 		type: "Electric",
@@ -1765,5 +1765,28 @@ export const Moves: {[moveid: string]: MoveData} = {
 	headsmash: {
 		inherit: true,
 		recoil: [1, 3],
+	},
+	venomdrench: {
+		desc: "Lowers Atk/Sp. Atk/Speed of poisoned foes by 2.",
+		shortdesc: "Lowers Atk/Sp. Atk/Speed of poisoned foes by 2.",
+		num: 599,
+		accuracy: 100,
+		basePower: 0,
+		category: "Status",
+		name: "Venom Drench",
+		pp: 20,
+		priority: 0,
+		flags: {protect: 1, reflectable: 1, mirror: 1},
+		onHit(target, source, move) {
+			if (target.status === 'psn' || target.status === 'tox') {
+				return !!this.boost({atk: -2, spa: -2, spe: -2}, target, source, move);
+			}
+			return false;
+		},
+		secondary: null,
+		target: "allAdjacentFoes",
+		type: "Poison",
+		zMove: {boost: {def: 1}},
+		contestType: "Clever",
 	},
 }

@@ -532,7 +532,6 @@ this.modData('Learnsets', 'cresselia').learnset.dazzlinggleam = ['8L1'];
 this.modData('Learnsets', 'cresselia').learnset.mistyexplosion = ['8L1'];
 this.modData('Learnsets', 'cresselia').learnset.mysticalfire = ['8L1'];
 
-this.modData('Learnsets', 'crobat').learnset.firstimpression = ['8L1'];
 this.modData('Learnsets', 'crobat').learnset.gunkshot = ['8L1'];
 this.modData('Learnsets', 'crobat').learnset.knockoff = ['8L1'];
 
@@ -1371,6 +1370,9 @@ this.modData('Learnsets', 'yveltal').learnset.sludgewave = ['8L1'];
 
 this.modData('Learnsets', 'sharpedo').learnset.obstruct = ['8L1'];
 this.modData('Learnsets', 'sharpedo').learnset.pursuit = ['8L1'];
+this.modData('Learnsets', 'sharpedo').learnset.nastyplot = ['8L1'];
+this.modData('Learnsets', 'sharpedo').learnset.glare = ['8L1'];
+this.modData('Learnsets', 'sharpedo').learnset.workup = ['8L1'];
 
 this.modData('Learnsets', 'giratina').learnset.dragondance = ['8L1'];
 this.modData('Learnsets', 'giratina').learnset.poltergeist = ['8L1'];

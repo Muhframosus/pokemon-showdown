@@ -483,7 +483,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	pikachustarter: {
 		inherit: true,
-		baseStats: {hp: 45, atk: 80, def: 50, spa: 90, spd: 60, spe: 120},
+		baseStats: {hp: 45, atk: 70, def: 50, spa: 90, spd: 60, spe: 120},
 	},
 	raichu: {
 		inherit: true,
