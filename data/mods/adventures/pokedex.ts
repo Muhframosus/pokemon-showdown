@@ -2068,7 +2068,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	snorlax: {
 		inherit: true,
 		baseStats: {hp: 160, atk: 120, def: 65, spa: 55, spd: 120, spe: 40},
-		abilities: {0: "Immunity", 1: "Thick Fat", H: "Waking Rage"},
+		abilities: {0: "Immunity", 1: "Thick Fat", H: "Waking Wrath"},
 	},
 	aerodactyl: {
 		inherit: true,
