@@ -185,7 +185,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	bastiodon: {
 		inherit: true,
 		types: ["Dragon", "Steel"],
-		baseStats: {hp: 60, atk: 82, def: 168, spa: 47, spd: 138, spe: 30},
+		baseStats: {hp: 60, atk: 82, def: 168, spa: 47, spd: 118, spe: 30},
 		abilities: {0: "Unaware", H: "Soundproof", 1:"Dauntless Shield"},
 	},
 	rampardos: {
@@ -2068,5 +2068,15 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	sharpedomega: {
 		inherit: true,
 		baseStats: {hp: 70, atk: 145, def: 70, spa: 125, spd: 65, spe: 105},
+	},
+	snorlax: {
+		inherit: true,
+		baseStats: {hp: 160, atk: 110, def: 65, spa: 55, spd: 120, spe: 40},
+		abilities: {0: "Immunity", 1: "Thick Fat", H: "Waking Rage"},
+	},
+	aerodactyl: {
+		inherit: true,
+		baseStats: {hp: 80, atk: 105, def: 65, spa: 60, spd: 75, spe: 130},
+		abilities: {0: "Rock Head", 1: "Mold Breaker", H: "Primal Rage"},
 	},
 };

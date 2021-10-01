@@ -1108,7 +1108,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		onWeather(target, source, effect) {
 			if (target.hasItem('utilityumbrella')) return;
 			if (effect.id === 'raindance' || effect.id === 'primordialsea') {
-				this.heal(target.baseMaxhp / 8);
+				this.heal(target.baseMaxhp / 4);
 			}
 		},
 		name: "Rain Dish",
@@ -1420,5 +1420,27 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		name: "Emergency Exit",
 		rating: 2,
 		num: 194,
+	},
+	wakingrage: {
+		name: "Waking Rage",
+		desc: "This Pokemon's Speed is raised by 2 stages when it wakes up from sleep.",
+		shortDesc: "This Pokemon's Speed is raised by 2 stages when it wakes up from sleep.",
+		onAfterSetStatus(status, target, source) {
+			if (status.id !== 'slp' || !target.isAlly(source)) return;
+				this.add('-ability', target, 'Waking Rage');
+				this.boost({spe: 2}, target, target, null, true);
+		},
+		rating: 2,
+		num: 72,
+	},
+	primalrage: {
+		desc: "This Pokemon's Attack is raised by 1 stage when it takes damage from an attack.",
+		shortDesc: "This Pokemon's Attack is raised by 1 stage when it takes damage from an attack.",
+		onDamagingHit(damage, target, source, effect) {
+			this.boost({atk: 1});
+		},
+		name: "Primal Rage",
+		rating: 4,
+		num: 192,
 	},
 };

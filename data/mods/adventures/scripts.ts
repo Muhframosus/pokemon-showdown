@@ -181,6 +181,9 @@ this.modData('Learnsets', 'kommoo').learnset.earthquake = ['8L1'];
 
 this.modData('Learnsets', 'pyukumuku').learnset.metronome = ['8L1'];
 
+this.modData('Learnsets', 'aerodactyl').learnset.superpower = ['8L1'];
+this.modData('Learnsets', 'aerodactyl').learnset.xscissor = ['8L1'];
+
 this.modData('Learnsets', 'cramorant').learnset.sludgebomb = ['8L1'];
 
 this.modData('Learnsets', 'politoed').learnset.flipturn = ['8L1'];
@@ -930,9 +933,9 @@ this.modData('Learnsets', 'metagross').learnset.shiftgear = ['8L1'];
 
 this.modData('Learnsets', 'milotic').learnset.drainingkiss = ['8L1'];
 this.modData('Learnsets', 'milotic').learnset.aurorabeam = ['8L1'];
+this.modData('Learnsets', 'milotic').learnset.moonblast = ['8L1'];
+this.modData('Learnsets', 'milotic').learnset.calmmind = ['8L1'];
 this.modData('Learnsets', 'milotic').learnset.dazzlinggleam = ['8L1'];
-this.modData('Learnsets', 'milotic').learnset.charm = ['8L1'];
-this.modData('Learnsets', 'milotic').learnset.babydolleyes = ['8L1'];
 this.modData('Learnsets', 'milotic').learnset.dragonrage = ['8L1'];
 
 this.modData('Learnsets', 'corviknight').learnset.beakblast = ['8L1'];
