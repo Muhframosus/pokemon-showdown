@@ -1429,6 +1429,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			if (status.id !== 'slp' || !target.isAlly(source)) return;
 				this.add('-ability', target, 'Waking Rage');
 				this.boost({spe: 2}, target, target, null, true);
+				this.boost({atk: 2}, target, target, null, true);
 		},
 		rating: 2,
 		num: 72,

@@ -184,6 +184,8 @@ this.modData('Learnsets', 'pyukumuku').learnset.metronome = ['8L1'];
 this.modData('Learnsets', 'aerodactyl').learnset.superpower = ['8L1'];
 this.modData('Learnsets', 'aerodactyl').learnset.xscissor = ['8L1'];
 
+this.modData('Learnsets', 'snorlax').learnset.smellingsalts = ['8L1'];
+
 this.modData('Learnsets', 'cramorant').learnset.sludgebomb = ['8L1'];
 
 this.modData('Learnsets', 'politoed').learnset.flipturn = ['8L1'];
