@@ -251,13 +251,18 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	num: -8,
 	sandforce: {
 		name: "Sand Force",
-		desc: "Ground, Steel and Rock moves have 1.3x Power. Grants Immunity to Sandstorm damage.",
-		shortDesc: "Powers up Ground, Steel, Rock moves. Sandstorm immunity.",
+		desc: "Ground, Steel and Rock moves have 1.3x Power, 1.6x during Sandstorm. Grants Immunity to Sandstorm damage.",
+		shortDesc: "Powers up Ground, Steel, Rock moves. Boost is doubled during Snadstorm. Sandstorm immunity.",
 		onBasePowerPriority: 21,
 		onBasePower(basePower, attacker, defender, move) {
 				if (move.type === 'Rock' || move.type === 'Ground' || move.type === 'Steel') {
 					this.debug('Sand Force boost');
 					return this.chainModify([0x14CD, 0x1000]);
+				}
+				if (this.field.isWeather('sandstorm')) {
+				if (move.type === 'Rock' || move.type === 'Ground' || move.type === 'Steel') {
+					this.debug('Sand Force boost 2');
+					return this.chainModify([5325, 4096]);
 				}
 		},
 		onImmunity(type, pokemon) {

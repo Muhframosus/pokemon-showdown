@@ -435,8 +435,8 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	rhydon: {
 		inherit: true,
-		baseStats: {hp: 105, atk: 170, def: 120, spa: 35, spd: 35, spe: 40},
-		abilities: {0: "Lightning Rod", 1: "Rock Head", H: "Reckless"},
+		baseStats: {hp: 105, atk: 160, def: 120, spa: 25, spd: 25, spe: 50},
+		abilities: {0: "Sand Rush", 1: "Rock Head", H: "Reckless"},
 	},
 	rhyperior: {
 		inherit: true,
@@ -1070,10 +1070,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	alcremie: {
 		inherit: true,
 		baseStats: {hp: 65, atk: 60, def: 75, spa: 120, spd: 141, spe: 64},
-	},
-	excadrill: {
-		inherit: true,
-		abilities: {0: "Sand Rush", H: "Mold Breaker"},
 	},
 	spiritomb: {
 		inherit: true,

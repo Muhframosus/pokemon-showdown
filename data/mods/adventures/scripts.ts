@@ -733,6 +733,7 @@ this.modData('Learnsets', 'whiscash').learnset.wildcharge = ['8L1'];
 this.modData('Learnsets', 'whiscash').learnset.stealthrock = ['8L1'];
 this.modData('Learnsets', 'whiscash').learnset.icefang = ['8L1'];
 this.modData('Learnsets', 'whiscash').learnset.discharge = ['8L1'];
+this.modData('Learnsets', 'whiscash').learnset.aquajet = ['8L1'];
 
 this.modData('Learnsets', 'delcatty').learnset.bodypress = ['8L1'];
 this.modData('Learnsets', 'delcatty').learnset.closecombat = ['8L1'];
