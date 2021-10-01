@@ -1421,8 +1421,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		rating: 2,
 		num: 194,
 	},
-	wakingrage: {
-		name: "Waking Rage",
+	wakingwrath: {
+		name: "Waking Wrath",
 		desc: "This Pokemon's Speed is raised by 2 stages when it wakes up from sleep.",
 		shortDesc: "This Pokemon's Speed is raised by 2 stages when it wakes up from sleep.",
 		onAfterSetStatus(status, target, source) {
