@@ -306,7 +306,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	shedinja: {
 		inherit: true,
-		baseStats: {hp: 1, atk: 100, def: 100, spa: 145, spd: 145, spe: 45},
+		baseStats: {hp: 1, atk: 100, def: 100, spa: 125, spd: 125, spe: 45},
 	},
 	sableye: {
 		inherit: true,
