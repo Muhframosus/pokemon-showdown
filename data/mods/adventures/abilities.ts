@@ -264,6 +264,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 					this.debug('Sand Force boost 2');
 					return this.chainModify([5325, 4096]);
 				}
+			}
 		},
 		onImmunity(type, pokemon) {
 			if (type === 'sandstorm') return false;
@@ -271,6 +272,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		name: "Sand Force",
 		rating: 4,
 		num: 159,
+		
 	},
 	wonderguard: {
 		onStart(pokemon) {
