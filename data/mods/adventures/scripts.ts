@@ -538,7 +538,6 @@ this.modData('Learnsets', 'cresselia').learnset.mistyexplosion = ['8L1'];
 this.modData('Learnsets', 'cresselia').learnset.mysticalfire = ['8L1'];
 
 this.modData('Learnsets', 'crobat').learnset.gunkshot = ['8L1'];
-this.modData('Learnsets', 'crobat').learnset.knockoff = ['8L1'];
 
 this.modData('Learnsets', 'cryogonal').learnset.mysticalfire = ['8L1'];
 this.modData('Learnsets', 'cryogonal').learnset.powergem = ['8L1'];
