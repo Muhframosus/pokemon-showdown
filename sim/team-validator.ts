@@ -768,7 +768,7 @@ export class TeamValidator {
 			if (move.id === 'hiddenpower' && move.type !== 'Normal') {
 				if (!set.hpType) {
 					set.hpType = move.type;
-				} else if (set.hpType !== move.type && ruleTable.has('obtainablemisc') && pokemon.species !== 'unown') {
+				} else if (set.hpType !== move.type && ruleTable.has('obtainablemisc') && pokemon.species.id !== 'unown') {
 					problems.push(`${name}'s Hidden Power type ${set.hpType} is incompatible with Hidden Power ${move.type}`);
 				}
 			}
