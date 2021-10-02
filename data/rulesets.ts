@@ -204,7 +204,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 					const moveid = move.id;
 					if (hasMove[moveid]) return [`${species.baseSpecies} has multiple copies of ${move.name}.`];
 					hasMove[moveid] = true;
-					}
+					} 
 				}
 			}
 		},
