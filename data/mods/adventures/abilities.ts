@@ -1434,7 +1434,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		shortDesc: "This Pokemon's Speed is raised by 2 stages when it wakes up from sleep.",
 		onAfterSetStatus(status, target, source) {
 			if (status.id !== 'slp' || !target.isAlly(source)) return;
-				this.add('-ability', target, 'Waking Rage');
+				this.add('-ability', target, 'Waking Wrath');
 				this.boost({spe: 2}, target, target, null, true);
 				this.boost({atk: 2}, target, target, null, true);
 		},
