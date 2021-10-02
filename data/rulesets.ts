@@ -197,9 +197,7 @@ export const Rulesets: {[k: string]: FormatData} = {
 			// repealing this will not actually let you USE multiple moves, because of a cart bug:
 			// https://twitter.com/DaWoblefet/status/1396217830006132737
 			if (set.moves) {
-				for (const pokemon of this.getAllPokemon()) {
-					if (pokemon.species.id !== 'unown') return;
-				}
+				if (pokemon.species.id === 'unown') return;
 				const hasMove: {[k: string]: true} = {};
 				for (const moveId of set.moves) {
 					const move = this.dex.moves.get(moveId);
