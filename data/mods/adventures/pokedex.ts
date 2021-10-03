@@ -1340,7 +1340,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	zoroark: {
 		inherit: true,
 		baseStats: {hp: 65, atk: 110, def: 65, spa: 120, spd: 65, spe: 115},
-		abilities: {0: "Illusion", H: "Imposter"},
+		abilities: {0: "Illusion"},
 	},
 	duraludon: {
 		inherit: true,
