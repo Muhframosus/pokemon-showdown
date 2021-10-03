@@ -634,7 +634,11 @@ this.modData('Learnsets', 'espeon').learnset.nastyplot = ['8L1'];
 
 this.modData('Learnsets', 'flareon').learnset.earthquake = ['8L1'];
 this.modData('Learnsets', 'flareon').learnset.closecombat = ['8L1'];
+this.modData('Learnsets', 'flareon').learnset.swordsdance = ['8L1'];
+this.modData('Learnsets', 'flareon').learnset.agility = ['8L1'];
+this.modData('Learnsets', 'flareon').learnset.morningsun = ['8L1'];
 this.modData('Learnsets', 'flareon').learnset.wildcharge = ['8L1'];
+this.modData('Learnsets', 'flareon').learnset.drainpunch = ['8L1'];
 
 this.modData('Learnsets', 'jolteon').learnset.mysticalfire = ['8L1'];
 this.modData('Learnsets', 'jolteon').learnset.bugbuzz = ['8L1'];
