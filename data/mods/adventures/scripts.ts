@@ -672,7 +672,8 @@ this.modData('Learnsets', 'drifblim').learnset.hurricane = ['8L1'];
 this.modData('Learnsets', 'drifblim').learnset.roost = ['8L1'];
 this.modData('Learnsets', 'drifblim').learnset.nastyplot = ['8L1'];
 
-this.modData('Learnsets', 'gardevoir').learnset.quiverdance = ['8L1'];
+this.modData('Learnsets', 'gardevoir').learnset.nastyplot = ['8L1'];
+this.modData('Learnsets', 'gardevoir').learnset.agility = ['8L1'];
 
 this.modData('Learnsets', 'kyuremblack').learnset.tailglow = ['8L1'];
 
