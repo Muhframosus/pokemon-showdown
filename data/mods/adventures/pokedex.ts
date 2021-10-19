@@ -637,7 +637,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	gardevoirmega: {
 		inherit: true,
-		baseStats: {hp: 68, atk: 95, def: 65, spa: 165, spd: 135, spe: 100},
+		baseStats: {hp: 68, atk: 95, def: 65, spa: 165, spd: 145, spe: 90},
 	},
 	gallade: {
 		inherit: true,
