@@ -640,6 +640,8 @@ this.modData('Learnsets', 'flareon').learnset.morningsun = ['8L1'];
 this.modData('Learnsets', 'flareon').learnset.wildcharge = ['8L1'];
 this.modData('Learnsets', 'flareon').learnset.trick = ['8L1'];
 
+this.modData('Learnsets', 'swampert').learnset.lifedew = ['8L1'];
+
 this.modData('Learnsets', 'jolteon').learnset.mysticalfire = ['8L1'];
 this.modData('Learnsets', 'jolteon').learnset.bugbuzz = ['8L1'];
 this.modData('Learnsets', 'jolteon').learnset.doublekick = ['8L1'];

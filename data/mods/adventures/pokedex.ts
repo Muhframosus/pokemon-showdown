@@ -1678,7 +1678,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	whiscash: {
 		inherit: true,
-		baseStats: {hp: 130, atk: 108, def: 93, spa: 76, spd: 71, spe: 60},
+		baseStats: {hp: 130, atk: 118, def: 93, spa: 66, spd: 71, spe: 60},
 		abilities: {0: "Oblivious", 1: "Gluttony", H: "Sand Rush"},
 	},
 	tsareena: {
@@ -1762,7 +1762,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	stoutland: {
 		inherit: true,
-		baseStats: {hp: 95, atk: 110, def: 90, spa: 45, spd: 90, spe: 90},
+		baseStats: {hp: 95, atk: 110, def: 90, spa: 45, spd: 90, spe: 100},
 	},
 	heracross: {
 		inherit: true,
@@ -2044,6 +2044,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		baseStats: {hp: 90, atk: 115, def: 80, spa: 100, spd: 80, spe: 95},
 		abilities: {0: "Flaming Claws", 1: "Intimidate", H: "Justified"},
+	},
+	hippowdon: {
+		inherit: true,
+		baseStats: {hp: 128, atk: 122, def: 118, spa: 68, spd: 72, spe: 47},
 	},
 	stantler: {
 		inherit: true,
