@@ -74,6 +74,12 @@ export const Formats: FormatList = [
 		ruleset: ['Obtainable Good', 'Team Preview', 'HP Percentage Mod', 'Cancel Mod', 'Endless Battle Clause'],
 	},
 	{
+		name: "[Gen 8] Adventures Ubers",
+		mod: 'adventures',
+		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Moves Clause', 'Species Clause', 'Dynamax Clause', 'Sleep Clause Mod'],
+		banlist: [ 'AG', 'Baton Pass', ],
+	},
+	{
 		name: "[Gen 8] Adventures Custom Game",
 
 		mod: 'adventures',
@@ -85,10 +91,6 @@ export const Formats: FormatList = [
 	},
 	{
 		name: "[Gen 8] Adventures Free-For-All",
-		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3681641/">Free-For-All</a>`,
-		],
-
 		mod: 'adventures',
 		gameType: 'freeforall',
 		rated: false,
@@ -109,15 +111,58 @@ export const Formats: FormatList = [
 		],
 	},
 	{
-		name: "[Gen 8] Adventures Free-For-All Custom Game",
-		threads: [
-			`&bullet; <a href="https://www.smogon.com/forums/threads/3681641/">Free-For-All</a>`,
+		name: "[Gen 8] Adventures Multi Battle 6v6",
+
+		mod: 'adventures',
+		gameType: 'multi',
+		tournamentShow: false,
+		rated: false,
+		ruleset: [
+			'Max Team Size = 6',
+			'Obtainable Good', 'Species Clause', 'HP Percentage Mod', 'Cancel Mod', 'Sleep Clause Mod',
 		],
+	},
+	{
+		name: "[Gen 8] Adventures Doubles OU",
+		mod: 'adventures',
+		gameType: 'doubles',
+		ruleset: ['Standard Doubles', 'Dynamax Clause', 'Swagger Clause'],
+		banlist: ['DUber', 'Power Construct', 'Shadow Tag'],
+	},
+	{
+		name: "[Gen 8] Adventures 1v1",
+		desc: `Bring three Pok&eacute;mon to Team Preview and choose one to battle.`,
+		mod: 'adventures',
+		teamLength: {
+			validate: [1, 3],
+			battle: 1,
+		},
+		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Moves Clause', 'Species Clause', 'Dynamax Clause', 'Sleep Clause Mod'],
+		banlist: [
+			'Calyrex-Ice', 'Calyrex-Shadow', 'Cinderace', 'Dialga', 'Dragonite', 'Eternatus', 'Giratina', 'Giratina-Origin', 'Groudon', 'Ho-Oh', 'Kyogre', 'Kyurem-Black',
+			'Kyurem-White', 'Lugia', 'Lunala', 'Magearna', 'Marshadow', 'Melmetal', 'Mew', 'Mewtwo', 'Mimikyu', 'Necrozma-Dawn-Wings', 'Necrozma-Dusk-Mane', 'Palkia',
+			'Rayquaza', 'Reshiram', 'Sableye', 'Solgaleo', 'Victini', 'Xerneas', 'Yveltal', 'Zacian', 'Zacian-Crowned', 'Zamazenta', 'Zamazenta-Crowned', 'Zekrom',
+			'Moody', 'Focus Sash', 'Perish Song', 'Eternatus-Eternamax', 'AG', 'Uber',
+		],
+	},
+	{
+		name: "[Gen 8] Adventures Free-For-All Custom Game",
 
 		mod: 'adventures',
 		gameType: 'freeforall',
 		rated: false,
 		tournamentShow: false,
 		ruleset: ['Standard Doubles', 'Sleep Clause Mod', 'Dynamax Clause', '!Gravity Sleep Clause', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 100'],
+	},
+	{
+		name: "[Gen 8] Doubles Custom Game",
+
+		mod: 'gen8',
+		gameType: 'doubles',
+		searchShow: false,
+		battle: {trunc: Math.trunc},
+		debug: true,
+		// no restrictions, for serious (other than team preview)
+		ruleset: ['Team Preview', 'Cancel Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 100'],
 	},
 ];
