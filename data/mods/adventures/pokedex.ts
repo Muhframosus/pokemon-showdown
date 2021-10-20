@@ -39,7 +39,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	sawk: {
 		inherit: true,
 		baseStats: {hp: 85, atk: 125, def: 75, spa: 30, spd: 75, spe: 95},
-		abilities: {0: "Focus Break", 1: "Mold Breaker", H: "Sturdy"},
+		abilities: {0: "Master's Focus", 1: "Mold Breaker", H: "Sturdy"},
 	},
 	chesnaught: {
 		inherit: true,
