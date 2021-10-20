@@ -1499,11 +1499,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				pokemon.removeVolatile('attract');
 			}
 		},
-		onHit(pokemon, source, move) {
-				if (move.category !== 'Status') {
-					pokemon.volatiles['focuspunch'].lostFocus = false;
-				}
-			},
 		onBeforeMove(pokemon) {
 				return true;
 		},

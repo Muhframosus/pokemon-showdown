@@ -1815,6 +1815,44 @@ export const Moves: {[moveid: string]: MoveData} = {
 		inherit: true,
 		flags: {contact: 1, martial: 1},
 	},
+		focuspunch: {
+		num: 264,
+		accuracy: 100,
+		basePower: 150,
+		category: "Physical",
+		name: "Focus Punch",
+		pp: 20,
+		priority: -3,
+		flags: {contact: 1, protect: 1, punch: 1},
+		beforeTurnCallback(pokemon) {
+			pokemon.addVolatile('focuspunch');
+		},
+		beforeMoveCallback(pokemon) {
+			if (pokemon.volatiles['focuspunch'] && pokemon.volatiles['focuspunch'].lostFocus) {
+				this.add('cant', pokemon, 'Focus Punch', 'Focus Punch');
+				return true;
+			}
+		},
+		condition: {
+			duration: 1,
+			onStart(pokemon) {
+				this.add('-singleturn', pokemon, 'move: Focus Punch');
+			},
+			onHit(pokemon, source, move) {
+				if (move.category !== 'Status') {
+					if (pokemon.hasAbility('mastersfocus')) return;
+					pokemon.volatiles['focuspunch'].lostFocus = true;
+				}
+			},
+			onTryAddVolatile(status, pokemon) {
+				if (status.id === 'flinch') return null;
+			},
+		},
+		secondary: null,
+		target: "normal",
+		type: "Fighting",
+		contestType: "Tough",
+	},
 	earththrow: {
 		desc: "More power the heavier the target.Is always a critical hit.",
 		shortDesc: "More power the heavier the target. Is always a critical hit.",
