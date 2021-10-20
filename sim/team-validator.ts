@@ -2113,7 +2113,14 @@ export class TeamValidator {
 		const backupSources = setSources.sources;
 		const backupSourcesBefore = setSources.sourcesBefore;
 		setSources.intersectWith(moveSources);
-		
+		if (!setSources.size()) {
+			// pretend this pokemon didn't have this move:
+			// prevents a crash if OMs override `checkCanLearn` to keep validating after an error
+			setSources.sources = backupSources;
+			setSources.sourcesBefore = backupSourcesBefore;
+			return `'s moves ${(setSources.restrictiveMoves || []).join(', ')} are incompatible.`;
+		}
+
 		if (babyOnly) setSources.babyOnly = babyOnly;
 		return null;
 	}
