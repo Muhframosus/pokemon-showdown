@@ -1499,6 +1499,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				pokemon.removeVolatile('attract');
 			}
 		},
+		onBeforeMovePriority: 15,
 		onBeforeMove(pokemon) {
 				return true;
 		},

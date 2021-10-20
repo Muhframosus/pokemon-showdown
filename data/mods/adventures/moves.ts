@@ -1815,7 +1815,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		inherit: true,
 		flags: {contact: 1, martial: 1},
 	},
-		focuspunch: {
+	focuspunch: {
 		num: 264,
 		accuracy: 100,
 		basePower: 150,
