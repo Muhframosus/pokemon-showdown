@@ -40,14 +40,23 @@ this.modData('Learnsets', 'buzzwole').learnset.knockoff = ['8L1'];
 
 this.modData('Learnsets', 'spinda').learnset.spindance = ['8L1'];
 
-this.modData('Learnsets', 'incineroar').learnset.poweruppunch = ['8L1'];
 this.modData('Learnsets', 'incineroar').learnset.circlethrow = ['8L1'];
 this.modData('Learnsets', 'incineroar').learnset.suckerpunch = ['8L1'];
 this.modData('Learnsets', 'incineroar').learnset.pursuit = ['8L1'];
-this.modData('Learnsets', 'incineroar').learnset.honeclaws = ['8L1'];
-this.modData('Learnsets', 'incineroar').learnset.nightslash = ['8L1'];
+this.modData('Learnsets', 'incineroar').learnset.vitalthrow = ['8L1'];
+this.modData('Learnsets', 'incineroar').learnset.stormthrow = ['8L1'];
+this.modData('Learnsets', 'incineroar').learnset.firethrow = ['8L1'];
+
+this.modData('Learnsets', 'throh').learnset.firethrow = ['8L1'];
+this.modData('Learnsets', 'throh').learnset.earththrow = ['8L1'];
+this.modData('Learnsets', 'throh').learnset.windthrow = ['8L1'];
 
 this.modData('Learnsets', 'chesnaught').learnset.bodypress = ['8L1'];
+
+this.modData('Learnsets', 'toxicroak').learnset.toxicspikes = ['8L1'];
+this.modData('Learnsets', 'toxicroak').learnset.closecombat = ['8L1'];
+this.modData('Learnsets', 'toxicroak').learnset.aurasphere = ['8L1'];
+this.modData('Learnsets', 'toxicroak').learnset.heatwave = ['8L1'];
 
 this.modData('Learnsets', 'zebstrika').learnset.highhorsepower = ['8L1'];
 this.modData('Learnsets', 'zebstrika').learnset.flareblitz = ['8L1'];
@@ -139,6 +148,7 @@ this.modData('Learnsets', 'golduck').learnset.taunt = ['8L1'];
 this.modData('Learnsets', 'golduck').learnset.nightslash = ['8L1'];
 this.modData('Learnsets', 'golduck').learnset.darkpulse = ['8L1'];
 this.modData('Learnsets', 'golduck').learnset.closecombat = ['8L1'];
+this.modData('Learnsets', 'golduck').learnset.expandingforce = ['8L1'];
 
 this.modData('Learnsets', 'psyduck').learnset.nastyplot = ['8L1'];
 this.modData('Learnsets', 'psyduck').learnset.agility = ['8L1'];
@@ -147,6 +157,7 @@ this.modData('Learnsets', 'psyduck').learnset.taunt = ['8L1'];
 this.modData('Learnsets', 'psyduck').learnset.nightslash = ['8L1'];
 this.modData('Learnsets', 'psyduck').learnset.darkpulse = ['8L1'];
 this.modData('Learnsets', 'psyduck').learnset.closecombat = ['8L1'];
+this.modData('Learnsets', 'psyduck').learnset.expandingforce = ['8L1'];
 
 this.modData('Learnsets', 'magcargo').learnset.scald = ['8L1'];
 this.modData('Learnsets', 'magcargo').learnset.scorchingsands = ['8L1'];
@@ -1169,6 +1180,10 @@ this.modData('Learnsets', 'jumpluff').learnset.fly = ['8L1'];
 this.modData('Learnsets', 'tropius').learnset.dualwingbeat = ['8L1'];
 this.modData('Learnsets', 'tropius').learnset.skyattack = ['8L1'];
 this.modData('Learnsets', 'tropius').learnset.solarblade = ['8L1'];
+this.modData('Learnsets', 'tropius').learnset.weatherball = ['8L1'];
+this.modData('Learnsets', 'tropius').learnset.junglehealing = ['8L1'];
+this.modData('Learnsets', 'tropius').learnset.aromatherapy = ['8L1'];
+this.modData('Learnsets', 'tropius').learnset.strengthsap = ['8L1'];
 
 this.modData('Learnsets', 'primeape').learnset.drainpunch = ['8L1'];
 
@@ -1379,6 +1394,7 @@ this.modData('Learnsets', 'solgaleo').learnset.swordsdance = ['8L1'];
 
 this.modData('Learnsets', 'xerneas').learnset.earthpower = ['8L1'];
 this.modData('Learnsets', 'xerneas').learnset.earthquake = ['8L1'];
+this.modData('Learnsets', 'xerneas').learnset.stompingtantrum = ['8L1'];
 this.modData('Learnsets', 'xerneas').learnset.powergem = ['8L1'];
 
 this.modData('Learnsets', 'yveltal').learnset.sludgewave = ['8L1'];

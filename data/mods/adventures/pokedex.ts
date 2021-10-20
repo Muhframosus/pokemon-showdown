@@ -29,7 +29,17 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	incineroar: {
 		inherit: true,
 		baseStats: {hp: 95, atk: 115, def: 90, spa: 60, spd: 85, spe: 90},
-		abilities: {0: "Blaze", 1: "Intimidate", H: "Moxie"},
+		abilities: {0: "Blaze", 1: "Intimidate", H: "Martial Mastery"},
+	},
+	throh: {
+		inherit: true,
+		baseStats: {hp: 120, atk: 120, def: 85, spa: 30, spd: 85, spe: 45},
+		abilities: {0: "Martial Mastery", 1: "Mold Breaker", H: "Guts"},
+	},
+	sawk: {
+		inherit: true,
+		baseStats: {hp: 75, atk: 100, def: 75, spa: 30, spd: 75, spe: 95},
+		abilities: {0: "Focus Break", 1: "Mold Breaker", H: "Sturdy"},
 	},
 	chesnaught: {
 		inherit: true,
@@ -296,7 +306,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	gigalith: {
 		inherit: true,
 		baseStats: {hp: 95, atk: 135, def: 135, spa: 60, spd: 85, spe: 25},
-		abilities: {0: "Sturdy", 1: "Lightning Rod", H: "Sand Force"},
+		abilities: {0: "Sturdy", 1: "Sand Stream", H: "Sand Force"},
 	},
 	armaldo: {
 		inherit: true,
@@ -1527,7 +1537,13 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	lycanroc: {
 		inherit: true,
+		baseStats: {hp: 85, atk: 115, def: 75, spa: 55, spd: 65, spe: 132},
 		abilities: {0: "Unburden", 1: "Sand Rush", H: "Sturdy"},
+	},
+	lycanrocdusk: {
+		inherit: true,
+		baseStats: {hp: 85, atk: 127, def: 65, spa: 73, spd: 65, spe: 112},
+		abilities: {0: "Tough Claws", H: "Moxie"},
 	},
 	lycanrocmidnight: {
 		inherit: true,

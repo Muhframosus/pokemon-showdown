@@ -1451,4 +1451,61 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		rating: 4,
 		num: 192,
 	},
+	ironfist: {
+		desc: "This Pokemon's punch-based attacks have 1.3x power.",
+		shortDesc: "This Pokemon's punch-based attacks have 1.3x power.",
+		onBasePowerPriority: 23,
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.flags['punch']) {
+				this.debug('Iron Fist boost');
+				return this.chainModify([5325, 4096]);
+			}
+		},
+		name: "Iron Fist",
+		rating: 3,
+		num: 89,
+	},
+	martialmastery: {
+		desc: "This Pokemon's wrestling-based attacks have 1.3x power.",
+		shortDesc: "This Pokemon's wrestling-based attacks have 1.3x power.",
+		onBasePowerPriority: 23,
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.flags['martial']) {
+				this.debug('Martial Mastery boost');
+				return this.chainModify([5325, 4096]);
+			}
+		},
+		name: "Martial Mastery",
+		rating: 3,
+		num: 89,
+	},
+	mastersfocus: {
+		desc: "This Pokemon's moves cannot be interrupted or stopped in any way.",
+		shortDesc: "This Pokemon's moves cannot be interrupted or stopped in any way.",
+		onTryAddVolatile(status, pokemon) {
+			if (status.id === 'flinch') return null;
+		},
+		if (pokemon.volatiles['taunt']) {
+				this.add('-activate', pokemon, "ability: Master's Focus");
+				pokemon.removeVolatile('taunt');
+			}
+		if (pokemon.volatiles['encore']) {
+				this.add('-activate', pokemon, "ability: Master's Focus");
+				pokemon.removeVolatile('encore');
+			}
+		if (pokemon.volatiles['attract']) {
+				this.add('-activate', pokemon, "ability: Master's Focus");
+				pokemon.removeVolatile('attract');
+			}
+		if (pokemon.volatiles['focuspunch'].lostFocus) {
+				this.add('-activate', pokemon, "ability: Master's Focus");
+				pokemon.volatiles['focuspunch'].lostFocus = false;
+			}
+		onBeforeMove(pokemon) {
+				return true;
+		},
+		name: "Master's Focus",
+		rating: 1.5,
+		num: 39,
+	},
 };

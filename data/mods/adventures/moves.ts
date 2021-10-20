@@ -1789,4 +1789,95 @@ export const Moves: {[moveid: string]: MoveData} = {
 		zMove: {boost: {def: 1}},
 		contestType: "Clever",
 	},
+		circlethrow: {
+		inherit: true,
+		flags: {contact: 1, protect: 1, mirror: 1, martial: 1},
+		basePower: 80,
+	},
+	stormthrow: {
+		inherit: true,
+		flags: {contact: 1, protect: 1, mirror: 1, martial: 1},
+	},
+	vitalthrow: {
+		inherit: true,
+		basePower: 110,
+		flags: {contact: 1, protect: 1, mirror: 1, martial: 1},
+	},
+	submission: {
+		inherit: true,
+		flags: {contact: 1, protect: 1, mirror: 1, martial: 1},
+	},
+	bodypress: {
+		inherit: true,
+		flags: {contact: 1, protect: 1, mirror: 1, martial: 1},
+	},
+	maliciousmoonsault: {
+		inherit: true,
+		flags: {contact: 1, martial: 1},
+	},
+	earththrow: {
+		desc: "More power the heavier the target.Is always a critical hit.",
+		shortDesc: "More power the heavier the target. Is always a critical hit.",
+		num: 480,
+		accuracy: 100,
+		basePower: 0,
+		basePowerCallback(pokemon, target) {
+			const targetWeight = target.getWeight();
+			if (targetWeight >= 2000) {
+				return 100;
+			}
+			if (targetWeight >= 1000) {
+				return 80;
+			}
+			if (targetWeight >= 500) {
+				return 60;
+			}
+			if (targetWeight >= 250) {
+				return 40;
+			}
+			return 20;
+		},
+		category: "Physical",
+		name: "Earth Throw",
+		pp: 5,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, martial: 1},
+		willCrit: true,
+		secondary: null,
+		target: "normal",
+		type: "Ground",
+		contestType: "Cool",
+	},
+	windthrow: {
+		desc: "Forces the target to switch to a random ally. Always results in a critical hit.",
+		shortDesc: "Forces the target to switch to a random ally. Always results in a critical hit.",
+		num: 525,
+		accuracy: 100,
+		basePower: 30,
+		category: "Physical",
+		name: "Wind Throw",
+		pp: 5,
+		flags: {contact: 1, protect: 1, mirror: 1, martial: 1},
+		forceSwitch: true,
+		willCrit: true,
+		target: "normal",
+		type: "Flying",
+		contestType: "Tough",
+	},
+	firethrow: {
+		desc: "Always results in a critical hit. 100% recoil.",
+		shortDesc: "Always results in a critical hit. 100% recoil.",
+		num: 525,
+		accuracy: 100,
+		basePower: 80,
+		category: "Physical",
+		name: "Fire Throw",
+		pp: 5,
+		flags: {contact: 1, protect: 1, mirror: 1, martial: 1},
+		recoil: [1, 1],
+		willCrit: true,
+		target: "normal",
+		type: "Fire",
+		contestType: "Tough",
+	},
 }
