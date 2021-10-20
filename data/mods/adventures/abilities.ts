@@ -1498,12 +1498,12 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				this.add('-activate', pokemon, "ability: Master's Focus");
 				pokemon.removeVolatile('attract');
 			}
+		},
 		onHit(pokemon, source, move) {
 				if (move.category !== 'Status') {
 					pokemon.volatiles['focuspunch'].lostFocus = false;
 				}
 			},
-		},
 		onBeforeMove(pokemon) {
 				return true;
 		},
