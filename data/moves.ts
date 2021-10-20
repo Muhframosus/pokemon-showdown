@@ -6698,8 +6698,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 			},
 			onSwitchIn(pokemon) {
 				if (pokemon.hasItem('heavydutyboots')) return;
-				if (pokemon.hasAbility('oblivious') return;
-				if (pokemon.hasAbility('suctioncups') return;
+				if (pokemon.hasAbility('oblivious')) return;
+				if (pokemon.hasAbility('suctioncups')) return;
 				// Ice Face and Disguise correctly get typed damage from Stealth Rock
 				// because Stealth Rock bypasses Substitute.
 				// They don't get typed damage from Steelsurge because Steelsurge doesn't,
@@ -16369,8 +16369,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 			onSwitchIn(pokemon) {
 				if (!pokemon.isGrounded()) return;
 				if (pokemon.hasItem('heavydutyboots')) return;
-				if (pokemon.hasAbility('oblivious') return;
-				if (pokemon.hasAbility('suctioncups') return;
+				if (pokemon.hasAbility('oblivious')) return;
+				if (pokemon.hasAbility('suctioncups')) return;
 				const damageAmounts = [0, 3, 4, 6]; // 1/8, 1/6, 1/4
 				this.damage(damageAmounts[this.effectState.layers] * pokemon.maxhp / 24);
 			},
@@ -16656,7 +16656,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			onSwitchIn(pokemon) {
 				if (pokemon.hasItem('heavydutyboots')) return;
 				if (pokemon.hasAbility('oblivious')) return;
-				if (pokemon.hasAbility('suctioncups') return;
+				if (pokemon.hasAbility('suctioncups')) return;
 				const typeMod = this.clampIntRange(pokemon.runEffectiveness(this.dex.getActiveMove('stealthrock')), -6, 6);
 				this.damage(pokemon.maxhp * Math.pow(2, typeMod) / 8);
 			},
@@ -16783,7 +16783,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 				if (!pokemon.isGrounded()) return;
 				if (pokemon.hasItem('heavydutyboots')) return;
 				if (pokemon.hasAbility('oblivious')) return;
-				if (pokemon.hasAbility('suctioncups') return;
+				if (pokemon.hasAbility('suctioncups')) return;
 				this.add('-activate', pokemon, 'move: Sticky Web');
 				this.boost({spe: -1}, pokemon, this.effectState.source, this.dex.getActiveMove('stickyweb'));
 			},
@@ -18383,7 +18383,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 				if (pokemon.hasType('Poison')) {
 					this.add('-sideend', pokemon.side, 'move: Toxic Spikes', '[of] ' + pokemon);
 					pokemon.side.removeSideCondition('toxicspikes');
-				} else if (pokemon.hasType('Steel') || pokemon.hasItem('heavydutyboots') || (pokemon.hasAbility('oblivious') || (pokemon.hasAbility('suctioncups')) return;) {
+				} else if (pokemon.hasType('Steel') || pokemon.hasItem('heavydutyboots') || pokemon.hasAbility('oblivious') || pokemon.hasAbility('suctioncups')) return;) {
 					return;
 				} else if (this.effectState.layers >= 2) {
 					pokemon.trySetStatus('tox', pokemon.side.foe.active[0]);
