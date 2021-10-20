@@ -659,25 +659,6 @@ export class TeamValidator {
 			if (!legal && species.gen <= 2 && dex.gen >= 7 && !this.validateSource(set, '7V', setSources, species)) {
 				legal = true;
 			}
-			if (!legal) {
-				if (eventData.length === 1) {
-					problems.push(`${species.name} is only obtainable from an event - it needs to match its event:`);
-				} else {
-					problems.push(`${species.name} is only obtainable from events - it needs to match one of its events, such as:`);
-				}
-				let eventInfo = eventData[0];
-				let eventNum = 1;
-				for (const [i, event] of eventData.entries()) {
-					if (event.generation <= dex.gen && event.generation >= this.minSourceGen) {
-						eventInfo = event;
-						eventNum = i + 1;
-						break;
-					}
-				}
-				const eventName = eventData.length > 1 ? ` #${eventNum}` : ``;
-				const eventProblems = this.validateEvent(set, eventInfo, eventSpecies, ` to be`, `from its event${eventName}`);
-				if (eventProblems) problems.push(...eventProblems);
-			}
 		}
 
 		let isFromRBYEncounter = false;
@@ -2132,14 +2113,7 @@ export class TeamValidator {
 		const backupSources = setSources.sources;
 		const backupSourcesBefore = setSources.sourcesBefore;
 		setSources.intersectWith(moveSources);
-		if (!setSources.size()) {
-			// pretend this pokemon didn't have this move:
-			// prevents a crash if OMs override `checkCanLearn` to keep validating after an error
-			setSources.sources = backupSources;
-			setSources.sourcesBefore = backupSourcesBefore;
-			return `'s moves ${(setSources.restrictiveMoves || []).join(', ')} are incompatible.`;
-		}
-
+		
 		if (babyOnly) setSources.babyOnly = babyOnly;
 		return null;
 	}
