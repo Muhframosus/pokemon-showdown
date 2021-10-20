@@ -1484,23 +1484,23 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		shortDesc: "This Pokemon's moves cannot be interrupted or stopped in any way.",
 		onTryAddVolatile(status, pokemon) {
 			if (status.id === 'flinch') return null;
-		},
+			}
 		if (pokemon.volatiles['taunt']) {
 				this.add('-activate', pokemon, "ability: Master's Focus");
 				pokemon.removeVolatile('taunt');
-			},
+			}
 		if (pokemon.volatiles['encore']) {
 				this.add('-activate', pokemon, "ability: Master's Focus");
 				pokemon.removeVolatile('encore');
-			},
+			}
 		if (pokemon.volatiles['attract']) {
 				this.add('-activate', pokemon, "ability: Master's Focus");
 				pokemon.removeVolatile('attract');
-			},
+			}
 		if (pokemon.volatiles['focuspunch'].lostFocus) {
 				this.add('-activate', pokemon, "ability: Master's Focus");
 				pokemon.volatiles['focuspunch'].lostFocus = false;
-			},
+			}
 		onBeforeMove(pokemon) {
 				return true;
 		},
