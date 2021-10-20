@@ -1499,9 +1499,9 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				pokemon.removeVolatile('attract');
 			}
 		},
-		onBeforeMovePriority: 15,
+		onBeforeMovePriority: 0,
 		onBeforeMove(pokemon) {
-				return true;
+				return;
 		},
 		name: "Master's Focus",
 		rating: 1.5,
