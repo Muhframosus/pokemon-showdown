@@ -154,7 +154,7 @@ export const Formats: FormatList = [
 		ruleset: ['Standard Doubles', 'Sleep Clause Mod', 'Dynamax Clause', '!Gravity Sleep Clause', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 100'],
 	},
 	{
-		name: "[Gen 8] Doubles Custom Game",
+		name: "[Gen 8] Adventures Doubles Custom Game",
 
 		mod: 'adventures',
 		gameType: 'doubles',

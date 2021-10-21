@@ -1669,7 +1669,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	mismagius: {
 		inherit: true,
-		types: ["Ghost"],
+		types: ["Ghost", "Fairy"],
 		abilities: {0: "Levitate", H: "Curious Medicine"},
 		baseStats: {hp: 60, atk: 60, def: 60, spa: 115, spd: 130, spe: 105},
 	},
