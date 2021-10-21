@@ -1498,6 +1498,18 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				this.add('-activate', pokemon, "ability: Master's Focus");
 				pokemon.removeVolatile('attract');
 			}
+		if (pokemon.status === 'slp') {
+				this.add('-activate', pokemon, "ability: Master's Focus");
+				pokemon.cureStatus('slp');
+			}
+		if (pokemon.status === 'par') {
+				this.add('-activate', pokemon, "ability: Master's Focus");
+				pokemon.cureStatus('par');
+			}
+		if (pokemon.status === 'frz') {
+				this.add('-activate', pokemon, "ability: Master's Focus");
+				pokemon.cureStatus('frz');
+			}
 		},
 		onBeforeMovePriority: 0,
 		onBeforeMove(pokemon) {
