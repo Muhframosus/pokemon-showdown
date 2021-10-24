@@ -776,7 +776,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	swellow: {
 		inherit: true,
-		baseStats: {hp: 60, atk: 115, def: 60, spa: 105, spd: 60, spe: 125},
+		baseStats: {hp: 60, atk: 115, def: 60, spa: 95, spd: 60, spe: 125},
 		abilities: {0: "Guts", 1: "Scrappy", H: "Competitive"},
 	},
 	crustle: {
