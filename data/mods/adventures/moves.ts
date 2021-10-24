@@ -1523,7 +1523,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 	},
 	aerialace: {
 		inherit: true,
-		basePower: 90,
+		basePower: 95,
 	},
 	octazooka: {
 		num: 190,
