@@ -324,7 +324,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	sableyemega: {
 		inherit: true,
-		baseStats: {hp: 50, atk: 105, def: 125, spa: 105, spd: 115, spe: 50},
+		baseStats: {hp: 50, atk: 105, def: 125, spa: 105, spd: 115, spe: 20},
 	},
 	toucannon: {
 		inherit: true,
@@ -633,6 +633,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	lapras: {
 		inherit: true,
+		baseStats: {hp: 130, atk: 85, def: 80, spa: 85, spd: 85, spe: 60},
 		abilities: {0: "Water Absorb", 1: "Ice Scales", H: "Hydration"},
 	},
 	weavile: {
@@ -936,7 +937,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	toxicroak: {
 		inherit: true,
-		baseStats: {hp: 83, atk: 116, def: 65, spa: 76, spd: 95, spe: 95},
+		baseStats: {hp: 83, atk: 106, def: 65, spa: 106, spd: 75, spe: 95},
 		abilities: {0: "Intimidate", 1: "Dry Skin", H: "Merciless"},
 	},
 	magnezone: {
