@@ -1525,6 +1525,44 @@ export const Moves: {[moveid: string]: MoveData} = {
 		inherit: true,
 		basePower: 95,
 	},
+	dualwingbeat: {
+		inherit: true,
+		basePower: 45,
+	},
+	powergem: {
+		inherit: true,
+		basePower: 90,
+	},
+	ancientpower: {
+		inherit: true,
+		secondary: {
+			chance: 30,
+			self: {
+				boosts: {
+					atk: 1,
+					def: 1,
+					spa: 1,
+					spd: 1,
+					spe: 1,
+				},
+			},
+		},
+	},
+	silverwind: {
+		inherit: true,
+		secondary: {
+			chance: 30,
+			self: {
+				boosts: {
+					atk: 1,
+					def: 1,
+					spa: 1,
+					spd: 1,
+					spe: 1,
+				},
+			},
+		},
+	},
 	octazooka: {
 		num: 190,
 		accuracy: 95,

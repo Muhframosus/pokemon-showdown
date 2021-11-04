@@ -533,6 +533,7 @@ this.modData('Learnsets', 'camerupt').learnset.meteorbeam = ['8L1'];
 this.modData('Learnsets', 'camerupt').learnset.shoreup = ['8L1'];
 
 this.modData('Learnsets', 'celebi').learnset.moonblast = ['8L1'];
+this.modData('Learnsets', 'celebi').learnset.playrough = ['8L1'];
 this.modData('Learnsets', 'celebi').learnset.floralhealing = ['8L1'];
 this.modData('Learnsets', 'celebi').learnset.storedpower = ['8L1'];
 this.modData('Learnsets', 'celebi').learnset.teleport = ['8L1'];
@@ -902,7 +903,7 @@ this.modData('Learnsets', 'hoopa').learnset.meteorassault = ['8L1'];
 this.modData('Learnsets', 'hoopa').learnset.meteormash = ['8L1'];
 this.modData('Learnsets', 'hoopa').learnset.pursuit = ['8L1'];
 this.modData('Learnsets', 'hoopa').learnset.swordsdance = ['8L1'];
-this.modData('Learnsets', 'hoopa').learnset.armthrust = ['8L1'];
+this.modData('Learnsets', 'hoopa').learnset.closecombat = ['8L1'];
 
 this.modData('Learnsets', 'infernape').learnset.switcheroo = ['8L1'];
 this.modData('Learnsets', 'infernape').learnset.knockoff = ['8L1'];
