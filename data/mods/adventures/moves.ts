@@ -1548,6 +1548,21 @@ export const Moves: {[moveid: string]: MoveData} = {
 			},
 		},
 	},
+	ominouswind: {
+		inherit: true,
+		secondary: {
+			chance: 30,
+			self: {
+				boosts: {
+					atk: 1,
+					def: 1,
+					spa: 1,
+					spd: 1,
+					spe: 1,
+				},
+			},
+		},
+	},
 	silverwind: {
 		inherit: true,
 		secondary: {
