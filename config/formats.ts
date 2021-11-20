@@ -126,7 +126,7 @@ export const Formats: FormatList = [
 		name: "[Gen 8] Adventures Doubles OU",
 		mod: 'adventures',
 		gameType: 'doubles',
-		ruleset: ['Standard Doubles', 'Dynamax Clause', 'Swagger Clause'],
+		ruleset: ['Standard Natdex', 'Dynamax Clause', 'Swagger Clause'],
 		banlist: ['DUber', 'Power Construct', 'Shadow Tag'],
 	},
 	{
