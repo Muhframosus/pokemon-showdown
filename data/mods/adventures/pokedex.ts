@@ -688,7 +688,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	deoxysattack: {
 		inherit: true,
-		abilities: {0: "Sheer Force"},
+		abilities: {0: "Magic Guard"},
 	},
 	deoxysdefense: {
 		inherit: true,
