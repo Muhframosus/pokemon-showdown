@@ -643,6 +643,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 		chance: 100,
 			boosts: {
 				spa: -1,
+				spd: -1,
+				def: -1,
 				atk: -1,
 				spe: -1,
 			},
