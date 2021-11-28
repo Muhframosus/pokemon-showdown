@@ -126,7 +126,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		rating: 1.5,
 		num: 64,
 	},
-	hardmetal: {
+	unscratchable: {
 		name: "Unscratchable",
 		desc: "Fighting-type attacks have their attacking stat halved when targeting this Pokemon.",
 		onSourceModifyAtkPriority: 6,
@@ -144,7 +144,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			}
 		},
 		isBreakable: true,
-		name: "Permafrost",
 		rating: 2,
 		num: -7,
 	},
