@@ -1642,7 +1642,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	turboblaze: {
 		desc: "This Pokemon's Speed and Special Attack are boosted by 1.25x during its first turn.",
-		shortDesc: "This Pokemon's Speed and Special Attack are boosted by 1.25x during its first turn.",
+		shortDesc: "This Pokemon's Spe and SpA are boosted by 1.25x during its first turn.",
 		onStart(pokemon) {
 			pokemon.addVolatile('turboblaze');
 		},
@@ -1655,7 +1655,10 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			onResidualOrder: 28,
 			onResidualSubOrder: 2,
 			onResidual(pokemon) {
-			if (pokemon.activeTurns) {
+			if (!pokemon.activeTurns) {
+				duration = 1;
+				}	
+			},
 			onStart(target) {
 				this.add('-start', target, 'ability: Turboblaze');
 			},
@@ -1667,7 +1670,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			},
 			onEnd(target) {
 				this.add('-end', target, 'Turboblaze');
-					}
 				}
 			}
 		},
@@ -1676,6 +1678,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		num: 163,
 	},
 	teravolt: {
+		desc: "This Pokemon's Speed and Attack are boosted by 1.25x during its first turn.",
+		shortDesc: "This Pokemon's Spe and Atk are boosted by 1.25x during its first turn.",
 		onStart(pokemon) {
 			pokemon.addVolatile('teravolt');
 		},
@@ -1687,7 +1691,11 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			duration: 1,
 			onResidualOrder: 28,
 			onResidualSubOrder: 2,
-			if (pokemon.activeTurns) {
+			onResidual(pokemon) {
+			if (!pokemon.activeTurns) {
+				duration = 1;
+				}	
+			},
 			onStart(target) {
 				this.add('-start', target, 'ability: Teravolt');
 			},
@@ -1700,9 +1708,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			onEnd(target) {
 				this.add('-end', target, 'Teravolt');
 				}
-			}
 		},
-		name: "Turboblaze",
+		name: "Teravolt",
 		rating: 5,
 		num: 163,
 	},
