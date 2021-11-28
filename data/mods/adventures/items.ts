@@ -175,7 +175,6 @@ export const Items: {[k: string]: ModdedItemData} = {
 				target.useItem();
 			}
 			if (effect.id === 'stickyweb') {
-			this.boost({spe: 1}) {}
 				target.useItem();
 			}
 		},
@@ -189,7 +188,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			pokemon.useItem();
 		},
 		boosts: {
-			spe: 1,
+			spe: 2,
 		},
 		num: 846,
 		gen: 7,
