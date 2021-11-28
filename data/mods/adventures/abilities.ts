@@ -1581,7 +1581,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				return false;
 			}
 		},
-		name: 
 		name: "Toxic Boost",
 		rating: 2.5,
 		num: 137,
