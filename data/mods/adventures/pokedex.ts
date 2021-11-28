@@ -657,6 +657,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 130, atk: 85, def: 90, spa: 85, spd: 115, spe: 60},
 		abilities: {0: "Water Absorb", 1: "Multiscale", H: "Hydration"},
 	},
+	electrode: {
+		inherit: true,
+		baseStats: {hp: 60, atk: 50, def: 70, spa: 80, spd: 80, spe: 150},
+		abilities: {0: "Galvanize", 1: "Static", H: "Aftermath"},
+	},
 	weavile: {
 		inherit: true,
 		baseStats: {hp: 70, atk: 120, def: 65, spa: 65, spd: 85, spe: 125},
