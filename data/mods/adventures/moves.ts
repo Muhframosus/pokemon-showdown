@@ -1738,7 +1738,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		desc: "Hits neutrally against every type. 10% chance for a random status.",
 		shortDesc: "Neutral vs. every type. 10% chance for random status.",
 		accuracy: 100,
-		basePower: 90,
+		basePower: 80,
 		category: "Special",
 		name: "Glitch",
 		pp: 10,
