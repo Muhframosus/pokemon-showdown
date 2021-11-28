@@ -175,9 +175,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 				target.useItem();
 			}
 			if (effect.id === 'stickyweb') {
-				boosts: {
-					spe: 1,
-				},
+			this.boost({spe: 1}) {}
 				target.useItem();
 			}
 		},
