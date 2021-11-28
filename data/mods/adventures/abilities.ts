@@ -1641,6 +1641,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		num: 39,
 	},
 	turboblaze: {
+		desc: "This Pokemon's Speed and Special Attack are boosted by 1.25x during its first turn.",
+		shortDesc: "This Pokemon's Speed and Special Attack are boosted by 1.25x during its first turn.",
 		onStart(pokemon) {
 			pokemon.addVolatile('turboblaze');
 		},
@@ -1652,6 +1654,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			duration: 1,
 			onResidualOrder: 28,
 			onResidualSubOrder: 2,
+			onResidual(pokemon) {
 			if (pokemon.activeTurns) {
 			onStart(target) {
 				this.add('-start', target, 'ability: Turboblaze');
@@ -1664,6 +1667,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			},
 			onEnd(target) {
 				this.add('-end', target, 'Turboblaze');
+					}
 				}
 			}
 		},
