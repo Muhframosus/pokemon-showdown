@@ -654,7 +654,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	lapras: {
 		inherit: true,
-		baseStats: {hp: 130, atk: 85, def: 80, spa: 85, spd: 95, spe: 60},
+		baseStats: {hp: 130, atk: 85, def: 90, spa: 85, spd: 115, spe: 60},
 		abilities: {0: "Water Absorb", 1: "Multiscale", H: "Hydration"},
 	},
 	weavile: {
