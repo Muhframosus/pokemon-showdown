@@ -1193,6 +1193,17 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		rating: 1.5,
 		num: 44,
 	},
+	icebody: {
+		onWeather(target, source, effect) {
+			if (target.hasItem('utilityumbrella')) return;
+			if (effect.id === 'hail') {
+				this.heal(target.baseMaxhp / 4);
+			}
+		},
+		name: "Ice Body",
+		rating: 1.5,
+		num: 44,
+	},
 	drainpower: {
 		desc: "User gains 1.3x HP from draining/Aqua Ring/Ingrain/Leech Seed/Strength Sap.",
 		shortdesc: "User gains 1.3x HP from draining/Aqua Ring/Ingrain/Leech Seed/Strength Sap.",
