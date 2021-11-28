@@ -30,6 +30,37 @@ export const Items: {[k: string]: ModdedItemData} = {
 		num: 265,
 		gen: 4,
 	},
+	micleberry: {
+		name: "Micle Berry",
+		spritenum: 290,
+		isBerry: true,
+		naturalGift: {
+			basePower: 100,
+			type: "Rock",
+		},
+		onResidual(pokemon) {
+			if (pokemon.hp <= pokemon.maxhp / 4 || (pokemon.hp <= pokemon.maxhp / 2 && pokemon.hasAbility('gluttony'))) {
+				pokemon.eatItem();
+			}
+		},
+		onEat(pokemon) {
+			pokemon.addVolatile('micleberry');
+		},
+		condition: {
+			duration: 2,
+			onSourceAccuracy(accuracy, target, source, move) {
+				if (!move.ohko) {
+					this.add('-enditem', source, 'Micle Berry');
+					source.removeVolatile('micleberry');
+					if (typeof accuracy === 'number') {
+						return this.chainModify([0x2000, 0x1000]);
+					}
+				}
+			},
+		},
+		num: 209,
+		gen: 4,
+	},
 	leek: {
 		name: "Leek",
 		fling: {
@@ -144,6 +175,9 @@ export const Items: {[k: string]: ModdedItemData} = {
 				target.useItem();
 			}
 			if (effect.id === 'stickyweb') {
+				boosts: {
+					spe: 1,
+				},
 				target.useItem();
 			}
 		},

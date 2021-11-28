@@ -489,8 +489,8 @@ export const Conditions: {[k: string]: ConditionData} = {
 		duration: 0,
 		onTryMovePriority: 1,
 		onTryMove(attacker, defender, move) {
-			if (move.type === 'Fire' && move.category !== 'Status') {
-				this.debug('Primordial Sea fire suppress');
+			if (move.type === 'Fire' && move.category !== 'Status' || move.type === 'Ground' && move.category !== 'Status') {
+				this.debug('Primordial Sea suppress');
 				this.add('-fail', attacker, move, '[from] Primordial Sea');
 				this.attrLastMove('[still]');
 				return null;

@@ -127,7 +127,7 @@ export const Formats: FormatList = [
 		mod: 'adventures',
 		gameType: 'doubles',
 		ruleset: ['Standard Natdex', 'Dynamax Clause', 'Swagger Clause'],
-		banlist: ['DUber', 'Power Construct', 'Shadow Tag'],
+		banlist: ['DUber', 'Power Construct', 'Roar of Time', 'Shadow Tag'],
 	},
 	{
 		name: "[Gen 8] Adventures 1v1",

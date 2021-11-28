@@ -113,6 +113,41 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		rating: 2,
 		num: -7,
 	},
+	liquidooze: {
+		onSourceTryHeal(damage, target, source, effect) {
+			this.debug("Heal is occurring: " + target + " <- " + source + " :: " + effect.id);
+			const canOoze = ['drain', 'leechseed', 'strengthsap'];
+			if (canOoze.includes(effect.id)) {
+				this.damage(damage);
+				return this.chainModify(1.5);
+			}
+		},
+		name: "Liquid Ooze",
+		rating: 1.5,
+		num: 64,
+	},
+	hardmetal: {
+		name: "Unscratchable",
+		desc: "Fighting-type attacks have their attacking stat halved when targeting this Pokemon.",
+		onSourceModifyAtkPriority: 6,
+		onSourceModifyAtk(atk, attacker, defender, move) {
+			if (move.type === 'Ice' || move.type === 'Fire') {
+				this.debug('Thick Fat weaken');
+				return this.chainModify(0.5);
+			}
+		},
+		onSourceModifySpAPriority: 5,
+		onSourceModifySpA(atk, attacker, defender, move) {
+			if (move.type === 'Ice' || move.type === 'Fire') {
+				this.debug('Thick Fat weaken');
+				return this.chainModify(0.5);
+			}
+		},
+		isBreakable: true,
+		name: "Permafrost",
+		rating: 2,
+		num: -7,
+	},
 	pastelveil: {
 		name: "Pastel Veil",
 		desc: "Grants immunity to Poison-type moves.",
@@ -209,42 +244,58 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				this.add('-start', pokemon, 'Future Sight');
 			}
 		},
+		rating: 5,
+		num: -8,
 	},
-	rating: 2,
-	num: -8,
 	omen: {
 		name: "Omen",
-		desc: "2 turns after switchin, the user uses Earthquake on the opposing side.",
-		shortDesc: "2 turns delayed Earthquake on switchin.",
+		desc: "At the end of the turn it switches-in, the user uses Brutal Swing.",
+		shortDesc: "Uses Brutal Swing on switch-in.",
 		onStart(pokemon) {
 			this.add('-activate', pokemon, 'ability: Omen');
 			let success = false;
 			for (const target of pokemon.side.foe.active) {
 				if (target.side.addSlotCondition(target, 'futuremove')) {
 					Object.assign(target.side.slotConditions[target.position]['futuremove'], {
-						duration: 3,
+						duration: 1,
 						move: 'omen',
 						source: pokemon,
 						moveData: {
 							id: 'omen',
 							name: "Omen",
 							accuracy: 100,
-							basePower: 100,
+							basePower: 60,
 							category: "Physical",
 							priority: 0,
 							flags: {},
 							effectType: 'Move',
 							isFutureMove: true,
-							type: 'Ground',
+							type: 'Dark',
 						},
 					});
 					success = true;
 				}
 			}
-
 			if (success) {
 				this.add('-anim', pokemon, 'Doom Desire');
 			}
+		},
+		rating: 5,
+		num: -9,
+	},
+	chimering: {
+		name: "Chime Ring",
+		desc: "On switch-in, cures the user's party of all status conditions.",
+		shortDesc: "Heal Bell on switch-in.",
+		onStart(pokemon) {
+			this.add('-activate', source, 'ability: Chime Ring');
+			const side = pokemon.side;
+			let success = false;
+			for (const ally of side.pokemon) {
+				if (ally !== source && ally.hasAbility('soundproof')) continue;
+				if (ally.cureStatus()) success = true;
+			}
+			return success;
 		},
 	},
 	rating: 2,
@@ -362,8 +413,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		num: 106,
 	},
 	blaze: {
-		name: "Blaze",
-		desc: "This pokemon's Fire-type moves are boosted by 25%, but 50% under 25% HP.",
+		desc: "This pokemon's Fire-type moves are boosted by 1.25x and by 1.5x under 25% HP.",
 		shortdesc: "User gets boosted Fire-type moves, even more on low HP.",
 		onModifyAtkPriority: 5,
 		onModifyAtk(atk, attacker, defender, move) {
@@ -397,9 +447,29 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		rating: 2,
 		num: 66,
 	},
+	paleolithicpower: {
+		desc: "This pokemon's Rock-type moves are boosted by 1.5x.",
+		shortdesc: "User gets boosted Rock-type moves.",
+		onModifyAtkPriority: 5,
+		onModifyAtk(atk, attacker, defender, move) {
+			if (move.type === 'Rock') {
+				this.debug('Paleolithic boost');
+				return this.chainModify(1.5);
+			}
+		},
+		onModifySpAPriority: 5,
+		onModifySpA(atk, attacker, defender, move) {
+			if (move.type === 'Rock') {
+				this.debug('Paleolithic boost');
+				return this.chainModify(1.5);
+			}
+		},
+		name: "Paleolithic Power",
+		rating: 2,
+		num: 66,
+	},
 	torrent: {
-		name: "Torrent",
-		desc: "This pokemon's Water-type moves are boosted by 25%, but 50% under 25% HP.",
+		desc: "This pokemon's Water-type moves are boosted by 1.25x and by 1.5x under 25% HP.",
 		shortdesc: "User gets boosted Water-type moves, even more on low HP.",
 		onModifyAtkPriority: 5,
 		onModifyAtk(atk, attacker, defender, move) {
@@ -434,8 +504,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		num: 66,
 	},
 	overgrow: {
-		name: "Overgrow",
-		desc: "This pokemon's Grass-type moves are boosted by 25%, but 50% under 25% HP.",
+		desc: "This pokemon's Grass-type moves are boosted by 1.25x and by 1.5x under 25% HP.",
 		shortdesc: "User gets boosted Grass-type moves, even more on low HP.",
 		onModifyAtkPriority: 5,
 		onModifyAtk(atk, attacker, defender, move) {
@@ -470,8 +539,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		num: 66,
 	},
 	swarm: {
-		name: "Swarm",
-		desc: "This pokemon's Bug-type moves are boosted by 25%, but 50% under 25% HP.",
+		desc: "This pokemon's Bug-type moves are boosted by 1.25x and by 1.5x under 25% HP.",
 		shortdesc: "User gets boosted Bug-type moves, even more on low HP.",
 		onModifyAtkPriority: 5,
 		onModifyAtk(atk, attacker, defender, move) {
@@ -558,7 +626,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		onTryHit(target, source, move) {
 			if (target !== source && move.type === 'Electric') {
 				if (!this.boost({spa: 1})) {
-					this.add('-immune', target, '[from] ability: Lightning Rod');
 				}
 				if (!this.boost({atk: 1})) {
 					this.add('-immune', target, '[from] ability: Lightning Rod');
@@ -760,7 +827,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		num: 38,
 	},
 	poisontouch: {
-		desc: "This Pokemon has a 30% chance to badly poison the target after using a contact move.",
+		desc: "This Pokemon has a 30% chance to badly poison any Pokemon it comes in contact with.",
 		shortDesc: "30% chance to badly poison on contact move.",
 		// upokecenter says this is implemented as an added secondary effect
 		onModifyMove(move) {
@@ -773,6 +840,13 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				status: 'tox',
 				ability: this.dex.abilities.get('poisontouch'),
 			});
+		},
+		onDamagingHit(damage, target, source, move) {
+			if (move.flags['contact']) {
+				if (this.randomChance(3, 10)) {
+					source.trySetStatus('tox', target);
+				}
+			}
 		},
 		name: "Poison Touch",
 		rating: 2,
@@ -1013,7 +1087,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		onTryHit(target, source, move) {
 			if (target !== source && move.type === 'Water') {
 				if (!this.boost({spa: 1})) {
-					this.add('-immune', target, '[from] ability: Storm Drain');
 				}
 				if (!this.boost({atk: 1})) {
 					this.add('-immune', target, '[from] ability: Storm Drain');
@@ -1051,7 +1124,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		onTryHit(target, source, move) {
 			if (target !== source && move.type === 'Grass') {
 				if (!this.boost({spa: 1})) {
-					this.add('-immune', target, '[from] ability: Sap Sipper');
 				}
 				if (!this.boost({atk: 1})) {
 					this.add('-immune', target, '[from] ability: Sap Sipper');
@@ -1479,6 +1551,41 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		rating: 3,
 		num: 89,
 	},
+	flareboost: {
+		onBasePowerPriority: 19,
+		onBasePower(basePower, attacker, defender, move) {
+			if (attacker.status === 'brn' && move.category === 'Special') {
+				return this.chainModify(1.5);
+			}
+		},
+		onDamagePriority: 1,
+		onDamage(damage, target, source, effect) {
+			if (effect.id === 'brn') {
+				return false;
+			}
+		},
+		name: "Flare Boost",
+		rating: 2,
+		num: 138,
+	},
+	toxicboost: {
+		onBasePowerPriority: 19,
+		onBasePower(basePower, attacker, defender, move) {
+			if ((attacker.status === 'psn' || attacker.status === 'tox') && move.category === 'Physical') {
+				return this.chainModify(1.5);
+			}
+		},
+		onDamagePriority: 1,
+		onDamage(damage, target, source, effect) {
+			if (effect.id === 'psn' || effect.id === 'tox') {
+				return false;
+			}
+		},
+		name: 
+		name: "Toxic Boost",
+		rating: 2.5,
+		num: 137,
+	},
 	mastersfocus: {
 		desc: "This Pokemon's moves cannot be interrupted or stopped in any way.",
 		shortDesc: "This Pokemon's moves cannot be interrupted or stopped in any way.",
@@ -1498,6 +1605,22 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				this.add('-activate', pokemon, "ability: Master's Focus");
 				pokemon.removeVolatile('attract');
 			}
+		if (pokemon.volatiles['healblock']) {
+				this.add('-activate', pokemon, "ability: Master's Focus");
+				pokemon.removeVolatile('healblock');
+			}
+		if (pokemon.volatiles['torment']) {
+				this.add('-activate', pokemon, "ability: Master's Focus");
+				pokemon.removeVolatile('torment');
+			}
+		if (pokemon.volatiles['disable']) {
+				this.add('-activate', pokemon, "ability: Master's Focus");
+				pokemon.removeVolatile('disable');
+			}
+		if (pokemon.volatiles['confusion']) {
+				this.add('-activate', pokemon, "ability: Master's Focus");
+				pokemon.removeVolatile('confusion');
+			}
 		if (pokemon.status === 'slp') {
 				this.add('-activate', pokemon, "ability: Master's Focus");
 				pokemon.cureStatus('slp');
@@ -1511,12 +1634,73 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				pokemon.cureStatus('frz');
 			}
 		},
-		onBeforeMovePriority: 0,
-		onBeforeMove(pokemon) {
-				return;
+		onModifyMove(move) {
+			if (move.flags['contact']) delete move.flags['protect'];
 		},
 		name: "Master's Focus",
-		rating: 1.5,
+		rating: 2.5,
 		num: 39,
+	},
+	turboblaze: {
+		onStart(pokemon) {
+			pokemon.addVolatile('turboblaze');
+		},
+		onEnd(pokemon) {
+			delete pokemon.volatiles['turboblaze'];
+			this.add('-end', pokemon, 'Turboblaze', '[silent]');
+		},
+		condition: {
+			duration: 1,
+			onResidualOrder: 28,
+			onResidualSubOrder: 2,
+			if (pokemon.activeTurns) {
+			onStart(target) {
+				this.add('-start', target, 'ability: Turboblaze');
+			},
+			onModifySpa(spa, pokemon) {
+				return this.chainModify(1.25);
+			},
+			onModifySpe(spe, pokemon) {
+				return this.chainModify(1.25);
+			},
+			onEnd(target) {
+				this.add('-end', target, 'Turboblaze');
+				}
+			}
+		},
+		name: "Turboblaze",
+		rating: 5,
+		num: 163,
+	},
+	teravolt: {
+		onStart(pokemon) {
+			pokemon.addVolatile('teravolt');
+		},
+		onEnd(pokemon) {
+			delete pokemon.volatiles['teravolt'];
+			this.add('-end', pokemon, 'Teravolt', '[silent]');
+		},
+		condition: {
+			duration: 1,
+			onResidualOrder: 28,
+			onResidualSubOrder: 2,
+			if (pokemon.activeTurns) {
+			onStart(target) {
+				this.add('-start', target, 'ability: Teravolt');
+			},
+			onModifyAtk(atk, pokemon) {
+				return this.chainModify(1.25);
+			},
+			onModifySpe(spe, pokemon) {
+				return this.chainModify(1.25);
+			},
+			onEnd(target) {
+				this.add('-end', target, 'Teravolt');
+				}
+			}
+		},
+		name: "Turboblaze",
+		rating: 5,
+		num: 163,
 	},
 };

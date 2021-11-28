@@ -150,7 +150,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		shortDesc: "20% chance to increase the user's Spe by 1 .",
 		inherit: true,
 		basePower: 90,
-		accuracy: 90,
+		accuracy: 100,
 		secondary: {
 			chance: 20,
 			self: {
@@ -189,7 +189,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 	},
 	triplekick: {
 		num: 167,
-		accuracy: 90,
+		accuracy: 100,
 		basePower: 20,
 		basePowerCallback(pokemon, target, move) {
 			return 20 * move.hit;
@@ -400,13 +400,10 @@ export const Moves: {[moveid: string]: MoveData} = {
 	},
 	slash: {
 		inherit: true,
+		basePower: 80,
 		critRatio: 3,
 	},
 	snipeshot: {
-		inherit: true,
-		critRatio: 3,
-	},
-	spacialrend: {
 		inherit: true,
 		critRatio: 3,
 	},
@@ -456,6 +453,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 	},
 	nightslash: {
 		inherit: true,
+		basePower: 80,
 		critRatio: 3,
 	},
 	poisontail: {
@@ -490,29 +488,6 @@ export const Moves: {[moveid: string]: MoveData} = {
 		inherit: true,
 		accuracy: 100,
 	},
-	shelltrap: {
-		desc: "Usually goes first. Fails if target is not attacking.",
-		shortDesc: "Usually goes first. Fails if target is not attacking.",
-		num: 704,
-		accuracy: 100,
-		basePower: 50,
-		category: "Special",
-		name: "Shell Trap",
-		pp: 8,
-		priority: 1,
-		flags: {contact: 1, protect: 1, mirror: 1},
-		onTry(source, target) {
-			const action = this.queue.willMove(target);
-			const move = action?.choice === 'move' ? action.move : null;
-			if (!move || (move.category === 'Status' && move.id !== 'mefirst') || target.volatiles['mustrecharge']) {
-				return false;
-			}
-		},
-		secondary: null,
-		target: "normal",
-		type: "Fire",
-		contestType: "Clever",
-	},
 	icehammer: {
 		desc: "100% chance to lower the target's Speed by 1 stage.",
 		shortDesc: "100% chance to lower target's Spe by 1.",
@@ -541,7 +516,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		desc: "High critical hit ratio.",
 		shortDesc: "High critical hit ratio.",
 		inherit: true,
-		accuracy: 90,
+		accuracy: 100,
 		basePower: 100,
 		pp: 10,
 		critRatio: 3,
@@ -594,7 +569,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		desc: "Lowers the user's Defense, Sp. Def, Speed by 1. Physical if user's Atk > SpA",
 		shortDesc: "Lowers user's Def, SpD, Spe by 1. Phys if Atk > SpA",
 		num: 557,
-		accuracy: 95,
+		accuracy: 100,
 		basePower: 180,
 		category: "Special",
 		name: "V-Create",
@@ -616,6 +591,124 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Fire",
 		zMove: {basePower: 220},
 		contestType: "Cool",
+	},
+	rollout: {
+		inherit: true,
+		basePower: 40,
+	},
+	iceball: {
+		inherit: true,
+		basePower: 40,
+	},
+	shadowforce: {
+		num: 467,
+		accuracy: 100,
+		basePower: 150,
+		category: "Physical",
+		name: "Shadow Force",
+		pp: 3,
+		priority: 1,
+		flags: {contact: 1, charge: 1, mirror: 1},
+		breaksProtect: true,
+		onTryMove(attacker, defender, move) {
+			if (attacker.removeVolatile(move.id)) {
+				return;
+			}
+			this.add('-prepare', attacker, move.name);
+			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
+				return;
+			}
+			attacker.addVolatile('twoturnmove', defender);
+			return null;
+		},
+		condition: {
+			duration: 2,
+			onInvulnerability: false,
+		},
+		secondary: null,
+		target: "normal",
+		type: "Ghost",
+		contestType: "Cool",
+	},
+	spacialrend: {
+		num: 460,
+		accuracy: 100,
+		basePower: 100,
+		category: "Special",
+		name: "Spacial Rend",
+		pp: 3,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		critRatio: 3,
+		chance: 100,
+			boosts: {
+				spa: -1,
+				atk: -1,
+				spe: -1,
+			},
+		target: "normal",
+		type: "Dragon",
+		contestType: "Beautiful",
+	},
+	trumpcard: {
+		num: 376,
+		accuracy: true,
+		basePower: 0,
+		basePowerCallback(source, target, move) {
+			const callerMoveId = move.sourceEffect || move.id;
+			const moveSlot = callerMoveId === 'instruct' ? source.getMoveData(move.id) : source.getMoveData(callerMoveId);
+			if (!moveSlot) return 70;
+			switch (moveSlot.pp) {
+			case 0:
+				return 200;
+			case 1:
+				return 160;
+			case 2:
+				return 130;
+			case 3:
+				return 100;
+			default:
+				return 70;
+			}
+		},
+		category: "Special",
+		isNonstandard: "Past",
+		name: "Trump Card",
+		pp: 5,
+		noPPBoosts: true,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		secondary: null,
+		target: "normal",
+		type: "Normal",
+		zMove: {basePower: 160},
+		maxMove: {basePower: 130},
+		contestType: "Cool",
+	},
+	aquaring: {
+		num: 392,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Aqua Ring",
+		pp: 20,
+		priority: 0,
+		flags: {snatch: 1},
+		volatileStatus: 'aquaring',
+		condition: {
+			onStart(pokemon) {
+				this.add('-start', pokemon, 'Aqua Ring');
+			},
+			onResidualOrder: 6,
+			onResidual(pokemon) {
+				this.heal(pokemon.baseMaxhp / 8);
+			},
+		},
+		secondary: null,
+		target: "self",
+		type: "Water",
+		zMove: {boost: {def: 1}},
+		contestType: "Beautiful",
 	},
 	multiattack: {
 		desc: "Type varies based on the user's primary type. Physical if Atk > SpA.",
@@ -651,7 +744,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		desc: "100% chance to increase the user's Special Attack by 1 stage.",
 		shortDesc: "100% chance to increase the user's SpA by 1.",
 		num: 451,
-		accuracy: 90,
+		accuracy: 100,
 		basePower: 60,
 		name: "Charge Beam",
 		category: "Special",
@@ -672,7 +765,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 	},
 	belch: {
 		inherit: true,
-		basePower: 140,
+		basePower: 150,
 		accuracy: 100,
 	},
 	geargrind: {
@@ -682,7 +775,27 @@ export const Moves: {[moveid: string]: MoveData} = {
 	},
 	shadowpunch: {
 		inherit: true,
-		basePower: 75,
+		basePower: 60,
+	},
+	roaroftime: {
+		num: 459,
+		accuracy: 100,
+		basePower: 180,
+		category: "Special",
+		name: "Roar of Time",
+		pp: 3,
+		priority: 4,
+		flags: {recharge: 1, mirror: 1},
+		self: {
+			volatileStatus: 'mustrecharge',
+		},
+		secondary: {
+			chance: 100,
+			volatileStatus: 'flinch',
+		},
+		target: "normal",
+		type: "Dragon",
+		contestType: "Beautiful",
 	},
 	flash: {
 		inherit: true,
@@ -708,7 +821,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 	rockclimb: {
 		inherit: true,
 		type: "Rock",
-		accuracy: 90,
+		accuracy: 100,
 		basePower: 85,
 	},
 	fly: {
@@ -752,7 +865,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		inherit: true,
 		desc: "100% chance to lower the target's defense by 1 stage.",
 		shortDesct: "100% chance to lower target's Def by 1.",
-		basePower: 65,
+		basePower: 60,
 		secondary: {
 			chance: 100,
 			boosts: {
@@ -768,7 +881,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: -6,
 		forceSwitch: true,
 		basePower: 80,
-		accuracy: 90,
+		accuracy: 100,
 	},
 	circlethrow: {
 		inherit: true,
@@ -1415,7 +1528,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		shortDesc: "10% chance to Poison, 10% chance to flinch",
 		inherit: true,
 		basePower: 65,
-		accuracy: 95,
+		accuracy: 100,
 		secondaries: [
 			{
 				chance: 10,
@@ -1483,7 +1596,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 	},
 	muddywater: {
 		inherit: true,
-		accuracy: 90,
+		accuracy: 100,
 	},
 	steelyspikes: {
 		desc: "Sets up a hazard on the opposing side of the field. Damages foes that switch-in based on their weakness to the Steel type.",
@@ -1536,7 +1649,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 	ancientpower: {
 		inherit: true,
 		secondary: {
-			chance: 30,
+			chance: 20,
 			self: {
 				boosts: {
 					atk: 1,
@@ -1551,7 +1664,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 	ominouswind: {
 		inherit: true,
 		secondary: {
-			chance: 30,
+			chance: 20,
 			self: {
 				boosts: {
 					atk: 1,
@@ -1566,7 +1679,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 	silverwind: {
 		inherit: true,
 		secondary: {
-			chance: 30,
+			chance: 20,
 			self: {
 				boosts: {
 					atk: 1,
@@ -1580,7 +1693,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 	},
 	octazooka: {
 		num: 190,
-		accuracy: 95,
+		accuracy: 100,
 		basePower: 95,
 		category: "Special",
 		name: "Octazooka",
@@ -1799,7 +1912,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		num: 158,
 		desc: "30% chance to flinch.",
 		shortDesc: "30% chance to flinch.",
-		accuracy: 90,
+		accuracy: 100,
 		basePower: 90,
 		category: "Physical",
 		isNonstandard: "Past",
@@ -1820,8 +1933,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 		recoil: [1, 3],
 	},
 	venomdrench: {
-		desc: "Lowers Atk/Sp. Atk/Speed of poisoned foes by 2.",
-		shortdesc: "Lowers Atk/Sp. Atk/Speed of poisoned foes by 2.",
+		desc: "Lowers Atk/Sp. Atk/Speed of foes by 1.",
+		shortdesc: "Lowers Atk/Sp. Atk/Speed of foes by 1.",
 		num: 599,
 		accuracy: 100,
 		basePower: 0,
@@ -1831,10 +1944,10 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {protect: 1, reflectable: 1, mirror: 1},
 		onHit(target, source, move) {
-			if (target.status === 'psn' || target.status === 'tox') {
-				return !!this.boost({atk: -2, spa: -2, spe: -2}, target, source, move);
+			const success = this.boost({atk: -1, spa: -1, spe: -1}, target, source);
+			if (!success && !target.hasAbility('mirrorarmor')) {
+				delete move.selfSwitch;
 			}
-			return false;
 		},
 		secondary: null,
 		target: "allAdjacentFoes",
