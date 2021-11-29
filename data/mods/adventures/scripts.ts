@@ -1357,9 +1357,9 @@ this.modData('Learnsets', 'wailord').learnset.flipturn = ['8L1'];
 this.modData('Learnsets', 'wailord').learnset.lifedew = ['8L1'];
 
 this.modData('Learnsets', 'victreebel').learnset.firefang = ['8L1'];
+this.modData('Learnsets', 'victreebel').learnset.solarblade = ['8L1'];
+this.modData('Learnsets', 'victreebel').learnset.gunkshot = ['8L1'];
 this.modData('Learnsets', 'victreebel').learnset.icefang = ['8L1'];
-this.modData('Learnsets', 'victreebel').learnset.poisonfang = ['8L1'];
-this.modData('Learnsets', 'victreebel').learnset.crosspoison = ['8L1'];
 this.modData('Learnsets', 'victreebel').learnset.hornleech = ['8L1'];
 
 this.modData('Learnsets', 'forretress').learnset.headsmash = ['8L1'];
