@@ -115,6 +115,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 65, atk: 80, def: 120, spa: 115, spd: 70, spe: 60},
 		abilities: {0: "Aftermath", H: "Levitate", 1: "Neutralizing Gas"},
 	},
+	relicanth: {
+		inherit: true,
+		baseStats: {hp: 100, atk: 110, def: 130, spa: 45, spd: 65, spe: 75},
+		abilities: {0: "Paleolithic Power", H: "Swift Swim", 1: "Sturdy"},
+	},
 	weezinggalar: {
 		inherit: true,
 		baseStats: {hp: 65, atk: 80, def: 120, spa: 115, spd: 70, spe: 60},
@@ -749,11 +754,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		baseStats: {hp: 95, atk: 145, def: 130, spa: 120, spd: 90, spe: 120},
 		abilities: {0: "Aerilate"},
-	},
-	relicanth: {
-		inherit: true,
-		baseStats: {hp: 100, atk: 90, def: 130, spa: 45, spd: 65, spe: 75},
-		abilities: {0: "Swift Swim", 1: "Rock Head", H: "Sturdy"},
 	},
 	espeon: {
 		inherit: true,
