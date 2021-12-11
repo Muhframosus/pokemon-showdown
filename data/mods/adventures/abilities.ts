@@ -1260,8 +1260,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	zenmode: {
 		desc: "On switch-in, this Pokemon becomes its Zen form.",
 		shortdesc: "On switch-in, this Pokemon becomes its Zen form.",
-		onResidualOrder: 27,
-		onResidual(pokemon) {
+		onStart(pokemon) {
 			if (pokemon.baseSpecies.baseSpecies !== 'Darmanitan' || pokemon.transformed) {
 				return;
 			}
@@ -1700,11 +1699,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			duration: 1,
 			onResidualOrder: 28,
 			onResidualSubOrder: 2,
-			onResidual(pokemon) {
-			if (!pokemon.activeTurns) {
-				duration = 1;
-				}	
-			},
 			onStart(target) {
 				this.add('-start', target, 'ability: Teravolt');
 			},
