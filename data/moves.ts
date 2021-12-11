@@ -9016,7 +9016,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			},
 			onResidualOrder: 7,
 			onResidual(pokemon) {
-				this.heal(pokemon.baseMaxhp / 16);
+				this.heal(pokemon.baseMaxhp / 8);
 			},
 			onTrapPokemon(pokemon) {
 				pokemon.tryTrap();
