@@ -419,10 +419,6 @@ export const Moves: {[moveid: string]: MoveData} = {
 		inherit: true,
 		critRatio: 3
 	},
-	aircutter: {
-		inherit: true,
-		critRatio: 3,
-	},
 	attackorder: {
 		inherit: true,
 		critRatio: 3,
@@ -475,6 +471,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		inherit: true,
 		accuracy: 100,
 		basePower: 80,
+		critRatio: 3,
 	},
 	airslash: {
 		inherit: true,

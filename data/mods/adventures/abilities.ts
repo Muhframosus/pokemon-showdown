@@ -286,7 +286,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		name: "Chime Ring",
 		desc: "On switch-in, cures the user's party of all status conditions.",
 		shortDesc: "Heal Bell on switch-in.",
-		onStart(pokemon) {
+		onStart(pokemon, source) {
 			this.add('-activate', source, 'ability: Chime Ring');
 			const side = pokemon.side;
 			let success = false;
