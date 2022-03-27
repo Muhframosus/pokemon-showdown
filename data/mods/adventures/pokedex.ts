@@ -2086,7 +2086,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	donphan: {
 		inherit: true,
-		baseStats: {hp: 90, atk: 120, def: 120, spa: 60, spd: 60, spe: 60},
+		baseStats: {hp: 90, atk: 120, def: 120, spa: 60, spd: 70, spe: 50},
 		abilities: {0: "Sturdy", 1: "Sand Force", H: "Sand Rush"},
 	},
 	unown: {
@@ -2197,11 +2197,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	aerodactyl: {
 		inherit: true,
 		abilities: {0: "Rock Head", 1: "Mold Breaker", H: "Primal Rage"},
-    },
-    phione: {
-		inherit: true,
-		baseStats: {hp: 80, atk: 80, def: 80, spa: 65, spd: 90, spe: 80},
-		abilities: {0: "Hydration", 1: "", H: "WaterBubble"},
+
 	
 			
 
