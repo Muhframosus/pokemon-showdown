@@ -2198,9 +2198,8 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: {0: "Rock Head", 1: "Mold Breaker", H: "Primal Rage"},
 		
-			phione: {
+	phione: {
 		inherit: true,
 		baseStats: {hp: 90, atk: 70, def: 80, spa: 55, spd: 90, spe: 80},
 		abilities: {0: "Rough Skin", 1: "", H: "Speed Boost"},
-	},
-};
+
