@@ -1174,6 +1174,8 @@ this.modData('Learnsets', 'tapufini').learnset.recover = ['8L1'];
 
 this.modData('Learnsets', 'tapukoko').learnset.playrough = ['8L1'];
 
+this.modData('Learnsets', 'toucannon').learnset.tailslap = ['8L1'];
+
 this.modData('Learnsets', 'vespiquen').learnset.playrough = ['8L1'];
 this.modData('Learnsets', 'vespiquen').learnset.storedpower = ['8L1'];
 this.modData('Learnsets', 'vespiquen').learnset.trickroom = ['8L1'];
