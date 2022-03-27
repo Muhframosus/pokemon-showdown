@@ -1,4 +1,4 @@
-},export const Scripts: {[k: string]: ModdedBattleScriptsData} = {
+export const Scripts: {[k: string]: ModdedBattleScriptsData} = {
 init() {
 //-NEW MOVES START
 
@@ -16,7 +16,6 @@ this.modData('Learnsets', 'samurott').learnset.secretsword = ['8L1'];
 
 this.modData('Learnsets', 'kecleon').learnset.machpunch = ['8L1'];
 this.modData('Learnsets', 'kecleon').learnset.iceshard = ['8L1'];
-this.modData('Learnsets', 'kecleon').learnset.gyroball = ['8L1'];
 
 this.modData('Learnsets', 'meganium').learnset.powerwhip = ['8L1'];
 this.modData('Learnsets', 'meganium').learnset.playrough = ['8L1'];
