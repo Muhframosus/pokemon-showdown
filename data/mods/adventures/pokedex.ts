@@ -2197,6 +2197,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	aerodactyl: {
 		inherit: true,
 		abilities: {0: "Rock Head", 1: "Mold Breaker", H: "Primal Rage"},
+    },
+    phione: {
+		inherit: true,
+		baseStats: {hp: 80, atk: 80, def: 80, spa: 65, spd: 90, spe: 80},
+		abilities: {0: "Hydration", 1: "", H: "WaterBubble"},
 	
 			
 
