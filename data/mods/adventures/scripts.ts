@@ -814,6 +814,7 @@ this.modData('Learnsets', 'tentacruel').learnset.gunkshot = ['8L1'];
 this.modData('Learnsets', 'tentacruel').learnset.earthpower = ['8L1'];
 this.modData('Learnsets', 'tentacruel').learnset.liquidation = ['8L1'];
 this.modData('Learnsets', 'tentacruel').learnset.powerwhip = ['8L1'];
+this.modData('Learnsets', 'tentacruel').learnset.weatherball = ['8L1'];
 
 this.modData('Learnsets', 'ninetales').learnset.psychic = ['8L1'];
 this.modData('Learnsets', 'ninetales').learnset.drainingkiss = ['8L1'];
