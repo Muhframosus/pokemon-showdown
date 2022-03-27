@@ -1714,7 +1714,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	kecleon: {
 		inherit: true,
-		baseStats: {hp: 95, atk: 115, def: 90, spa: 90, spd: 120, spe: 30},
+		baseStats: {hp: 90, atk: 110, def: 90, spa: 90, spd: 120, spe: 40},
 	},
 	probopass: {
 		inherit: true,
