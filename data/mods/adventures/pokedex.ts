@@ -737,8 +737,8 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	tentacruel: {
 		inherit: true,
-		baseStats: {hp: 100, atk: 90, def: 70, spa: 100, spd: 120, spe: 110},
-		abilities: {0: "Storm Drain", 1: "Infiltrator", H: "Rain Dish"},
+		baseStats: {hp: 80, atk: 100, def: 70, spa: 80, spd: 120, spe: 110},
+		abilities: {0: "Storm Drain", 1: "Corrosion", H: "Rain Dish"},
 	},
 	relicanth: {
 		inherit: true,
