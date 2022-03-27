@@ -47839,7 +47839,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 	},
 	phione: {
 		learnset: {
-			acidarmor: ["7L31", "6L31", "5L31", "4L31"],
+			calmmind: ["7L31", "6L31", "5L31", "4L31"],
 			ancientpower: ["4T"],
 			aquaring: ["7L54", "6L54", "5L54", "4L54"],
 			blizzard: ["7M", "6M", "5M", "4M"],
