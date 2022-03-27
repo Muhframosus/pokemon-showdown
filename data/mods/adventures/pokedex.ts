@@ -2204,7 +2204,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		abilities: {0: "Hydration",  H: "Water Bubble"},
     
 	},
-      },
+      }
 	
 			
 
