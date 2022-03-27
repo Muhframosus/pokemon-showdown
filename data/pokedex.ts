@@ -8469,7 +8469,7 @@ export const Pokedex: {[speciesid: string]: SpeciesData} = {
 		types: ["Water"],
 		gender: "N",
 		baseStats: {hp: 90, atk: 70, def: 85, spa: 50, spd: 90, spe: 80},
-		abilities: {0: "Waterbubble"},
+		abilities: {0: "adaptability"},
 		heightm: 0.4,
 		weightkg: 3.1,
 		color: "Blue",
