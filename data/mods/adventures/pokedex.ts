@@ -333,7 +333,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	toucannon: {
 		inherit: true,
-		baseStats: {hp: 90, atk: 120, def: 80, spa: 90, spd: 80, spe: 80},
+		baseStats: {hp: 90, atk: 110, def: 80, spa: 90, spd: 80, spe: 80},
 	},
 	heliolisk: {	
 		inherit: true,
