@@ -1983,7 +1983,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	darmanitan: {
 		inherit: true,
 		types: ["Fire", "Fighting"],
-		baseStats: {hp: 105, atk: 140, def: 75, spa: 30, spd: 75, spe: 95},
+		baseStats: {hp: 105, atk: 140, def: 75, spa: 30, spd: 75, spe: 100},
 		abilities: {0: "Sheer Force", H: "Zen Mode"},
 	},
 	darmanitanzen: {
