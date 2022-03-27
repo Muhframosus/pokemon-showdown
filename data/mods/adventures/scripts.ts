@@ -61,6 +61,7 @@ this.modData('Learnsets', 'throh').learnset.earththrow = ['8L1'];
 this.modData('Learnsets', 'throh').learnset.windthrow = ['8L1'];
 
 this.modData('Learnsets', 'chesnaught').learnset.bodypress = ['8L1'];
+this.modData('Learnsets', 'chesnaught').learnset.hornleech = ['8L1'];
 
 this.modData('Learnsets', 'toxicroak').learnset.toxicspikes = ['8L1'];
 this.modData('Learnsets', 'toxicroak').learnset.closecombat = ['8L1'];
