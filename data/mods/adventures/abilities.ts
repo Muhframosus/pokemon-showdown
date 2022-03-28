@@ -1715,5 +1715,12 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		name: "Teravolt",
 		rating: 5,
 		num: 163,
+
+	},
+    Fire Spread {
+        onModifyTypePriority: +1,
+        onModifyType(move, pokemon) {
+            const noModifyType = [
+                'judgment', 'multiattack', 'naturalgift', 'revelationdance', 'technoblast', 'terrainpulse', 'weatherball',
 	},
 };
