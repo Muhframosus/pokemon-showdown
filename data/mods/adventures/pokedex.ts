@@ -1458,7 +1458,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	noivern: {
 		inherit: true,
-		baseStats: {hp: 95, atk: 40, def: 90, spa: 105, spd: 90, spe: 123},
+		baseStats: {hp: 95, atk: 50, def: 90, spa: 95, spd: 90, spe: 123},
 		abilities: {0: "Frisk", 1: "Infiltrator", H: "No Guard"},
 	},
 	absol: {
@@ -2202,7 +2202,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	    inherit: true,
 		baseStats: {hp: 80, atk: 86, def: 80, spa: 55, spd: 90, spe: 85},
 		abilities: {0: "Hydration",  H: "Water Bubble"},
-    
+    	},
+	clefable: {	
+		inherit: true,
+		baseStats: {hp: 95, atk: 70, def: 83, spa: 110, spd: 93, spe: 60},
 	},
       }
 	
