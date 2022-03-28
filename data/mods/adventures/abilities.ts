@@ -1716,7 +1716,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		rating: 5,
 		num: 163,
  
- Fire Spread: {
        },
     Fire Spread {
         onModifyTypePriority: +1,
