@@ -47,6 +47,7 @@ this.modData('Learnsets', 'porygonz').learnset.glitch = ['8L1'];
 
 this.modData('Learnsets', 'buzzwole').learnset.bulletpunch = ['8L1'];
 this.modData('Learnsets', 'buzzwole').learnset.knockoff = ['8L1'];
+this.modData('Learnsets', 'buzzwole').learnset.defog = ['8L1'];
 
 this.modData('Learnsets', 'spinda').learnset.spindance = ['8L1'];
 
