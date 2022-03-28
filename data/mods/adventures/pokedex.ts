@@ -1859,7 +1859,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	dracovish: {
 		inherit: true,
-		baseStats: {hp: 90, atk: 100, def: 100, spa: 80, spd: 100, spe: 75},
+		baseStats: {hp: 90, atk: 90, def: 100, spa: 80, spd: 100, spe: 75},
 	},
 	manectric: {
 		inherit: true,
