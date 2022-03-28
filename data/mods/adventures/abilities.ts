@@ -1716,9 +1716,9 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		rating: 5,
 		num: 163,
  
-   Fire Spread: {
+   FireSpread: {
        },
-    Fire Spread {
+    FireSpread {
         onModifyTypePriority: +1,
         onModifyType(move, pokemon) {
             const noModifyType = [
