@@ -1721,5 +1721,4 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
         accuracy: 100,
         basePower: 90,
        pp: 15,
-	}
-		},
+},
