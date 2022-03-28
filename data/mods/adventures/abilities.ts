@@ -1722,3 +1722,4 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
         basePower: 90,
        pp: 15,
 },
+      }
