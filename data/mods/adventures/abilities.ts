@@ -1715,8 +1715,9 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		name: "Teravolt",
 		rating: 5,
 		num: 163,
+
 },
-         FireSpread: {
+FireSpread: {
            onModifyTypePriority: +1,
         onModifyType(move, pokemon) {
             const noModifyType = [
@@ -1726,4 +1727,3 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
                 move.type = 'Fire';
                 move.aerilateBoosted = true;
 },
-      }
