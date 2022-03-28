@@ -13,9 +13,10 @@ this.modData('Learnsets', 'samurott').learnset.rockpolish = ['8L1'];
 this.modData('Learnsets', 'samurott').learnset.flipturn = ['8L1'];
 this.modData('Learnsets', 'samurott').learnset.earthpower = ['8L1'];
 this.modData('Learnsets', 'samurott').learnset.secretsword = ['8L1'];
+this.modData('Learnsets', 'samurott').learnset.hornleech = ['8L1'];
 
 this.modData('Learnsets', 'kecleon').learnset.machpunch = ['8L1'];
-this.modData('Learnsets', 'kecleon').learnset.iceshard = ['8L1'];
+this.modData('Learnsets', 'kecleon').learnset.bulletpunch = ['8L1'];
 
 this.modData('Learnsets', 'meganium').learnset.powerwhip = ['8L1'];
 this.modData('Learnsets', 'meganium').learnset.playrough = ['8L1'];
