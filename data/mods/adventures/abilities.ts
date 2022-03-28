@@ -1725,4 +1725,5 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
             if (move.type === 'Normal' && !noModifyType.includes(move.id) && !(move.isZ && move.category !== 'Status')) {
                 move.type = 'Fire';
                 move.aerilateBoosted = true;
-         },
+         }
+		},
