@@ -1723,5 +1723,3 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
        pp: 15,
 	}
 		},
-
-
