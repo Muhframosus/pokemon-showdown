@@ -429,6 +429,7 @@ this.modData('Learnsets', 'aegislash').learnset.nastyplot = ['8L1'];
 this.modData('Learnsets', 'garchomp').learnset.dragondance = ['8L1'];
 
 this.modData('Learnsets', 'banette').learnset.poltergeist = ['8L1'];
+this.modData('Learnsets', 'banette').learnset.obstruct = ['8L1'];
 
 this.modData('Learnsets', 'aggron').learnset.shiftgear = ['8L1'];
 
