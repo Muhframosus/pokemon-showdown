@@ -2201,7 +2201,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	phione:  {
 	    inherit: true,
 		baseStats: {hp: 80, atk: 86, def: 80, spa: 55, spd: 90, spe: 85},
-		abilities: {0: "Hydration",  H: "Water Bubble"},
+		abilities: {0: "Hydration",  H: "PoopThrow"},
     	},
 	clefable: {	
 		inherit: true,
