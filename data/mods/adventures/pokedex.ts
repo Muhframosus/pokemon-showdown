@@ -1458,7 +1458,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	noivern: {
 		inherit: true,
-		baseStats: {hp: 95, atk: 50, def: 90, spa: 95, spd: 90, spe: 123},
+		baseStats: {hp: 95, atk: 40, def: 90, spa: 105, spd: 90, spe: 123},
 		abilities: {0: "Frisk", 1: "Infiltrator", H: "No Guard"},
 	},
 	absol: {
