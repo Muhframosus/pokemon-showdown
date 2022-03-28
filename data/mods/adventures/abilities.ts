@@ -1718,7 +1718,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
  
    FireSpread: {
        },
-    FireSpread {
         onModifyTypePriority: +1,
         onModifyType(move, pokemon) {
             const noModifyType = [
