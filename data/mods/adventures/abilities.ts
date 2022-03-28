@@ -1728,4 +1728,3 @@ FireSpread: {
                 move.aerilateBoosted = true;
    } 
 },
-
