@@ -1715,10 +1715,5 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		name: "Teravolt",
 		rating: 5,
 		num: 163,
-},
-    PoopThrow: {
-        inherit: true,
-        accuracy: 100,
-        basePower: 90,
-       pp: 15,
+
 },
