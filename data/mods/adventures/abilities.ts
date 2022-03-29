@@ -1717,14 +1717,14 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		num: 163,
 
 },
-FireSpread: {
-           onModifyTypePriority: +1,
-        onModifyType(move, pokemon) {
-            const noModifyType = [
-                'judgment', 'multiattack', 'naturalgift', 'revelationdance', 'technoblast', 'terrainpulse', 'weatherball',
-            ];
-            if (move.type === 'Normal' && !noModifyType.includes(move.id) && !(move.isZ && move.category !== 'Status')) {
-                move.type = 'Fire';
-                move.aerilateBoosted = true;
-   } 
-},
+    Conduct: {
+        name: "Permafrost",
+        desc: "Grants immunity to Flying Moves.",
+        onTryHit(target, source, move) {
+            if (target !== source && move.type === 'Flying') {
+                {
+                    this.add('-immune', target, '[from] ability: Permafrost');
+                }
+                return null;
+            }
+        },

@@ -1224,7 +1224,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	garchompmega: {
 		inherit: true,
-		baseStats: {hp: 108, atk: 170, def: 125, spa: 110, spd: 85, spe: 102},
+		baseStats: {hp: 108, atk: 170, def: 125, spa: 110, spd: 85, spe: 92},
 		abilities: {0: "Rough Skin"},
 	},
 	lanturn: {
@@ -2206,7 +2206,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	clefable: {	
 		inherit: true,
 		baseStats: {hp: 95, atk: 70, def: 83, spa: 110, spd: 93, spe: 60},
-           abilities: {0: "Cute Charm", 1: "Magic Guard", H: "Unaware"},
+           
    
 	},
       }
