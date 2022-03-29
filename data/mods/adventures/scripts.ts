@@ -503,6 +503,8 @@ this.modData('Learnsets', 'audino').learnset.charm = ['8L1'];
 this.modData('Learnsets', 'audino').learnset.lovelykiss = ['8L1'];
 
 this.modData('Learnsets', 'nidoqueen').learnset.lovelykiss = ['8L1'];
+this.modData('Learnsets', 'nidoqueen').learnset.shoreup = ['8L1'];
+this.modData('Learnsets', 'nidoking').learnset.gunkshot = ['8L1'];
 this.modData('Learnsets', 'nidoking').learnset.lovelykiss = ['8L1'];
 
 this.modData('Learnsets', 'aurorus').learnset.defog = ['8L1'];

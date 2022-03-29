@@ -346,11 +346,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	nidoking: {	
 		inherit: true,
-		baseStats: {hp: 81, atk: 85, def: 77, spa: 102, spd: 75, spe: 85},
+		baseStats: {hp: 81, atk: 85, def: 77, spa: 102, spd: 75, spe: 95},
 	},
 	nidoqueen: {	
 		inherit: true,
-		baseStats: {hp: 90, atk: 92, def: 87, spa: 92, spd: 85, spe: 76},
+		baseStats: {hp: 100, atk: 92, def: 87, spa: 92, spd: 85, spe: 76},
 	},
 	tyrantrum: {
 		inherit: true,
@@ -1220,7 +1220,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	garchomp: {
 		inherit: true,
-		baseStats: {hp: 108, atk: 130, def: 95, spa: 80, spd: 85, spe: 90},
+		baseStats: {hp: 108, atk: 130, def: 95, spa: 80, spd: 85, spe: 102},
 	},
 	garchompmega: {
 		inherit: true,
@@ -2206,6 +2206,8 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	clefable: {	
 		inherit: true,
 		baseStats: {hp: 95, atk: 70, def: 83, spa: 110, spd: 93, spe: 60},
+           abilities: {0: "Cute Charm", 1: "Magic Guard", H: "Unaware"},
+   
 	},
       }
 	
