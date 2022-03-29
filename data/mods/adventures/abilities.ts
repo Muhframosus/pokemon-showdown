@@ -1716,15 +1716,5 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		rating: 5,
 		num: 163,
 
-},
-    Conduct: {
-        name: "Permafrost",
-        desc: "Grants immunity to Flying Moves.",
-        onTryHit(target, source, move) {
-            if (target !== source && move.type === 'Flying') {
-                {
-                    this.add('-immune', target, '[from] ability: Permafrost');
-                }
-                return null;
             }
         },
