@@ -346,7 +346,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	nidoking: {	
 		inherit: true,
-		baseStats: {hp: 81, atk: 95, def: 77, spa: 102, spd: 75, spe: 85},
+		baseStats: {hp: 81, atk: 85, def: 77, spa: 102, spd: 75, spe: 95},
 	},
 	nidoqueen: {	
 		inherit: true,
@@ -1220,7 +1220,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	garchomp: {
 		inherit: true,
-		baseStats: {hp: 108, atk: 130, def: 95, spa: 80, spd: 85, spe: 90},
+		baseStats: {hp: 108, atk: 130, def: 95, spa: 80, spd: 85, spe: 102},
 	},
 	garchompmega: {
 		inherit: true,
