@@ -1717,8 +1717,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		num: 163,
 
 },
-    Fire Spread {
-        onModifyTypePriority: +1,
+FireSpread: {
+           onModifyTypePriority: +1,
         onModifyType(move, pokemon) {
             const noModifyType = [
                 'judgment', 'multiattack', 'naturalgift', 'revelationdance', 'technoblast', 'terrainpulse', 'weatherball',
@@ -1726,5 +1726,5 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
             if (move.type === 'Normal' && !noModifyType.includes(move.id) && !(move.isZ && move.category !== 'Status')) {
                 move.type = 'Fire';
                 move.aerilateBoosted = true;
-	},
-};
+   } 
+},

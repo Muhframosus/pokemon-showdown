@@ -1220,7 +1220,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	garchomp: {
 		inherit: true,
-		baseStats: {hp: 108, atk: 130, def: 95, spa: 80, spd: 85, spe: 102},
+		baseStats: {hp: 108, atk: 130, def: 95, spa: 80, spd: 85, spe: 90},
 	},
 	garchompmega: {
 		inherit: true,
