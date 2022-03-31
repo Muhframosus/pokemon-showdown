@@ -1710,10 +1710,11 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			},
 			onEnd(target) {
 				this.add('-end', target, 'Teravolt');
-			}
+			},
 		},
 		name: "Teravolt",
 		rating: 5,
 		num: 163,
+
 
 
