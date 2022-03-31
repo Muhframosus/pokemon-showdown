@@ -1715,5 +1715,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		name: "Teravolt",
 		rating: 5,
 		num: 163,
-
+	},
+      }
 
