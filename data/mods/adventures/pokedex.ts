@@ -406,7 +406,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	cacturne: {
 		inherit: true,
 		baseStats: {hp: 70, atk: 125, def: 80, spa: 125, spd: 80, spe: 55},
-		abilities: {0: "Sand Veil", 1: "Drought", H: "Water Absorb"},
+		abilities: {0: "Sand Veil", 1: "Drought", H: "Stakeout"},
 	},
 	murkrow: {
 		inherit: true,
@@ -621,7 +621,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	maractus: {
 		inherit: true,
-		baseStats: {hp: 70, atk: 80, def: 125, spa: 80, spd: 125, spe: 55},
+		baseStats: {hp: 70, atk: 120, def: 125, spa: 120, spd: 125, spe: 15},
 		abilities: {0: "Iron Barbs", 1: "Dancer", H: "Water Absorb"},
 	},
 	raikou: {
@@ -2206,7 +2206,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	clefable: {	
 		inherit: true,
 		baseStats: {hp: 95, atk: 70, def: 83, spa: 110, spd: 93, spe: 60},
-           
+	},
+	celesteela: {	
+		inherit: true,
+		baseStats: {hp: 97, atk: 109, def: 103, spa: 115, spd: 101, spe: 61},
+            abilities: {0: "Beast Boost",  H: "Filter"},
+        
       },
       }
 	
