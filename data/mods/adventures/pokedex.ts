@@ -1073,7 +1073,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	cryogonal: {
 		inherit: true,
-		baseStats: {hp: 85, atk: 35, def: 55, spa: 115, spd: 135, spe: 115},
+		baseStats: {hp: 85, atk: 35, def: 55, spa: 125, spd: 135, spe: 115},
 		abilities: {0: "Levitate", 1: "Ice Body", H: "Catalyst"},
 	},
 	chimecho: {
