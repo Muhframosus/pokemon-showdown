@@ -1531,6 +1531,13 @@ this.modData('Learnsets', 'cacturne').learnset.vinetrap = ['8L1'];
 this.modData('Learnsets', 'carnivine').learnset.vinetrap = ['8L1'];
 this.modData('Learnsets', 'cradily').learnset.vinetrap = ['8L1'];
 
+this.modData('Learnsets', 'unfezant').learnset.gunkshot = ['8L1'];
+this.modData('Learnsets', 'unfezant').learnset.extremespeed = ['8L1'];
+this.modData('Learnsets', 'unfezant').learnset.doublekick = ['8L1'];
+
+this.modData('Learnsets', 'eeveestarter').learnset.tailglow = ['8L1'];
+
+
 
 
 

@@ -1448,7 +1448,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	chandelure: {
 		inherit: true,
-		baseStats: {hp: 60, atk: 55, def: 90, spa: 145, spd: 90, spe: 80},
+		baseStats: {hp: 60, atk: 55, def: 80, spa: 145, spd: 80, spe: 80},
 		abilities: {0: "Flash Fire", 1: "Infiltrator", H: "Shadow Tag"},
 	},
 	decidueye: {
@@ -2066,12 +2066,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	sudowoodo: {
 		inherit: true,
-		baseStats: {hp: 130, atk: 100, def: 115, spa: 30, spd: 75, spe: 30},
+		baseStats: {hp: 130, atk: 110, def: 115, spa: 30, spd: 75, spe: 30},
 		abilities: {0: "Mimicry", 1: "Rock Head", H: "Sturdy"},
 	},
 	furret: {
 		inherit: true,
-		baseStats: {hp: 85, atk: 96, def: 64, spa: 45, spd: 55, spe: 105},
+		baseStats: {hp: 85, atk: 105, def: 64, spa: 45, spd: 55, spe: 105},
 		abilities: {0: "Run Away", 1: "Adaptability", H: "Frisk"},
 	},
 	muk: {
@@ -2211,6 +2211,18 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		baseStats: {hp: 97, atk: 109, def: 103, spa: 115, spd: 101, spe: 61},
             abilities: {0: "Beast Boost",  H: "Filter"},
+      },
+	unfezant: {	
+		inherit: true,
+		baseStats: {hp: 80, atk: 115, def: 80, spa: 110, spd: 55, spe: 100},
+            abilities: {0: "Speed Boost", 1: "Technician", H: "Super Luck"},
+      },
+	claydol: {	
+		inherit: true,
+		baseStats: {hp: 80, atk: 80, def: 110, spa: 80, spd: 120, spe: 75},
+            abilities: {0: "Levitate", 1: "Forewarn", H: "Magic Bounce"},
+
+    
         
       },
       }
