@@ -1537,6 +1537,10 @@ this.modData('Learnsets', 'unfezant').learnset.doublekick = ['8L1'];
 
 this.modData('Learnsets', 'eeveestarter').learnset.tailglow = ['8L1'];
 
+this.modData('Learnsets', 'beedrill').learnset.megahorn = ['8L1'];
+this.modData('Learnsets', 'beedrill').learnset.wildcharge = ['8L1'];
+
+
 
 
 
