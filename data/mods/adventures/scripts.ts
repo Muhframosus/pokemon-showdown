@@ -448,6 +448,8 @@ this.modData('Learnsets', 'donphan').learnset.iciclecrash = ['8L1'];
 this.modData('Learnsets', 'donphan').learnset.bulkup = ['8L1'];
 this.modData('Learnsets', 'donphan').learnset.bodypress = ['8L1'];
 this.modData('Learnsets', 'donphan').learnset.ironhead = ['8L1'];
+this.modData('Learnsets', 'donphan').learnset.powerwhip = ['8L1'];
+this.modData('Learnsets', 'donphan').learnset.rockblast = ['8L1'];
 
 this.modData('Learnsets', 'simipour').learnset.lifedew = ['8L1'];
 this.modData('Learnsets', 'simipour').learnset.swordsdance = ['8L1'];
@@ -1569,8 +1571,18 @@ this.modData('Learnsets', 'pidgeot').learnset.focusblast = ['8L1'];
 this.modData('Learnsets', 'uxie').learnset.recover = ['8L1'];
 
 this.modData('Learnsets', 'mesprit').learnset.recover = ['8L1'];
+
 this.modData('Learnsets', 'keldeo').learnset.vacuumwave = ['8L1'];
 
+this.modData('Learnsets', 'vikavolt').learnset.hurricane = ['8L1'];
+this.modData('Learnsets', 'vikavolt').learnset.focusblast = ['8L1'];
+
+this.modData('Learnsets', 'wormadam').learnset.slackoff = ['8L1'];
+this.modData('Learnsets', 'wormadamsandy').learnset.slackoff = ['8L1'];
+this.modData('Learnsets', 'wormadamtrash').learnset.slackoff = ['8L1'];
+this.modData('Learnsets', 'wormadam').learnset.powersplit = ['8L1'];
+this.modData('Learnsets', 'wormadamsandy').learnset.powersplit = ['8L1'];
+this.modData('Learnsets', 'wormadamtrash').learnset.powersplit = ['8L1'];
 
 //NEW MOVES END-
 

@@ -1515,7 +1515,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	vikavolt: {
 		inherit: true,
-		baseStats: {hp: 77, atk: 60, def: 110, spa: 115, spd: 105, spe: 43},
+		baseStats: {hp: 85, atk: 60, def: 90, spa: 145, spd: 80, spe: 115},
 		abilities: {0: "Levitate", 1: "Lightning Rod", H:"Battery"},
 	},
 	beedrill: {
@@ -2026,7 +2026,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	boltund: {
 		inherit: true,
-		baseStats: {hp: 69, atk: 110, def: 70, spa: 90, spd: 70, spe: 121},
+		baseStats: {hp: 69, atk: 125, def: 70, spa: 90, spd: 70, spe: 121},
 		abilities: {0: "Strong Jaw", 1: "Speed Boost", H: "Competitive"},
 	},
 	magikarp: {
@@ -2086,8 +2086,8 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	donphan: {
 		inherit: true,
-		baseStats: {hp: 90, atk: 120, def: 120, spa: 60, spd: 70, spe: 50},
-		abilities: {0: "Sturdy", 1: "Sand Force", H: "Sand Rush"},
+		baseStats: {hp: 90, atk: 130, def: 120, spa: 50, spd: 70, spe: 50},
+		abilities: {0: "Rock Head", 1: "Technician", H: "Scrappy"},
 	},
 	unown: {
 		inherit: true,
@@ -2096,7 +2096,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	braviary: {
 		inherit: true,
-		baseStats: {hp: 120, atk: 123, def: 75, spa: 57, spd: 75, spe: 80},
+		baseStats: {hp: 120, atk: 123, def: 85, spa: 57, spd: 85, spe: 80},
 		abilities: {0: "Moxie", 1: "Sheer Force", H: "Defiant"},
 	},
 	arbok: {
@@ -2269,10 +2269,39 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		baseStats: {hp: 55, atk: 48 , def: 48, spa: 48, spd: 48, spe: 48},
   
-
-
-
+      },
+	wormadam: {	
+		inherit: true,
+		baseStats: {hp: 90, atk: 85 , def: 105, spa: 85, spd: 105, spe: 36},
+            abilities: {0: "Shed Skin", 1: "Thick Fat", H: "Unaware"},
   
+
+      },
+	wormadamsandy: {	
+		inherit: true,
+		baseStats: {hp: 105, atk: 120 , def: 95, spa: 45, spd: 105, spe: 36},
+            abilities: {0: "Mold Breaker", 1: "Defiant", H: "Regenerator"},
+
+      },
+	wormadamtrash: {	
+		inherit: true,
+		baseStats: {hp: 105, atk: 100 , def: 105, spa: 60, spd: 100, spe: 36},
+            abilities: {0: "Overcoat", 1: "Pressure", H: "Clear Body"},
+
+
+     },
+	mothim: {	
+		inherit: true,
+		baseStats: {hp: 75, atk: 105 , def: 90, spa: 114, spd: 70, spe: 98},
+            abilities: {0: "Overcoat", 1: "Pressure", H: "Clear Body"},
+
+     },
+	salazzle: {	
+		inherit: true,
+		baseStats: {hp: 80, atk: 100 , def: 90, spa: 111, spd: 70, spe: 117},
+            
+
+
 
 
      
