@@ -449,7 +449,7 @@ this.modData('Learnsets', 'donphan').learnset.bulkup = ['8L1'];
 this.modData('Learnsets', 'donphan').learnset.bodypress = ['8L1'];
 this.modData('Learnsets', 'donphan').learnset.ironhead = ['8L1'];
 this.modData('Learnsets', 'donphan').learnset.powerwhip = ['8L1'];
-this.modData('Learnsets', 'donphan').learnset.rockblast = ['8L1'];
+
 
 this.modData('Learnsets', 'simipour').learnset.lifedew = ['8L1'];
 this.modData('Learnsets', 'simipour').learnset.swordsdance = ['8L1'];
@@ -1562,9 +1562,11 @@ this.modData('Learnsets', 'slurpuff').learnset.softboiled = ['8L1'];
 this.modData('Learnsets', 'slurpuff').learnset.stealthrock = ['8L1'];
 this.modData('Learnsets', 'slurpuff').learnset.aromaticmist = ['8L1'];
 this.modData('Learnsets', 'slurpuff').learnset.haze = ['8L1'];
+this.modData('Learnsets', 'slurpuff').learnset.zenheadbutt = ['8L1'];
 
 this.modData('Learnsets', 'gumshoos').learnset.perishsong = ['8L1'];
 this.modData('Learnsets', 'gumshoos').learnset.slackoff = ['8L1'];
+this.modData('Learnsets', 'gumshoos').learnset.jawlock = ['8L1'];
 
 this.modData('Learnsets', 'pidgeot').learnset.focusblast = ['8L1'];
 

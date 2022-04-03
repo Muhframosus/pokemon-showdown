@@ -1458,7 +1458,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	noivern: {
 		inherit: true,
-		baseStats: {hp: 95, atk: 50, def: 90, spa: 85, spd: 90, spe: 123},
+		baseStats: {hp: 95, atk: 50, def: 86, spa: 85, spd: 90, spe: 123},
 		abilities: {0: "Frisk", 1: "Infiltrator", H: "Aerilate"},
 	},
 	absol: {
@@ -2250,7 +2250,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
       },
 	uxie: {	
 		inherit: true,
-		baseStats: {hp: 70, atk: 75 , def: 130, spa: 75, spd: 130, spe: 95},
+		baseStats: {hp: 70, atk: 80 , def: 130, spa: 75, spd: 130, spe: 95},
             abilities: {0: "Levitate", 1: "Slumber", H: "Oblivious"},
       },
 	azelf: {	
