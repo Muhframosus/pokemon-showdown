@@ -1550,7 +1550,7 @@ this.modData('Learnsets', 'whimsicott').learnset.lightscreen = ['8L1'];
 
 
 this.modData('Learnsets', 'sawsbuck').learnset.leafblade = ['8L1'];
-this.modData('Learnsets', 'sawsbuck').learnset.triple kick = ['8L1'];
+this.modData('Learnsets', 'sawsbuck').learnset.triplekick = ['8L1'];
 this.modData('Learnsets', 'sawsbuck').learnset.headcharge = ['8L1'];
 this.modData('Learnsets', 'sawsbuck').learnset.hihorsepower = ['8L1'];
 
