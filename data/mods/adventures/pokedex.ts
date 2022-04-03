@@ -210,7 +210,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	exploud: {
 		inherit: true,
-		baseStats: {hp: 111, atk: 71, def: 63, spa: 111, spd: 111, spe: 68},
+		baseStats: {hp: 111, atk: 71, def: 63, spa: 117, spd: 111, spe: 72},
 		abilities: {0: "Punk Rock", 1: "Scrappy", H: "Soundproof"},		
 	},
 	xatu: {
@@ -844,7 +844,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	swellow: {
 		inherit: true,
-		baseStats: {hp: 60, atk: 115, def: 60, spa: 95, spd: 60, spe: 125},
+		baseStats: {hp: 60, atk: 115, def: 60, spa: 100, spd: 60, spe: 125},
 		abilities: {0: "Guts", 1: "Scrappy", H: "Competitive"},
 	},
 	crustle: {
@@ -867,7 +867,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	carracosta: {
 		inherit: true,
-		baseStats: {hp: 84, atk: 73, def: 65, spa: 138, spd: 133, spe: 32},
+		baseStats: {hp: 84, atk: 100, def: 120, spa: 95, spd: 100, spe: 32},
 		abilities: {0: "Solid Rock", 1: "Sturdy", H: "Drizzle"},
 	},
 	turtonator: {
@@ -1271,7 +1271,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	pyukumuku: {
 		inherit: true,
-		baseStats: {hp: 50, atk: 60, def: 150, spa: 30, spd: 150, spe: 5},
+		baseStats: {hp: 60, atk: 60, def: 150, spa: 30, spd: 150, spe: 5},
 		abilities: {0: "Innards Out", H: "Unaware"},
 	},
 	politoed: {
@@ -1458,8 +1458,8 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	noivern: {
 		inherit: true,
-		baseStats: {hp: 95, atk: 50, def: 90, spa: 95, spd: 90, spe: 123},
-		abilities: {0: "Frisk", 1: "Infiltrator", H: "No Guard"},
+		baseStats: {hp: 95, atk: 50, def: 90, spa: 85, spd: 90, spe: 123},
+		abilities: {0: "Frisk", 1: "Infiltrator", H: "Aerilate"},
 	},
 	absol: {
 		inherit: true,
@@ -2222,8 +2222,74 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 80, atk: 80, def: 110, spa: 80, spd: 120, spe: 75},
             abilities: {0: "Levitate", 1: "Forewarn", H: "Magic Bounce"},
 
-    
-        
+      },
+    whimsicott: {	
+		inherit: true,
+		baseStats: {hp: 90, atk: 67, def: 90, spa: 100, spd: 80, spe: 116},
+
+      },
+	sawsbuck: {	
+		inherit: true,
+		baseStats: {hp: 80, atk: 120, def: 75, spa: 100, spd: 70, spe: 105},
+            abilities: {0: "Serene Grace", 1: "Chlorophyll", H: "Adaptability"},
+ 
+      },
+	shiftry: {	
+		inherit: true,
+		baseStats: {hp: 80, atk: 135, def: 60, spa: 130, spd: 60, spe: 104},
+            abilities: {0: "Dark Aura", 1: "Chlorophyll", H: "Unburden"},
+      },
+	slurpuff: {	
+		inherit: true,
+		baseStats: {hp: 90, atk: 95, def: 85, spa: 130, spd: 87, spe: 78},
+      },
+	gumshoos: {	
+		inherit: true,
+		baseStats: {hp: 90, atk: 113, def: 100, spa: 55, spd: 90, spe: 45},
+            abilities: {0: "Intimidate", 1: "Aftermath", H: "Adaptability"},
+      },
+	uxie: {	
+		inherit: true,
+		baseStats: {hp: 70, atk: 75 , def: 130, spa: 75, spd: 130, spe: 95},
+            abilities: {0: "Levitate", 1: "Slumber", H: "Oblivious"},
+      },
+	azelf: {	
+		inherit: true,
+		baseStats: {hp: 70, atk: 125 , def: 75, spa: 125, spd: 70, spe: 115},
+            abilities: {0: "Levitate", 1: "Neuroforce", H: "Regenerator"},
+
+      },
+	mesprit: {	
+		inherit: true,
+		baseStats: {hp: 80, atk: 85 , def: 105, spa: 105, spd: 105, spe: 100},
+            abilities: {0: "Levitate", 1: "Competitive", H: "Healer"},
+
+      },
+	ditto: {	
+		inherit: true,
+		baseStats: {hp: 55, atk: 48 , def: 48, spa: 48, spd: 48, spe: 48},
+  
+
+
+
+  
+
+
+     
+
+
+  
+
+
+
+
+           
+
+
+
+
+
+
       },
       }
 	

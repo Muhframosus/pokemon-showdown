@@ -270,6 +270,7 @@ this.modData('Learnsets', 'sandslashalola').learnset.rockblast = ['8L1'];
 this.modData('Learnsets', 'sandslashalola').learnset.aquatail = ['8L1'];
 
 this.modData('Learnsets', 'tapubulu').learnset.playrough = ['8L1'];
+this.modData('Learnsets', 'tapubulu').learnset.strengthsap = ['8L1'];
 
 this.modData('Learnsets', 'regice').learnset.voltswitch = ['8L1'];
 this.modData('Learnsets', 'regice').learnset.earthpower = ['8L1'];
@@ -1540,9 +1541,35 @@ this.modData('Learnsets', 'eeveestarter').learnset.tailglow = ['8L1'];
 this.modData('Learnsets', 'beedrill').learnset.megahorn = ['8L1'];
 this.modData('Learnsets', 'beedrill').learnset.wildcharge = ['8L1'];
 
+this.modData('Learnsets', 'whimsicott').learnset.tearfullook = ['8L1'];
+this.modData('Learnsets', 'whimsicott').learnset.calmmind = ['8L1'];
+this.modData('Learnsets', 'whimsicott').learnset.nastyplot = ['8L1'];
+this.modData('Learnsets', 'whimsicott').learnset.glare = ['8L1'];
+this.modData('Learnsets', 'whimsicott').learnset.reflect = ['8L1'];
+this.modData('Learnsets', 'whimsicott').learnset.lightscreen = ['8L1'];
 
 
+this.modData('Learnsets', 'sawsbuck').learnset.leafblade = ['8L1'];
+this.modData('Learnsets', 'sawsbuck').learnset.triple kick = ['8L1'];
+this.modData('Learnsets', 'sawsbuck').learnset.headcharge = ['8L1'];
+this.modData('Learnsets', 'sawsbuck').learnset.hihorsepower = ['8L1'];
 
+this.modData('Learnsets', 'shiftry').learnset.weatherball = ['8L1'];
+
+this.modData('Learnsets', 'slurpuff').learnset.icepunch = ['8L1'];
+this.modData('Learnsets', 'slurpuff').learnset.softboiled = ['8L1'];
+this.modData('Learnsets', 'slurpuff').learnset.stealthrock = ['8L1'];
+this.modData('Learnsets', 'slurpuff').learnset.aromaticmist = ['8L1'];
+this.modData('Learnsets', 'slurpuff').learnset.haze = ['8L1'];
+
+this.modData('Learnsets', 'gumshoos').learnset.perishsong = ['8L1'];
+this.modData('Learnsets', 'gumshoos').learnset.slackoff = ['8L1'];
+
+this.modData('Learnsets', 'pidgeot').learnset.focusblast = ['8L1'];
+
+this.modData('Learnsets', 'uxie').learnset.recover = ['8L1'];
+
+this.modData('Learnsets', 'mesprit').learnset.recover = ['8L1'];
 
 
 //NEW MOVES END-
