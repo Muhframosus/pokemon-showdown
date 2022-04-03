@@ -2293,7 +2293,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	mothim: {	
 		inherit: true,
 		baseStats: {hp: 75, atk: 105 , def: 90, spa: 114, spd: 70, spe: 98},
-            abilities: {0: "Overcoat", 1: "Pressure", H: "Clear Body"},
+          
 
      },
 	salazzle: {	
