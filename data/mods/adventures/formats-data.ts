@@ -1801,7 +1801,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	},
 	donphan: {
 		isNonstandard: "Past",
-		tier: "NU",
+		tier: "RU",
 	},
 	stantler: {
 		isNonstandard: "Past",
@@ -6007,7 +6007,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		randomBattleLevel: 78,
 		randomDoubleBattleMoves: ["closecombat", "ironhead", "protect", "suckerpunch", "wickedblow"],
 		randomDoubleBattleLevel: 76,
-		tier: "Uber",
+		tier: "OU",
 		doublesTier: "DUber",
 	},
 	urshifurapidstrike: {
