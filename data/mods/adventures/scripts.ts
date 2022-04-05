@@ -9,7 +9,6 @@ this.modData('Learnsets', 'trevenant').learnset.lightscreen = ['8L1'];
 
 this.modData('Learnsets', 'shaymin').learnset.fierydance = ['8L1'];
 this.modData('Learnsets', 'shaymin').learnset.calmmind = ['8L1'];
-this.modData('Learnsets', 'shaymin').learnset.mysticalfire = ['8L1'];
 this.modData('Learnsets', 'shaymin').learnset.flareblitz = ['8L1'];
 
 this.modData('Learnsets', 'samurott').learnset.thunderbolt = ['8L1'];
