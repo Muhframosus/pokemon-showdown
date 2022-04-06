@@ -1606,6 +1606,11 @@ this.modData('Learnsets', 'bronzong').learnset.doomdesire = ['8L1'];
 this.modData('Learnsets', 'bronzong').learnset.healbell = ['8L1'];
 this.modData('Learnsets', 'bronzong').learnset.teleport = ['8L1'];
 
+this.modData('Learnsets', 'skarmory').learnset.uturn = ['8L1'];
+
+this.modData('Learnsets', 'forretress').learnset.healorder = ['8L1'];
+
+this.modData('Learnsets', 'rotommow').learnset.aromatherapy = ['8L1'];
  
 
 
