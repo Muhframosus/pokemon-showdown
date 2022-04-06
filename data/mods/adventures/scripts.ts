@@ -1619,13 +1619,7 @@ this.modData('Learnsets', 'gastrodon').learnset.spikes = ['8L1'];
 
 this.modData('Learnsets', 'suicune').learnset.flipturn = ['8L1'];  
 
-this.modData('Learnsets', 'gourgeistsmall').learnset.flamethrower = ['8L1']; 
 
-this.modData('Learnsets', 'gourgeistlarge').learnset.flamethrower = ['8L1']; 
-
-this.modData('Learnsets', 'gourgeist').learnset.flareblitz = ['8L1']; 
-
-this.modData('Learnsets', 'gourgeistsuper').learnset.flareblitz = ['8L1']; 
 
 
 //NEW MOVES END-
