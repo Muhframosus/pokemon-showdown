@@ -1611,7 +1611,13 @@ this.modData('Learnsets', 'skarmory').learnset.uturn = ['8L1'];
 this.modData('Learnsets', 'forretress').learnset.healorder = ['8L1'];
 
 this.modData('Learnsets', 'rotommow').learnset.aromatherapy = ['8L1'];
- 
+
+this.modData('Learnsets', 'bouffalant').learnset.hijumpkick = ['8L1'];
+
+this.modData('Learnsets', 'gastrodon').learnset.stealthrock = ['8L1'];
+this.modData('Learnsets', 'gastrodon').learnset.spikes = ['8L1'];  
+
+this.modData('Learnsets', 'suicune').learnset.flipturn = ['8L1'];  
 
 
 //NEW MOVES END-
