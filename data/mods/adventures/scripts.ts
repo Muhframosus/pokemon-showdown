@@ -1596,6 +1596,42 @@ this.modData('Learnsets', 'wormadam').learnset.powersplit = ['8L1'];
 this.modData('Learnsets', 'wormadamsandy').learnset.powersplit = ['8L1'];
 this.modData('Learnsets', 'wormadamtrash').learnset.powersplit = ['8L1'];
 
+this.modData('Learnsets', 'shaymin').learnset.fierydance = ['8L1']; 
+this.modData('Learnsets', 'shaymin').learnset.calmmind = ['8L1']; 
+this.modData('Learnsets', 'shaymin').learnset.flareblitz = ['8L1']; 
+
+this.modData('Learnsets', 'regice').learnset.boomburst = ['8L1']; 
+
+this.modData('Learnsets', 'rillaboom').learnset.stoneedge = ['8L1']; 
+this.modData('Learnsets', 'rillaboom').learnset.junglehealing = ['8L1']; 
+
+this.modData('Learnsets', 'forretress').learnset.healorder = ['8L1']; 
+
+this.modData('Learnsets', 'bronzong').learnset.doomdesire = ['8L1']; 
+this.modData('Learnsets', 'bronzong').learnset.teleport = ['8L1']; 
+this.modData('Learnsets', 'bronzong').learnset.healbell = ['8L1']; 
+
+this.modData('Learnsets', 'rotommow').learnset.aromatherapy = ['8L1']; 
+
+this.modData('Learnsets', 'bouffalant').learnset.hijumpkick = ['8L1']; 
+
+this.modData('Learnsets', 'gastrodon').learnset.stealthrock = ['8L1']; 
+this.modData('Learnsets', 'gastrodon').learnset.spikes = ['8L1'];  
+
+this.modData('Learnsets', 'mrmime').learnset.fleurcannon = ['8L1']; 
+
+this.modData('Learnsets', 'suicune').learnset.flipturn = ['8L1']; 
+
+this.modData('Learnsets', 'gourgeistsmall').learnset.flamethrower = ['8L1']; 
+this.modData('Learnsets', 'gourgeistlarge').learnset.flamethrower = ['8L1']; 
+this.modData('Learnsets', 'gourgeist').learnset.flareblitz = ['8L1']; 
+this.modData('Learnsets', 'gourgeistsuper').learnset.flareblitz = ['8L1']; 
+
+this.modData('Learnsets', 'skarmory').learnset.uturn = ['8L1']; 
+
+ 
+
+
 //NEW MOVES END-
 
 //-REMOVE MOVES START
