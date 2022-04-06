@@ -1600,6 +1600,11 @@ this.modData('Learnsets', 'regice').learnset.boomburst = ['8L1'];
 
 this.modData('Learnsets', 'rillaboom').learnset.stoneedge = ['8L1'];
 
+this.modData('Learnsets', 'mrmime').learnset.fleurcannon = ['8L1'];
+
+this.modData('Learnsets', 'bronzong').learnset.doomdesire = ['8L1'];
+this.modData('Learnsets', 'bronzong').learnset.healbell = ['8L1'];
+this.modData('Learnsets', 'bronzong').learnset.teleport = ['8L1'];
 
  
 
