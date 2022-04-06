@@ -1710,7 +1710,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	goodra: {
 		inherit: true,
-		types: ["Dragon", "Water"],
+		types: ["Water", "Dragon"],
 		abilities: {0: "Poison Heal", 1: "Hydration", H: "Gooey"},
 		baseStats: {hp: 100, atk: 100, def: 90, spa: 120, spd: 120, spe: 70},
 	},
