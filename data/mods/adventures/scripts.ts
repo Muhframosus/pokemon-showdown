@@ -1062,7 +1062,6 @@ this.modData('Learnsets', 'milotic').learnset.calmmind = ['8L1'];
 this.modData('Learnsets', 'milotic').learnset.dazzlinggleam = ['8L1'];
 this.modData('Learnsets', 'milotic').learnset.dragonrage = ['8L1'];
 
-this.modData('Learnsets', 'corviknight').learnset.beakblast = ['8L1'];
 
 this.modData('Learnsets', 'falinks').learnset.defendorder = ['8L1'];
 this.modData('Learnsets', 'falinks').learnset.attackorder = ['8L1'];
