@@ -1596,6 +1596,10 @@ this.modData('Learnsets', 'wormadam').learnset.powersplit = ['8L1'];
 this.modData('Learnsets', 'wormadamsandy').learnset.powersplit = ['8L1'];
 this.modData('Learnsets', 'wormadamtrash').learnset.powersplit = ['8L1'];
 
+this.modData('Learnsets', 'regice').learnset.boomburst = ['8L1'];
+
+this.modData('Learnsets', 'rillaboom').learnset.stoneedge = ['8L1'];
+
 
  
 
