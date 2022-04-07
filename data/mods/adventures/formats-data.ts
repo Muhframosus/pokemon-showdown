@@ -1824,7 +1824,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		randomBattleLevel: 82,
 		randomDoubleBattleMoves: ["aurasphere", "calmmind", "protect", "scald", "snarl", "thunderbolt", "voltswitch"],
 		randomDoubleBattleLevel: 82,
-		tier: "UU",
+		tier: "OU",
 		doublesTier: "(DUU)",
 	},
 	entei: {
