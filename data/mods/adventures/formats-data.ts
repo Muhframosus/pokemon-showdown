@@ -3871,7 +3871,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		randomBattleLevel: 84,
 		randomDoubleBattleMoves: ["calmmind", "energyball", "heatwave", "overheat", "protect", "shadowball", "trick"],
 		randomDoubleBattleLevel: 80,
-		tier: "OU",
+		tier: "RU",
 		doublesTier: "(DUU)",
 	},
 	axew: {
@@ -4590,7 +4590,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		randomBattleLevel: 84,
 		randomDoubleBattleMoves: ["boomburst", "dracometeor", "flamethrower", "hurricane", "protect", "tailwind"],
 		randomDoubleBattleLevel: 84,
-		tier: "OU",
+		tier: "Uber",
 		doublesTier: "DOU",
 	},
 	xerneas: {
@@ -5723,7 +5723,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		randomBattleLevel: 88,
 		randomDoubleBattleMoves: ["coil", "firelash", "knockoff", "leechlife", "powerwhip", "protect"],
 		randomDoubleBattleLevel: 88,
-		tier: "OU",
+		tier: "RU",
 		doublesTier: "(DUU)",
 	},
 	centiskorchgmax: {
