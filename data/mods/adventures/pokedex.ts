@@ -2316,7 +2316,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
       },
 	mrmime: {	
 		inherit: true,
-		baseStats: {hp: 75, atk: 45 , def: 80, spa: 75, spd: 80, spe: 115},
+		baseStats: {hp: 75, atk: 45 , def: 80, spa: 75, spd: 80, spe: 130},
             abilities: {0: "Contrary", 1: "Soundproof", H: "Technician"},
 
       },
