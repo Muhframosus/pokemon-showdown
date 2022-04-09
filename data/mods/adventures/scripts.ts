@@ -414,7 +414,7 @@ this.modData('Learnsets', 'grapploct').learnset.toxicspikes = ['8L1'];
 this.modData('Learnsets', 'goodra').learnset.gunkshot = ['8L1'];
 this.modData('Learnsets', 'goodra').learnset.scald = ['8L1'];
 this.modData('Learnsets', 'goodra').learnset.dragonrush = ['8L1'];
-this.modData('Learnsets', 'goodra').learnset.flipturn = ['8L1'];
+
 
 this.modData('Learnsets', 'zapdos').learnset.cumuluscharge = ['8L1'];
 

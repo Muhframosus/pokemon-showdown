@@ -9,7 +9,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	centiskorch: {
 		inherit: true,
 		baseStats: {hp: 125, atk: 125, def: 85, spa: 70, spd: 85, spe: 65},
-		abilities: {0: "Flash Fire", H: "Flame Body", 1: "Arena Trap"},	
+		abilities: {0: "Flash Fire", H: "Flame Body", 1: "Oblivious"},	
 	},
 	trevenant: {
 		inherit: true,
@@ -1451,7 +1451,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	chandelure: {
 		inherit: true,
 		baseStats: {hp: 60, atk: 55, def: 80, spa: 145, spd: 80, spe: 80},
-		abilities: {0: "Flash Fire", 1: "Infiltrator", H: "Shadow Tag"},
+		abilities: {0: "Flash Fire", 1: "Infiltrator", H: "Magic Guard"},
 	},
 	decidueye: {
 		inherit: true,
@@ -1460,7 +1460,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	noivern: {
 		inherit: true,
-		baseStats: {hp: 95, atk: 50, def: 86, spa: 85, spd: 90, spe: 123},
+		baseStats: {hp: 95, atk: 50, def: 86, spa: 97, spd: 90, spe: 123},
 		abilities: {0: "Frisk", 1: "Infiltrator", H: "Aerilate"},
 	},
 	absol: {
@@ -2316,7 +2316,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
       },
 	mrmime: {	
 		inherit: true,
-		baseStats: {hp: 75, atk: 45 , def: 80, spa: 75, spd: 80, spe: 130},
+		baseStats: {hp: 75, atk: 45 , def: 80, spa: 75, spd: 80, spe: 115},
             abilities: {0: "Contrary", 1: "Soundproof", H: "Technician"},
 
       },
@@ -2325,11 +2325,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
             types: ["Normal", "Fighting"],
 		baseStats: {hp: 95, atk: 120 , def: 100, spa: 40, spd: 100, spe: 75},
 
-      },
-	bouffalant: {	
-		inherit: true,
-            types: ["Normal", "Fighting"],
-		baseStats: {hp: 95, atk: 120 , def: 100, spa: 40, spd: 100, spe: 75},
 
       },
 	gourgeist: {	
