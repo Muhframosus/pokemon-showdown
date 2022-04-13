@@ -639,8 +639,8 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	infernape: {
 		inherit: true,
-		baseStats: {hp: 76, atk: 114, def: 54, spa: 114, spd: 54, spe: 118},
-		abilities: {0: "Blaze", 1: "Illusion", H: "Iron Fist"},
+		baseStats: {hp: 76, atk: 110, def: 58, spa: 110, spd: 58, spe: 118},
+		abilities: {0: "Blaze", 1: "Illusion", H: "Adaptability"},
 	},
 	charizard: {
 		inherit: true,
@@ -1129,7 +1129,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	slaking: {
 		inherit: true,
-		abilities: {0: "Slumber", H: "Truant"},
+		abilities: {0: "Slumber", 1: "Unnerve" H: "Truant"},
 	},
 	zarude: {
 		inherit: true,
@@ -1611,7 +1611,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	machamp: {
 		inherit: true,
-		baseStats: {hp: 100, atk: 130, def: 95, spa: 50, spd: 85, spe: 75},
+		baseStats: {hp: 100, atk: 150, def: 85, spa: 50, spd: 75, spe: 75},
 	},
 	mantine: {
 		inherit: true,
@@ -1680,8 +1680,8 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	dewgong: {
 		inherit: true,
-		baseStats: {hp: 90, atk: 80, def: 100, spa: 80, spd: 105, spe: 70},
-		abilities: {0: "Thick Fat", 1: "Hydration", H: "Ice Body"},
+		baseStats: {hp: 90, atk: 50, def: 100, spa: 104, spd: 70, spe: 70},
+		abilities: {0: "Thick Fat", 1: "Ice Scales", H: "Ice Body"},
 	},
 	cinccino: {
 		inherit: true,
@@ -1896,7 +1896,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	primarina: {
 		inherit: true,
-		baseStats: {hp: 80, atk: 74, def: 84, spa: 126, spd: 116, spe: 60},
+		baseStats: {hp: 80, atk: 54, def: 84, spa: 126, spd: 116, spe: 80},
 	},
 	orbeetle: {
 		inherit: true,
@@ -2397,15 +2397,59 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
             abilities: {0: "Psychic Terrain", 1: "Power of Alchemy", H: "Illusion"},
 
 
+      },
+      kingdra: {	
+		inherit: true,
+		baseStats: {hp: 85, atk: 95 , def: 95, spa: 107, spd: 95, spe: 95},
+
+
+      },
+      amoonguss: {	
+		inherit: true,
+		baseStats: {hp: 114, atk: 85 , def: 85, spa: 90, spd: 88, spe: 30},
+
+      },
+      tangrowth: {	
+		inherit: true,
+		baseStats: {hp: 100, atk: 115 , def: 125, spa: 120, spd: 75, spe: 30}, 
+
+      },
+      skuntank: {	
+		inherit: true,
+		baseStats: {hp: 103, atk: 109 , def: 90, spa: 103, spd: 89, spe: 90},
+            abilities: {0: "Corrosion", 1: "Neutralizing Gas", H: "Aftermath"},
+
+
+      },
+      slowbromega: {	
+		inherit: true,
+		abilities: {0: "Regenerator"},
+
+      },
+      corsola: {	
+		inherit: true,
+		baseStats: {hp: 93, atk: 60 , def: 107, spa: 65, spd: 95, spe: 11},
+            types: ["Water", "Grass"],
+
+      },
+      hatterene: {	
+		inherit: true,
+		baseStats: {hp: 90, atk: 130 , def: 107, spa: 145, spd: 103, spe: 15},
+            abilities: {0: "Magic Bounce", 1: "Curious Medicine", H: "Healer"},
+
+      },
+      klefki: {	
+		inherit: true,
+		baseStats: {hp: 90, atk: 90 , def: 100, spa: 110, spd: 83, spe: 81},
+
+      },
+      dugtrioalola: {	
+		inherit: true,
+		baseStats: {hp: 50, atk: 120 , def: 80, spa: 30, spd: 78, spe: 130},
+            abilities: {0: "Fur Coat", 1: "Tangling Hair", H: "Sand Force"},
+
+         
   
-
-
-
-
-           
-
-
-
 
 
 
