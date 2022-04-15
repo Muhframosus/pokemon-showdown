@@ -6,51 +6,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		abilities: {0: "Water Compaction", H: "Power Compaction", 1: "Sand Stream", },
 		otherFormes: ["Palossand-Mega"],
 		formeOrder: ["Palossand", "Palossand-Mega"],
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@FierceFlamethrower 
-Muhframosus
-/
-pokemon-showdown
-Public
-forked from noelcerulean/pokemon-showdown
-Code
-Pull requests
-Actions
-Projects
-Security
-Insights
-Update pokedex.ts
- master
-@FierceFlame6098
-FierceFlame6098 committed 32 minutes ago 
-1 parent 78ab114 commit 231c08c6e2bec14877c5cc1bdd108a9701395f62
-Showing  with 0 additions and 2,461 deletions.
- 2,461  
-data/mods/adventures/pokedex.ts
-@@ -1,2461 +0,0 @@
-export const Pokedex: {[k: string]: ModdedSpeciesData} = {	
-	palossand: {	
-		inherit: true,	
-		baseStats: {hp: 95, atk: 100, def: 135, spa: 100, spd: 85, spe: 20},	
-		abilities: {0: "Water Compaction", H: "Power Compaction", 1: "Sand Stream", },	
-		otherFormes: ["Palossand-Mega"],	
-		formeOrder: ["Palossand", "Palossand-Mega"],	
+
 	},	
 	centiskorch: {	
-		inherit: true,	
- 
- 
-Leave a comment
-No file chosen
-Attach files by dragging & dropping, selecting or pasting them.
-		baseStats: {hp: 125, atk: 125, def: 85, spa: 70, spd: 85, spe: 65},	
-		abilities: {0: "Flash Fire", H: "Flame Body", 1: "Oblivious"},		
+		inherit: true,
+            baseStats: {hp: 125, atk: 125, def: 85, spa: 70, spd: 85, spe: 65},	
+	      abilities: {0: "Flash Fire", H: "Flame Body", 1: "Oblivious"},		
 	},	
 	trevenant: {	
 		inherit: true,	
