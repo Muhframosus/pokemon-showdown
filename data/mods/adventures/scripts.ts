@@ -1470,7 +1470,7 @@ this.modData('Learnsets', 'abomasnow').learnset.hornleech = ['8L1'];
 
 this.modData('Learnsets', 'scizor').learnset.closecombat = ['8L1'];
 
-
+this.modData('Learnsets', 'mew').learnset.cumuluscharge = ['8L1'];
 
 
 
