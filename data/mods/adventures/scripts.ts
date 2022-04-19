@@ -3,7 +3,6 @@ init() {
 //-NEW MOVES START
 
 
-this.modData('Learnsets', 'trevenant').learnset.shadowsneak = ['8L1'];
 
 
 
