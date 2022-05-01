@@ -2434,10 +2434,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 90, atk: 130 , def: 107, spa: 145, spd: 103, spe: 15},	
             abilities: {0: "Magic Bounce", 1: "Curious Medicine", H: "Healer"},	
 
-      },	
-      klefki: {		
-	            inherit: true,	
-		baseStats: {hp: 90, atk: 90 , def: 100, spa: 110, spd: 83, spe: 81},	
 
       },	
       dugtrioalola: {		
