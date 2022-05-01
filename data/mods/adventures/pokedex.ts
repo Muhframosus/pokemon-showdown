@@ -2418,7 +2418,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
       },	
       skuntank: {		
 		inherit: true,	
-		baseStats: {hp: 103, atk: 109 , def: 90, spa: 103, spd: 89, spe: 90},	
+		baseStats: {hp: 103, atk: 109 , def: 90, spa: 103, spd: 89, spe: 85},	
             abilities: {0: "Corrosion", 1: "Neutralizing Gas", H: "Aftermath"},	
 	
 
