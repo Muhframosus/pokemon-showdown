@@ -30,37 +30,6 @@ export const Items: {[k: string]: ModdedItemData} = {
 		num: 265,
 		gen: 4,
 	},
-	micleberry: {
-		name: "Micle Berry",
-		spritenum: 290,
-		isBerry: true,
-		naturalGift: {
-			basePower: 100,
-			type: "Rock",
-		},
-		onResidual(pokemon) {
-			if (pokemon.hp <= pokemon.maxhp / 4 || (pokemon.hp <= pokemon.maxhp / 2 && pokemon.hasAbility('gluttony'))) {
-				pokemon.eatItem();
-			}
-		},
-		onEat(pokemon) {
-			pokemon.addVolatile('micleberry');
-		},
-		condition: {
-			duration: 2,
-			onSourceAccuracy(accuracy, target, source, move) {
-				if (!move.ohko) {
-					this.add('-enditem', source, 'Micle Berry');
-					source.removeVolatile('micleberry');
-					if (typeof accuracy === 'number') {
-						return this.chainModify([0x2000, 0x1000]);
-					}
-				}
-			},
-		},
-		num: 209,
-		gen: 4,
-	},
 	leek: {
 		name: "Leek",
 		fling: {
@@ -188,7 +157,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 			pokemon.useItem();
 		},
 		boosts: {
-			spe: 2,
+			spe: 1,
 		},
 		num: 846,
 		gen: 7,
@@ -199,25 +168,9 @@ export const Items: {[k: string]: ModdedItemData} = {
 		shortDesc: "Holder's use of Gravity lasts 8 turns instead of 5.",
 		spritenum: 193,
 		fling: {
-			basePower: 120,
+			basePower: 60,
 		},
 		num: 284,
 		gen: 4,
 	},
-	kingsrock: {
-    inherit: true,
-    onModifyMove(move) {
-        if (move.id === "mobboss") return;
-        if (move.category !== "Status") {
-            if (!move.secondaries) move.secondaries = [];
-            for (const secondary of move.secondaries) {
-                if (secondary.volatileStatus === 'flinch') return;
-            }
-            move.secondaries.push({
-                chance: 10,
-                volatileStatus: 'flinch',
-            });
-        }
-    },
-}
 };
