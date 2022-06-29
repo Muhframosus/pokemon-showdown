@@ -61,6 +61,10 @@ export const Moves: {[moveid: string]: MoveData} = {
 // Mega Launcher Implementation End
 
 //Move changes
+	vacuumwave: {
+		inherit: true,
+		basePower: 60,
+	},
 	snore: {
 		inherit: true,
 		basePower: 120,
@@ -109,6 +113,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 	armthrust: {
 		inherit: true,
 		basePower: 25,
+		accuracy: 100,
 	},
 	furyswipes: {
 		desc: "Hits 2-5 times. High critical hit ratio.",
@@ -145,7 +150,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		shortDesc: "20% chance to increase the user's Spe by 1 .",
 		inherit: true,
 		basePower: 90,
-		accuracy: 90,
+		accuracy: 100,
 		secondary: {
 			chance: 20,
 			self: {
@@ -184,7 +189,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 	},
 	triplekick: {
 		num: 167,
-		accuracy: 90,
+		accuracy: 100,
 		basePower: 20,
 		basePowerCallback(pokemon, target, move) {
 			return 20 * move.hit;
@@ -395,13 +400,10 @@ export const Moves: {[moveid: string]: MoveData} = {
 	},
 	slash: {
 		inherit: true,
+		basePower: 80,
 		critRatio: 3,
 	},
 	snipeshot: {
-		inherit: true,
-		critRatio: 3,
-	},
-	spacialrend: {
 		inherit: true,
 		critRatio: 3,
 	},
@@ -416,10 +418,6 @@ export const Moves: {[moveid: string]: MoveData} = {
 	aeroblast: {
 		inherit: true,
 		critRatio: 3
-	},
-	aircutter: {
-		inherit: true,
-		critRatio: 3,
 	},
 	attackorder: {
 		inherit: true,
@@ -451,6 +449,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 	},
 	nightslash: {
 		inherit: true,
+		basePower: 80,
 		critRatio: 3,
 	},
 	poisontail: {
@@ -472,6 +471,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		inherit: true,
 		accuracy: 100,
 		basePower: 80,
+		critRatio: 3,
 	},
 	airslash: {
 		inherit: true,
@@ -484,29 +484,6 @@ export const Moves: {[moveid: string]: MoveData} = {
 	sacredfire: {
 		inherit: true,
 		accuracy: 100,
-	},
-	shelltrap: {
-		desc: "Usually goes first. Fails if target is not attacking.",
-		shortDesc: "Usually goes first. Fails if target is not attacking.",
-		num: 704,
-		accuracy: 100,
-		basePower: 50,
-		category: "Special",
-		name: "Shell Trap",
-		pp: 8,
-		priority: 1,
-		flags: {contact: 1, protect: 1, mirror: 1},
-		onTry(source, target) {
-			const action = this.queue.willMove(target);
-			const move = action?.choice === 'move' ? action.move : null;
-			if (!move || (move.category === 'Status' && move.id !== 'mefirst') || target.volatiles['mustrecharge']) {
-				return false;
-			}
-		},
-		secondary: null,
-		target: "normal",
-		type: "Fire",
-		contestType: "Clever",
 	},
 	icehammer: {
 		desc: "100% chance to lower the target's Speed by 1 stage.",
@@ -536,7 +513,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		desc: "High critical hit ratio.",
 		shortDesc: "High critical hit ratio.",
 		inherit: true,
-		accuracy: 90,
+		accuracy: 100,
 		basePower: 100,
 		pp: 10,
 		critRatio: 3,
@@ -544,50 +521,6 @@ export const Moves: {[moveid: string]: MoveData} = {
 	bulletpunch: {
 		inherit: true,
 		flags: {contact: 1, protect: 1, mirror: 1, bullet: 1, punch: 1},
-	},
-	defog: {
-		desc: "-1 Evasion; clears terrain, screens, hazards and weather for both sides.",
-		shortDesc: "-1 Evasion; clears terrain, screens, hazards and weather for both sides.",
-		num: 432,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		name: "Defog",
-		pp: 15,
-		priority: 0,
-		flags: {protect: 1, reflectable: 1, mirror: 1, authentic: 1},
-		onHit(target, source, move) {
-			let success = false;
-			this.field.clearTerrain();
-			if (!target.volatiles['substitute'] || move.infiltrates) success = !!this.boost({evasion: -1});
-			const removeTarget = [
-				'reflect', 'lightscreen', 'auroraveil', 'safeguard', 'mist', 'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
-			];
-			const removeAll = [
-				'spikes', 'toxicspikes', 'stealthrock', 'stickyweb', 'gmaxsteelsurge',
-			];
-			for (const targetCondition of removeTarget) {
-				if (target.side.removeSideCondition(targetCondition)) {
-					if (!removeAll.includes(targetCondition)) continue;
-					this.add('-sideend', target.side, this.dex.conditions.get(targetCondition).name, '[from] move: Defog', '[of] ' + source);
-					success = true;
-				}
-			}
-			for (const sideCondition of removeAll) {
-				if (source.side.removeSideCondition(sideCondition)) {
-					this.add('-sideend', source.side, this.dex.conditions.get(sideCondition).name, '[from] move: Defog', '[of] ' + source);
-					success = true;
-				}
-			}
-			this.field.clearTerrain();
-			this.field.clearWeather();
-			return success;
-		},
-		secondary: null,
-		target: "normal",
-		type: "Flying",
-		zMove: {boost: {accuracy: 1}},
-		contestType: "Cool",
 	},
 	barrage: {
 		desc: "Hits three times.",
@@ -631,30 +564,176 @@ export const Moves: {[moveid: string]: MoveData} = {
 	},
 	vcreate: {
 		desc: "Lowers the user's Defense, Sp. Def, Speed by 1. Physical if user's Atk > SpA",
-		shortDesc: "Lowers the user's Def, SpD, Spe by 1. Physical if user's Atk > SpA",
+		shortDesc: "Lowers user's Def, SpD, Spe by 1. Phys if Atk > SpA",
 		num: 557,
-		accuracy: 95,
+		accuracy: 100,
 		basePower: 180,
 		category: "Special",
 		name: "V-Create",
 		pp: 5,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
+		onModifyMove(move, pokemon) {
+			if (pokemon.getStat('atk', false, true) > pokemon.getStat('spa', false, true)) move.category = 'Physical';
+		},
 		self: {
 			boosts: {
 				spe: -1,
 				def: -1,
 				spd: -1,
-			},
-		onModifyMove(move, pokemon) {
-			if (pokemon.getStat('atk', false, true) > pokemon.getStat('spa', false, true)) move.category = 'Physical';
-			},
+			}
 		},
 		secondary: null,
 		target: "normal",
 		type: "Fire",
 		zMove: {basePower: 220},
 		contestType: "Cool",
+	},
+	rollout: {
+		inherit: true,
+		basePower: 40,
+	},
+	iceball: {
+		inherit: true,
+		basePower: 40,
+	},
+	shadowforce: {
+		num: 467,
+		accuracy: 100,
+		basePower: 150,
+		category: "Physical",
+		name: "Shadow Force",
+		pp: 3,
+		priority: 1,
+		flags: {contact: 1, charge: 1, mirror: 1},
+		breaksProtect: true,
+		onTryMove(attacker, defender, move) {
+			if (attacker.removeVolatile(move.id)) {
+				return;
+			}
+			this.add('-prepare', attacker, move.name);
+			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
+				return;
+			}
+			attacker.addVolatile('twoturnmove', defender);
+			return null;
+		},
+		condition: {
+			duration: 2,
+			onInvulnerability: false,
+		},
+		secondary: null,
+		target: "normal",
+		type: "Ghost",
+		contestType: "Cool",
+	},
+	spacialrend: {
+		num: 460,
+		accuracy: 100,
+		basePower: 100,
+		category: "Special",
+		name: "Spacial Rend",
+		pp: 3,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		critRatio: 3,
+		chance: 100,
+			boosts: {
+				spa: -1,
+				spd: -1,
+				def: -1,
+				atk: -1,
+				spe: -1,
+			},
+		target: "normal",
+		type: "Dragon",
+		contestType: "Beautiful",
+	},
+	trumpcard: {
+		num: 376,
+		accuracy: true,
+		basePower: 0,
+		basePowerCallback(source, target, move) {
+			const callerMoveId = move.sourceEffect || move.id;
+			const moveSlot = callerMoveId === 'instruct' ? source.getMoveData(move.id) : source.getMoveData(callerMoveId);
+			if (!moveSlot) return 70;
+			switch (moveSlot.pp) {
+			case 0:
+				return 200;
+			case 1:
+				return 160;
+			case 2:
+				return 130;
+			case 3:
+				return 100;
+			default:
+				return 70;
+			}
+		},
+		category: "Special",
+		isNonstandard: "Past",
+		name: "Trump Card",
+		pp: 5,
+		noPPBoosts: true,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		secondary: null,
+		target: "normal",
+		type: "Normal",
+		zMove: {basePower: 160},
+		maxMove: {basePower: 130},
+		contestType: "Cool",
+	},
+	aquaring: {
+		num: 392,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Aqua Ring",
+		pp: 20,
+		priority: 0,
+		flags: {snatch: 1},
+		volatileStatus: 'aquaring',
+		condition: {
+			onStart(pokemon) {
+				this.add('-start', pokemon, 'Aqua Ring');
+			},
+			onResidualOrder: 6,
+			onResidual(pokemon) {
+				this.heal(pokemon.baseMaxhp / 8);
+			},
+		},
+		secondary: null,
+		target: "self",
+		type: "Water",
+		zMove: {boost: {def: 1}},
+		contestType: "Beautiful",
+	},
+	multiattack: {
+		desc: "Type varies based on the user's primary type. Physical if Atk > SpA.",
+		shortDesc: "Type varies based on the user's primary type. Physical if Atk > SpA.",
+		num: 718,
+		accuracy: 100,
+		basePower: 120,
+		category: "Physical",
+		name: "Multi-Attack",
+		pp: 10,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		onModifyType(move, pokemon) {
+			let type = pokemon.getTypes()[0];
+			move.type = type;
+			
+		},
+		onModifyMove(move, pokemon) {
+			if (pokemon.getStat('atk', false, true) > pokemon.getStat('spa', false, true)) move.category = 'Physical';
+			},
+		secondary: null,
+		target: "normal",
+		type: "Normal",
+		zMove: {basePower: 185},
+		maxMove: {basePower: 95},
+		contestType: "Tough",
 	},
 	doublekick: {
 		inherit: true,
@@ -664,7 +743,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		desc: "100% chance to increase the user's Special Attack by 1 stage.",
 		shortDesc: "100% chance to increase the user's SpA by 1.",
 		num: 451,
-		accuracy: 90,
+		accuracy: 100,
 		basePower: 60,
 		name: "Charge Beam",
 		category: "Special",
@@ -685,7 +764,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 	},
 	belch: {
 		inherit: true,
-		basePower: 140,
+		basePower: 150,
 		accuracy: 100,
 	},
 	geargrind: {
@@ -695,7 +774,27 @@ export const Moves: {[moveid: string]: MoveData} = {
 	},
 	shadowpunch: {
 		inherit: true,
-		basePower: 75,
+		basePower: 60,
+	},
+	roaroftime: {
+		num: 459,
+		accuracy: 100,
+		basePower: 180,
+		category: "Special",
+		name: "Roar of Time",
+		pp: 3,
+		priority: 4,
+		flags: {recharge: 1, mirror: 1},
+		self: {
+			volatileStatus: 'mustrecharge',
+		},
+		secondary: {
+			chance: 100,
+			volatileStatus: 'flinch',
+		},
+		target: "normal",
+		type: "Dragon",
+		contestType: "Beautiful",
 	},
 	flash: {
 		inherit: true,
@@ -721,7 +820,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 	rockclimb: {
 		inherit: true,
 		type: "Rock",
-		accuracy: 90,
+		accuracy: 100,
 		basePower: 85,
 	},
 	fly: {
@@ -765,7 +864,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		inherit: true,
 		desc: "100% chance to lower the target's defense by 1 stage.",
 		shortDesct: "100% chance to lower target's Def by 1.",
-		basePower: 65,
+		basePower: 60,
 		secondary: {
 			chance: 100,
 			boosts: {
@@ -781,7 +880,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: -6,
 		forceSwitch: true,
 		basePower: 80,
-		accuracy: 90,
+		accuracy: 100,
 	},
 	circlethrow: {
 		inherit: true,
@@ -796,12 +895,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		accuracy: 100,
 		basePower: 0,
 		basePowerCallback(pokemon, target, move) {
-			return 5 + Math.floor(move.allies!.shift()!.species.baseStats.atk / 10);
+			return 5 + Math.floor(move.allies!.shift()!.species.baseStats.atk / 20);
 		},
 		category: "Physical",
 		name: "Mob Boss",
-		desc: "Usually goes first. Hits the target one time for the user and one time for each unfainted Pokemon without a non-volatile status condition in the user's party. The power of each hit is equal to 5+(X/10), where X is each participating Pokemon's base Attack; each hit is considered to come from the user.",
-		shortDesct: "Beat Up with +1 priority.",
+		desc: "Usually goes first. Hits the target one time for the user and one time for each unfainted Pokemon without a non-volatile status condition in the user's party. The power of each hit is equal to 5+(X/20), where X is each participating Pokemon's base Attack; each hit is considered to come from the user.",
+		shortDesct: "Beat Up with +1 priority and halved damage (Not affected by King's Rock.)",
 		pp: 10,
 		priority: 1,
 		flags: {protect: 1, mirror: 1, mystery: 1},
@@ -817,12 +916,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 	shatteringsteel: {
 		num: -16,
 		accuracy: 100,
-		basePower: 150,
+		basePower: 170,
 		name: "Shattering Steel",
-		desc: "100% chance to lower the target's Defense by 2 stages.",
-		shortDesc: "100% chance to lower target's Def by 2.",
+		desc: "100% chance to lower both the user's and target's Defense by 2 stages.",
+		shortDesc: "100% chance to lower user's and target's Def by 2.",
 		category: "Physical",
-		pp: 1,
+		pp: 5,
 		noPPBoosts: true,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
@@ -831,6 +930,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 				boosts: {
 					def: -2,
 				},
+		self: {
+			boosts: {
+				def: -2,
+			},
+		},
 		},
 		target: "normal",
 		type: "Steel",
@@ -1194,9 +1298,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 		flags: {contact: 1, protect: 1, mirror: 1},
 		beforeTurnCallback(pokemon) {
 			for (const side of this.sides) {
-				if (side === pokemon.side) continue;
-				side.addSideCondition('pursuit', pokemon);
-				const data = side.getSideConditionData('pursuit');
+				if (side.hasAlly(pokemon)) continue;
+				side.addSideCondition('vinetrap', pokemon);
+				const data = side.getSideConditionData('vinetrap');
 				if (!data.sources) {
 					data.sources = [];
 				}
@@ -1207,12 +1311,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 			if (target?.beingCalledBack || target?.switchFlag) move.accuracy = true;
 		},
 		onTryHit(target, pokemon) {
-			target.side.removeSideCondition('pursuit');
+			target.side.removeSideCondition('vinetrap');
 		},
 		condition: {
 			duration: 1,
 			onBeforeSwitchOut(pokemon) {
-				this.debug('Vine start');
+				this.debug('Vine Trap start');
 				let alreadyAdded = false;
 				pokemon.removeVolatile('destinybond');
 				for (const source of this.effectData.sources) {
@@ -1226,13 +1330,13 @@ export const Moves: {[moveid: string]: MoveData} = {
 					if (source.canMegaEvo || source.canUltraBurst) {
 						for (const [actionIndex, action] of this.queue.entries()) {
 							if (action.pokemon === source && action.choice === 'megaEvo') {
-								this.runMegaEvo(source);
+								this.actions.runMegaEvo(source);
 								this.queue.list.splice(actionIndex, 1);
 								break;
 							}
 						}
 					}
-					this.runMove('pursuit', source, this.getTargetLoc(pokemon, source));
+					this.actions.runMove('vinetrap', source, source.getLocOf(pokemon));
 				}
 			},
 		},
@@ -1306,7 +1410,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		shortDesc: "100% chance to increase the user's SpA by 1 stage.",
 		num: 488,
 		accuracy: 100,
-		basePower: 80,
+		basePower: 50,
 		category: "Special",
 		name: "Aqua Revolver",
 		pp: 10,
@@ -1342,16 +1446,16 @@ export const Moves: {[moveid: string]: MoveData} = {
 		condition: {
 			duration: 5,
 			durationCallback(source, effect) {
-				if (source?.hasItem('unidentifiedforeignrock')) {
-				return 8;
-				}	
 				if (source?.hasAbility('persistent')) {
 					this.add('-activate', source, 'ability: Persistent', effect);
 					return 7;
 				}
+				if (source?.hasItem('unidentifiedforeignrock')) {
+				return 8;
+				}	
 				return 5;
 			},
-			onStart() {
+			onFieldStart() {
 				this.add('-fieldstart', 'move: Gravity');
 				for (const pokemon of this.getAllActive()) {
 					let applies = false;
@@ -1387,7 +1491,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			},
 			onDisableMove(pokemon) {
 				for (const moveSlot of pokemon.moveSlots) {
-					if (this.dex.getMove(moveSlot.id).flags['gravity']) {
+					if (this.dex.moves.get(moveSlot.id).flags['gravity']) {
 						pokemon.disableMove(moveSlot.id);
 					}
 				}
@@ -1406,8 +1510,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 					return false;
 				}
 			},
-			onResidualOrder: 22,
-			onEnd() {
+			onFieldResidualOrder: 27,
+			onFieldResidualSubOrder: 2,
+			onFieldEnd() {
 				this.add('-fieldend', 'move: Gravity');
 			},
 		},
@@ -1422,7 +1527,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		shortDesc: "10% chance to Poison, 10% chance to flinch",
 		inherit: true,
 		basePower: 65,
-		accuracy: 95,
+		accuracy: 100,
 		secondaries: [
 			{
 				chance: 10,
@@ -1443,7 +1548,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		isNonstandard: "LGPE",
 		name: "Zippy Zap",
 		pp: 10,
-		priority: 2,
+		priority: 1,
 		flags: {contact: 1, protect: 1},
 		target: "normal",
 		type: "Electric",
@@ -1467,5 +1572,515 @@ export const Moves: {[moveid: string]: MoveData} = {
 		secondary: null,
 		target: "allies",
 		type: "Grass",
+	},
+	tailslap: {
+		inherit: true,
+		accuracy: 100,
+	},
+	pinmissile: {
+		inherit: true,
+		accuracy: 100,
+	},
+	rockblast: {
+		inherit: true,
+		accuracy: 100,
+	},
+	iciclespear: {
+		inherit: true,
+		accuracy: 100,
+	},
+	bonerush: {
+		inherit: true,
+		accuracy: 100,
+	},
+	muddywater: {
+		inherit: true,
+		accuracy: 100,
+	},
+	steelyspikes: {
+		desc: "Sets up a hazard on the opposing side of the field. Damages foes that switch-in based on their weakness to the Steel type.",
+		shortDesc: "Hurts foes on switch-in. Factors Steel weakness.",
+		num: -20,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Steely Spikes",
+		pp: 5,
+		priority: 0,
+		flags: {reflectable: 1},
+		sideCondition: 'gmaxsteelsurge',
+		condition: {
+			onStart(side) {
+				this.add('-sidestart', side, 'move: Steely Spikes');
+			},
+			onSwitchIn(pokemon) {
+				if (pokemon.hasItem('heavydutyboots')) return;
+				if (pokemon.hasAbility('oblivious')) return;
+				if (pokemon.hasAbility('suctioncups')) return;
+				// Ice Face and Disguise correctly get typed damage from Stealth Rock
+				// because Stealth Rock bypasses Substitute.
+				// They don't get typed damage from Steelsurge because Steelsurge doesn't,
+				// so we're going to test the damage of a Steel-type Stealth Rock instead.
+				const steelHazard = this.dex.getActiveMove('Stealth Rock');
+				steelHazard.type = 'Steel';
+				const typeMod = this.clampIntRange(pokemon.runEffectiveness(steelHazard), -6, 6);
+				this.damage(pokemon.maxhp * Math.pow(2, typeMod) / 8);
+			},
+		},
+		secondary: null,
+		target: "foeSide",
+		type: "Steel",
+		zMove: {boost: {def: 1}},
+		contestType: "Cool",
+	},
+	aerialace: {
+		inherit: true,
+		basePower: 95,
+	},
+	dualwingbeat: {
+		inherit: true,
+		basePower: 45,
+	},
+	powergem: {
+		inherit: true,
+		basePower: 90,
+	},
+	ancientpower: {
+		inherit: true,
+		secondary: {
+			chance: 20,
+			self: {
+				boosts: {
+					atk: 1,
+					def: 1,
+					spa: 1,
+					spd: 1,
+					spe: 1,
+				},
+			},
+		},
+	},
+	ominouswind: {
+		inherit: true,
+		secondary: {
+			chance: 20,
+			self: {
+				boosts: {
+					atk: 1,
+					def: 1,
+					spa: 1,
+					spd: 1,
+					spe: 1,
+				},
+			},
+		},
+	},
+	silverwind: {
+		inherit: true,
+		secondary: {
+			chance: 20,
+			self: {
+				boosts: {
+					atk: 1,
+					def: 1,
+					spa: 1,
+					spd: 1,
+					spe: 1,
+				},
+			},
+		},
+	},
+	octazooka: {
+		num: 190,
+		accuracy: 100,
+		basePower: 95,
+		category: "Special",
+		name: "Octazooka",
+		pp: 10,
+		priority: 0,
+		flags: {bullet: 1, protect: 1, mirror: 1, pulse: 1},
+		secondary: {
+			chance: 50,
+			boosts: {
+				accuracy: -1,
+			},
+		},
+		target: "normal",
+		type: "Water",
+		contestType: "Tough",
+	},
+	cumuluscharge: {
+		num: -69,
+		desc: "Raises the user's Special Attack and Speed by 1.",
+		shortDesc: "Raises the user's Special Attack and Speed by 1.",
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Cumulus Charge",
+		pp: 20,
+		priority: 0,
+		flags: {snatch: 1},
+		boosts: {
+			spa: 1,
+			spe: 1,
+		},
+		secondary: null,
+		target: "self",
+		type: "Electric",
+		zMove: {effect: 'clearnegativeboost'},
+		contestType: "Cool",
+	},
+	glitch: {
+		num: -70,
+		desc: "Hits neutrally against every type. 10% chance for a random status.",
+		shortDesc: "Neutral vs. every type. 10% chance for random status.",
+		accuracy: 100,
+		basePower: 80,
+		category: "Special",
+		name: "Glitch",
+		pp: 10,
+		priority: 0,
+		ignoreImmunity: true,
+		flags: {protect: 1, mirror: 1},
+		onEffectiveness(typeMod, target, type) {
+			if (type === 'Steel' || type === 'Rock') return 0;
+		},
+		secondary: {
+			chance: 10,
+		onHit(target, source) {
+				const result = this.random(5);
+				if (result === 0) {
+					target.trySetStatus('brn', source);
+				} else if (result === 1) {
+					target.trySetStatus('par', source);
+				} else if (result === 2) {
+					target.trySetStatus('frz', source);
+				} else if (result === 3) {
+					target.trySetStatus('psn', source);
+				} else if (result === 4) {
+					target.trySetStatus('tox', source);
+				} else {
+					target.trySetStatus('sleep', source);
+				}
+			}
+		},
+		target: "normal",
+		type: "Normal",
+		contestType: "Spooky",
+	},
+	spindance: {
+		num: -71,
+		desc: "Lowers all of the user's stats by 2 and confuses it. Fails if already spindancing.",
+		shortDesc: "Lowers all of the user's stats by 2 and confuses it.",
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Spindance",
+		pp: 5,
+		priority: 0,
+		flags: {snatch: 1, dance: 1},
+		volatileStatus: 'confusion',
+		volatileStatus: 'Spindancing',
+		onTry(source, target, move) {
+			if (source.volatiles['Spindancing']) return false;
+		},
+		condition: {
+			onStart(pokemon) {
+				this.add('-start', pokemon, 'move: Spindance');
+			},
+		},
+		boosts: {
+			atk: -2,
+			def: -2,
+			spa: -2,
+			spd: -2,
+			spe: -2,
+		},
+		secondary: null,
+		target: "self",
+		type: "Normal",
+	},
+	terrainpunch: {
+		num: 805,
+		desc: "User on terrain: power doubles, type varies.",
+		shortDesc: "User on terrain: power doubles, type varies.",
+		accuracy: 100,
+		basePower: 60,
+		category: "Physical",
+		name: "Terrain Punch",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1, contact: 1, punch: 1},
+		onModifyType(move, pokemon) {
+			if (!pokemon.isGrounded()) return;
+			switch (this.field.terrain) {
+			case 'electricterrain':
+				move.type = 'Electric';
+				break;
+			case 'grassyterrain':
+				move.type = 'Grass';
+				break;
+			case 'mistyterrain':
+				move.type = 'Fairy';
+				break;
+			case 'psychicterrain':
+				move.type = 'Psychic';
+				break;
+			}
+		},
+		onModifyMove(move, pokemon) {
+			if (this.field.terrain && pokemon.isGrounded()) {
+				move.basePower *= 2;
+			}
+		},
+		secondary: null,
+		target: "normal",
+		type: "Normal",
+		zMove: {basePower: 160},
+		maxMove: {basePower: 130},
+	},
+	hiddenpower: {
+		inherit: true,
+		flags: {protect: 1, mirror: 1, unknown: 1},
+	},
+	hiddenpowerflying: {
+		inherit: true,
+		flags: {protect: 1, mirror: 1, unknown: 1},
+	},
+	hiddenpowerpsychic: {
+		inherit: true,
+		flags: {protect: 1, mirror: 1, unknown: 1},
+	},
+	hiddenpowerrock: {
+		inherit: true,
+		flags: {protect: 1, mirror: 1, unknown: 1},
+	},
+	hiddenpowerground: {
+		inherit: true,
+		flags: {protect: 1, mirror: 1, unknown: 1},
+	},
+	hiddenpowerpoison: {
+		inherit: true,
+		flags: {protect: 1, mirror: 1, unknown: 1},
+	},
+	hiddenpowerghost: {
+		inherit: true,
+		flags: {protect: 1, mirror: 1, unknown: 1},
+	},
+	hiddenpowerdark: {
+		inherit: true,
+		flags: {protect: 1, mirror: 1, unknown: 1},
+	},
+	hiddenpowerfighting: {
+		inherit: true,
+		flags: {protect: 1, mirror: 1, unknown: 1},
+	},
+	hiddenpowerelectric: {
+		inherit: true,
+		flags: {protect: 1, mirror: 1, unknown: 1},
+	},
+	hiddenpowergrass: {
+		inherit: true,
+		flags: {protect: 1, mirror: 1, unknown: 1},
+	},
+	hiddenpowersteel: {
+		inherit: true,
+		flags: {protect: 1, mirror: 1, unknown: 1},
+	},
+	hiddenpowerwater: {
+		inherit: true,
+		flags: {protect: 1, mirror: 1, unknown: 1},
+	},
+	hiddenpowerfire: {
+		inherit: true,
+		flags: {protect: 1, mirror: 1, unknown: 1},
+	},
+	hiddenpowerice: {
+		inherit: true,
+		flags: {protect: 1, mirror: 1, unknown: 1},
+	},
+	hiddenpowerdragon: {
+		inherit: true,
+		flags: {protect: 1, mirror: 1, unknown: 1},
+	},
+	hiddenpowerbug: {
+		inherit: true,
+		flags: {protect: 1, mirror: 1, unknown: 1},
+	},
+	hyperfang: {
+		num: 158,
+		desc: "30% chance to flinch.",
+		shortDesc: "30% chance to flinch.",
+		accuracy: 100,
+		basePower: 90,
+		category: "Physical",
+		isNonstandard: "Past",
+		name: "Hyper Fang",
+		pp: 15,
+		priority: 0,
+		flags: {bite: 1, contact: 1, protect: 1, mirror: 1},
+		secondary: {
+			chance: 30,
+			volatileStatus: 'flinch',
+		},
+		target: "normal",
+		type: "Normal",
+		contestType: "Cool",
+	},
+	headsmash: {
+		inherit: true,
+		recoil: [1, 3],
+	},
+	venomdrench: {
+		desc: "Lowers Atk/Sp. Atk/Speed of foes by 1.",
+		shortdesc: "Lowers Atk/Sp. Atk/Speed of foes by 1.",
+		num: 599,
+		accuracy: 100,
+		basePower: 0,
+		category: "Status",
+		name: "Venom Drench",
+		pp: 20,
+		priority: 0,
+		flags: {protect: 1, reflectable: 1, mirror: 1},
+		onHit(target, source, move) {
+			const success = this.boost({atk: -1, spa: -1, spe: -1}, target, source);
+			if (!success && !target.hasAbility('mirrorarmor')) {
+				delete move.selfSwitch;
+			}
+		},
+		secondary: null,
+		target: "allAdjacentFoes",
+		type: "Poison",
+		zMove: {boost: {def: 1}},
+		contestType: "Clever",
+	},
+		circlethrow: {
+		inherit: true,
+		flags: {contact: 1, protect: 1, mirror: 1, martial: 1},
+		basePower: 80,
+	},
+	stormthrow: {
+		inherit: true,
+		flags: {contact: 1, protect: 1, mirror: 1, martial: 1},
+	},
+	vitalthrow: {
+		inherit: true,
+		basePower: 110,
+		flags: {contact: 1, protect: 1, mirror: 1, martial: 1},
+	},
+	submission: {
+		inherit: true,
+		flags: {contact: 1, protect: 1, mirror: 1, martial: 1},
+	},
+	bodypress: {
+		inherit: true,
+		flags: {contact: 1, protect: 1, mirror: 1, martial: 1},
+	},
+	maliciousmoonsault: {
+		inherit: true,
+		flags: {contact: 1, martial: 1},
+	},
+	focuspunch: {
+		num: 264,
+		accuracy: 100,
+		basePower: 150,
+		category: "Physical",
+		name: "Focus Punch",
+		pp: 20,
+		priority: -3,
+		flags: {contact: 1, protect: 1, punch: 1},
+		beforeTurnCallback(pokemon) {
+			pokemon.addVolatile('focuspunch');
+		},
+		beforeMoveCallback(pokemon) {
+			if (pokemon.volatiles['focuspunch'] && pokemon.volatiles['focuspunch'].lostFocus) {
+				this.add('cant', pokemon, 'Focus Punch', 'Focus Punch');
+				return true;
+			}
+		},
+		condition: {
+			duration: 1,
+			onStart(pokemon) {
+				this.add('-singleturn', pokemon, 'move: Focus Punch');
+			},
+			onHit(pokemon, source, move) {
+				if (move.category !== 'Status') {
+					if (pokemon.hasAbility('mastersfocus')) return;
+					pokemon.volatiles['focuspunch'].lostFocus = true;
+				}
+			},
+			onTryAddVolatile(status, pokemon) {
+				if (status.id === 'flinch') return null;
+			},
+		},
+		secondary: null,
+		target: "normal",
+		type: "Fighting",
+		contestType: "Tough",
+	},
+	earththrow: {
+		desc: "More power the heavier the target.Is always a critical hit.",
+		shortDesc: "More power the heavier the target. Is always a critical hit.",
+		num: 480,
+		accuracy: 100,
+		basePower: 0,
+		basePowerCallback(pokemon, target) {
+			const targetWeight = target.getWeight();
+			if (targetWeight >= 2000) {
+				return 100;
+			}
+			if (targetWeight >= 1000) {
+				return 80;
+			}
+			if (targetWeight >= 500) {
+				return 60;
+			}
+			if (targetWeight >= 250) {
+				return 40;
+			}
+			return 20;
+		},
+		category: "Physical",
+		name: "Earth Throw",
+		pp: 5,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1, martial: 1},
+		willCrit: true,
+		secondary: null,
+		target: "normal",
+		type: "Ground",
+		contestType: "Cool",
+	},
+	windthrow: {
+		desc: "Forces the target to switch to a random ally. Always results in a critical hit.",
+		shortDesc: "Forces the target to switch to a random ally. Always results in a critical hit.",
+		num: 525,
+		accuracy: 100,
+		basePower: 30,
+		category: "Physical",
+		name: "Wind Throw",
+		pp: 5,
+		flags: {contact: 1, protect: 1, mirror: 1, martial: 1},
+		forceSwitch: true,
+		willCrit: true,
+		target: "normal",
+		type: "Flying",
+		contestType: "Tough",
+	},
+	firethrow: {
+		desc: "Always results in a critical hit. 100% recoil.",
+		shortDesc: "Always results in a critical hit. 100% recoil.",
+		num: 525,
+		accuracy: 100,
+		basePower: 80,
+		category: "Physical",
+		name: "Fire Throw",
+		pp: 5,
+		flags: {contact: 1, protect: 1, mirror: 1, martial: 1},
+		recoil: [1, 1],
+		willCrit: true,
+		target: "normal",
+		type: "Fire",
+		contestType: "Tough",
 	},
 }
