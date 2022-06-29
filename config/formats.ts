@@ -23,7 +23,7 @@ export const Formats: FormatList = [
 	///////////////////////////////////////////////////////////////////
 
 	{
-		section: "Adventures",
+		section: "National Dex",
 	},
 	{
 		name: "[Gen 8] Adventures OU",
@@ -161,55 +161,6 @@ export const Formats: FormatList = [
 		searchShow: false,
 		battle: {trunc: Math.trunc},
 		debug: true,
-		// no restrictions, for serious (other than team preview)
-		ruleset: ['Team Preview', 'Cancel Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 100'],
-	},
-	{
-		section: "Fierce Format",
-	},
-	{
-		name: "[Gen 8] Fierce OU",
-		mod: 'fierceformat',
-		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Moves Clause', 'Species Clause', 'Dynamax Clause', 'Sleep Clause Mod'],
-		banlist: [ 'Uber', 'AG', 'Baton Pass', ],
-	},
-	{
-		name: "[Gen 8] Fierce UU",
-
-		mod: 'fierceformat',
-		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Moves Clause', 'Species Clause', 'Dynamax Clause', 'Sleep Clause Mod'],
-		banlist: [
-			// National Dex OU
-			 'OU', 'AG', 'UUBL', 'Uber', 'Drought', 'Drizzle', 'Arena Trap', 'Shadow Tag', 'Baton Pass',
-			// Slowbronite is banned so it doesn't validate on Galarian Slowbro
-			'Slowbronite',
-		],
-	},
-	{
-		name: "[Gen 8] Adventures AG",
-		mod: 'fierceformat',
-		ruleset: ['Obtainable Good', 'Team Preview', 'HP Percentage Mod', 'Cancel Mod', 'Endless Battle Clause'],
-	},
-	{
-		name: "[Gen 8] Adventures Ubers",
-		mod: 'fierceformat',
-		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Moves Clause', 'Species Clause', 'Dynamax Clause', 'Sleep Clause Mod'],
-		banlist: [ 'AG', 'Baton Pass', ],
-	},
-	{
-		name: "[Gen 8] Fierce Free-For-All",
-		mod: 'fierceformat',
-		gameType: 'freeforall',
-		rated: false,
-		tournamentShow: false,
-		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Moves Clause', 'Species Clause', 'Dynamax Clause', 'Sleep Clause Mod'],
-		banlist: [ 'Uber', 'AG', 'Baton Pass', ],
-	},
-	{
-		name: "[Gen 8] Fierce Custom Game",
-
-		mod: 'fierceformat',
-		battle: {trunc: Math.trunc},
 		// no restrictions, for serious (other than team preview)
 		ruleset: ['Team Preview', 'Cancel Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 100'],
 	},
