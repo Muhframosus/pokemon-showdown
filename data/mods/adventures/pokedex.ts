@@ -352,7 +352,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	hoopaunbound: {
 		inherit: true,
 		baseStats: {hp: 90, atk: 160, def: 60, spa: 170, spd: 130, spe: 70},
-		abilities: {0: "Magician", 1: "Skill Link", H: "Unaware"},
+		abilities: {0: "Unaware"},
 	},
 	camerupt: {
 		inherit: true,
@@ -616,12 +616,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	gallade: {
 		inherit: true,
-		baseStats: {hp: 68, atk: 125, def: 75, spa: 65, spd: 115, spe: 80},
+		baseStats: {hp: 78, atk: 125, def: 75, spa: 55, spd: 115, spe: 90},
 		abilities: {0: "Steadfast", 1: "Defiant", H: "Justified"},
 	},
 	gallademega: {
 		inherit: true,
-		baseStats: {hp: 68, atk: 165, def: 105, spa: 65, spd: 115, spe: 110},
+		baseStats: {hp: 78, atk: 165, def: 105, spa: 65, spd: 115, spe: 110},
 		abilities: {0: "Neuroforce"},
 	},
 	blaziken: {
@@ -958,8 +958,13 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	cryogonal: {
 		inherit: true,
-		baseStats: {hp: 80, atk: 50, def: 50, spa: 115, spd: 135, spe: 105},
+		baseStats: {hp: 80, atk: 40, def: 50, spa: 125, spd: 135, spe: 105},
 		abilities: {0: "Levitate", H: "Catalyst"},
+	},
+	mismagius: {
+		inherit: true,
+		types: ["Ghost", "Fairy"],
+		baseStats: {hp: 60, atk: 60, def: 60, spa: 115, spd: 130, spe: 105},
 	},
 	avalugg: {
 		inherit: true,

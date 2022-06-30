@@ -550,7 +550,7 @@ this.modData('Learnsets', 'hoopa').learnset.meteorassault = ['8L1'];
 this.modData('Learnsets', 'hoopa').learnset.meteormash = ['8L1'];
 this.modData('Learnsets', 'hoopa').learnset.pursuit = ['8L1'];
 this.modData('Learnsets', 'hoopa').learnset.swordsdance = ['8L1'];
-this.modData('Learnsets', 'hoopa').learnset.armthrust = ['8L1'];
+this.modData('Learnsets', 'hoopa').learnset.closecombat = ['8L1'];
 
 this.modData('Learnsets', 'infernape').learnset.switcheroo = ['8L1'];
 this.modData('Learnsets', 'infernape').learnset.knockoff = ['8L1'];
@@ -941,8 +941,11 @@ this.modData('Learnsets', 'abomasnow').learnset.hydropump = ['8L1'];
 
 this.modData('Learnsets', 'mimikyu').learnset.meanlook = ['8L1'];
 this.modData('Learnsets', 'mimikyu').learnset.glare = ['8L1'];
+this.modData('Learnsets', 'mimikyu').learnset.poltergeist = ['8L1'];
 
 this.modData('Learnsets', 'froslass').learnset.nuzzle = ['8L1'];
+
+this.modData('Learnsets', 'gallade').learnset.noretreat = ['8L1'];
 
 this.modData('Learnsets', 'mewtwo').learnset.closecombat = ['8L1'];
 
