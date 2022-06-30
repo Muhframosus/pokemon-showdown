@@ -8,7 +8,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	centiskorch: {
 		inherit: true,
-		baseStats: {hp: 126, atk: 125, def: 85, spa: 70, spd: 85, spe: 65},
+		baseStats: {hp: 124, atk: 125, def: 85, spa: 70, spd: 85, spe: 65},
 		abilities: {0: "Flash Fire", H: "Flame Body", 1: "Arena Trap"},	
 	},
 	trevenant: {
