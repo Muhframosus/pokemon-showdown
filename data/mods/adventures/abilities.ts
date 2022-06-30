@@ -154,7 +154,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				source.trySetStatus('tox', target);
 			}
 		},
-		},
 		name: "Gooey",
 		rating: 2,
 		num: 183,
