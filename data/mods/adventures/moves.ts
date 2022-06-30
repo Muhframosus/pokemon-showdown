@@ -83,10 +83,51 @@ export const Moves: {[moveid: string]: MoveData} = {
 	  },
 	},
 	lifedew: {
-		desc: "Restores 1/2 max HP of user and allies.",
-		shortDesc: "Restores 1/2 max HP of user and allies.",
-		inherit: true,
-		heal: [1, 2],	 
+		desc: "Heals status and 1/3 max HP of self and allies.",
+		shortDesc: "Heals status and 1/3 max HP of self and allies.",
+		num: 791,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Life Dew",
+		pp: 10,
+		priority: 0,
+		flags: {heal: 1, authentic: 1, mystery: 1},
+		onHit(pokemon) {
+			const success = !!this.heal(this.modify(pokemon.maxhp, 0.33));
+			return pokemon.cureStatus() || success;
+		},
+		secondary: null,
+		target: "allies",
+		type: "Water", 
+	},
+	shoreup: {
+		num: 659,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Shore Up",
+		pp: 10,
+		priority: 0,
+		flags: {snatch: 1, heal: 1},
+		onHit(pokemon) {
+			let factor = 0.5;
+			switch (pokemon.effectiveWeather()) {
+			case 'sandstorm':
+				factor = 0.667;
+				break;
+			case 'raindance':
+			case 'primordialsea':
+				factor = 0.25;
+				break;
+			}
+			return !!this.heal(this.modify(pokemon.maxhp, factor));
+		},
+		secondary: null,
+		target: "self",
+		type: "Ground",
+		zMove: {effect: 'clearnegativeboost'},
+		contestType: "Beautiful",
 	},
 	dragonrage: {
 		desc: "Deals damage equal to the user's level.",
@@ -154,6 +195,18 @@ export const Moves: {[moveid: string]: MoveData} = {
 				},
 			},
 		}
+	},
+	wildcharge: {
+		basePower: 120,
+		inherit: true,
+	},
+	volttackle: {
+		basePower: 130,
+		secondary: {
+			chance: 30,
+			status: 'par',
+		},
+		inherit: true,
 	},
 	explosion: {
 		desc: "Hits adjacent Pokemon. User faints. Always results in a critical hit.",
@@ -395,6 +448,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 	},
 	slash: {
 		inherit: true,
+		basePower: 80,
 		critRatio: 3,
 	},
 	snipeshot: {
@@ -451,7 +505,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 	},
 	nightslash: {
 		inherit: true,
+		basePower: 80,
 		critRatio: 3,
+	},
+	flyingpress: {
+		basePower: 120,
+		zMove: {basePower: 190},
 	},
 	poisontail: {
 		inherit: true,
@@ -983,6 +1042,39 @@ export const Moves: {[moveid: string]: MoveData} = {
 	steameruption: {
 		inherit: true,
 		accuracy: 100,
+	},
+	toxicspikes: {
+		num: 390,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Toxic Spikes",
+		pp: 20,
+		priority: 0,
+		flags: {reflectable: 1, nonsky: 1},
+		sideCondition: 'toxicspikes',
+		condition: {
+			// this is a side condition
+			onSideStart(side) {
+				this.add('-sidestart', side, 'move: Toxic Spikes');
+			},
+			onSwitchIn(pokemon) {
+				if (!pokemon.isGrounded()) return;
+				if (pokemon.hasType('Poison')) {
+					this.add('-sideend', pokemon.side, 'move: Toxic Spikes', '[of] ' + pokemon);
+					pokemon.side.removeSideCondition('toxicspikes');
+				} else if (pokemon.hasType('Steel') || pokemon.hasItem('heavydutyboots') || pokemon.hasAbility('oblivious') || pokemon.hasAbility('suctioncups')) {
+					return;
+				} else {
+					pokemon.trySetStatus('tox', pokemon.side.foe.active[0]);
+				}
+			},
+		},
+		secondary: null,
+		target: "foeSide",
+		type: "Poison",
+		zMove: {boost: {def: 1}},
+		contestType: "Clever",
 	},
 	smellingsalts: {
 		num: 265,
