@@ -15,7 +15,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},	
 	trevenant: {	
 		inherit: true,	
-		baseStats: {hp: 85, atk: 110, def: 87, spa: 65, spd: 122, spe: 56},	
+		baseStats: {hp: 80, atk: 110, def: 87, spa: 65, spd: 122, spe: 56},	
 		abilities: {0: "Natural Cure", 1: "Regenerator", H: "Harvest"},	
 	},	
 	samurott: {	
