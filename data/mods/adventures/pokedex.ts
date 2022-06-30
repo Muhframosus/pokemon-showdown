@@ -1543,4 +1543,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 90, atk: 80, def: 100, spa: 80, spd: 105, spe: 70},
 		abilities: {0: "Thick Fat", 1: "Hydration", H: "Ice Body"},
 	},
+	kangaskhan: {
+		inherit: true,
+		baseStats: {hp: 105, atk: 115, def: 90, spa: 40, spd: 90, spe: 90},
+	},
+	kangaskhanmega: {
+		inherit: true,
+		baseStats: {hp: 105, atk: 125, def: 100, spa: 80, spd: 100, spe: 100},
+	},
 };
