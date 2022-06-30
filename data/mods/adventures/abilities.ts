@@ -126,26 +126,38 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		rating: 1.5,
 		num: 64,
 	},
-	unscratchable: {
-		name: "Unscratchable",
-		desc: "Fighting-type attacks have their attacking stat halved when targeting this Pokemon.",
+	thickfat: {
 		onSourceModifyAtkPriority: 6,
 		onSourceModifyAtk(atk, attacker, defender, move) {
-			if (move.type === 'Ice' || move.type === 'Fire') {
+			if (move.type === 'Ice' || move.type === 'Fire' || move.type === 'Fighting') {
 				this.debug('Thick Fat weaken');
 				return this.chainModify(0.5);
 			}
 		},
 		onSourceModifySpAPriority: 5,
 		onSourceModifySpA(atk, attacker, defender, move) {
-			if (move.type === 'Ice' || move.type === 'Fire') {
+			if (move.type === 'Ice' || move.type === 'Fire' || move.type === 'Fighting') {
 				this.debug('Thick Fat weaken');
 				return this.chainModify(0.5);
 			}
 		},
 		isBreakable: true,
+		name: "Thick Fat",
+		rating: 3.5,
+		num: 47,
+	},
+	gooey: {
+		onDamagingHit(damage, target, source, move) {
+			if (this.checkMoveMakesContact(move, source, target, true)) {
+				this.add('-ability', target, 'Gooey');
+				this.boost({spe: -1}, source, target, null, true);
+				source.trySetStatus('tox', target);
+			}
+		},
+		},
+		name: "Gooey",
 		rating: 2,
-		num: -7,
+		num: 183,
 	},
 	pastelveil: {
 		name: "Pastel Veil",

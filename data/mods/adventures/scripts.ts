@@ -28,6 +28,8 @@ this.modData('Learnsets', 'incineroar').learnset.nightslash = ['8L1'];
 
 this.modData('Learnsets', 'chesnaught').learnset.bodypress = ['8L1'];
 
+this.modData('Learnsets', 'goodra').learnset.stickyweb = ['8L1'];
+
 this.modData('Learnsets', 'guzzlord').learnset.trickroom = ['8L1'];
 this.modData('Learnsets', 'guzzlord').learnset.gunkshot = ['8L1'];
 this.modData('Learnsets', 'guzzlord').learnset.suckerpunch = ['8L1'];

@@ -80,11 +80,21 @@ export const Items: {[k: string]: ModdedItemData} = {
 			basePower: 40,
 		},
 		onModifyCritRatio(critRatio, user) {
-			if (user.baseSpecies.name === 'Chansey') {
-				return critRatio + 4;
+			if (user.baseSpecies.name === 'Kangaskhan') {
+				return critRatio + 2;
 			}
 		},
-		itemUser: ["Chansey"],
+		onModifyMovePriority: -2,
+		onModifyMove(move) {
+			if (move.secondaries) {
+				this.debug('doubling secondary chance');
+				for (const secondary of move.secondaries) {
+					if (secondary.chance) secondary.chance *= 2;
+				}
+			}
+			if (move.self?.chance) move.self.chance *= 2;
+		},
+		itemUser: ["Kangaskhan"],
 		num: 256,
 		gen: 2,
 		isNonstandard: "Past",

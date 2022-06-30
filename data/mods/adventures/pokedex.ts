@@ -1533,10 +1533,26 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 95, atk: 65, def: 65, spa: 110, spd: 130, spe: 60},
 		abilities: {0: "Cute Charm", 1: "Fairy Aura", H: "Pixilate"},
 	},
+	goodra: {
+		inherit: true,
+		types: ["Dragon", "Poison"],
+		baseStats: {hp: 90, atk: 100, def: 150, spa: 110, spd: 70, spe: 80},
+		abilities: {0: "Sap Sipper", 1: "Hydration", H: "Gooey"},
+		heightm: 2,
+		weightkg: 150.5,
+		color: "Purple",
+		prevo: "Sliggoo",
+		evoLevel: 50,
+		eggGroups: ["Dragon"],
+	},
 	kingler: {
 		inherit: true,
 		baseStats: {hp: 75, atk: 130, def: 125, spa: 50, spd: 50, spe: 85},
 		abilities: {0: "Hyper Cutter", 1: "Shell Armor", H: "Sheer Force"},
+	},
+	snorlax: {
+		inherit: true,
+		abilities: {0: "Gluttony", 1: "Immunity", H: "Slumber"},
 	},
 	dewgong: {
 		inherit: true,
@@ -1549,6 +1565,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	kangaskhanmega: {
 		inherit: true,
-		baseStats: {hp: 105, atk: 125, def: 100, spa: 80, spd: 100, spe: 100},
+		baseStats: {hp: 105, atk: 125, def: 100, spa: 100, spd: 100, spe: 100},
 	},
 };
