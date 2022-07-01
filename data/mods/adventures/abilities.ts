@@ -259,35 +259,35 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	omen: {
 		name: "Omen",
-		desc: "At the end of the turn it switches-in, the user uses Brutal Swing.",
-		shortDesc: "Uses Brutal Swing on switch-in.",
+		desc: "After 2 turns, the user uses Earthquake.",
+		shortDesc: "Uses Earthquake after 2 turns.",
 		onStart(pokemon) {
 			this.add('-activate', pokemon, 'ability: Omen');
 			let success = false;
 			for (const target of pokemon.side.foe.active) {
 				if (target.side.addSlotCondition(target, 'futuremove')) {
 					Object.assign(target.side.slotConditions[target.position]['futuremove'], {
-						duration: 1,
+						duration: 3,
 						move: 'omen',
 						source: pokemon,
 						moveData: {
 							id: 'omen',
 							name: "Omen",
 							accuracy: 100,
-							basePower: 60,
+							basePower: 100,
 							category: "Physical",
 							priority: 0,
 							flags: {},
 							effectType: 'Move',
 							isFutureMove: true,
-							type: 'Dark',
+							type: 'Ground',
 						},
 					});
 					success = true;
 				}
 			}
 			if (success) {
-				this.add('-anim', pokemon, 'Doom Desire');
+				this.add('-anim', pokemon, 'Earthquake');
 			}
 		},
 		rating: 5,
@@ -1215,6 +1215,37 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		rating: 1.5,
 		num: 44,
 	},
+	primordialsea: {
+		onStart(source) {
+			this.field.setWeather('primordialsea');
+		},
+		onAnySetWeather(target, source, weather) {
+			const strongWeathers = ['desolateland', 'primordialsea', 'deltastream'];
+			if (this.field.getWeather().id === 'primordialsea' && !strongWeathers.includes(weather.id)) return false;
+		},
+		onEnd(pokemon) {
+			if (this.field.weatherState.source !== pokemon) return;
+			for (const target of this.getAllActive()) {
+				if (target === pokemon) continue;
+				if (target.hasAbility('primordialsea')) {
+					this.field.weatherState.source = target;
+					return;
+				}
+			}
+			this.field.clearWeather();
+		},
+		onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Electric') {
+				{
+					this.add('-immune', target, '[from] ability: primordialsea');
+				}
+				return null;
+			}
+		},
+		name: "Primordial Sea",
+		rating: 4.5,
+		num: 189,
+	},
 	drainpower: {
 		desc: "User gains 1.3x HP from draining/Aqua Ring/Ingrain/Leech Seed/Strength Sap.",
 		shortdesc: "User gains 1.3x HP from draining/Aqua Ring/Ingrain/Leech Seed/Strength Sap.",
@@ -1378,6 +1409,20 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		name: "Gale Wings",
 		rating: 3,
 		num: 177,
+	},
+	windup: {
+		onModifyAtkPriority: 5,
+		onModifyAtk(atk, attacker, defender, move) {
+			if (move === 'Rollout' || 'Ice Ball') {
+			this.self: {
+			volatileStatus: 'defensecurl',
+		    },;
+			this.boost({def: 1}, pokemon);
+		    },;
+	        },
+	 name: "Windup",
+	 rating: 3,
+	 num: 177,
 	},
 	powerspot: {
 		desc: "This Pokemon and its allies have the power of their moves multiplied by 1.3x.",

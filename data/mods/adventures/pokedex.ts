@@ -1428,7 +1428,8 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	miltank: {
 		inherit: true,
-		baseStats: {hp: 115, atk: 100, def: 105, spa: 40, spd: 70, spe: 100},
+		baseStats: {hp: 100, atk: 100, def: 105, spa: 40, spd: 80, spe: 100},
+		abilities: {0: "Scrappy", 1: "Thick Fat", H: "Windup"},
 	},
 	bisharp: {
 		inherit: true,
