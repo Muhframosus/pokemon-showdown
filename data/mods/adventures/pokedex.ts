@@ -614,6 +614,26 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		abilities: {0: "Synchronize", 1: "Trace", H: "Misty Surge"},
 	},
+	floatzel: {
+		types: ["Water", "Normal"],
+		baseStats: {hp: 85, atk: 105, def: 115, spa: 65, spd: 50, spe: 115},
+		abilities: {0: "Swift Swim", 1: "Water Veil", H: "Serene Grace"},
+		inherit: true,
+	},
+	octillery: {
+		types: ["Water", "Normal"],
+		baseStats: {hp: 75, atk: 105, def: 85, spa: 130, spd: 85, spe: 45},
+		inherit: true,
+	},
+	skuntank: {
+		inherit: true,
+		baseStats: {hp: 103, atk: 93, def: 117, spa: 21, spd: 111, spe: 84},
+		abilities: {0: "Stench", 1: "Aftermath", H: "Keen Eye"},
+	},
+	klefki: {
+		baseStats: {hp: 57, atk: 80, def: 91, spa: 80, spd: 87, spe: 75},
+		abilities: {0: "Prankster", 1: "Levitate", H: "Magician"},
+	},
 	gallade: {
 		inherit: true,
 		baseStats: {hp: 78, atk: 125, def: 75, spa: 55, spd: 115, spe: 90},
