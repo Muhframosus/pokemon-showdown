@@ -1410,20 +1410,22 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		rating: 3,
 		num: 177,
 	},
-	windup: {
-		onModifyAtkPriority: 5,
-		onModifyAtk(atk, attacker, defender, move) {
-			if (move === 'Rollout' || 'Ice Ball') {
-			this.self: {
-			volatileStatus: 'defensecurl',
-		    },;
-			this.boost({def: 1}, pokemon);
-		    },;
-	        },
-	 name: "Windup",
-	 rating: 3,
-	 num: 177,
-	},
+	
+	//windup: {
+	//	onModifyAtkPriority: 5,
+	//	onModifyAtk(atk, attacker, defender, move) {
+	//		if (move === 'Rollout' || 'Ice Ball') {
+	//		this.self: {
+	//		volatileStatus: 'defensecurl',
+	//	    },;
+	//		this.boost({def: 1}, pokemon);
+	//	    },;
+	//        },
+	// name: "Windup",
+	// rating: 3,
+	// num: 177,
+	//},
+	
 	powerspot: {
 		desc: "This Pokemon and its allies have the power of their moves multiplied by 1.3x.",
 		shortdesc: "This Pokemon and its allies have the power of their moves multiplied by 1.3x.",
