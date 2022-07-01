@@ -152,12 +152,20 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	sandslash: {
 		inherit: true,
 		baseStats: {hp: 75, atk: 110, def: 115, spa: 65, spd: 75, spe: 85},
-		abilities: {0: "Skill Link", 1: "Water Absorb", H: "Sand Rush"},		
+		abilities: {0: "Skill Link", 1: "Water Absorb", H: "Windup"},		
 	},
 	sandslashalola: {
 		inherit: true,
 		baseStats: {hp: 75, atk: 110, def: 115, spa: 45, spd: 95, spe: 85},
-		abilities: {0: "Skill Link", 1: "Permafrost", H: "Slush Rush"},		
+		abilities: {0: "Skill Link", 1: "Permafrost", H: "Windup"},		
+	},
+	donphan: {
+		baseStats: {hp: 90, atk: 120, def: 120, spa: 60, spd: 60, spe: 50},
+		abilities: {0: "Sturdy", 1: "Windup", H: "Sand Veil"},
+	},
+	golem: {
+		baseStats: {hp: 80, atk: 120, def: 130, spa: 55, spd: 65, spe: 45},
+		abilities: {0: "Rock Head", 1: "Sturdy", H: "Windup"},
 	},
 	raticate: {
 		inherit: true,
@@ -276,6 +284,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	walrein: {
 		inherit: true,
 		baseStats: {hp: 110, atk: 130, def: 100, spa: 55, spd: 110, spe: 30},
+		abilities: {0: "Thick Fat", 1: "Windup", H: "Oblivious"},
 	},
 	krookodile: {
 		inherit: true,
@@ -847,7 +856,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	golisopod: {
 		inherit: true,
-		abilities: {0: "Emergency Exit", H: "Shell Armor"},
+		abilities: {0: "Emergency Exit", 1: "Windup", H: "Shell Armor"},
 	},
 	grimmsnarl: {
 		inherit: true,
@@ -1453,6 +1462,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	scolipede: {
 		inherit: true,
 		baseStats: {hp: 60, atk: 120, def: 99, spa: 55, spd: 79, spe: 112},
+		abilities: {0: "Windup", 1: "Swarm", H: "Speed Boost"},
 	},
 	castform: {
 		inherit: true,
