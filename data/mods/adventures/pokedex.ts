@@ -622,7 +622,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	octillery: {
 		types: ["Water", "Normal"],
-		baseStats: {hp: 75, atk: 105, def: 85, spa: 130, spd: 85, spe: 45},
+		baseStats: {hp: 75, atk: 105, def: 85, spa: 120, spd: 85, spe: 45},
 		inherit: true,
 	},
 	skuntank: {

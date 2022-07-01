@@ -950,6 +950,7 @@ this.modData('Learnsets', 'octillery').learnset.triattack = ['8L1'];
 this.modData('Learnsets', 'gallade').learnset.noretreat = ['8L1'];
 
 this.modData('Learnsets', 'skuntank').learnset.slackoff = ['8L1'];
+this.modData('Learnsets', 'skuntank').learnset.toxicspikes = ['8L1'];
 
 this.modData('Learnsets', 'klefki').learnset.fairyfool = ['8L1'];
 
