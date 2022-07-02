@@ -1677,4 +1677,74 @@ export const Moves: {[moveid: string]: MoveData} = {
 		target: "self",
 		type: "Dark",
 	},
+	quell: {
+		num: 669,
+		accuracy: 100,
+		basePower: 40,
+		basePowerCallback(pokemon, target, move) {
+			// You can't get here unless the pursuit succeeds
+			if (target.beingCalledBack || target.switchFlag) {
+				this.debug('Pursuit damage boost');
+				return move.basePower * 2;
+			}
+			return move.basePower;
+		},
+		category: "Physical",
+		isNonstandard: "Past",
+		name: "Quell",
+		pp: 20,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		beforeTurnCallback(pokemon) {
+			for (const side of this.sides) {
+				if (side.hasAlly(pokemon)) continue;
+				side.addSideCondition('pursuit', pokemon);
+				const data = side.getSideConditionData('pursuit');
+				if (!data.sources) {
+					data.sources = [];
+				}
+				data.sources.push(pokemon);
+			}
+		},
+		onModifyMove(move, source, target) {
+			if (target?.beingCalledBack || target?.switchFlag) move.accuracy = true;
+		},
+		onTryHit(target, pokemon) {
+			target.side.removeSideCondition('pursuit');
+		},
+		condition: {
+			duration: 1,
+			onBeforeSwitchOut(pokemon) {
+				this.debug('Pursuit start');
+				let alreadyAdded = false;
+				pokemon.removeVolatile('destinybond');
+				for (const source of this.effectState.sources) {
+					if (!this.queue.cancelMove(source) || !source.hp) continue;
+					if (!alreadyAdded) {
+						this.add('-activate', pokemon, 'move: Quell');
+						alreadyAdded = true;
+					}
+					// Run through each action in queue to check if the Pursuit user is supposed to Mega Evolve this turn.
+					// If it is, then Mega Evolve before moving.
+					if (source.canMegaEvo || source.canUltraBurst) {
+						for (const [actionIndex, action] of this.queue.entries()) {
+							if (action.pokemon === source && action.choice === 'megaEvo') {
+								this.actions.runMegaEvo(source);
+								this.queue.list.splice(actionIndex, 1);
+								break;
+							}
+						}
+					}
+					this.actions.runMove('pursuit', source, source.getLocOf(pokemon));
+				}
+			},
+			onEffectiveness(typeMod, target, type) {
+			if (type === 'Poison') return 1;
+		},
+		},
+		secondary: null,
+		target: "normal",
+		type: "Fairy",
+		contestType: "Clever",
+	},
 }
