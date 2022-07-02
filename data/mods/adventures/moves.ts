@@ -1614,4 +1614,67 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Ground",
 		contestType: "Clever",
 	},
+	stalk: {
+		num: 666,
+		accuracy: 100,
+		basePower: 0,
+		category: "Status",
+		name: "Stalk",
+		pp: 10,
+		priority: 4,
+		flags: {},
+		stallingMove: true,
+		volatileStatus: 'obstruct',
+		onPrepareHit(pokemon) {
+			return !!this.queue.willAct() && this.runEvent('StallMove', pokemon);
+		},
+		onHit(pokemon) {
+			pokemon.addVolatile('stall');
+		},
+		condition: {
+			duration: 1,
+			onStart(target) {
+				this.add('-singleturn', target, 'Protect');
+			},
+			onTryHitPriority: 3,
+			onTryHit(target, source, move) {
+				if (!move.flags['protect'] || move.category === 'Status') {
+					if (['gmaxoneblow', 'gmaxrapidflow'].includes(move.id)) return;
+					if (move.isZ || move.isMax) target.getMoveHitData(move).zBrokeProtect = true;
+					return;
+				}
+				if (move.smartTarget) {
+					move.smartTarget = false;
+				} else {
+					this.add('-activate', target, 'move: Protect');
+				}
+				const lockedmove = source.getVolatile('lockedmove');
+				if (lockedmove) {
+					// Outrage counter is reset
+					if (source.volatiles['lockedmove'].duration === 2) {
+						delete source.volatiles['lockedmove'];
+					}
+				}
+				return this.NOT_FAIL;
+			},
+		},
+		volatileStatus: 'focusenergy',
+		condition: {
+			onStart(target, source, effect) {
+				if (effect?.id === 'zpower') {
+					this.add('-start', target, 'move: Focus Energy', '[zeffect]');
+				} else if (effect && (['imposter', 'psychup', 'transform'].includes(effect.id))) {
+					this.add('-start', target, 'move: Focus Energy', '[silent]');
+				} else {
+					this.add('-start', target, 'move: Focus Energy');
+				}
+			},
+			onModifyCritRatio(critRatio) {
+				return critRatio + 4;
+			},
+		},
+		secondary: null,
+		target: "self",
+		type: "Dark",
+	},
 }
