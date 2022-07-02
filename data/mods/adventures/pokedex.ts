@@ -1492,7 +1492,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		abilities: {0: "Shed Skin", 1: "Sheer Force", H: "Infiltrator"},
 	},
 	scyther: {
-		inherit: true
+		inherit: true,
 		baseStats: {hp: 70, atk: 110, def: 80, spa: 55, spd: 80, spe: 105},
 		abilities: {0: "Swarm", 1: "Technician", H: "Delta Stream"},
 	},
