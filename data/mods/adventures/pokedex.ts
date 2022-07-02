@@ -1465,7 +1465,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		abilities: {0: "Windup", 1: "Swarm", H: "Speed Boost"},
 	},
 	clamperl: {
-		inherit: true
+		inherit: true,
 		baseStats: {hp: 35, atk: 64, def: 105, spa: 74, spd: 85, spe: 32},
 		abilities: {0: "Shell Armor", H: "Rattled"},
 	},
