@@ -1464,6 +1464,38 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 60, atk: 120, def: 99, spa: 55, spd: 79, spe: 112},
 		abilities: {0: "Windup", 1: "Swarm", H: "Speed Boost"},
 	},
+	clamperl: {
+		inherit: true
+		baseStats: {hp: 35, atk: 64, def: 105, spa: 74, spd: 85, spe: 32},
+		abilities: {0: "Shell Armor", H: "Rattled"},
+	},
+	huntail: {
+		inherit: true,
+		baseStats: {hp: 85, atk: 114, def: 85, spa: 84, spd: 85, spe: 72},
+		abilities: {0: "Swift Swim", 1: "Stakeout", H: "Water Veil"},
+	},
+	gorebyss: {
+		inherit: true,
+		baseStats: {hp: 85, atk: 84, def: 85, spa: 114, spd: 85, spe: 72},
+		abilities: {0: "Swift Swim", 1: "Limber", H: "Hydration"},
+	},
+	zangoose: {
+        inherit: true,
+		types: ["Fairy", "Fighting"],
+		baseStats: {hp: 73, atk: 115, def: 85, spa: 80, spd: 85, spe: 90},
+		abilities: {0: "Anger Point", 1: "Pastel Veil", H: "Toxic Boost"},
+	},
+	seviper: {
+		inherit: true,
+		types: ["Poison", "Dark"],
+		baseStats: {hp: 73, atk: 115, def: 85, spa: 115, spd: 85, spe: 65},
+		abilities: {0: "Shed Skin", 1: "Sheer Force", H: "Infiltrator"},
+	},
+	scyther: {
+		inherit: true
+		baseStats: {hp: 70, atk: 110, def: 80, spa: 55, spd: 80, spe: 105},
+		abilities: {0: "Swarm", 1: "Technician", H: "Delta Stream"},
+	},
 	castform: {
 		inherit: true,
 		baseStats: {hp: 70, atk: 80, def: 70, spa: 100, spd: 70, spe: 110},
