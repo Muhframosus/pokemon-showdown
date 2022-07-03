@@ -1747,4 +1747,18 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Fairy",
 		contestType: "Clever",
 	},
+	zippyzap: {
+		num: 729,
+		accuracy: 100,
+		basePower: 80,
+		category: "Physical",
+		isNonstandard: "LGPE",
+		name: "Zippy Zap",
+		pp: 10,
+		priority: 0,
+		flags: {contact: 1, protect: 1},
+		target: "normal",
+		type: "Electric",
+		contestType: "Cool",
+	},
 }
