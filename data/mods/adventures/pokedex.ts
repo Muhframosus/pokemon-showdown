@@ -1367,7 +1367,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	noivern: {
 		inherit: true,
 		baseStats: {hp: 95, atk: 50, def: 85, spa: 97, spd: 85, spe: 123},
-		abilities: {0: "Frisk", 1: "Infiltrator", H: "Aerilate"},
 	},
 	absol: {
 		inherit: true,
@@ -1495,6 +1494,10 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		baseStats: {hp: 70, atk: 110, def: 80, spa: 55, spd: 80, spe: 105},
 		abilities: {0: "Swarm", 1: "Technician", H: "Delta Stream"},
+	},
+	kecleon: {
+		baseStats: {hp: 90, atk: 110, def: 70, spa: 90, spd: 120, spe: 40},
+		inherit: true,
 	},
 	castform: {
 		inherit: true,

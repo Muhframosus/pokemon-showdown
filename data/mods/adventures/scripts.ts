@@ -334,6 +334,11 @@ this.modData('Learnsets', 'starmie').learnset.zapcannon = ['8L1'];
 
 this.modData('Learnsets', 'zangoose').learnset.stalk = ['8L1'];
 this.modData('Learnsets', 'zangoose').learnset.quell = ['8L1'];
+this.modData('Learnsets', 'zangoose').learnset.playrough = ['8L1'];
+
+this.modData('Learnsets', 'kecleon').learnset.bulletpunch = ['8L1'];
+this.modData('Learnsets', 'kecleon').learnset.pursuit = ['8L1'];
+this.modData('Learnsets', 'kecleon').learnset.machpunch = ['8L1'];
 
 this.modData('Learnsets', 'seviper').learnset.pursuit = ['8L1'];
 this.modData('Learnsets', 'seviper').learnset.nastyplot = ['8L1'];
