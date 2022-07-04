@@ -182,5 +182,13 @@ export const Items: {[k: string]: ModdedItemData} = {
 		},
 		num: 284,
 		gen: 4,
-	},		
+	},	
+	lightball: {
+		inherit: true,
+		onResidualOrder: 28,
+		onResidualSubOrder: 3,
+		onResidual(pokemon) {
+			pokemon.trySetStatus('par', pokemon);
+		},
+	},
 };

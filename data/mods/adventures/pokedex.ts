@@ -1630,6 +1630,29 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 90, atk: 80, def: 100, spa: 80, spd: 105, spe: 70},
 		abilities: {0: "Thick Fat", 1: "Hydration", H: "Ice Body"},
 	},
+	corsola: {
+		types: ["Water", "Rock"],
+		baseStats: {hp: 65, atk: 55, def: 95, spa: 65, spd: 95, spe: 35},
+		abilities: {0: "Hustle", 1: "Natural Cure", H: "Regenerator"},
+        inherit: true,
+	},
+	corsolagalar: {
+		types: ["Ghost"],
+		baseStats: {hp: 60, atk: 55, def: 100, spa: 65, spd: 100, spe: 30},
+		abilities: {0: "Weak Armor", H: "Cursed Body"},
+		inherit: true,
+	},
+	cursola: {
+		types: ["Ghost"],
+		baseStats: {hp: 60, atk: 55, def: 100, spa: 145, spd: 130, spe: 30},
+		abilities: {0: "Weak Armor", H: "Perish Body"},
+		inherit: true,
+	},
+	ampharos: {
+		inherit: true,
+		baseStats: {hp: 90, atk: 75, def: 85, spa: 115, spd: 90, spe: 55},
+		abilities: {0: "Static", 1: "Electric Surge", H: "Plus"},
+	},
 	kangaskhan: {
 		inherit: true,
 		baseStats: {hp: 105, atk: 115, def: 90, spa: 40, spd: 90, spe: 90},
@@ -1638,4 +1661,25 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		baseStats: {hp: 105, atk: 125, def: 100, spa: 100, spd: 100, spe: 100},
 	},
+	genesect: {
+		inherit: true,
+		abilities: {0: "No Guard"},
+	},
+	genesectdouse: {
+		inherit: true,
+		abilities: {0: "No Guard"},
+	},
+	genesectshock: {
+		inherit: true,
+		abilities: {0: "No Guard"},
+	},
+	genesectburn: {
+		inherit: true,
+		abilities: {0: "No Guard"},
+	},
+	genesectchill: {
+		inherit: true,
+		abilities: {0: "No Guard"},
+	},
+	
 };
