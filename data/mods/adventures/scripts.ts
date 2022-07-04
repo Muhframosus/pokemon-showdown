@@ -332,6 +332,8 @@ this.modData('Learnsets', 'cofagrigus').learnset.scorchingsands = ['8L1'];
 
 this.modData('Learnsets', 'starmie').learnset.zapcannon = ['8L1'];
 
+this.modData('Learnsets', 'ampharos').learnset.tailglow = ['8L1'];
+
 this.modData('Learnsets', 'zangoose').learnset.stalk = ['8L1'];
 this.modData('Learnsets', 'zangoose').learnset.quell = ['8L1'];
 this.modData('Learnsets', 'zangoose').learnset.playrough = ['8L1'];
