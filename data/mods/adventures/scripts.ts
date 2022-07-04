@@ -342,11 +342,17 @@ this.modData('Learnsets', 'kecleon').learnset.bulletpunch = ['8L1'];
 this.modData('Learnsets', 'kecleon').learnset.pursuit = ['8L1'];
 this.modData('Learnsets', 'kecleon').learnset.machpunch = ['8L1'];
 
+this.modData('Learnsets', 'scyther').learnset.glare = ['8L1'];
+this.modData('Learnsets', 'scyther').learnset.stealthrock = ['8L1'];
+this.modData('Learnsets', 'scyther').learnset.bulkup = ['8L1'];
+
 this.modData('Learnsets', 'seviper').learnset.pursuit = ['8L1'];
 this.modData('Learnsets', 'seviper').learnset.nastyplot = ['8L1'];
 this.modData('Learnsets', 'seviper').learnset.psychic = ['8L1'];
 this.modData('Learnsets', 'seviper').learnset.psyshock = ['8L1'];
 this.modData('Learnsets', 'seviper').learnset.psychicfangs = ['8L1'];
+this.modData('Learnsets', 'seviper').learnset.gunkshot = ['8L1'];
+this.modData('Learnsets', 'seviper').learnset.stalk = ['8L1'];
 
 this.modData('Learnsets', 'cresselia').learnset.aurorabeam = ['8L1'];
 this.modData('Learnsets', 'cresselia').learnset.teleport = ['8L1'];
