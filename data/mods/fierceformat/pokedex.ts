@@ -93,7 +93,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},	
 	seaking: {	
 		inherit: true,	
-		baseStats: {hp: 80, atk: 122, def: 65, spa: 105, spd: 80, spe: 78},	
+		baseStats: {hp: 80, atk: 123, def: 65, spa: 105, spd: 80, spe: 78},	
 	},	
 	basculin: {	
 		inherit: true,	
