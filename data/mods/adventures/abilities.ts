@@ -910,6 +910,20 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			}
 		}
 	},
+	Rampage: {
+		onModifyAccuracyPriority: -1,
+		onModifyAccuracy(accuracy, target) {
+			if (typeof accuracy !== 'number') return;
+			if (target?.volatiles['confusion']) {
+				target.setBoost({atk: 6});
+				this.add('-setboost', target, 'atk', 12, '[from] ability: Rampage');
+			}
+		},
+		isBreakable: true,
+		name: "Rampage",
+		rating: 1,
+		num: 77,
+	},
 	forewarn: {
 		onStart(pokemon) {
 			let warnMoves: (Move | Pokemon)[][] = [];

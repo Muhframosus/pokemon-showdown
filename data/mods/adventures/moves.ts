@@ -1662,8 +1662,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 		},
 		secondary: null,
 		target: "normal",
-		type: "Fairy",
+		type: "Fighting",
 		contestType: "Clever",
+	},
+	thrash: {
+		inherit: true,
+		type: "Fighting",
 	},
 	zippyzap: {
 		num: 729,
