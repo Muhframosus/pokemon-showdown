@@ -2,6 +2,11 @@ export const Scripts: {[k: string]: ModdedBattleScriptsData} = {
 init() {
 //-NEW MOVES START
 
+this.modData('Learnsets', 'trevenant').learnset.strengthsap = ['8L1'];
+this.modData('Learnsets', 'trevenant').learnset.synthesis = ['8L1'];
+this.modData('Learnsets', 'trevenant').learnset.shadowsneak = ['8L1'];
+this.modData('Learnsets', 'trevenant').learnset.lightscreen = ['8L1'];
+
 
 
 
