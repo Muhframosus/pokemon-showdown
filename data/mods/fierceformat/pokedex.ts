@@ -15,7 +15,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},	
 	trevenant: {	
 		inherit: true,	
-		baseStats: {hp: 85, atk: 110, def: 87, spa: 65, spd: 122, spe: 56},	
+		baseStats: {hp: 80, atk: 110, def: 87, spa: 65, spd: 122, spe: 56},	
 		abilities: {0: "Natural Cure", 1: "Regenerator", H: "Harvest"},	
 	},	
 	samurott: {	
@@ -93,7 +93,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},	
 	seaking: {	
 		inherit: true,	
-		baseStats: {hp: 80, atk: 122, def: 65, spa: 105, spd: 80, spe: 78},	
+		baseStats: {hp: 80, atk: 125, def: 65, spa: 105, spd: 80, spe: 78},	
 	},	
 	basculin: {	
 		inherit: true,	
