@@ -863,6 +863,11 @@ this.modData('Learnsets', 'tropius').learnset.skyattack = ['8L1'];
 this.modData('Learnsets', 'tropius').learnset.solarblade = ['8L1'];
 
 this.modData('Learnsets', 'primeape').learnset.drainpunch = ['8L1'];
+this.modData('Learnsets', 'primeape').learnset.knockoff = ['8L1'];
+this.modData('Learnsets', 'primeape').learnset.machpunch = ['8L1'];
+this.modData('Learnsets', 'primeape').learnset.suckerpunch = ['8L1'];
+this.modData('Learnsets', 'primeape').learnset.bulletpunch = ['8L1'];
+this.modData('Learnsets', 'primeape').learnset.shadowpunch = ['8L1'];
 
 this.modData('Learnsets', 'appletun').learnset.bellydrum = ['8L1'];
 this.modData('Learnsets', 'appletun').learnset.aromatherapy = ['8L1'];
