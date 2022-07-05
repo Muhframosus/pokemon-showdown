@@ -565,6 +565,16 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		baseStats: {hp: 80, atk: 52, def: 70, spa: 100, spd: 70, spe: 89},
 	},
+	scatterbug: {
+		inherit: true,
+		baseStats: {hp: 38, atk: 55, def: 40, spa: 47, spd: 25, spe: 35},
+		abilities: {0: "Shield Dust", 1: "Compound Eyes", H: "Friend Guard"},
+	},
+	spewpa: {
+		inherit: true,
+		baseStats: {hp: 45, atk: 22, def: 100, spa: 27, spd: 40, spe: 29},
+		abilities: {0: "Shed Skin", 1: "Fur Coat", H: "Friend Guard"},
+	},
 	flapple: {
 		inherit: true,
 		baseStats: {hp: 70, atk: 120, def: 80, spa: 100, spd: 80, spe: 85},
@@ -1413,8 +1423,8 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	primeape: {
 		inherit: true,
-		baseStats: {hp: 85, atk: 80, def: 80, spa: 50, spd: 90, spe: 100},
-		abilities: {0: "Anger Point", 1: "Defiant", H: "Gorilla Tactics"},
+		baseStats: {hp: 105, atk: 105, def: 80, spa: 60, spd: 80, spe: 95},
+		abilities: {0: "Anger Point", 1: "Defiant", H: "Rampage"},
 	},
 	conkeldurr: {
 		inherit: true,
@@ -1480,7 +1490,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	zangoose: {
         inherit: true,
-		types: ["Fairy", "Fighting"],
+		types: ["Normal", "Fighting"],
 		baseStats: {hp: 73, atk: 115, def: 85, spa: 80, spd: 85, spe: 90},
 		abilities: {0: "Anger Point", 1: "Pastel Veil", H: "Toxic Boost"},
 	},

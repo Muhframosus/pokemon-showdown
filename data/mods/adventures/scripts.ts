@@ -359,6 +359,16 @@ this.modData('Learnsets', 'seviper').learnset.psychicfangs = ['8L1'];
 this.modData('Learnsets', 'seviper').learnset.gunkshot = ['8L1'];
 this.modData('Learnsets', 'seviper').learnset.stalk = ['8L1'];
 
+this.modData('Learnsets', 'spewpa').learnset.bodypress = ['8L1'];
+this.modData('Learnsets', 'spewpa').learnset.stickyweb = ['8L1'];
+this.modData('Learnsets', 'spewpa').learnset.painsplit = ['8L1'];
+this.modData('Learnsets', 'spewpa').learnset.babydolleyes = ['8L1'];
+this.modData('Learnsets', 'spewpa').learnset.sleeppowder = ['8L1'];
+this.modData('Learnsets', 'spewpa').learnset.powder = ['8L1'];
+this.modData('Learnsets', 'spewpa').learnset.cottonguard = ['8L1'];
+this.modData('Learnsets', 'spewpa').learnset.rest = ['8L1'];
+this.modData('Learnsets', 'spewpa').learnset.sleeptalk = ['8L1'];
+
 this.modData('Learnsets', 'cresselia').learnset.aurorabeam = ['8L1'];
 this.modData('Learnsets', 'cresselia').learnset.teleport = ['8L1'];
 this.modData('Learnsets', 'cresselia').learnset.dazzlinggleam = ['8L1'];
