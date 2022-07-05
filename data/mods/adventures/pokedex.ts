@@ -1356,7 +1356,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	chandelure: {
 		inherit: true,
-		baseStats: {hp: 60, atk: 55, def: 90, spa: 145, spd: 90, spe: 80},
+		baseStats: {hp: 50, atk: 55, def: 60, spa: 125, spd: 60, spe: 70},
 		abilities: {0: "Flash Fire", 1: "Infiltrator", H: "Shadow Tag"},
 	},
 	decidueye: {
@@ -1647,6 +1647,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 60, atk: 55, def: 100, spa: 145, spd: 130, spe: 30},
 		abilities: {0: "Weak Armor", H: "Perish Body"},
 		inherit: true,
+	},
+	salamence: {
+		inherit: true,
+		baseStats: {hp: 95, atk: 135, def: 80, spa: 110, spd: 80, spe: 100},
+		abilities: {0: "Intimidate", 1: "Guts", H: "Moxie"},
 	},
 	ampharos: {
 		inherit: true,
