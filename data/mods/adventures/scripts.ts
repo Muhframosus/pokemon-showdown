@@ -334,6 +334,8 @@ this.modData('Learnsets', 'starmie').learnset.zapcannon = ['8L1'];
 
 this.modData('Learnsets', 'ampharos').learnset.tailglow = ['8L1'];
 
+this.modData('Learnsets', 'toxicroak').learnset.closecombat = ['8L1'];
+
 this.modData('Learnsets', 'zangoose').learnset.stalk = ['8L1'];
 this.modData('Learnsets', 'zangoose').learnset.quell = ['8L1'];
 this.modData('Learnsets', 'zangoose').learnset.playrough = ['8L1'];
@@ -345,6 +347,9 @@ this.modData('Learnsets', 'kecleon').learnset.machpunch = ['8L1'];
 this.modData('Learnsets', 'scyther').learnset.glare = ['8L1'];
 this.modData('Learnsets', 'scyther').learnset.stealthrock = ['8L1'];
 this.modData('Learnsets', 'scyther').learnset.bulkup = ['8L1'];
+
+this.modData('Learnsets', 'salamence').learnset.ironhead = ['8L1'];
+this.modData('Learnsets', 'salamence').learnset.uturn = ['8L1'];
 
 this.modData('Learnsets', 'seviper').learnset.pursuit = ['8L1'];
 this.modData('Learnsets', 'seviper').learnset.nastyplot = ['8L1'];
@@ -967,8 +972,6 @@ this.modData('Learnsets', 'cradily').learnset.leafstorm = ['8L1'];
 this.modData('Learnsets', 'cradily').learnset.hornleech = ['8L1'];
 this.modData('Learnsets', 'cradily').learnset.knockoff = ['8L1'];
 
-this.modData('Learnsets', 'abomasnow').learnset.hydropump = ['8L1'];
-this.modData('Learnsets', 'abomasnow').learnset.hornleech = ['8L1'];
 this.modData('Learnsets', 'abomasnow').learnset.iciclecrash = ['8L1'];
 this.modData('Learnsets', 'abomasnow').learnset.closecombat = ['8L1'];
 this.modData('Learnsets', 'abomasnow').learnset.stalk = ['8L1'];
