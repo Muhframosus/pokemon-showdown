@@ -48,7 +48,6 @@ this.modData('Learnsets', 'kyogre').learnset.hurricane = ['8L1'];
 this.modData('Learnsets', 'noctowl').learnset.nightdaze = ['8L1'];
 this.modData('Learnsets', 'noctowl').learnset.moonlight = ['8L1'];
 
-this.modData('Learnsets', 'centiskorch').learnset.firstimpression = ['8L1'];
 this.modData('Learnsets', 'centiskorch').learnset.taunt = ['8L1'];
 this.modData('Learnsets', 'centiskorch').learnset.rapidspin = ['8L1'];
 
