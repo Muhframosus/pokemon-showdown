@@ -922,7 +922,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		isBreakable: true,
 		name: "Rampage",
 		rating: 1,
-		num: 77,
+		num: 999,
 	},
 	forewarn: {
 		onStart(pokemon) {
