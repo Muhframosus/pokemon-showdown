@@ -913,6 +913,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	Rampage: {
 		onModifyAtkPriority: -1,
 		onModifyAtk(atk, target) {
+			if (typeof atk !== 'number') return;
 			if (target?.volatiles['confusion']) {
 				target.setBoost({atk: 6});
 				this.add('-setboost', target, 'atk', 12, '[from] ability: Rampage');
