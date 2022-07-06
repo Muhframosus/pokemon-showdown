@@ -26,5 +26,5 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		name: "Rampage",
 		shortDesc: "This pokemon maximizes Attack when confused.",
 	},
-	
+};
 	
