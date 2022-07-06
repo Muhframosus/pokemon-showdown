@@ -22,4 +22,9 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		name: "Permafrost",
 		shortDesc: "This Pokemon is immune to Fire-type moves.",
 	},
-};
+	rampage: {
+		name: "Rampage",
+		shortDesc: "This pokemon maximizes Attack when confused.",
+	},
+	
+	
