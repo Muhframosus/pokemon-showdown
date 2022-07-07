@@ -479,26 +479,33 @@ this.modData('Learnsets', 'espeon').learnset.mysticalfire = ['8L1'];
 this.modData('Learnsets', 'espeon').learnset.aurasphere = ['8L1'];
 this.modData('Learnsets', 'espeon').learnset.teleport = ['8L1'];
 this.modData('Learnsets', 'espeon').learnset.nastyplot = ['8L1'];
+this.modData('Learnsets', 'espeon').learnset.passbaton = ['8L1'];
 
 this.modData('Learnsets', 'flareon').learnset.earthquake = ['8L1'];
 this.modData('Learnsets', 'flareon').learnset.closecombat = ['8L1'];
 this.modData('Learnsets', 'flareon').learnset.wildcharge = ['8L1'];
+this.modData('Learnsets', 'flareon').learnset.passbaton = ['8L1'];
 
 this.modData('Learnsets', 'jolteon').learnset.mysticalfire = ['8L1'];
 this.modData('Learnsets', 'jolteon').learnset.bugbuzz = ['8L1'];
 this.modData('Learnsets', 'jolteon').learnset.doublekick = ['8L1'];
+this.modData('Learnsets', 'jolteon').learnset.passbaton = ['8L1'];
 
 this.modData('Learnsets', 'leafeon').learnset.mysticalfire = ['8L1'];
 this.modData('Learnsets', 'leafeon').learnset.cottonguard = ['8L1'];
 this.modData('Learnsets', 'leafeon').learnset.bodypress = ['8L1'];
 this.modData('Learnsets', 'leafeon').learnset.bulkup = ['8L1'];
+this.modData('Learnsets', 'leafeon').learnset.passbaton = ['8L1'];
 
 this.modData('Learnsets', 'glaceon').learnset.mysticalfire = ['8L1'];
 this.modData('Learnsets', 'glaceon').learnset.aurorabeam = ['8L1'];
+this.modData('Learnsets', 'glaceon').learnset.passbaton = ['8L1'];
 
 this.modData('Learnsets', 'umbreon').learnset.mysticalfire = ['8L1'];
+this.modData('Learnsets', 'umbreon').learnset.passbaton = ['8L1'];
 
 this.modData('Learnsets', 'vaporeon').learnset.mysticalfire = ['8L1'];
+this.modData('Learnsets', 'vaporeon').learnset.passbaton = ['8L1'];
 
 this.modData('Learnsets', 'flygon').learnset.fellstinger = ['8L1'];
 this.modData('Learnsets', 'flygon').learnset.leechlife = ['8L1'];

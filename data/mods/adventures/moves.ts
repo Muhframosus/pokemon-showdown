@@ -1767,4 +1767,27 @@ export const Moves: {[moveid: string]: MoveData} = {
 		target: "self",
 		type: "Normal",
 	},
+	passbaton: {
+		num: 226,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Pass Baton",
+		desc: "Switch out, keeping stat changes.",
+		shortDesc: "Switch out, keeping stat changes.",
+		pp: 40,
+		priority: 0,
+		flags: {},
+		self: {
+			onHit(source) {
+				source.skipBeforeSwitchOutEventFlag = true;
+			},
+		},
+		selfSwitch: 'copyvolatile',
+		secondary: null,
+		target: "self",
+		type: "Normal",
+		zMove: {effect: 'clearnegativeboost'},
+		contestType: "Cute",
+	},
 }
