@@ -1749,6 +1749,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			} else {
 				return false;
 		},
+		},
 		onHit(pokemon) {
 			if (pokemon.item || !pokemon.lastItem) return false;
 			const item = pokemon.lastItem;
