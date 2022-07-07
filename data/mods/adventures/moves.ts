@@ -1736,7 +1736,20 @@ export const Moves: {[moveid: string]: MoveData} = {
 		onTry(source) {
 			const item = source.getItem();
 			if (item.isBerry && source.eatItem(true)) {
-				this.boost({randomStat: 2}, source, null, null, false, true);
+				const stats: BoostID[] = [];
+			let stat: BoostID;
+			for (stat in target.boosts) {
+				if (target.boosts[stat] < 6) {
+					stats.push(stat);
+				}
+			}
+			if (stats.length) {
+				const randomStat = this.sample(stats);
+				const boost: SparseBoostsTable = {};
+				boost[randomStat] = 2;
+				this.boost(boost);
+			} else {
+				return false;
 			} else {
 				return false;
 			}
