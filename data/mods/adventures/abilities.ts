@@ -1713,8 +1713,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		onModifyAtkPriority: 5,
 		onModifyAtk(atk, pokemon) {
 			if (pokemon.volatiles['confusion']) {
-				target.setBoost({atk: 6});
-				this.add('-setboost', target, 'atk', 12, '[from] ability: Rampage');
+				pokemon.setBoost({atk: 6});
+				this.add('-setboost', pokemon, 'atk', 12, '[from] ability: Rampage');
 			}
 		},
 		isBreakable: true,
