@@ -1733,11 +1733,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 		priority: 0,
 		flags: {snatch: 1},
 		// Move disabling implemented in Battle#nextTurn in sim/battle.ts
-		onHit(target) {
+		onTry(source) {
 			const stats: BoostID[] = [];
 			let stat: BoostID;
-			for (stat in target.boosts) {
-				if (target.boosts[stat] < 6) {
+			for (stat in source.boosts) {
+				if (source.boosts[stat] < 6) {
 					stats.push(stat);
 				}
 			}
@@ -1748,7 +1748,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 				this.boost(boost);
 			} else {
 				return false;
-			}
+		      }
 		},
 		onHit(pokemon) {
 			if (pokemon.item || !pokemon.lastItem) return false;
