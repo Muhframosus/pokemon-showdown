@@ -379,6 +379,14 @@ this.modData('Learnsets', 'crobat').learnset.gunkshot = ['8L1'];
 this.modData('Learnsets', 'crobat').learnset.knockoff = ['8L1'];
 this.modData('Learnsets', 'crobat').learnset.stalk = ['8L1'];
 
+this.modData('Learnsets', 'garbodor').learnset.earthquake = ['8L1'];
+this.modData('Learnsets', 'garbodor').learnset.earthpower = ['8L1'];
+this.modData('Learnsets', 'garbodor').learnset.stealthrock = ['8L1'];
+this.modData('Learnsets', 'garbodor').learnset.bulkup = ['8L1'];
+
+this.modData('Learnsets', 'greedent').learnset.uturn = ['8L1'];
+this.modData('Learnsets', 'greedent').learnset.bulkup = ['8L1'];
+
 this.modData('Learnsets', 'cryogonal').learnset.mysticalfire = ['8L1'];
 this.modData('Learnsets', 'cryogonal').learnset.powergem = ['8L1'];
 this.modData('Learnsets', 'cryogonal').learnset.dazzlinggleam = ['8L1'];
