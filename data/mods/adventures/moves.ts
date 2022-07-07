@@ -1736,7 +1736,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		onTry(source) {
 			const item = source.getItem();
 			if (item.isBerry && source.eatItem(true)) {
-				this.boost({def: 2}, source, null, null, false, true);
+				this.boost({randomStat: 2}, source, null, null, false, true);
 			} else {
 				return false;
 			}
