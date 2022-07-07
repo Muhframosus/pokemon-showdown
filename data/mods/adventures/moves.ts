@@ -1750,11 +1750,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 				return false;
 		      }
 		},
-		onHit(pokemon) {
+		onTry(source) {
 			if (pokemon.item || !pokemon.lastItem) return false;
 			const item = pokemon.lastItem;
 			pokemon.lastItem = '';
-			this.add('-item', pokemon, this.dex.items.get(item), '[from] move: Stuff Cheeks');
+			this.add('-item', source, this.dex.items.get(item), '[from] move: Stuff Cheeks');
 			pokemon.setItem(item);
 		},
 		secondary: null,
