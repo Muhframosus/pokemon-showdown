@@ -1480,6 +1480,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 	},
 	fairyfool: {
 		num: 999,
+		desc: "Fairy-type Foul Play.",
+		shortDesc: "Fairy-type Foul Play.",
 		accuracy: 100,
 		basePower: 95,
 		category: "Physical",
@@ -1534,6 +1536,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 	},
 	stalk: {
 		num: 666,
+		desc: "Protect + Focus Energy.",
+		shortDesc: "Protect + Focus Energy.",
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -1610,6 +1614,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 		category: "Physical",
 		isNonstandard: "Past",
 		name: "Quell",
+		desc: "Fighting-type Pursuit, Super Effective vs Poison-types.",
+		shortDesc: "Fighting-type Pursuit, Super Effective vs Poison-types.",
 		pp: 20,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},

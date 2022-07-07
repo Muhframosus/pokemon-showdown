@@ -1710,7 +1710,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	rampage: {
 		desc: "This pokemon maximizes Attack when confused.",
 		shortDesc: "This pokemon maximizes Attack when confused.",
-		onUpdate(pokemon) {
+		onModifyAtkPriority: 5,
+		onModifyAtk(atk, pokemon) {
 			if (pokemon.volatiles['confusion']) {
 				target.setBoost({atk: 6});
 				this.add('-setboost', target, 'atk', 12, '[from] ability: Rampage');
