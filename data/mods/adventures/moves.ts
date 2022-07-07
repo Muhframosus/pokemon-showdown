@@ -1736,27 +1736,10 @@ export const Moves: {[moveid: string]: MoveData} = {
 		onTry(source) {
 			const item = source.getItem();
 			if (item.isBerry && source.eatItem(true)) {
-				this.boost({def: 1}, source, null, null, false, true);
+				this.boost({def: 2}, source, null, null, false, true);
 			} else {
 				return false;
 			}
-		},
-		onTry(source) {
-			const stats: BoostID[] = [];
-			let stat: BoostID;
-			for (stat in source.boosts) {
-				if (source.boosts[stat] < 6) {
-					stats.push(stat);
-				}
-			}
-			if (stats.length) {
-				const randomStat = this.sample(stats);
-				const boost: SparseBoostsTable = {};
-				boost[randomStat] = 2;
-				this.boost(boost);
-			} else {
-				return false;
-		      }
 		},
 		onHit(pokemon) {
 			if (pokemon.item || !pokemon.lastItem) return false;
