@@ -1557,6 +1557,23 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		baseStats: {hp: 100, atk: 130, def: 95, spa: 50, spd: 85, spe: 75},
 	},
+	garbodor: {
+		inherit: true,
+		types: ["Poison", "Ground"],
+		baseStats: {hp: 70, atk: 95, def: 82, spa: 95, spd: 142, spe: 45},
+		abilities: {0: "Aftermath", 1: "Technician", H: "Corrosion"},
+	},
+	garbodorgmax: {
+		inherit: true,
+		types: ["Poison", "Ground"],
+		baseStats: {hp: 70, atk: 95, def: 112, spa: 95, spd: 112, spe: 45},
+		abilities: {0: "Aftermath", 1: "Technician", H: "Corrosion"},
+	},
+	greedent: {
+		baseStats: {hp: 120, atk: 95, def: 135, spa: 55, spd: 95, spe: 20},
+		abilities: {0: "Cheek Pouch", H: "Gluttony"},
+		inherit: true,
+	},
 	mantine: {
 		inherit: true,
 		baseStats: {hp: 95, atk: 40, def: 70, spa: 90, spd: 160, spe: 70},

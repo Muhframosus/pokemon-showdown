@@ -1690,4 +1690,66 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Electric",
 		contestType: "Cool",
 	},
+	belch: {
+		num: 562,
+		accuracy: 100,
+		basePower: 60,
+		category: "Special",
+		name: "Belch",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, sound: 1},
+		// Move disabling implemented in Battle#nextTurn in sim/battle.js
+		onTry(source) {
+			const item = source.getItem();
+			if (item.isBerry && source.eatItem(true)) {
+				this.boost({def: 0}, source, null, null, false, true);
+			} else {
+				return false;
+			}
+		},
+		onHit(pokemon) {
+			if (pokemon.item || !pokemon.lastItem) return false;
+			const item = pokemon.lastItem;
+			pokemon.lastItem = '';
+			this.add('-item', pokemon, this.dex.items.get(item), '[from] move: Belch');
+			pokemon.setItem(item);
+		},
+		secondary: {
+			chance: 30,
+			status: 'psn',
+		},
+		target: "normal",
+		type: "Poison",
+		contestType: "Tough",
+	},
+	stuffcheeks: {
+		num: 747,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Stuff Cheeks",
+		pp: 10,
+		priority: 0,
+		flags: {snatch: 1},
+		// Move disabling implemented in Battle#nextTurn in sim/battle.ts
+		onTry(source) {
+			const item = source.getItem();
+			if (item.isBerry && source.eatItem(true)) {
+				this.boost({def: 2}, source, null, null, false, true);
+			} else {
+				return false;
+			}
+		},
+		onHit(pokemon) {
+			if (pokemon.item || !pokemon.lastItem) return false;
+			const item = pokemon.lastItem;
+			pokemon.lastItem = '';
+			this.add('-item', pokemon, this.dex.items.get(item), '[from] move: Stuff Cheeks');
+			pokemon.setItem(item);
+		},
+		secondary: null,
+		target: "self",
+		type: "Normal",
+	},
 }
