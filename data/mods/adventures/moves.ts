@@ -1734,6 +1734,14 @@ export const Moves: {[moveid: string]: MoveData} = {
 		flags: {snatch: 1},
 		// Move disabling implemented in Battle#nextTurn in sim/battle.ts
 		onTry(source) {
+			const item = source.getItem();
+			if (item.isBerry && source.eatItem(true)) {
+				this.boost({def: 0}, source, null, null, false, true);
+			} else {
+				return false;
+			}
+		},
+		onTry(source) {
 			const stats: BoostID[] = [];
 			let stat: BoostID;
 			for (stat in source.boosts) {
@@ -1750,11 +1758,11 @@ export const Moves: {[moveid: string]: MoveData} = {
 				return false;
 		      }
 		},
-		onTry(source) {
+		onHit(pokemon) {
 			if (pokemon.item || !pokemon.lastItem) return false;
 			const item = pokemon.lastItem;
 			pokemon.lastItem = '';
-			this.add('-item', source, this.dex.items.get(item), '[from] move: Stuff Cheeks');
+			this.add('-item', pokemon, this.dex.items.get(item), '[from] move: Stuff Cheeks');
 			pokemon.setItem(item);
 		},
 		secondary: null,
