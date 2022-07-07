@@ -1736,8 +1736,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 		onTry(source) {
 			const stats: BoostID[] = [];
 			let stat: BoostID;
-			for (stat in target.boosts) {
-				if (target.boosts[stat] < 6) {
+			for (stat in source.boosts) {
+				if (source.boosts[stat] < 6) {
 					stats.push(stat);
 				}
 			}
