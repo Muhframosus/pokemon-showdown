@@ -1748,7 +1748,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 				this.boost(boost);
 			} else {
 				return false;
-		},
+		      }
 		},
 		onHit(pokemon) {
 			if (pokemon.item || !pokemon.lastItem) return false;
