@@ -1729,6 +1729,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 		basePower: 0,
 		category: "Status",
 		name: "Stuff Cheeks",
+		desc: "Munches on held berry and increases a random stat +2.",
+		shortDesc: "Munches on held berry and increases a random stat +2.",
 		pp: 10,
 		priority: 0,
 		flags: {snatch: 1},
