@@ -507,6 +507,8 @@ this.modData('Learnsets', 'umbreon').learnset.passbaton = ['8L1'];
 this.modData('Learnsets', 'vaporeon').learnset.mysticalfire = ['8L1'];
 this.modData('Learnsets', 'vaporeon').learnset.passbaton = ['8L1'];
 
+this.modData('Learnsets', 'sylveon').learnset.passbaton = ['8L1'];
+
 this.modData('Learnsets', 'flygon').learnset.fellstinger = ['8L1'];
 this.modData('Learnsets', 'flygon').learnset.leechlife = ['8L1'];
 this.modData('Learnsets', 'flygon').learnset.quiverdance = ['8L1'];
