@@ -29,8 +29,8 @@ export const Formats: FormatList = [
 		name: "[Gen 8] Adventures OU",
 		desc: `The standard format for Adventures.`,
 		mod: 'adventures',
-		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Moves Clause', 'Species Clause', 'Dynamax Clause', 'Sleep Clause Mod', 'Eeveelution Baton Pass Clause',],
-		banlist: [ 'Uber', 'AG', ],
+		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Moves Clause', 'Species Clause', 'Dynamax Clause', 'Sleep Clause Mod',],
+		banlist: [ 'Uber', 'AG',],
 	},
 	{
 		name: "[Gen 8] Adventures UU",
@@ -39,7 +39,7 @@ export const Formats: FormatList = [
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Moves Clause', 'Species Clause', 'Dynamax Clause', 'Sleep Clause Mod'],
 		banlist: [
 			// National Dex OU
-			 'OU', 'AG', 'UUBL', 'Uber', 'Drought', 'Drizzle', 'Arena Trap', 'Shadow Tag', 'Baton Pass',
+			 'OU', 'AG', 'UUBL', 'Uber', 'Drought', 'Drizzle', 'Arena Trap', 'Shadow Tag',
 			// Slowbronite is banned so it doesn't validate on Galarian Slowbro
 			'Slowbronite',
 		],
@@ -51,7 +51,7 @@ export const Formats: FormatList = [
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Moves Clause', 'Species Clause', 'Dynamax Clause', 'Sleep Clause Mod'],
 		banlist: [
 			// National Dex OU
-			 'OU', 'AG', 'UUBL', 'UU', 'Uber', 'Drought', 'Drizzle', 'Arena Trap', 'Shadow Tag', 'Baton Pass',
+			 'OU', 'AG', 'UUBL', 'UU', 'Uber', 'Drought', 'Drizzle', 'Arena Trap', 'Shadow Tag',
 			// Slowbronite is banned so it doesn't validate on Galarian Slowbro
 			'Slowbronite',
 		],
@@ -63,7 +63,7 @@ export const Formats: FormatList = [
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Moves Clause', 'Species Clause', 'Dynamax Clause', 'Sleep Clause Mod'],
 		banlist: [
 			// National Dex OU
-			 'OU', 'AG', 'UUBL', 'UU', 'RU', 'Uber', 'Drought', 'Drizzle', 'Arena Trap', 'Shadow Tag', 'Baton Pass',
+			 'OU', 'AG', 'UUBL', 'UU', 'RU', 'Uber', 'Drought', 'Drizzle', 'Arena Trap', 'Shadow Tag',
 			// Slowbronite is banned so it doesn't validate on Galarian Slowbro
 			'Slowbronite',
 		],
@@ -77,7 +77,7 @@ export const Formats: FormatList = [
 		name: "[Gen 8] Adventures Ubers",
 		mod: 'adventures',
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Moves Clause', 'Species Clause', 'Dynamax Clause', 'Sleep Clause Mod'],
-		banlist: [ 'AG', 'Baton Pass', ],
+		banlist: [ 'AG', ],
 	},
 	{
 		name: "[Gen 8] Adventures Custom Game",
@@ -96,7 +96,7 @@ export const Formats: FormatList = [
 		rated: false,
 		tournamentShow: false,
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Moves Clause', 'Species Clause', 'Dynamax Clause', 'Sleep Clause Mod'],
-		banlist: [ 'Uber', 'AG', 'Baton Pass', ],
+		banlist: [ 'Uber', 'AG', ],
 	},
 	{
 		name: "[Gen 8] Adventures Multi Battle",
