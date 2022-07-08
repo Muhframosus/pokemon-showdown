@@ -718,7 +718,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	glaceon: {
 		inherit: true,
-		abilities: {0: "Snow Cloak", 1: "Slush Rush", H: "Ice Body"},
+		abilities: {0: "Unburden", 1: "Slush Rush", H: "Ice Body"},
 	},
 	umbreon: {
 		inherit: true,
@@ -727,6 +727,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	flareon: {
 		inherit: true,
 		baseStats: {hp: 65, atk: 130, def: 65, spa: 60, spd: 110, spe: 95},
+	},
+	sylveon: {
+		inherit: true,
+		baseStats: {hp: 95, atk: 65, def: 65, spa: 110, spd: 130, spe: 60},
+		abilities: {0: "Cute Charm", 1: "Fairy Aura", H: "Pixilate"},
 	},
 	floetteeternal: {
 		inherit: true,
@@ -1625,11 +1630,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		baseStats: {hp: 95, atk: 130, def: 80, spa: 70, spd: 80, spe: 76},
 		abilities: {0: "Levitate", 1: "Stench", H: "Strong Jaw"},
-	},
-	sylveon: {
-		inherit: true,
-		baseStats: {hp: 95, atk: 65, def: 65, spa: 110, spd: 130, spe: 60},
-		abilities: {0: "Cute Charm", 1: "Fairy Aura", H: "Pixilate"},
 	},
 	goodra: {
 		inherit: true,
