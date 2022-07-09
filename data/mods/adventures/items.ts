@@ -191,4 +191,69 @@ export const Items: {[k: string]: ModdedItemData} = {
 			pokemon.trySetStatus('par', pokemon);
 		},
 	},
+	metalpowder: {
+		name: "Metal Powder",
+		fling: {
+			basePower: 10,
+		},
+		spritenum: 287,
+		onModifyDefPriority: 2,
+		onModifyDef(def, pokemon) {
+			if (pokemon.species.name === 'Ditto') {
+				return this.chainModify(1.5);
+			}
+		},
+		onModifySpDPriority: 2,
+		onModifySpD(spd, pokemon) {
+			if (pokemon.species.name === 'Ditto') {
+				return this.chainModify(1.5);
+			}
+		},
+		itemUser: ["Ditto"],
+		num: 257,
+		gen: 2,
+	},
+	metronome: {
+		name: "Metronome",
+		spritenum: 289,
+		fling: {
+			basePower: 30,
+		},
+		onStart(pokemon) {
+			pokemon.addVolatile('metronome');
+		},
+		condition: {
+			onStart(pokemon) {
+				this.effectState.lastMove = '';
+				this.effectState.numConsecutive = 0;
+			},
+			onTryMovePriority: -2,
+			onTryMove(pokemon, target, move) {
+				if (!pokemon.hasItem('metronome')) {
+					pokemon.removeVolatile('metronome');
+					return;
+				}
+				if (this.effectState.lastMove === move.id && pokemon.moveLastTurnResult) {
+					this.effectState.numConsecutive++;
+				} else if (pokemon.volatiles['twoturnmove']) {
+					if (this.effectState.lastMove !== move.id) {
+						this.effectState.numConsecutive = 1;
+					} else {
+						this.effectState.numConsecutive++;
+					}
+				} else {
+					this.effectState.numConsecutive = 0;
+				}
+				this.effectState.lastMove = move.id;
+			},
+			onModifyDamage(damage, source, target, move) {
+				const dmgMod = [1.15*4096, 1.30*4096, 1.45*4096, 1.60*4096, 1.75*4096, 1.90*4096];
+				const numConsecutive = this.effectState.numConsecutive > 5 ? 5 : this.effectState.numConsecutive;
+				this.debug(`Current Metronome boost: ${dmgMod[numConsecutive]}/4096`);
+				return this.chainModify([dmgMod[numConsecutive], 4096]);
+			},
+		},
+		num: 277,
+		gen: 4,
+	},
 };

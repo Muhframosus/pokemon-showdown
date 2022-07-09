@@ -23,3 +23,4 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		shortDesc: "This Pokemon is immune to Fire-type moves.",
 	},
 };
+	

@@ -1352,16 +1352,16 @@ export const Moves: {[moveid: string]: MoveData} = {
 		condition: {
 			duration: 5,
 			durationCallback(source, effect) {
-				if (source?.hasItem('unidentifiedforeignrock')) {
-				return 8;
-				}	
 				if (source?.hasAbility('persistent')) {
 					this.add('-activate', source, 'ability: Persistent', effect);
 					return 7;
 				}
+				if (source?.hasItem('unidentifiedforeignrock')) {
+				return 8;
+				}	
 				return 5;
 			},
-			onStart() {
+			onFieldStart() {
 				this.add('-fieldstart', 'move: Gravity');
 				for (const pokemon of this.getAllActive()) {
 					let applies = false;
@@ -1397,7 +1397,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			},
 			onDisableMove(pokemon) {
 				for (const moveSlot of pokemon.moveSlots) {
-					if (this.dex.getMove(moveSlot.id).flags['gravity']) {
+					if (this.dex.moves.get(moveSlot.id).flags['gravity']) {
 						pokemon.disableMove(moveSlot.id);
 					}
 				}
@@ -1416,8 +1416,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 					return false;
 				}
 			},
-			onResidualOrder: 22,
-			onEnd() {
+			onFieldResidualOrder: 27,
+			onFieldResidualSubOrder: 2,
+			onFieldEnd() {
 				this.add('-fieldend', 'move: Gravity');
 			},
 		},
@@ -1480,6 +1481,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 	},
 	fairyfool: {
 		num: 999,
+		desc: "Fairy-type Foul Play.",
+		shortDesc: "Fairy-type Foul Play.",
 		accuracy: 100,
 		basePower: 95,
 		category: "Physical",
@@ -1534,6 +1537,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 	},
 	stalk: {
 		num: 666,
+		desc: "Protect + Focus Energy.",
+		shortDesc: "Protect + Focus Energy.",
 		accuracy: 100,
 		basePower: 0,
 		category: "Status",
@@ -1610,6 +1615,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 		category: "Physical",
 		isNonstandard: "Past",
 		name: "Quell",
+		desc: "Fighting-type Pursuit, Super Effective vs Poison-types.",
+		shortDesc: "Fighting-type Pursuit, Super Effective vs Poison-types.",
 		pp: 20,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
@@ -1682,5 +1689,107 @@ export const Moves: {[moveid: string]: MoveData} = {
 		target: "normal",
 		type: "Electric",
 		contestType: "Cool",
+	},
+	belch: {
+		num: 562,
+		accuracy: 100,
+		basePower: 60,
+		category: "Special",
+		name: "Belch",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, sound: 1},
+		// Move disabling implemented in Battle#nextTurn in sim/battle.js
+		onTry(source) {
+			const item = source.getItem();
+			if (item.isBerry && source.eatItem(true)) {
+				this.boost({def: 0}, source, null, null, false, true);
+			} else {
+				return false;
+			}
+		},
+		onHit(pokemon) {
+			if (pokemon.item || !pokemon.lastItem) return false;
+			const item = pokemon.lastItem;
+			pokemon.lastItem = '';
+			this.add('-item', pokemon, this.dex.items.get(item), '[from] move: Belch');
+			pokemon.setItem(item);
+		},
+		secondary: {
+			chance: 30,
+			status: 'psn',
+		},
+		target: "normal",
+		type: "Poison",
+		contestType: "Tough",
+	},
+	stuffcheeks: {
+		num: 747,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Stuff Cheeks",
+		desc: "Munches on held berry and increases a random stat +2.",
+		shortDesc: "Munches on held berry and increases a random stat +2.",
+		pp: 10,
+		priority: 0,
+		flags: {snatch: 1},
+		// Move disabling implemented in Battle#nextTurn in sim/battle.ts
+		onTry(source) {
+			const item = source.getItem();
+			if (item.isBerry && source.eatItem(true)) {
+				this.boost({def: 0}, source, null, null, false, true);
+			} else {
+				return false;
+			}
+			const stats: BoostID[] = [];
+			let stat: BoostID;
+			for (stat in source.boosts) {
+				if (source.boosts[stat] < 6) {
+					stats.push(stat);
+				}
+			}
+			if (stats.length) {
+				const randomStat = this.sample(stats);
+				const boost: SparseBoostsTable = {};
+				boost[randomStat] = 2;
+				this.boost(boost);
+			} else {
+				return false;
+		      }
+		},
+		onHit(pokemon) {
+			if (pokemon.item || !pokemon.lastItem) return false;
+			const item = pokemon.lastItem;
+			pokemon.lastItem = '';
+			this.add('-item', pokemon, this.dex.items.get(item), '[from] move: Stuff Cheeks');
+			pokemon.setItem(item);
+		},
+		secondary: null,
+		target: "self",
+		type: "Normal",
+	},
+	passbaton: {
+		num: 226,
+		accuracy: true,
+		basePower: 0,
+		category: "Status",
+		name: "Pass Baton",
+		desc: "Switch out, keeping stat changes.",
+		shortDesc: "Switch out, keeping stat changes.",
+		pp: 40,
+		priority: 0,
+		flags: {},
+		self: {
+			onHit(source) {
+				source.skipBeforeSwitchOutEventFlag = true;
+			},
+		},
+		selfSwitch: 'copyvolatile',
+		secondary: null,
+		target: "self",
+		type: "Normal",
+		zMove: {effect: 'clearnegativeboost'},
+		contestType: "Cute",
 	},
 }

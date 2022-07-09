@@ -910,20 +910,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			}
 		}
 	},
-	Rampage: {
-		onModifyAccuracyPriority: -1,
-		onModifyAccuracy(accuracy, target) {
-			if (typeof accuracy !== 'number') return;
-			if (target?.volatiles['confusion']) {
-				target.setBoost({atk: 6});
-				this.add('-setboost', target, 'atk', 12, '[from] ability: Rampage');
-			}
-		},
-		isBreakable: true,
-		name: "Rampage",
-		rating: 1,
-		num: 77,
-	},
 	forewarn: {
 		onStart(pokemon) {
 			let warnMoves: (Move | Pokemon)[][] = [];
@@ -1720,6 +1706,21 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		name: "Master's Focus",
 		rating: 2.5,
 		num: 39,
+	},
+	rampage: {
+		desc: "This pokemon maximizes Attack when confused.",
+		shortDesc: "This pokemon maximizes Attack when confused.",
+		onModifyAtkPriority: 5,
+		onModifyAtk(atk, pokemon) {
+			if (pokemon.volatiles['confusion']) {
+				pokemon.setBoost({atk: 6});
+				this.add('-setboost', pokemon, 'atk', 12, '[from] ability: Rampage');
+			}
+		},
+		isBreakable: true,
+		name: "Rampage",
+		rating: 1,
+		num: 764
 	},
 	turboblaze: {
 		desc: "This Pokemon's Speed and Special Attack are boosted by 1.25x during its first turn.",
