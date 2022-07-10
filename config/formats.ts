@@ -19,9 +19,7 @@ The column value will be ignored for repeat sections.
 
 export const Formats: FormatList = [
 
-	// Sw/Sh Singles
-	///////////////////////////////////////////////////////////////////
-
+	
 	{
 		section: "Official Formats",
 	},
@@ -104,9 +102,11 @@ export const Formats: FormatList = [
 			'Zamazenta', 'Zamazenta-Crowned', 'Zekrom', 'Moody', 'Bright Powder', 'Focus Band', 'Focus Sash', 'Lax Incense', 'Quick Claw', 'Perish Song',
 		],
 	},
+	
 	{
 		section: "Misc Formats",
 	},
+	
 	{
 		name: "Adventures Custom Game",
 
@@ -117,6 +117,7 @@ export const Formats: FormatList = [
 		// no restrictions, for serious (other than team preview)
 		ruleset: ['Team Preview', 'Cancel Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 100'],
 	},
+	
 	{
 		name: "Adventures Free-For-All",
 		mod: 'adventures',
@@ -126,6 +127,7 @@ export const Formats: FormatList = [
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Moves Clause', 'Species Clause', 'Dynamax Clause', 'Sleep Clause Mod'],
 		banlist: [ 'Uber', 'AG', ],
 	},
+	
 	{
 		name: "Adventures Multi Battle",
 
@@ -138,6 +140,7 @@ export const Formats: FormatList = [
 			'Obtainable Good', 'Species Clause', 'HP Percentage Mod', 'Cancel Mod', 'Sleep Clause Mod',
 		],
 	},
+	
 	{
 		name: "Adventures Free-For-All Custom Game",
 
@@ -147,6 +150,7 @@ export const Formats: FormatList = [
 		tournamentShow: false,
 		ruleset: ['Standard Doubles', 'Sleep Clause Mod', 'Dynamax Clause', '!Gravity Sleep Clause', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 100'],
 	},
+	
 	{
 		name: "Adventures Doubles Custom Game",
 
@@ -158,21 +162,5 @@ export const Formats: FormatList = [
 		// no restrictions, for serious (other than team preview)
 		ruleset: ['Team Preview', 'Cancel Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 100'],
 	},
-	{
-		section: "Co-Formats",
-	},
-	{
-		name: "Fierce Format",
-		desc: `The format run by Fierce Flamethrower.`,
-		mod: 'fierceformat',
-		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Moves Clause', 'Species Clause', 'Dynamax Clause', 'Sleep Clause Mod'],
-		banlist: [ 'Uber', 'AG', 'Baton Pass', ],
-	},
-	{
-		name: "Torcho's Territory",
-		desc: `The format run by Torchic.`,
-		mod: 'torchic',
-		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Moves Clause', 'Species Clause', 'Dynamax Clause', 'Sleep Clause Mod'],
-		banlist: [ 'Uber', 'AG', 'Baton Pass', ],
-	},
+
 ];
