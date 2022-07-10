@@ -12,15 +12,15 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		doublesTier: "DUU",
 	},
 	venusaurmega: {
-		isNonstandard: "Past",
+		randomBattleMoves: ["powerwhip", "synthesis", "sleeppowder", "gunkshot", "earthquake", "solarblade"],
+		randomBattleLevel: 70,
 		tier: "OU",
 	},
 	venusaurgmax: {
-		randomDoubleBattleMoves: ["earthpower", "energyball", "leechseed", "protect", "sleeppowder", "sludgebomb"],
-		randomDoubleBattleLevel: 80,
-		isNonstandard: "Gigantamax",
-		tier: "AG",
-		doublesTier: "(DUber)",
+		randomBattleMoves: ["powerwhip", "synthesis", "sleeppowder", "gunkshot", "earthquake", "solarblade"],
+		randomBattleLevel: 80,
+		tier: "UU",
+		doublesTier: "DUU",
 	},
 	charmander: {
 		tier: "LC",
@@ -29,7 +29,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "NFE",
 	},
 	charizard: {
-		randomBattleMoves: ["airslash", "earthquake", "fireblast", "focusblast", "roost"],
+		randomBattleMoves: ["airslash", "earthpower", "fireblast", "focusblast", "roost", "dracometeor"],
 		randomBattleLevel: 90,
 		randomDoubleBattleMoves: ["airslash", "heatwave", "overheat", "protect", "scorchingsands", "tailwind"],
 		randomDoubleBattleLevel: 80,
@@ -37,11 +37,13 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		doublesTier: "DUU",
 	},
 	charizardmegax: {
-		isNonstandard: "Past",
+		randomBattleMoves: ["dragondance", "earthquake", "roost", "firepunch", "thunderpunch", "dragonclaw"],
+		randomBattleLevel: 70,
 		tier: "OU",
 	},
 	charizardmegay: {
-		isNonstandard: "Past",
+		randomBattleMoves: ["airslash", "solarbeam", "weatherball", "focusblast", "roost", "dracometeor"],
+		randomBattleLevel: 70,
 		tier: "OU",
 	},
 	charizardgmax: {
@@ -58,7 +60,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "NFE",
 	},
 	blastoise: {
-		randomBattleMoves: ["earthquake", "focusblast", "hydropump", "icebeam", "shellsmash"],
+		randomBattleMoves: ["flashcannon", "hydrocannon", "zapcannon", "aurasphere", "shellsmash", "dragonpulse"],
 		randomBattleLevel: 70,
 		randomDoubleBattleMoves: ["icebeam", "muddywater", "protect", "shellsmash"],
 		randomDoubleBattleLevel: 80,
@@ -66,16 +68,17 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		doublesTier: "DOU",
 	},
 	blastoisemega: {
-		isNonstandard: "Past",
+		randomBattleMoves: ["flashcannon", "hydrocannon", "zapcannon", "aurasphere", "shellsmash", "dragonpulse"],
+		randomBattleLevel: 70,
 		tier: "OU",
 	},
 	blastoisegmax: {
-		randomBattleMoves: ["icebeam", "protect", "rapidspin", "scald", "toxic"],
-		randomBattleLevel: 82,
+		randomBattleMoves: ["flashcannon", "hydrocannon", "zapcannon", "aurasphere", "shellsmash", "dragonpulse"],
+		randomBattleLevel: 70,
 		randomDoubleBattleMoves: ["fakeout", "flipturn", "followme", "icywind", "lifedew", "muddywater", "protect"],
 		randomDoubleBattleLevel: 80,
 		isNonstandard: "Gigantamax",
-		tier: "AG",
+		tier: "OU",
 		doublesTier: "(DUber)",
 	},
 	caterpie: {
