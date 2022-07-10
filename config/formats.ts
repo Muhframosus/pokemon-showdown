@@ -23,17 +23,17 @@ export const Formats: FormatList = [
 	///////////////////////////////////////////////////////////////////
 
 	{
-		section: "National Dex",
+		section: "Official Formats",
 	},
 	{
-		name: "[Gen 8] Adventures OU",
+		name: "Adventures OU",
 		desc: `The standard format for Adventures.`,
 		mod: 'adventures',
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Moves Clause', 'Species Clause', 'Dynamax Clause', 'Sleep Clause Mod',],
 		banlist: [ 'Uber', 'AG',],
 	},
 	{
-		name: "[Gen 8] Adventures UU",
+		name: "Adventures UU",
 
 		mod: 'adventures',
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Moves Clause', 'Species Clause', 'Dynamax Clause', 'Sleep Clause Mod'],
@@ -45,7 +45,7 @@ export const Formats: FormatList = [
 		],
 	},
 	{
-		name: "[Gen 8] Adventures RU",
+		name: "Adventures RU",
 
 		mod: 'adventures',
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Moves Clause', 'Species Clause', 'Dynamax Clause', 'Sleep Clause Mod'],
@@ -57,7 +57,7 @@ export const Formats: FormatList = [
 		],
 	},
 	{
-		name: "[Gen 8] Adventures NU",
+		name: "Adventures NU",
 
 		mod: 'adventures',
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Moves Clause', 'Species Clause', 'Dynamax Clause', 'Sleep Clause Mod'],
@@ -69,68 +69,28 @@ export const Formats: FormatList = [
 		],
 	},
 	{
-		name: "[Gen 8] Adventures AG",
+		name: "Adventures AG",
 		mod: 'adventures',
 		ruleset: ['Obtainable Good', 'Team Preview', 'HP Percentage Mod', 'Cancel Mod', 'Endless Battle Clause'],
 	},
 	{
-		name: "[Gen 8] Adventures Ubers",
-		mod: 'adventures',
-		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Moves Clause', 'Species Clause', 'Dynamax Clause', 'Sleep Clause Mod'],
-		banlist: [ 'AG', ],
+		section: "Side Formats",
 	},
 	{
-		name: "[Gen 8] Adventures Custom Game",
-
+		name: "Random Battle",
 		mod: 'adventures',
-		searchShow: false,
-		debug: true,
-		battle: {trunc: Math.trunc},
-		// no restrictions, for serious (other than team preview)
-		ruleset: ['Team Preview', 'Cancel Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 100'],
+		team: 'random',
+		ruleset: ['PotD', 'Obtainable', 'Species Clause', 'HP Percentage Mod', 'Cancel Mod', 'Sleep Clause Mod'],
 	},
 	{
-		name: "[Gen 8] Adventures Free-For-All",
-		mod: 'adventures',
-		gameType: 'freeforall',
-		rated: false,
-		tournamentShow: false,
-		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Moves Clause', 'Species Clause', 'Dynamax Clause', 'Sleep Clause Mod'],
-		banlist: [ 'Uber', 'AG', ],
-	},
-	{
-		name: "[Gen 8] Adventures Multi Battle",
-
-		mod: 'adventures',
-		gameType: 'multi',
-		tournamentShow: false,
-		rated: false,
-		ruleset: [
-			'Max Team Size = 3',
-			'Obtainable Good', 'Species Clause', 'HP Percentage Mod', 'Cancel Mod', 'Sleep Clause Mod',
-		],
-	},
-	{
-		name: "[Gen 8] Adventures Multi Battle 6v6",
-
-		mod: 'adventures',
-		gameType: 'multi',
-		tournamentShow: false,
-		rated: false,
-		ruleset: [
-			'Max Team Size = 6',
-			'Obtainable Good', 'Species Clause', 'HP Percentage Mod', 'Cancel Mod', 'Sleep Clause Mod',
-		],
-	},
-	{
-		name: "[Gen 8] Adventures Doubles OU",
+		name: "Adventures Doubles OU",
 		mod: 'adventures',
 		gameType: 'doubles',
 		ruleset: ['Standard Natdex', 'Dynamax Clause', 'Swagger Clause'],
 		banlist: ['DUber'],
 	},
 	{
-		name: "[Gen 8] Adventures 1v1",
+		name: "Adventures 1v1",
 		desc: `Bring three Pok&eacute;mon to Team Preview and choose one to battle.`,
 		mod: 'adventures',
 		ruleset: [
@@ -145,7 +105,41 @@ export const Formats: FormatList = [
 		],
 	},
 	{
-		name: "[Gen 8] Adventures Free-For-All Custom Game",
+		section: "Misc Formats",
+	},
+	{
+		name: "Adventures Custom Game",
+
+		mod: 'adventures',
+		searchShow: false,
+		debug: true,
+		battle: {trunc: Math.trunc},
+		// no restrictions, for serious (other than team preview)
+		ruleset: ['Team Preview', 'Cancel Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 100'],
+	},
+	{
+		name: "Adventures Free-For-All",
+		mod: 'adventures',
+		gameType: 'freeforall',
+		rated: false,
+		tournamentShow: false,
+		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Moves Clause', 'Species Clause', 'Dynamax Clause', 'Sleep Clause Mod'],
+		banlist: [ 'Uber', 'AG', ],
+	},
+	{
+		name: "Adventures Multi Battle",
+
+		mod: 'adventures',
+		gameType: 'multi',
+		tournamentShow: false,
+		rated: false,
+		ruleset: [
+			'Max Team Size = 3',
+			'Obtainable Good', 'Species Clause', 'HP Percentage Mod', 'Cancel Mod', 'Sleep Clause Mod',
+		],
+	},
+	{
+		name: "Adventures Free-For-All Custom Game",
 
 		mod: 'adventures',
 		gameType: 'freeforall',
@@ -154,7 +148,7 @@ export const Formats: FormatList = [
 		ruleset: ['Standard Doubles', 'Sleep Clause Mod', 'Dynamax Clause', '!Gravity Sleep Clause', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 100'],
 	},
 	{
-		name: "[Gen 8] Adventures Doubles Custom Game",
+		name: "Adventures Doubles Custom Game",
 
 		mod: 'adventures',
 		gameType: 'doubles',
@@ -165,9 +159,19 @@ export const Formats: FormatList = [
 		ruleset: ['Team Preview', 'Cancel Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 100'],
 	},
 	{
-		name: "[Gen 8] Fierce Format",
+		section: "Co-Formats",
+	},
+	{
+		name: "Fierce Format",
 		desc: `The format run by Fierce Flamethrower.`,
 		mod: 'fierceformat',
+		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Moves Clause', 'Species Clause', 'Dynamax Clause', 'Sleep Clause Mod'],
+		banlist: [ 'Uber', 'AG', 'Baton Pass', ],
+	},
+	{
+		name: "Torcho's Territory",
+		desc: `The format run by Torchic.`,
+		mod: 'torchic',
 		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Moves Clause', 'Species Clause', 'Dynamax Clause', 'Sleep Clause Mod'],
 		banlist: [ 'Uber', 'AG', 'Baton Pass', ],
 	},
