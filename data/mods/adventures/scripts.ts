@@ -114,6 +114,7 @@ this.modData('Learnsets', 'exeggutor').learnset.shellsmash = ['8L1'];
 this.modData('Learnsets', 'exeggutor').learnset.heatcrash = ['8L1'];
 this.modData('Learnsets', 'exeggutor').learnset.heatwave = ['8L1'];
 this.modData('Learnsets', 'exeggutor').learnset.weatherball = ['8L1'];
+this.modData('Learnsets', 'exeggutor').learnset.earthpower = ['8L1'];
 
 this.modData('Learnsets', 'barbaracle').learnset.flipturn = ['8L1'];
 
@@ -720,6 +721,9 @@ this.modData('Learnsets', 'swoobat').learnset.miracleeye = ['8L1'];
 
 this.modData('Learnsets', 'walrein').learnset.iciclecrash = ['8L1'];
 this.modData('Learnsets', 'walrein').learnset.iceshard = ['8L1'];
+
+this.modData('Learnsets', 'dewgong').learnset.iciclecrash = ['8L1'];
+this.modData('Learnsets', 'dewgong').learnset.freezedry = ['8L1'];
 
 this.modData('Learnsets', 'jynx').learnset.dazzlinggleam = ['8L1'];
 this.modData('Learnsets', 'jynx').learnset.healingwish = ['8L1'];

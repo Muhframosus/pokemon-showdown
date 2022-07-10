@@ -785,6 +785,9 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			if (!move.ignoreImmunity) move.ignoreImmunity = {};
 			if (move.ignoreImmunity !== true) {
 				move.ignoreImmunity['Electric'] = true;
+			if (!move.ignoreImmunity) move.ignoreImmunity = {};
+			if (move.ignoreImmunity !== true) {
+				move.ignoreImmunity['Grass'] = true;
 			}
 		},
 		name: "Illuminate",
