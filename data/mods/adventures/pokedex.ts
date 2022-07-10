@@ -24,7 +24,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	emboar: {
 		inherit: true,
 		baseStats: {hp: 110, atk: 133, def: 115, spa: 60, spd: 85, spe: 35},
-		abilities: {0: "Blaze", 1: "Reckless", H: "Intimidate"},
+		abilities: {0: "Blaze",  1: "Reckless", H: "Intimidate"},
 	},
 	incineroar: {
 		inherit: true,

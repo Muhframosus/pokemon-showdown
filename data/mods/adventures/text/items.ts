@@ -4,4 +4,8 @@ export const ItemsText: {[k: string]: ItemText} = {
 		name: "Palossandite",
 		desc: "If held by a Palossand, this item allows it to Mega Evolve in battle.",
 	},
+	butterfrinite: {
+		name: "Butterfrinite",
+		desc: "If held by a Butterfree, this item allows it to Mega Evolve in battle.",
+	},
 };
