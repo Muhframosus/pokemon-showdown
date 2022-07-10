@@ -784,11 +784,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		onModifyMove(move) {
 			if (!move.ignoreImmunity) move.ignoreImmunity = {};
 			if (move.ignoreImmunity !== true) {
-				move.ignoreImmunity['Electric'] = true;
-			}
-			if (!move.ignoreImmunity) move.ignoreImmunity = {};
-			if (move.ignoreImmunity !== true) {
-				move.ignoreImmunity['Powder'] = true;
+				move.ignoreImmunity['powder'] = true;
 			}
 		},
 		name: "Illuminate",
