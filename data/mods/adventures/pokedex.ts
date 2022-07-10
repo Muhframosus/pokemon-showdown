@@ -811,8 +811,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Bug", "Flying"],
 		baseStats: {hp: 60, atk: 45, def: 50, spa: 90, spd: 80, spe: 70},
 		abilities: {0: "Compound Eyes"},
-		otherFormes: ["Butterfree-Mega"],
-		formeOrder: ["Butterfree", "Butterfree-Mega"],
 		heightm: 1.1,
 		weightkg: 32,
 		color: "White",
