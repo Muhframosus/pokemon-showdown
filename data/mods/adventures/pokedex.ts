@@ -1682,8 +1682,20 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	ampharos: {
 		inherit: true,
-		baseStats: {hp: 90, atk: 75, def: 85, spa: 115, spd: 90, spe: 55},
+		baseStats: {hp: 90, atk: 75, def: 85, spa: 115, spd: 110, spe: 55},
 		abilities: {0: "Static", 1: "Electric Surge", H: "Plus"},
+	},
+	ampharosmega: {
+		baseStats: {hp: 90, atk: 95, def: 105, spa: 165, spd: 130, spe: 45},
+	},
+	venusaur: {
+		inherit: true,
+		baseStats: {hp: 80, atk: 105, def: 83, spa: 82, spd: 100, spe: 80},
+		abilities: {0: "Overgrow", 1: "Regenerator", H: "Chlorophyll"},
+	},
+	venusaurmega: {
+		inherit: true,
+		baseStats: {hp: 80, atk: 127, def: 123, spa: 100, spd: 120, spe: 80},
 	},
 	kangaskhan: {
 		inherit: true,
@@ -1692,6 +1704,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	kangaskhanmega: {
 		inherit: true,
 		baseStats: {hp: 105, atk: 125, def: 100, spa: 100, spd: 100, spe: 100},
+	},
+	shiinotic: {
+		inherit: true,
+		types: ["Grass", "Fairy"],
+		baseStats: {hp: 60, atk: 45, def: 80, spa: 90, spd: 100, spe: 30},
+		abilities: {0: "Illuminate", 1: "Effect Spore", H: "Rain Dish"},
 	},
 	genesect: {
 		inherit: true,

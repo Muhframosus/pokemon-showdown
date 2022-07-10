@@ -13,7 +13,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	},
 	venusaurmega: {
 		isNonstandard: "Past",
-		tier: "UU",
+		tier: "OU",
 	},
 	venusaurgmax: {
 		randomDoubleBattleMoves: ["earthpower", "energyball", "leechseed", "protect", "sleeppowder", "sludgebomb"],

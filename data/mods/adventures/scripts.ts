@@ -332,6 +332,9 @@ this.modData('Learnsets', 'cofagrigus').learnset.scorchingsands = ['8L1'];
 this.modData('Learnsets', 'starmie').learnset.zapcannon = ['8L1'];
 
 this.modData('Learnsets', 'ampharos').learnset.tailglow = ['8L1'];
+this.modData('Learnsets', 'ampharos').learnset.dracometeor = ['8L1'];
+this.modData('Learnsets', 'ampharos').learnset.twister = ['8L1'];
+this.modData('Learnsets', 'ampharos').learnset.dragontail = ['8L1'];
 
 this.modData('Learnsets', 'toxicroak').learnset.closecombat = ['8L1'];
 
@@ -1071,6 +1074,11 @@ this.modData('Learnsets', 'clawitzer').learnset.calmmind = ['8L1'];
 this.modData('Learnsets', 'clawitzer').learnset.nastyplot = ['8L1'];
 this.modData('Learnsets', 'clawitzer').learnset.aquarevolver = ['8L1'];
 this.modData('Learnsets', 'clawitzer').learnset.lifedew = ['8L1'];
+
+this.modData('Learnsets', 'venusaur').learnset.solarblade = ['8L1'];
+this.modData('Learnsets', 'venusaur').learnset.gunkshot = ['8L1'];
+this.modData('Learnsets', 'venusaur').learnset.heatcrash = ['8L1'];
+this.modData('Learnsets', 'venusaur').learnset.heatwave = ['8L1'];
 
 this.modData('Learnsets', 'ferrothorn').learnset.vinetrap = ['8L1'];
 this.modData('Learnsets', 'tangrowth').learnset.vinetrap = ['8L1'];
