@@ -724,6 +724,7 @@ this.modData('Learnsets', 'walrein').learnset.iceshard = ['8L1'];
 
 this.modData('Learnsets', 'dewgong').learnset.iciclecrash = ['8L1'];
 this.modData('Learnsets', 'dewgong').learnset.freezedry = ['8L1'];
+this.modData('Learnsets', 'dewgong').learnset.hydropump = ['8L1'];
 
 this.modData('Learnsets', 'jynx').learnset.dazzlinggleam = ['8L1'];
 this.modData('Learnsets', 'jynx').learnset.healingwish = ['8L1'];
