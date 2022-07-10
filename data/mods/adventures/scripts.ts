@@ -738,6 +738,7 @@ this.modData('Learnsets', 'jynx').learnset.memento = ['8L1'];
 this.modData('Learnsets', 'charizard').learnset.solarblade = ['8L1'];
 this.modData('Learnsets', 'charizard').learnset.dracometeor = ['8L1'];
 this.modData('Learnsets', 'charizard').learnset.dragonrage = ['8L1'];
+this.modData('Learnsets', 'charizard').learnset.earthpower = ['8L1'];
 
 this.modData('Learnsets', 'gigalith').learnset.rollout = ['8L1'];
 this.modData('Learnsets', 'gigalith').learnset.defensecurl = ['8L1'];
