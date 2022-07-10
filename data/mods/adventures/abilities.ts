@@ -788,11 +788,11 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			}
 			if (!move.ignoreImmunity) move.ignoreImmunity = {};
 			if (move.ignoreImmunity !== true) {
-				move.ignoreImmunity['Grass'] = true;
+				move.ignoreImmunity['Powder'] = true;
 			}
 		},
 		name: "Illuminate",
-		desc: "This Pokemon's moves ignore Electric and Grass immunity.",
+		desc: "This Pokemon's moves ignore Electric and Powder immunity.",
 		rating: 3,
 		num: 35,
 	},
