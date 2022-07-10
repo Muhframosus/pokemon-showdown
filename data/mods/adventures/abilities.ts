@@ -779,6 +779,19 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		rating: 3,
 		num: 212,
 	},
+	illuminate: {
+		onModifyMovePriority: -5,
+		onModifyMove(move) {
+			if (!move.ignoreImmunity) move.ignoreImmunity = {};
+			if (move.ignoreImmunity !== true) {
+				move.ignoreImmunity['Electric'] = true;
+			}
+		},
+		name: "Illuminate",
+		desc: "This Pokemon's moves ignore Electric immunity.",
+		rating: 3,
+		num: 35,
+	},
 	shellarmor: {
 		desc: "This Pokemon cannot be struck with a critical hit or burned.",
 		shortDesc: "User can't be hit with a critical hit or burned.",

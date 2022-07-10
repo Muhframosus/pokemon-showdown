@@ -277,6 +277,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		baseStats: {hp: 67, atk: 97, def: 55, spa: 97, spd: 95, spe: 114},
 	},
+	victreebel: {
+		inherit: true,
+		baseStats: {hp: 80, atk: 125, def: 65, spa: 120, spd: 70, spe: 70},
+		abilities: {0: "Chlorophyll", H: "Gluttony"},
+	},
 	jynx: {
 		inherit: true,
 		baseStats: {hp: 65, atk: 50, def: 35, spa: 165, spd: 35, spe: 115},
@@ -285,6 +290,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		baseStats: {hp: 110, atk: 130, def: 100, spa: 55, spd: 110, spe: 30},
 		abilities: {0: "Thick Fat", 1: "Windup", H: "Oblivious"},
+	},
+	dewgong: {
+		inherit: true,
+		baseStats: {hp: 90, atk: 30, def: 90, spa: 120, spd: 130, spe: 70},
+		abilities: {0: "Thick Fat", 1: "Hydration", H: "Windup"},
 	},
 	krookodile: {
 		inherit: true,
@@ -794,6 +804,34 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	torterra: {
 		inherit: true,
 		abilities: {0: "Overgrow", 1: "Thick Fat", H: "Gravity Surge"},
+	},
+	butterfree: {
+		num: 12,
+		name: "Butterfree",
+		types: ["Bug", "Flying"],
+		baseStats: {hp: 60, atk: 45, def: 50, spa: 90, spd: 80, spe: 70},
+		abilities: {0: "Compound Eyes"},
+		heightm: 1.1,
+		weightkg: 32,
+		color: "White",
+		prevo: "Metapod",
+		evoLevel: 10,
+		eggGroups: ["Bug"],
+		canGigantamax: "G-Max Befuddle",
+	},
+	butterfreemega: {
+		num: 12,
+		name: "Butterfree-Mega",
+		baseSpecies: "Butterfree",
+		forme: "Mega",
+		types: ["Bug", "Fairy"],
+		baseStats: {hp: 60, atk: 45, def: 60, spa: 130, spd: 90, spe: 110},
+		abilities: {0: "Tinted Lens"},
+		heightm: 1.6,
+		weightkg: 64,
+		color: "White",
+		eggGroups: ["Bug"],
+		requiredItem: "Butterfrinite",
 	},
 	torkoal: {
 		inherit: true,
@@ -1682,8 +1720,20 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	ampharos: {
 		inherit: true,
-		baseStats: {hp: 90, atk: 75, def: 85, spa: 115, spd: 90, spe: 55},
+		baseStats: {hp: 90, atk: 75, def: 85, spa: 115, spd: 110, spe: 55},
 		abilities: {0: "Static", 1: "Electric Surge", H: "Plus"},
+	},
+	ampharosmega: {
+		baseStats: {hp: 90, atk: 95, def: 105, spa: 165, spd: 130, spe: 45},
+	},
+	venusaur: {
+		inherit: true,
+		baseStats: {hp: 80, atk: 105, def: 83, spa: 82, spd: 100, spe: 80},
+		abilities: {0: "Overgrow", 1: "Regenerator", H: "Chlorophyll"},
+	},
+	venusaurmega: {
+		inherit: true,
+		baseStats: {hp: 80, atk: 127, def: 123, spa: 100, spd: 120, spe: 80},
 	},
 	kangaskhan: {
 		inherit: true,
@@ -1692,6 +1742,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	kangaskhanmega: {
 		inherit: true,
 		baseStats: {hp: 105, atk: 125, def: 100, spa: 100, spd: 100, spe: 100},
+	},
+	shiinotic: {
+		inherit: true,
+		types: ["Grass", "Fairy"],
+		baseStats: {hp: 60, atk: 45, def: 80, spa: 90, spd: 100, spe: 30},
+		abilities: {0: "Illuminate", 1: "Effect Spore", H: "Rain Dish"},
 	},
 	genesect: {
 		inherit: true,

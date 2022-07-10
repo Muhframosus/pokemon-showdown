@@ -256,4 +256,18 @@ export const Items: {[k: string]: ModdedItemData} = {
 		num: 277,
 		gen: 4,
 	},
+	Butterfrinite: {
+        name: "Butterfrinite",
+        spritenum: 626,
+        megaStone: "Butterfree-Mega",
+        megaEvolves: "Butterfree",
+        itemUser: ["Butterfree"],
+        onTakeItem(item, source) {
+            if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+            return true;
+        },
+        num: -101,
+        gen: 7,
+        isNonstandard: "Past",
+},
 };
