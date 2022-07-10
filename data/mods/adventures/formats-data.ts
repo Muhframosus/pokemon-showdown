@@ -92,13 +92,19 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "NU",
 		doublesTier: "(DUU)",
 	},
+	butterfreemega: {
+		randomBattleMoves: ["dazzlinggleam", "bugbuzz", "quiverdance", "sleeppowder", "roost"],
+		randomBattleLevel: 80,
+		tier: "UU",
+		doublesTier: "(DUU)",
+	},
 	butterfreegmax: {
-		randomBattleMoves: ["airslash", "bugbuzz", "quiverdance", "sleeppowder"],
-		randomBattleLevel: 88,
+		randomBattleMoves: ["energyball", "hurricane", "quiverdance", "sleeppowder"],
+		randomBattleLevel: 100,
 		randomDoubleBattleMoves: ["hurricane", "pollenpuff", "protect", "quiverdance", "ragepowder", "sleeppowder", "tailwind"],
 		randomDoubleBattleLevel: 88,
 		isNonstandard: "Gigantamax",
-		tier: "AG",
+		tier: "NU",
 		doublesTier: "(DUber)",
 	},
 	weedle: {
@@ -110,11 +116,13 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	beedrill: {
-		isNonstandard: "Past",
+		randomBattleMoves: ["twinneedle", "uturn", "poisonjab", "drillrun", "toxicspikes", "knockoff"],
+		randomBattleLevel: 100,
 		tier: "NU",
 	},
 	beedrillmega: {
-		isNonstandard: "Past",
+		randomBattleMoves: ["twinneedle", "uturn", "poisonjab", "drillrun", "toxicspikes", "knockoff"],
+		randomBattleLevel: 80,
 		tier: "UU",
 	},
 	pidgey: {
@@ -126,12 +134,14 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "NFE",
 	},
 	pidgeot: {
-		isNonstandard: "Past",
+		randomBattleMoves: ["roost", "uturn", "defog", "bravebird", "quickattack", "whirlwind"],
+		randomBattleLevel: 100,
 		tier: "NU",
 	},
 	pidgeotmega: {
-		isNonstandard: "Past",
-		tier: "RU",
+		randomBattleMoves: ["hurricane", "inferno", "roost", "defog", "whirlwind", "uturn"],
+		randomBattleLevel: 80,
+		tier: "UU",
 	},
 	rattata: {
 		isNonstandard: "Past",
@@ -142,11 +152,13 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	raticate: {
-		isNonstandard: "Past",
+		randomBattleMoves: ["honeclaws", "doubleedge", "superfang", "taunt", "endeavor", "quickattack"],
+		randomBattleLevel: 100,
 		tier: "NU",
 	},
 	raticatealola: {
-		isNonstandard: "Past",
+		randomBattleMoves: ["honeclaws", "doubleedge", "knockoff", "taunt", "pursuit", "suckerpunch"],
+		randomBattleLevel: 100,
 		tier: "NU",
 	},
 	raticatealolatotem: {
