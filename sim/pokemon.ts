@@ -1518,32 +1518,11 @@ export class Pokemon {
 			return false;
 		}
 
-		if (!ignoreImmunities && status.id &&
-				!(source?.hasAbility('corrosion') && ['tox', 'psn'].includes(status.id))) {
-			// the game currently never ignores immunities
-			if (!this.runStatusImmunity(status.id === 'tox' ? 'psn' : status.id)) {
-				this.battle.debug('immune to status');
-				if ((sourceEffect as Move)?.status) {
-					this.battle.add('-immune', this);
-				}
-				return false;
-			}
-		}
+		
 		if (!ignoreImmunities && status.id &&
 				!(source?.hasAbility('illuminate') && ['par'].includes(status.id))) {
 			// the game currently never ignores immunities
 			if (!this.runStatusImmunity(status.id === 'par' : status.id)) {
-				this.battle.debug('immune to status');
-				if ((sourceEffect as Move)?.status) {
-					this.battle.add('-immune', this);
-				}
-				return false;
-			}
-		}
-		if (!ignoreImmunities && status.id &&
-				!(source?.hasAbility('illuminate') && ['powder'].includes(status.id))) {
-			// the game currently never ignores immunities
-			if (!this.runStatusImmunity(status.id === 'powder' : status.id)) {
 				this.battle.debug('immune to status');
 				if ((sourceEffect as Move)?.status) {
 					this.battle.add('-immune', this);

@@ -293,7 +293,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	dewgong: {
 		inherit: true,
-		baseStats: {hp: 100, atk: 60, def: 90, spa: 120, spd: 95, spe: 70},
+		baseStats: {hp: 90, atk: 30, def: 90, spa: 120, spd: 130, spe: 70},
 		abilities: {0: "Thick Fat", 1: "Hydration", H: "Windup"},
 	},
 	krookodile: {
