@@ -111,12 +111,17 @@ this.modData('Learnsets', 'scrafty').learnset.suckerpunch = ['8L1'];
 this.modData('Learnsets', 'drednaw').learnset.shellsmash = ['8L1'];
 
 this.modData('Learnsets', 'exeggutor').learnset.shellsmash = ['8L1'];
+this.modData('Learnsets', 'exeggutor').learnset.heatcrash = ['8L1'];
+this.modData('Learnsets', 'exeggutor').learnset.heatwave = ['8L1'];
+this.modData('Learnsets', 'exeggutor').learnset.weatherball = ['8L1'];
 
 this.modData('Learnsets', 'barbaracle').learnset.flipturn = ['8L1'];
 
 this.modData('Learnsets', 'exeggutoralola').learnset.shellsmash = ['8L1'];
 this.modData('Learnsets', 'exeggutoralola').learnset.headsmash = ['8L1'];
 this.modData('Learnsets', 'exeggutoralola').learnset.headcharge = ['8L1'];
+this.modData('Learnsets', 'exeggutoralola').learnset.heatcrash = ['8L1'];
+this.modData('Learnsets', 'exeggutoralola').learnset.heatwave = ['8L1'];
 
 this.modData('Learnsets', 'carracosta').learnset.powergem = ['8L1'];
 this.modData('Learnsets', 'carracosta').learnset.flipturn = ['8L1'];
@@ -1079,6 +1084,7 @@ this.modData('Learnsets', 'venusaur').learnset.solarblade = ['8L1'];
 this.modData('Learnsets', 'venusaur').learnset.gunkshot = ['8L1'];
 this.modData('Learnsets', 'venusaur').learnset.heatcrash = ['8L1'];
 this.modData('Learnsets', 'venusaur').learnset.heatwave = ['8L1'];
+this.modData('Learnsets', 'venusaur').learnset.heavyslam = ['8L1'];
 
 this.modData('Learnsets', 'ferrothorn').learnset.vinetrap = ['8L1'];
 this.modData('Learnsets', 'tangrowth').learnset.vinetrap = ['8L1'];
