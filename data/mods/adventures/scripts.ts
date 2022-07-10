@@ -69,7 +69,6 @@ this.modData('Learnsets', 'magcargo').learnset.sludgebomb = ['8L1'];
 
 this.modData('Learnsets', 'pidgeot').learnset.acrobatics = ['8L1'];
 this.modData('Learnsets', 'pidgeot').learnset.inferno = ['8L1'];
-this.modData('Learnsets', 'pidgeot').learnset.beakblast = ['8L1'];
 
 this.modData('Learnsets', 'beheeyem').learnset.focusblast = ['8L1'];
 this.modData('Learnsets', 'beheeyem').learnset.thunder = ['8L1'];
