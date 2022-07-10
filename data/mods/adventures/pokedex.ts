@@ -277,6 +277,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		baseStats: {hp: 67, atk: 97, def: 55, spa: 97, spd: 95, spe: 114},
 	},
+	victreebel: {
+		inherit: true,
+		baseStats: {hp: 80, atk: 125, def: 65, spa: 120, spd: 70, spe: 70},
+		abilities: {0: "Chlorophyll", H: "Gluttony"},
+	},
 	jynx: {
 		inherit: true,
 		baseStats: {hp: 65, atk: 50, def: 35, spa: 165, spd: 35, spe: 115},
@@ -285,6 +290,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		baseStats: {hp: 110, atk: 130, def: 100, spa: 55, spd: 110, spe: 30},
 		abilities: {0: "Thick Fat", 1: "Windup", H: "Oblivious"},
+	},
+	dewgong: {
+		inherit: true,
+		baseStats: {hp: 110, atk: 55, def: 100, spa: 130, spd: 110, spe: 30},
+		abilities: {0: "Thick Fat", 1: "Hydration", H: "Windup"},
 	},
 	krookodile: {
 		inherit: true,
