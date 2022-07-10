@@ -1534,7 +1534,7 @@ export class Pokemon {
         if (!ignoreImmunities && status.id &&
                 !(source?.hasAbility('illuminate') && ['par'].includes(status.id))) {
             // the game currently never ignores immunities
-            if (!this.runStatusImmunity(status.id === 'par' : status.id)) {
+            if (!this.runStatusImmunity(status.id === 'par')) {
                 this.battle.debug('immune to status');
                 if ((sourceEffect as Move)?.status) {
                     this.battle.add('-immune', this);
