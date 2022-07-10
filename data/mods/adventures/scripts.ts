@@ -716,6 +716,9 @@ this.modData('Learnsets', 'pinsir').learnset.stalk = ['8L1'];
 this.modData('Learnsets', 'raichu').learnset.workup = ['8L1'];
 this.modData('Learnsets', 'raichu').learnset.lowkick = ['8L1'];
 
+this.modData('Learnsets', 'shiinotic').learnset.nuzzle = ['8L1'];
+this.modData('Learnsets', 'shiinotic').learnset.dancinglights = ['8L1'];
+
 this.modData('Learnsets', 'swoobat').learnset.barrier = ['8L1'];
 this.modData('Learnsets', 'swoobat').learnset.miracleeye = ['8L1'];
 
@@ -796,13 +799,14 @@ this.modData('Learnsets', 'spiritomb').learnset.nightdaze = ['8L1'];
 
 this.modData('Learnsets', 'tapufini').learnset.recover = ['8L1'];
 
+this.modData('Learnsets', 'groudon').learnset.solarblade = ['8L1'];
+
 this.modData('Learnsets', 'tapukoko').learnset.playrough = ['8L1'];
 
 this.modData('Learnsets', 'vespiquen').learnset.playrough = ['8L1'];
 this.modData('Learnsets', 'vespiquen').learnset.storedpower = ['8L1'];
 this.modData('Learnsets', 'vespiquen').learnset.trickroom = ['8L1'];
 this.modData('Learnsets', 'vespiquen').learnset.teleport = ['8L1'];
-this.modData('Learnsets', 'vespiquen').learnset.nuzzle = ['8L1'];
 this.modData('Learnsets', 'vespiquen').learnset.spikes = ['8L1'];
 
 this.modData('Learnsets', 'accelgor').learnset.darkpulse = ['8L1'];
@@ -1021,8 +1025,6 @@ this.modData('Learnsets', 'abomasnow').learnset.stalk = ['8L1'];
 this.modData('Learnsets', 'mimikyu').learnset.meanlook = ['8L1'];
 this.modData('Learnsets', 'mimikyu').learnset.glare = ['8L1'];
 this.modData('Learnsets', 'mimikyu').learnset.poltergeist = ['8L1'];
-
-this.modData('Learnsets', 'froslass').learnset.nuzzle = ['8L1'];
 
 this.modData('Learnsets', 'octillery').learnset.triattack = ['8L1'];
 

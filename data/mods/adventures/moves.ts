@@ -235,6 +235,24 @@ export const Moves: {[moveid: string]: MoveData} = {
 			}
 		}
 	},
+	dancinglights: {
+		num: 147,
+		desc: "Puts the enemy to sleep.",
+		shortDesc: "Puts the enemy to sleep.",
+		accuracy: 100,
+		basePower: 0,
+		category: "Status",
+		name: "Dancing Lights",
+		pp: 15,
+		priority: 0,
+		flags: {protect: 1, reflectable: 1, mirror: 1},
+		status: 'slp',
+		secondary: null,
+		target: "normal",
+		type: "Electric",
+		zMove: {effect: 'clearnegativeboost'},
+		contestType: "Beautiful",
+	},
 	triplekick: {
 		num: 167,
 		accuracy: 90,
