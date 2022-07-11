@@ -75,21 +75,22 @@ export const Formats: FormatList = [
 		section: "Side Formats",
 	},
 	{
-		name: "[Gen 8] Random Battle",
+		name: "[Gen 8] Random Battle - DO NOT USE FOR NOW",
 		mod: 'adventures',
 		team: 'random',
 		ruleset: ['PotD', 'Obtainable', 'Species Clause', 'HP Percentage Mod', 'Cancel Mod', 'Sleep Clause Mod'],
 	},
 	{
 		name: "[Gen 8] Adventures Doubles",
+		desc: `Bring six Pok&eacute;mon to Team Preview and choose three to a 2v2 battle.`,
 		mod: 'adventures',
 		gameType: 'doubles',
-		ruleset: ['Standard Natdex', 'Dynamax Clause', 'Swagger Clause'],
-		banlist: ['DUber'],
+		ruleset: ['Standard Natdex', 'Dynamax Clause', 'Swagger Clause', 'Picked Team Size = 3'],
+		banlist: ['Uber', 'AG',],
 	},
 	{
 		name: "[Gen 8] Adventures 1v1",
-		desc: `Bring three Pok&eacute;mon to Team Preview and choose one to battle.`,
+		desc: `Bring three Pok&eacute;mon to Team Preview and choose one to a 1v1 battle.`,
 		mod: 'adventures',
 		ruleset: [
 			'Picked Team Size = 1', 'Max Team Size = 3',
