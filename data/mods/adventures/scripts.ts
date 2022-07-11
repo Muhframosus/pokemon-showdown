@@ -119,7 +119,6 @@ this.modData('Learnsets', 'barbaracle').learnset.flipturn = ['8L1'];
 
 this.modData('Learnsets', 'exeggutoralola').learnset.shellsmash = ['8L1'];
 this.modData('Learnsets', 'exeggutoralola').learnset.headsmash = ['8L1'];
-this.modData('Learnsets', 'exeggutoralola').learnset.headcharge = ['8L1'];
 this.modData('Learnsets', 'exeggutoralola').learnset.heatcrash = ['8L1'];
 this.modData('Learnsets', 'exeggutoralola').learnset.heatwave = ['8L1'];
 
