@@ -173,7 +173,8 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	fearow: {
-		isNonstandard: "Past",
+		randomBattleMoves: ["protect", "drillpeck", "drillrun", "mirrormove"],
+		randomBattleLevel: 80,
 		tier: "RU",
 	},
 	ekans: {
@@ -181,8 +182,9 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "LC",
 	},
 	arbok: {
-		isNonstandard: "Past",
-		tier: "NU",
+		randomBattleMoves: ["dragondance", "outrage", "gunkshot", "earthquake", "jawlock", "icefang"],
+		randomBattleLevel: 80,
+		tier: "RU",
 	},
 	pichu: {
 		tier: "LC",

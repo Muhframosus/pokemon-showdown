@@ -71,6 +71,19 @@ export const Formats: FormatList = [
 		mod: 'adventures',
 		ruleset: ['Obtainable Good', 'Team Preview', 'HP Percentage Mod', 'Cancel Mod', 'Endless Battle Clause'],
 	},
+	
+	{
+		section: "Co-Formats",
+	},
+	
+	{
+		name: "[Gen 8] Fierce Format",
+		desc: `The format run by Fierce Flamethrower.`,
+		mod: 'fierceformat',
+		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Moves Clause', 'Species Clause', 'Dynamax Clause', 'Sleep Clause Mod'],
+		banlist: [ 'Uber', 'AG', 'Baton Pass', ],
+	},
+	
 	{
 		section: "Side Formats",
 	},
@@ -112,8 +125,8 @@ export const Formats: FormatList = [
 		name: "[Gen 8] Adventures Custom Game",
 
 		mod: 'adventures',
-		searchShow: false,
 		debug: true,
+		rated: false,
 		battle: {trunc: Math.trunc},
 		// no restrictions, for serious (other than team preview)
 		ruleset: ['Team Preview', 'Cancel Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 100'],
@@ -157,24 +170,13 @@ export const Formats: FormatList = [
 
 		mod: 'adventures',
 		gameType: 'doubles',
-		searchShow: false,
+		rated: false,
 		battle: {trunc: Math.trunc},
 		debug: true,
 		// no restrictions, for serious (other than team preview)
 		ruleset: ['Team Preview', 'Cancel Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 100'],
 	},
     	
-	{
-		section: "Co-Formats",
-	},
-	
-	{
-		name: "[Gen 8] Fierce Format",
-		desc: `The format run by Fierce Flamethrower.`,
-		mod: 'fierceformat',
-		ruleset: ['Standard NatDex', 'OHKO Clause', 'Evasion Moves Clause', 'Species Clause', 'Dynamax Clause', 'Sleep Clause Mod'],
-		banlist: [ 'Uber', 'AG', 'Baton Pass', ],
-	},
 	//{
 	//	name: "Torcho's Territory",
 	//	desc: `The format run by Torchic.`,
