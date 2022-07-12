@@ -28,7 +28,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	arbok: {
 		inerhit: true,
-		baseStats: {hp: 80, atk: 125, def: 69, spa: 95, spd: 79, spe: 80},
+		baseStats: {hp: 95, atk: 110, def: 69, spa: 95, spd: 79, spe: 80},
 	},
 	incineroar: {
 		inherit: true,
