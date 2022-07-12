@@ -109,6 +109,14 @@ this.modData('Learnsets', 'scrafty').learnset.suckerpunch = ['8L1'];
 
 this.modData('Learnsets', 'drednaw').learnset.shellsmash = ['8L1'];
 
+this.modData('Learnsets', 'arbok').learnset.dragondance = ['8L1'];
+this.modData('Learnsets', 'arbok').learnset.swordsdance = ['8L1'];
+this.modData('Learnsets', 'arbok').learnset.outrage = ['8L1'];
+this.modData('Learnsets', 'arbok').learnset.scaleshot = ['8L1'];
+this.modData('Learnsets', 'arbok').learnset.jawlock = ['8L1'];
+this.modData('Learnsets', 'arbok').learnset.flamethrower = ['8L1'];
+this.modData('Learnsets', 'arbok').learnset.fireblast = ['8L1'];
+
 this.modData('Learnsets', 'exeggutor').learnset.shellsmash = ['8L1'];
 this.modData('Learnsets', 'exeggutor').learnset.heatcrash = ['8L1'];
 this.modData('Learnsets', 'exeggutor').learnset.heatwave = ['8L1'];

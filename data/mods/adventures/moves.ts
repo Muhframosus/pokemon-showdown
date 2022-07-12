@@ -235,6 +235,20 @@ export const Moves: {[moveid: string]: MoveData} = {
 			}
 		}
 	},
+	octazooka: {
+		num: 190,
+		accuracy: 85,
+		basePower: 110,
+		category: "Special",
+		name: "Octazooka",
+		pp: 10,
+		priority: 0,
+		flags: {bullet: 1, protect: 1, mirror: 1},
+		critRatio: 3,
+		target: "normal",
+		type: "Water",
+		contestType: "Tough",
+	},
 	dancinglights: {
 		num: 147,
 		desc: "Puts the enemy to sleep.",
