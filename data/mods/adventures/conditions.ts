@@ -59,6 +59,40 @@ export const Conditions: {[k: string]: ConditionData} = {
 			return false;
 		},
 	},
+	lickytrapped: {
+		name: 'lickytrapped',
+		duration: 2,
+		onBeforeMovePriority: 4,
+		onBeforeMove(pokemon) {
+			this.add('cant', pokemon, 'lickytrapped');
+			return false;
+		},
+	},
+	lickytrappinglock: {
+		name: 'lickytrappinglock',
+		durationCallback() {
+			const duration = this.sample([2, 2, 2, 3, 3, 3, 4, 5]);
+			return duration;
+		},
+		onResidual(target) {
+			if (target.lastMove && target.lastMove.id === 'struggle' || target.status === 'slp') {
+				delete target.volatiles['lickytrappinglock'];
+			}
+		},
+		onStart(target, source, effect) {
+			this.effectState.move = effect.id;
+		},
+		onDisableMove(pokemon) {
+			if (!pokemon.hasMove(this.effectState.move)) {
+				return;
+			}
+			for (const moveSlot of pokemon.moveSlots) {
+				if (moveSlot.id !== this.effectState.move) {
+					pokemon.disableMove(moveSlot.id);
+				}
+			}
+		},
+	},
 	primordialsea: {
 		name: 'PrimordialSea',
 		effectType: 'Weather',
