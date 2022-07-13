@@ -95,7 +95,6 @@ export const Conditions: {[k: string]: ConditionData} = {
 			if (this.effectState.source?.isActive || gmaxEffect) pokemon.tryTrap();
 		},
 	},
-	},
 	lickytrappinglock: {
 		name: 'lickytrappinglock',
 		durationCallback() {
