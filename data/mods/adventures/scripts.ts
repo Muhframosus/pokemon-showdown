@@ -968,6 +968,9 @@ this.modData('Learnsets', 'tyrantrum').learnset.jawlock = ['8L1'];
 this.modData('Learnsets', 'victini').learnset.aurorabeam = ['8L1'];
 this.modData('Learnsets', 'victini').learnset.psychicfangs = ['8L1'];
 
+this.modData('Learnsets', 'lickitung').learnset.licky = ['8L1'];
+this.modData('Learnsets', 'lickilicky').learnset.licky = ['8L1'];
+
 this.modData('Learnsets', 'vivillon').learnset.scorchingsands = ['8L1'];
 this.modData('Learnsets', 'vivillon').learnset.weatherball = ['8L1'];
 this.modData('Learnsets', 'vivillon').learnset.heatwave = ['8L1'];
