@@ -45,9 +45,25 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 100, atk: 100, def: 100, spa: 100, spd: 100, spe: 100},
 		abilities: {0: "Victory Star", 1: "Cloud Nine"},
 	},
+	ninetales: {
+		inherit: true,
+		types: ["Fire", "Fairy"],
+		baseStats: {hp: 73, atk: 76, def: 75, spa: 81, spd: 100, spe: 100},
+		abilities: {0: "Flash Fire", H: "Drought"},
+	},
+	ninetalesalola: {
+		baseStats: {hp: 73, atk: 67, def: 75, spa: 81, spd: 100, spe: 109},
+		abilities: {0: "Snow Cloak", H: "Snow Warning"},
+		inherit: true,
+	},
 	arbok: {
 		inherit: true,
 		baseStats: {hp: 95, atk: 110, def: 69, spa: 95, spd: 79, spe: 80},
+	},
+	wigglytuff: {
+		inherit: true,
+		baseStats: {hp: 140, atk: 70, def: 45, spa: 85, spd: 50, spe: 45},
+		abilities: {0: "Cute Charm", 1: "Competitive", H: "Frisk"},
 	},
 	incineroar: {
 		inherit: true,

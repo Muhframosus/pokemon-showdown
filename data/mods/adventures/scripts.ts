@@ -968,6 +968,11 @@ this.modData('Learnsets', 'tyrantrum').learnset.jawlock = ['8L1'];
 this.modData('Learnsets', 'victini').learnset.aurorabeam = ['8L1'];
 this.modData('Learnsets', 'victini').learnset.psychicfangs = ['8L1'];
 
+this.modData('Learnsets', 'ninetales').learnset.dazzlinggleam = ['8L1'];
+this.modData('Learnsets', 'ninetales').learnset.moonblast = ['8L1'];
+this.modData('Learnsets', 'ninetales').learnset.drainingkiss = ['8L1'];
+this.modData('Learnsets', 'ninetales').learnset.mistyterrain = ['8L1'];
+
 this.modData('Learnsets', 'lickitung').learnset.licky = ['8L1'];
 this.modData('Learnsets', 'lickilicky').learnset.licky = ['8L1'];
 

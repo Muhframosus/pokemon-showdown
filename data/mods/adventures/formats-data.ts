@@ -205,69 +205,69 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		randomBattleLevel: 90,
 		randomDoubleBattleMoves: ["fakeout", "grassknot", "knockoff", "protect", "volttackle"],
 		randomDoubleBattleLevel: 90,
-		tier: "NFE",
+		tier: "UU",
 	},
 	pikachucosplay: {
 		isNonstandard: "Past",
-		tier: "RU",
+		tier: "UU",
 	},
 	pikachurockstar: {
 		isNonstandard: "Past",
-		tier: "NU",
+		tier: "UU",
 	},
 	pikachubelle: {
 		isNonstandard: "Past",
-		tier: "NU",
+		tier: "UU",
 	},
 	pikachupopstar: {
 		isNonstandard: "Past",
-		tier: "NU",
+		tier: "UU",
 	},
 	pikachuphd: {
 		isNonstandard: "Past",
-		tier: "NU",
+		tier: "UU",
 	},
 	pikachulibre: {
 		isNonstandard: "Past",
-		tier: "NU",
+		tier: "UU",
 	},
 	pikachuoriginal: {
-		tier: "NU",
+		tier: "UU",
 		doublesTier: "(DUU)",
 	},
 	pikachuhoenn: {
-		tier: "NU",
+		tier: "UU",
 		doublesTier: "(DUU)",
 	},
 	pikachusinnoh: {
-		tier: "NU",
+		tier: "UU",
 		doublesTier: "(DUU)",
 	},
 	pikachuunova: {
-		tier: "NU",
+		tier: "UU",
 		doublesTier: "(DUU)",
 	},
 	pikachukalos: {
-		tier: "NU",
+		tier: "UU",
 		doublesTier: "(DUU)",
 	},
 	pikachualola: {
-		tier: "NU",
+		tier: "UU",
 		doublesTier: "(DUU)",
 	},
 	pikachupartner: {
-		tier: "NU",
+		tier: "UU",
 		doublesTier: "(DUU)",
 	},
 	pikachustarter: {
 		isNonstandard: "LGPE",
-		tier: "OU",
+		tier: "UU",
 	},
 	pikachugmax: {
 		randomDoubleBattleMoves: ["extremespeed", "fakeout", "knockoff", "surf", "volttackle"],
 		randomDoubleBattleLevel: 90,
 		isNonstandard: "Gigantamax",
-		tier: "AG",
+		tier: "UU",
 		doublesTier: "(DUber)",
 	},
 	pikachuworld: {
@@ -279,7 +279,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		randomBattleLevel: 88,
 		randomDoubleBattleMoves: ["encore", "fakeout", "grassknot", "helpinghand", "nuzzle", "protect", "thunderbolt", "voltswitch"],
 		randomDoubleBattleLevel: 88,
-		tier: "NU",
+		tier: "RU",
 		doublesTier: "DUU",
 	},
 	raichualola: {
@@ -301,7 +301,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		randomBattleLevel: 88,
 		randomDoubleBattleMoves: ["drillrun", "knockoff", "protect", "stealthrock", "stoneedge", "swordsdance"],
 		randomDoubleBattleLevel: 88,
-		tier: "NU",
+		tier: "RU",
 		doublesTier: "(DUU)",
 	},
 	sandslashalola: {
@@ -375,7 +375,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		randomBattleLevel: 82,
 		randomDoubleBattleMoves: ["auroraveil", "blizzard", "encore", "freezedry", "moonblast"],
 		randomDoubleBattleLevel: 84,
-		tier: "UU",
+		tier: "RU",
 		doublesTier: "DUU",
 	},
 	igglybuff: {
@@ -403,7 +403,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		randomBattleLevel: 84,
 		randomDoubleBattleMoves: [ "defog", "roost", "superfang", "tailwind", "taunt"],
 		randomDoubleBattleLevel: 86,
-		tier: "OU",
+		tier: "NU",
 		doublesTier: "(DUU)",
 	},
 	oddish: {

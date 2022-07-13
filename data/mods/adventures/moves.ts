@@ -363,6 +363,14 @@ export const Moves: {[moveid: string]: MoveData} = {
 			}
 		},
 	},
+	poisonfang: {
+		inherit: true,
+		basePower: 50,
+		secondary: {
+			chance: 100,
+			status: 'tox',
+		},
+	},
 	dizzypunch: {
 		desc: "Hits twice. Each hit has a 20% chance to confuse the target and a 20% chance to flinch.",
 		shortDesc: "Hits twice. Each hit has a 20% chance to confuse and a 20% chance to flinch.",
