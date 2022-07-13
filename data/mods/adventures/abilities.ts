@@ -930,7 +930,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			for (const target of pokemon.side.foe.active) {
 				if (target.fainted) continue;
 				for (const moveSlot of target.moveSlots) {
-					const move = this.dex.getMove(moveSlot.move);
+					const move = this.dex.moves.get(moveSlot.move);
 					let bp = move.basePower;
 					if (move.ohko) bp = 150;
 					if (move.id === 'counter' || move.id === 'metalburst' || move.id === 'mirrorcoat') bp = 120;
@@ -1439,20 +1439,23 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		num: 177,
 	},
 	
-	//windup: {
-	//	onModifyAtkPriority: 5,
-	//	onModifyAtk(atk, attacker, defender, move) {
-	//		if (move === 'Rollout' || 'Ice Ball') {
-	//		this.self: {
-	//		volatileStatus: 'defensecurl',
-	//	    },;
-	//		this.boost({def: 1}, pokemon);
-	//	    },;
-	//        },
-	// name: "Windup",
-	// rating: 3,
-	// num: 177,
-	//},
+	windup: {
+		onModifyAtkPriority: 5,
+		onModifyAtk(atk, attacker, defender, move) {
+			if (
+				effect && effect.id === 'rollout' && source.hasAbility('windup')
+			    )
+			{
+			this.self: {
+			volatileStatus: 'defensecurl',
+		    },;
+			this.boost({def: 1}, pokemon);
+		    },;
+	        },
+	 name: "Windup",
+	 rating: 3,
+	 num: 177,
+	},
 	
 	powerspot: {
 		desc: "This Pokemon and its allies have the power of their moves multiplied by 1.3x.",
