@@ -71,7 +71,7 @@ export const Conditions: {[k: string]: ConditionData} = {
 	lickytrappinglock: {
 		name: 'lickytrappinglock',
 		durationCallback() {
-			const duration = this.sample([2, 2, 2, 3, 3, 3, 4, 5]);
+			const duration = this.sample([3, 3, 3, 4, 4, 4, 5, 5]);
 			return duration;
 		},
 		onResidual(target) {
