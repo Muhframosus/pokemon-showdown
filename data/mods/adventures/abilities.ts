@@ -1443,7 +1443,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		onSourceTryPrimaryHit(target, source, effect) {
 			if (effect && effect.id === 'rollout' && source.hasAbility('windup'))
 			  {
-			  this.add: {volatileStatus: 'defensecurl'};
+			  this.add({volatileStatus: 'defensecurl'});
 			  this.boost({def: 1});
 		      }
 	        },
