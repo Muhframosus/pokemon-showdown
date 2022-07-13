@@ -1444,7 +1444,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			if (effect && effect.id === 'rollout' && source.hasAbility('windup'))
 			  {
 			  self: {volatileStatus: 'defensecurl'};
-			  this.boost({def: 1});
+			  self.boost({def: 1});
 		      }
 	        },
 	 name: "Windup",

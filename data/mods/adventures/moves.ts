@@ -1501,22 +1501,6 @@ export const Moves: {[moveid: string]: MoveData} = {
 		zMove: {boost: {spa: 1}},
 		contestType: "Clever",
 	},
-	poisonfang: {
-		desc: "10% chance to Poison the target. 10% chance to flinch.",
-		shortDesc: "10% chance to Poison, 10% chance to flinch",
-		inherit: true,
-		basePower: 65,
-		accuracy: 95,
-		secondaries: [
-			{
-				chance: 10,
-				status: 'psn',
-			}, {
-				chance: 10,
-				volatileStatus: 'flinch',
-			},
-		],
-	},
 	zippyzap: {
 		desc: "Goes first.",
 		shortDesc: "Goes first",
