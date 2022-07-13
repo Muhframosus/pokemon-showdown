@@ -330,6 +330,39 @@ export const Moves: {[moveid: string]: MoveData} = {
 		zMove: {boost: {spe: 1}},
 		contestType: "Tough",
 	},
+	licky: {
+		num: 35,
+		basePower: 15,
+		category: "Physical",
+		name: "Licky",
+		pp: 20,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		secondary: null,
+		target: "normal",
+		type: "Normal",
+		contestType: "Tough",
+		accuracy: 85,
+		ignoreImmunity: true,
+		volatileStatus: 'lickytrapped',
+		self: {
+			volatileStatus: 'lickytrappinglock',
+		},
+		// FIXME: onBeforeMove(pokemon, target) {target.removeVolatile('mustrecharge')}
+		onHit(target, source) {
+			/**
+			 * The duration of the partially trapped must be always renewed to 2
+			 * so target doesn't move on trapper switch out as happens in gen 1.
+			 * However, this won't happen if there's no switch and the trapper is
+			 * about to end its partial trapping.
+			 **/
+			if (target.volatiles['lickytrapped']) {
+				if (source.volatiles['lickytrappinglock'] && source.volatiles['lickytrappinglock'].duration > 1) {
+					target.volatiles['lickytrapped'].duration = 2;
+				}
+			}
+		},
+	},
 	dizzypunch: {
 		desc: "Hits twice. Each hit has a 20% chance to confuse the target and a 20% chance to flinch.",
 		shortDesc: "Hits twice. Each hit has a 20% chance to confuse and a 20% chance to flinch.",

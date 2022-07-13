@@ -26,8 +26,27 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 110, atk: 133, def: 115, spa: 60, spd: 85, spe: 35},
 		abilities: {0: "Blaze", 1: "Reckless", H: "Intimidate"},
 	},
+	rayquaza: {
+		abilities: {0: "Cloud Nine"},
+		inherit: true,
+	},
+	lickitung: {
+		inherit: true,
+		baseStats: {hp: 110, atk: 85, def: 95, spa: 80, spd: 95, spe: 50},
+	},
+	lickilicky: {
+		inherit: true,
+		baseStats: {hp: 110, atk: 85, def: 95, spa: 80, spd: 95, spe: 50},
+		abilities: {0: "Own Tempo", 1: "Oblivious", H: "Cloud Nine"},
+	},
+	victini: {
+		inherit: true,
+		types: ["Psychic", "Fire"],
+		baseStats: {hp: 100, atk: 100, def: 100, spa: 100, spd: 100, spe: 100},
+		abilities: {0: "Victory Star", 1: "Cloud Nine"},
+	},
 	arbok: {
-		inerhit: true,
+		inherit: true,
 		baseStats: {hp: 95, atk: 110, def: 69, spa: 95, spd: 79, spe: 80},
 	},
 	incineroar: {
