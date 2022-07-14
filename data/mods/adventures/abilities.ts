@@ -1441,11 +1441,8 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	
 	windup: {
 		onDamagingHit(damage, target, source, move) {
-			if (move && move.id === 'rollout') 
-			  {
 				this.add({volatileStatus: 'defensecurl', target});
 			    this.boost({def: 1});
-				}
 			  },
 	 name: "Windup",
 	 rating: 3,
