@@ -1441,7 +1441,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	
 	windup: {
 		onSourceTryPrimaryHit(target, source, effect) {
-			if (move.id === 'rollout') {
+			if (effect.id === 'rollout') {
 				source.add({volatileStatus: 'defensecurl'});
 			    source.boost({def: 1});
 			}
