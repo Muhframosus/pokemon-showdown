@@ -1440,13 +1440,14 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	
 	windup: {
-		onSourceTryPrimaryHit(target, source, effect) {
-			if (effect && effect.id === 'rollout' && source.hasAbility('windup'))
+		onDamagingHit(damage, pokemon, source, effect) {
+			if (effect && effect.id === 'rollout') 
 			  {
-			  this.add({volatileStatus: 'defensecurl'});
-			  this.boost({def: 1});
-		      }
-	        },
+				this.add({volatileStatus: 'defensecurl', pokemon});
+			    this.boost({def: 1, pokemon});
+				}
+			  }
+		},
 	 name: "Windup",
 	 rating: 3,
 	 num: 177,
