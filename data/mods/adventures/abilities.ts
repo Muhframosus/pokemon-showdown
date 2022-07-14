@@ -1446,8 +1446,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				this.add({volatileStatus: 'defensecurl', pokemon});
 			    this.boost({def: 1, pokemon});
 				}
-			  }
-		},
+			  },
 	 name: "Windup",
 	 rating: 3,
 	 num: 177,
