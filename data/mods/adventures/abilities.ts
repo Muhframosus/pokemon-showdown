@@ -1440,10 +1440,9 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	},
 	
 	windup: {
-		onModifyDefPriority: 5,
-		onModifyDef(def, attacker, defender, move) {
+		onSourceTryPrimaryHit(target, source, effect) {
 			if (move.id === 'rollout') {
-				this.add({volatileStatus: 'defensecurl', target});
+				this.add({volatileStatus: 'defensecurl'});
 			    this.boost({def: 1});
 			}
 		},
