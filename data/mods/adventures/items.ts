@@ -256,7 +256,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 		num: 277,
 		gen: 4,
 	},
-	Butterfrinite: {
+	butterfrinite: {
         name: "Butterfrinite",
         spritenum: 626,
 		desc: "If held by a Butterfree, this item allows it to Mega Evolve in battle.",

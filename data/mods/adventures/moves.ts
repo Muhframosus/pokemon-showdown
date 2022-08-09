@@ -792,6 +792,10 @@ export const Moves: {[moveid: string]: MoveData} = {
 		inherit: true,
 		basePower: 45
 	},
+	metalburst: {
+		priority: -5,
+		inherit: true,
+	},
 	chargebeam: {
 		desc: "100% chance to increase the user's Special Attack by 1 stage.",
 		shortDesc: "100% chance to increase the user's SpA by 1.",
