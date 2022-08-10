@@ -136,6 +136,7 @@ export const Formats: FormatList = [
 		name: "[Gen 8] Adventures Custom Game",
 
 		mod: 'adventures',
+		debug: true,
 		rated: false,
 		battle: {trunc: Math.trunc},
 		// no restrictions, for serious (other than team preview)

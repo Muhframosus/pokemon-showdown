@@ -1043,6 +1043,8 @@ this.modData('Learnsets', 'mimikyu').learnset.poltergeist = ['8L1'];
 
 this.modData('Learnsets', 'octillery').learnset.triattack = ['8L1'];
 
+this.modData('Learnsets', 'butterfree').learnset.dazzlinggleam = ['8L1'];
+
 this.modData('Learnsets', 'huntail').learnset.flipturn = ['8L1'];
 this.modData('Learnsets', 'huntail').learnset.stealthrock = ['8L1'];
 this.modData('Learnsets', 'huntail').learnset.haze = ['8L1'];
