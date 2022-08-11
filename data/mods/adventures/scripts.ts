@@ -1046,6 +1046,8 @@ this.modData('Learnsets', 'octillery').learnset.triattack = ['8L1'];
 this.modData('Learnsets', 'arcanine').learnset.dragondance = ['8L1'];
 this.modData('Learnsets', 'arcanine').learnset.dragonrush = ['8L1'];
 
+this.modData('Learnsets', 'snorlax').learnset.woodhammer = ['8L1'];
+
 this.modData('Learnsets', 'butterfree').learnset.dazzlinggleam = ['8L1'];
 
 this.modData('Learnsets', 'huntail').learnset.flipturn = ['8L1'];
