@@ -622,12 +622,14 @@ this.modData('Learnsets', 'bellossom').learnset.flamethrower = ['8L1'];
 this.modData('Learnsets', 'bellossom').learnset.fireblast = ['8L1'];
 this.modData('Learnsets', 'bellossom').learnset.overheat = ['8L1'];
 
-this.modData('Learnsets', 'hoopa').learnset.meteorbeam = ['8L1'];
-this.modData('Learnsets', 'hoopa').learnset.meteorassault = ['8L1'];
-this.modData('Learnsets', 'hoopa').learnset.meteormash = ['8L1'];
+this.modData('Learnsets', 'hoopa').learnset.vacuumwave = ['8L1'];
+this.modData('Learnsets', 'hoopa').learnset.circlethrow = ['8L1'];
+this.modData('Learnsets', 'hoopa').learnset.recover = ['8L1'];
 this.modData('Learnsets', 'hoopa').learnset.pursuit = ['8L1'];
 this.modData('Learnsets', 'hoopa').learnset.swordsdance = ['8L1'];
 this.modData('Learnsets', 'hoopa').learnset.closecombat = ['8L1'];
+this.modData('Learnsets', 'hoopa').learnset.meteorbeam = ['8L1'];
+this.modData('Learnsets', 'hoopa').learnset.meteormash = ['8L1'];
 
 this.modData('Learnsets', 'infernape').learnset.switcheroo = ['8L1'];
 this.modData('Learnsets', 'infernape').learnset.knockoff = ['8L1'];
