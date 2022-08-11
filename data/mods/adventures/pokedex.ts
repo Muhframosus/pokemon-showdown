@@ -414,6 +414,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 110, atk: 110, def: 90, spa: 110, spd: 90, spe: 30},
 		abilities: {0: "Steam Engine", 1: "Flame Body", H: "Flash Fire"},
 	},
+	forretress: {
+		inherit: true,
+		baseStats: {hp: 75, atk: 90, def: 200, spa: 60, spd: 60, spe: 40},
+		abilities: {0: "Sturdy", 1: "Unaware", H: "Overcoat"},
+	},
 	hoopa: {
 		inherit: true,
 		baseStats: {hp: 80, atk: 90, def: 60, spa: 150, spd: 130, spe: 90},

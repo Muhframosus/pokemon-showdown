@@ -1107,6 +1107,8 @@ this.modData('Learnsets', 'eeveestarter').learnset.storedpower = ['8L1'];
 
 this.modData('Learnsets', 'grapploct').learnset.glare = ['8L1'];
 
+this.modData('Learnsets', 'forretress').learnset.topsyturvy = ['8L1'];
+
 this.modData('Learnsets', 'coalossal').learnset.taunt = ['8L1'];
 this.modData('Learnsets', 'coalossal').learnset.workup = ['8L1'];
 this.modData('Learnsets', 'coalossal').learnset.nastyplot = ['8L1'];
