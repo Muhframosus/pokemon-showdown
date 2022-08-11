@@ -411,6 +411,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		baseStats: {hp: 90, atk: 160, def: 60, spa: 170, spd: 130, spe: 70},
 		abilities: {0: "Unaware"},
+		types: ["Dark", "Fighting"],
 	},
 	camerupt: {
 		inherit: true,
@@ -885,6 +886,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		color: "Black",
 		eggGroups: ["Monster"],
 		requiredItem: "Snorlite",
+	},
+	electrode: {
+		inherit: true,
+		types: ["Electric", "Normal"],
+		baseStats: {hp: 60, atk: 50, def: 70, spa: 110, spd: 80, spe: 150},
+		abilities: {0: "Soundproof", 1: "Static", H: "Aftermath"},
 	},
 	torkoal: {
 		inherit: true,
