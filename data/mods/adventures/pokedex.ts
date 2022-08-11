@@ -403,6 +403,17 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 60, atk: 65, def: 80, spa: 170, spd: 115, spe: 130},
 		abilities: {0: "Cursed Body", 1: "Merciless", H: "Levitate"},
 	},
+	grapploct: {
+		inherit: true,
+		types: ["Fighting", "Water"],
+		baseStats: {hp: 80, atk: 118, def: 90, spa: 70, spd: 80, spe: 92},
+		abilities: {0: "Limber", 1: "Guts", H: "Technician"},
+	},
+	coalossal: {
+		inherit: true,
+		baseStats: {hp: 110, atk: 110, def: 90, spa: 110, spd: 90, spe: 30},
+		abilities: {0: "Steam Engine", 1: "Flame Body", H: "Flash Fire"},
+	},
 	hoopa: {
 		inherit: true,
 		baseStats: {hp: 80, atk: 90, def: 60, spa: 150, spd: 130, spe: 90},
