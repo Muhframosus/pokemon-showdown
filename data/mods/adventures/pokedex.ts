@@ -1075,10 +1075,6 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 104, atk: 66, def: 88, spa: 111, spd: 101, spe: 60},
 		abilities: {0: "Torrent", 1: "Berserk", H: "Competitive"},
 	},
-	melmetal: {
-		inherit: true,
-		abilities: {0: "Motor Drive", 1: "Iron Fist"},
-	},
 	cryogonal: {
 		inherit: true,
 		baseStats: {hp: 80, atk: 40, def: 50, spa: 125, spd: 135, spe: 105},
@@ -1217,8 +1213,14 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	sirfetchd: {
 		inherit: true,
+		types: ["Fighting", "Flying"],
 		baseStats: {hp: 62, atk: 135, def: 115, spa: 68, spd: 82, spe: 65},
 		abilities: {0: "Dauntless Shield", 1: "Steadfast", H: "Scrappy"},
+	},
+	arcanine: {
+		inherit: true,
+		baseStats: {hp: 90, atk: 110, def: 80, spa: 100, spd: 80, spe: 95},
+		abilities: {0: "Intimidate", 1: "Flash Fire", H: "Moxie"},
 	},
 	ninjask: {
 		inherit: true,
@@ -1484,6 +1486,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	perrserker: {
 		inherit: true,
+		types: ["Steel", "Fighting"],
 		baseStats: {hp: 100, atk: 120, def: 115, spa: 65, spd: 70, spe: 60},
 	},
 	thievul: {
