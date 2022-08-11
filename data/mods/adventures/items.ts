@@ -272,4 +272,20 @@ export const Items: {[k: string]: ModdedItemData} = {
         gen: 7,
         isNonstandard: "Past",
     },
+	snorlite: {
+        name: "Snorlite",
+        spritenum: 626,
+		desc: "If held by a Snorlax, this item allows it to Mega Evolve in battle.",
+		shortDesc: "If held by a Snorlax, this item allows it to Mega Evolve in battle.",
+        megaStone: "Snorlax-Mega",
+        megaEvolves: "Snorlax",
+        itemUser: ["Snorlax"],
+        onTakeItem(item, source) {
+            if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+            return true;
+        },
+        num: -101,
+        gen: 7,
+        isNonstandard: "Past",
+    },
 };
