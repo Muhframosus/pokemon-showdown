@@ -1101,10 +1101,15 @@ this.modData('Learnsets', 'carnivine').learnset.psychicfangs = ['8L1'];
 this.modData('Learnsets', 'carnivine').learnset.firefang = ['8L1'];
 this.modData('Learnsets', 'carnivine').learnset.thunderfang = ['8L1'];
 this.modData('Learnsets', 'carnivine').learnset.poisonfang = ['8L1'];
-this.modData('Learnsets', 'carnivine').learnset.aromaticmist = ['8L1'];
 this.modData('Learnsets', 'carnivine').learnset.snaptrap = ['8L1'];
 
 this.modData('Learnsets', 'eeveestarter').learnset.storedpower = ['8L1'];
+
+this.modData('Learnsets', 'grapploct').learnset.glare = ['8L1'];
+
+this.modData('Learnsets', 'coalossal').learnset.taunt = ['8L1'];
+this.modData('Learnsets', 'coalossal').learnset.workup = ['8L1'];
+this.modData('Learnsets', 'coalossal').learnset.nastyplot = ['8L1'];
 
 this.modData('Learnsets', 'clawitzer').learnset.calmmind = ['8L1'];
 this.modData('Learnsets', 'clawitzer').learnset.nastyplot = ['8L1'];
