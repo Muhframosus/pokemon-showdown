@@ -1093,6 +1093,8 @@ this.modData('Learnsets', 'lycanrocmidnight').learnset.accelerock = ['8L1'];
 
 this.modData('Learnsets', 'ninjask').learnset.leafblade = ['8L1'];
 
+this.modData('Learnsets', 'claydol').learnset.recover = ['8L1'];
+
 this.modData('Learnsets', 'pincurchin').learnset.spikyshield = ['8L1'];
 this.modData('Learnsets', 'pincurchin').learnset.spikecannon = ['8L1'];
 
