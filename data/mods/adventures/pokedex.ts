@@ -767,7 +767,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	deoxysattack: {
 		inherit: true,
-		abilities: {0: "Sheer Force", 1: "Pressure",  H: "Extraterrestrial"},,
+		abilities: {0: "Sheer Force", 1: "Pressure",  H: "Extraterrestrial"},
 	},
 	deoxysdefense: {
 		inherit: true,
