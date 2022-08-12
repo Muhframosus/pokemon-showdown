@@ -4208,19 +4208,19 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		doublesTier: "DOU",
 	},
 	genesectburn: {
-		tier: "Uber",
+		tier: "OU",
 		doublesTier: "(DOU)",
 	},
 	genesectchill: {
-		tier: "Uber",
+		tier: "OU",
 		doublesTier: "(DOU)",
 	},
 	genesectdouse: {
-		tier: "Uber",
+		tier: "OU",
 		doublesTier: "(DOU)",
 	},
 	genesectshock: {
-		tier: "Uber",
+		tier: "OU",
 		doublesTier: "(DOU)",
 	},
 	chespin: {
