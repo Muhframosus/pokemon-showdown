@@ -414,6 +414,16 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 110, atk: 110, def: 90, spa: 110, spd: 90, spe: 30},
 		abilities: {0: "Steam Engine", 1: "Flame Body", H: "Flash Fire"},
 	},
+	claydol: {
+		inherit: true,
+		types: ["Ground, "Psychic"],
+		baseStats: {hp: 90, atk: 50, def: 130, spa: 90, spd: 100, spe: 75},
+		abilities: {0: "Levitate", H: "Extraterrestrial"},
+	},
+	clefable: {
+		inherit: true,
+		abilities: {0: "Extraterrestrial", 1: "Magic Guard", H: "Unaware"},
+		},
 	forretress: {
 		inherit: true,
 		baseStats: {hp: 75, atk: 90, def: 200, spa: 60, spd: 60, spe: 40},
@@ -752,21 +762,21 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	deoxys: {
 		inherit: true,
-		abilities: {0: "Contrary"},
+		abilities: {0: "Contrary", 1: "Pressure",  H: "Extraterrestrial"},
 		baseStats: {hp: 50, atk: 110, def: 110, spa: 110, spd: 110, spe: 110},
 	},
 	deoxysattack: {
 		inherit: true,
-		abilities: {0: "Sheer Force"},
+		abilities: {0: "Sheer Force", 1: "Pressure",  H: "Extraterrestrial"},,
 	},
 	deoxysdefense: {
 		inherit: true,
-		abilities: {0: "Regenerator"},
+		abilities: {0: "Regenerator", 1: "Pressure",  H: "Extraterrestrial"},
 		baseStats: {hp: 50, atk: 50, def: 180, spa: 50, spd: 180, spe: 90},
 	},
 	deoxysspeed: {
 		inherit: true,
-		abilities: {0: "Speed Boost"},
+		abilities: {0: "Speed Boost", 1: "Pressure",  H: "Extraterrestrial"},
 	},
 	espeon: {
 		inherit: true,
@@ -846,7 +856,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	beheeyem: {
 		inherit: true,
 		baseStats: {hp: 75, atk: 75, def: 85, spa: 150, spd: 105, spe: 40},
-		abilities: {0: "Telepathy", 1: "Analytic", H: "Gravity Surge"},
+		abilities: {0: "Extraterrestrial", 1: "Analytic", H: "Gravity Surge"},
 	},
 	swellow: {
 		inherit: true,
