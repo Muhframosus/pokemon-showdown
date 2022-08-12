@@ -416,7 +416,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	claydol: {
 		inherit: true,
-		types: ["Ground, "Psychic"],
+		types: ["Ground", "Psychic"],
 		baseStats: {hp: 90, atk: 50, def: 130, spa: 90, spd: 100, spe: 75},
 		abilities: {0: "Levitate", H: "Extraterrestrial"},
 	},
