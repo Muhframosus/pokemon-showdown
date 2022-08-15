@@ -146,6 +146,26 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		rating: 3.5,
 		num: 47,
 	},
+	extraterrestrial: {
+		onSourceModifyAtkPriority: 6,
+		onSourceModifyAtk(atk, attacker, defender, move) {
+			if (move.type === 'Bug' || move.type === 'Grass' || move.type === 'Ground') {
+				this.debug('Thick Fat weaken');
+				return this.chainModify(0.5);
+			}
+		},
+		onSourceModifySpAPriority: 5,
+		onSourceModifySpA(atk, attacker, defender, move) {
+			if (move.type === 'Bug' || move.type === 'Grass' || move.type === 'Ground') {
+				this.debug('Thick Fat weaken');
+				return this.chainModify(0.5);
+			}
+		},
+		isBreakable: true,
+		name: "Extraterrestrial",
+		rating: 3.5,
+		num: 47,
+	},
 	gooey: {
 		onDamagingHit(damage, target, source, move) {
 			if (this.checkMoveMakesContact(move, source, target, true)) {
@@ -930,7 +950,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			for (const target of pokemon.side.foe.active) {
 				if (target.fainted) continue;
 				for (const moveSlot of target.moveSlots) {
-					const move = this.dex.getMove(moveSlot.move);
+					const move = this.dex.moves.get(moveSlot.move);
 					let bp = move.basePower;
 					if (move.ohko) bp = 150;
 					if (move.id === 'counter' || move.id === 'metalburst' || move.id === 'mirrorcoat') bp = 120;
@@ -1037,6 +1057,21 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 			// Cloud Nine now activates after Neutralizing Gas or Skill Swap, etc
 			this.add('-ability', pokemon, 'Cloud Nine');
 			this.field.clearWeather();
+		},
+		onAnyModifyBoost(boosts, pokemon) {
+			const unawareUser = this.effectState.target;
+			if (unawareUser === pokemon) return;
+			if (unawareUser === this.activePokemon && pokemon === this.activeTarget) {
+				boosts['def'] = 0;
+				boosts['spd'] = 0;
+				boosts['evasion'] = 0;
+			}
+			if (pokemon === this.activePokemon && unawareUser === this.activeTarget) {
+				boosts['atk'] = 0;
+				boosts['def'] = 0;
+				boosts['spa'] = 0;
+				boosts['accuracy'] = 0;
+			}
 		},
 		suppressWeather: true,
 		name: "Cloud Nine",
@@ -1424,20 +1459,17 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		num: 177,
 	},
 	
-	//windup: {
-	//	onModifyAtkPriority: 5,
-	//	onModifyAtk(atk, attacker, defender, move) {
-	//		if (move === 'Rollout' || 'Ice Ball') {
-	//		this.self: {
-	//		volatileStatus: 'defensecurl',
-	//	    },;
-	//		this.boost({def: 1}, pokemon);
-	//	    },;
-	//        },
-	// name: "Windup",
-	// rating: 3,
-	// num: 177,
-	//},
+	windup: {
+		onSourceTryPrimaryHit(target, source, effect) {
+			if (effect.id === 'rollout' || 'iceball') {
+				this.add({volatileStatus: 'defensecurl'}, target);
+			    this.boost({def: 1}, target);
+			}
+		},
+	 name: "Windup",
+	 rating: 3,
+	 num: 177,
+	},
 	
 	powerspot: {
 		desc: "This Pokemon and its allies have the power of their moves multiplied by 1.3x.",

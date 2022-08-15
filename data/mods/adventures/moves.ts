@@ -235,6 +235,20 @@ export const Moves: {[moveid: string]: MoveData} = {
 			}
 		}
 	},
+	octazooka: {
+		num: 190,
+		accuracy: 85,
+		basePower: 110,
+		category: "Special",
+		name: "Octazooka",
+		pp: 10,
+		priority: 0,
+		flags: {bullet: 1, protect: 1, mirror: 1},
+		critRatio: 3,
+		target: "normal",
+		type: "Water",
+		contestType: "Tough",
+	},
 	dancinglights: {
 		num: 147,
 		desc: "Puts the enemy to sleep.",
@@ -315,6 +329,47 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Poison",
 		zMove: {boost: {spe: 1}},
 		contestType: "Tough",
+	},
+	licky: {
+		num: 35,
+		basePower: 15,
+		category: "Physical",
+		name: "Licky",
+		pp: 20,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		secondary: null,
+		target: "normal",
+		type: "Normal",
+		contestType: "Tough",
+		accuracy: 85,
+		ignoreImmunity: true,
+		volatileStatus: 'lickytrapped',
+		self: {
+			volatileStatus: 'lickytrappinglock',
+		},
+		// FIXME: onBeforeMove(pokemon, target) {target.removeVolatile('mustrecharge')}
+		onHit(target, source) {
+			/**
+			 * The duration of the partially trapped must be always renewed to 2
+			 * so target doesn't move on trapper switch out as happens in gen 1.
+			 * However, this won't happen if there's no switch and the trapper is
+			 * about to end its partial trapping.
+			 **/
+			if (target.volatiles['lickytrapped']) {
+				if (source.volatiles['lickytrappinglock'] && source.volatiles['lickytrappinglock'].duration > 1) {
+					target.volatiles['lickytrapped'].duration = 2;
+				}
+			}
+		},
+	},
+	poisonfang: {
+		inherit: true,
+		basePower: 50,
+		secondary: {
+			chance: 100,
+			status: 'tox',
+		},
 	},
 	dizzypunch: {
 		desc: "Hits twice. Each hit has a 20% chance to confuse the target and a 20% chance to flinch.",
@@ -736,6 +791,10 @@ export const Moves: {[moveid: string]: MoveData} = {
 	doublekick: {
 		inherit: true,
 		basePower: 45
+	},
+	metalburst: {
+		priority: -5,
+		inherit: true,
 	},
 	chargebeam: {
 		desc: "100% chance to increase the user's Special Attack by 1 stage.",
@@ -1445,22 +1504,6 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Psychic",
 		zMove: {boost: {spa: 1}},
 		contestType: "Clever",
-	},
-	poisonfang: {
-		desc: "10% chance to Poison the target. 10% chance to flinch.",
-		shortDesc: "10% chance to Poison, 10% chance to flinch",
-		inherit: true,
-		basePower: 65,
-		accuracy: 95,
-		secondaries: [
-			{
-				chance: 10,
-				status: 'psn',
-			}, {
-				chance: 10,
-				volatileStatus: 'flinch',
-			},
-		],
 	},
 	zippyzap: {
 		desc: "Goes first.",
