@@ -1475,7 +1475,6 @@ export const Moves: {[moveid: string]: MoveData} = {
 					spd	: -1,
 				},
 			},
-		},
 		target: "normal",
 		type: "Water",
 		contestType: "Cool",
