@@ -1943,7 +1943,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 	},
 	blazikenmega: {
 		isNonstandard: "Past",
-		tier: "Uber",
+		tier: "OU",
 	},
 	mudkip: {
 		tier: "LC",
@@ -3733,7 +3733,7 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		randomBattleLevel: 88,
 		randomDoubleBattleMoves: ["allyswitch", "fakeout", "healpulse", "helpinghand", "hypnosis", "protect", "psychic", "shadowball", "trickroom"],
 		randomDoubleBattleLevel: 80,
-		tier: "RU",
+		tier: "AG",
 		doublesTier: "(DUU)",
 	},
 	solosis: {
