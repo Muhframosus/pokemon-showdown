@@ -307,7 +307,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 	buggem: {
 		inherit: true,
 		isNonstandard: null,
-	}
+	},
 	butterfrinite: {
         name: "Butterfrinite",
         spritenum: 626,
