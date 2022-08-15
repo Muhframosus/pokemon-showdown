@@ -264,8 +264,6 @@ this.modData('Learnsets', 'aegislash').learnset.poltergeist = ['8L1'];
 this.modData('Learnsets', 'banette').learnset.poltergeist = ['8L1'];
 this.modData('Learnsets', 'banette').learnset.stalk = ['8L1'];
 
-this.modData('Learnsets', 'aggron').learnset.shiftgear = ['8L1'];
-
 this.modData('Learnsets', 'kingler').learnset.thunderpunch = ['8L1'];
 this.modData('Learnsets', 'kingler').learnset.firepunch = ['8L1'];
 this.modData('Learnsets', 'kingler').learnset.icepunch = ['8L1'];
@@ -533,8 +531,6 @@ this.modData('Learnsets', 'trapinch').learnset.leechlife = ['8L1'];
 this.modData('Learnsets', 'drifblim').learnset.hurricane = ['8L1'];
 this.modData('Learnsets', 'drifblim').learnset.roost = ['8L1'];
 
-this.modData('Learnsets', 'gardevoir').learnset.quiverdance = ['8L1'];
-
 this.modData('Learnsets', 'kyuremblack').learnset.tailglow = ['8L1'];
 
 this.modData('Learnsets', 'kyuremwhite').learnset.tailglow = ['8L1'];
@@ -678,8 +674,6 @@ this.modData('Learnsets', 'magmortar').learnset.nightdaze = ['8L1'];
 this.modData('Learnsets', 'marowak').learnset.rockpolish = ['8L1'];
 
 this.modData('Learnsets', 'marowakalola').learnset.wildcharge = ['8L1'];
-
-this.modData('Learnsets', 'metagross').learnset.shiftgear = ['8L1'];
 
 this.modData('Learnsets', 'milotic').learnset.drainingkiss = ['8L1'];
 this.modData('Learnsets', 'milotic').learnset.aurorabeam = ['8L1'];
@@ -1119,10 +1113,8 @@ this.modData('Learnsets', 'coalossal').learnset.taunt = ['8L1'];
 this.modData('Learnsets', 'coalossal').learnset.workup = ['8L1'];
 this.modData('Learnsets', 'coalossal').learnset.nastyplot = ['8L1'];
 
-this.modData('Learnsets', 'clawitzer').learnset.calmmind = ['8L1'];
 this.modData('Learnsets', 'clawitzer').learnset.nastyplot = ['8L1'];
 this.modData('Learnsets', 'clawitzer').learnset.aquarevolver = ['8L1'];
-this.modData('Learnsets', 'clawitzer').learnset.lifedew = ['8L1'];
 
 this.modData('Learnsets', 'venusaur').learnset.solarblade = ['8L1'];
 this.modData('Learnsets', 'venusaur').learnset.gunkshot = ['8L1'];

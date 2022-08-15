@@ -62,8 +62,8 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	wigglytuff: {
 		inherit: true,
-		baseStats: {hp: 140, atk: 70, def: 45, spa: 85, spd: 50, spe: 45},
-		abilities: {0: "Cute Charm", 1: "Competitive", H: "Frisk"},
+		baseStats: {hp: 140, atk: 90, def: 65, spa: 85, spd: 80, spe: 65},
+		abilities: {0: "Cute Charm", 1: "Competitive", H: "Levitate"},
 	},
 	incineroar: {
 		inherit: true,
@@ -78,7 +78,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	blastoise: {
 		inherit: true,
 		types: ["Water", "Steel"],
-		abilities: {0: "Torrent", H: "Rain Dish", 1: "Mega Launcher"},	
+		abilities: {0: "Torrent", H: "Rain Dish", 1: "Shell Armor"},	
 	},
 	blastoisemega: {
 		inherit: true,
@@ -241,6 +241,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	mew: {
 		inherit: true,
+		baseStats: {hp: 100, atk: 90, def: 80, spa: 90, spd: 80, spe: 100},
 		abilities: {0: "Synchronize", 1: "Psychic Surge", H: "Protean"},			
 	},
 	florges: {
@@ -304,9 +305,13 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 80, atk: 131, def: 100, spa: 86, spd: 90, spe: 40},
 		abilities: {0: "Steelworker", H: "Illusion"},
 	},
+	aggron: {
+		inherit: true,
+		baseStats: {hp: 100, atk: 110, def: 180, spa: 30, spd: 60, spe: 50},
+	},
 	aggronmega: {
 		inherit: true,
-		baseStats: {hp: 70, atk: 140, def: 200, spa: 60, spd: 80, spe: 80},
+		baseStats: {hp: 100, atk: 140, def: 200, spa: 30, spd: 80, spe: 80},
 	},
 	eelektross: {
 		inherit: true,
@@ -741,11 +746,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	blaziken: {
 		inherit: true,
-		abilities: {0: "Blaze", 1: "Speed Boost", H: "Motor Drive"},
+		abilities: {0: "Blaze", H: "Motor Drive"},
 	},
 	blazikenmega: {
 		inherit: true,
-		abilities: {0: "Speed Boost"},
+		abilities: {0: "Tough Claws"},
 	},
 	crobat: {
 		inherit: true,
@@ -1734,7 +1739,19 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	clawitzer: {
 		inherit: true,
-		baseStats: {hp: 61, atk: 67, def: 108, spa: 120, spd: 109, spe: 59},
+		baseStats: {hp: 61, atk: 73, def: 108, spa: 120, spd: 109, spe: 59},
+	},
+	dugtrio: {
+		inherit: true,
+		types: ["Ground"],
+		baseStats: {hp: 35, atk: 80, def: 50, spa: 50, spd: 70, spe: 120},
+		abilities: {0: "Sand Veil", 1: "Arena Trap", H: "Sand Force"},
+	},
+	dugtrioalola: {
+		inherit: true,
+		types: ["Ground", "Steel"],
+		baseStats: {hp: 35, atk: 100, def: 60, spa: 30, spd: 70, spe: 110},
+		abilities: {0: "Sand Veil", 1: "Tangling Hair", H: "Sand Force"},
 	},
 	meloetta: {
 		inherit: true,

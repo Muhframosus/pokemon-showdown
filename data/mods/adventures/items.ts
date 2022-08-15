@@ -256,6 +256,58 @@ export const Items: {[k: string]: ModdedItemData} = {
 		num: 277,
 		gen: 4,
 	},
+	watergem: {
+		inherit: true,
+		isNonstandard: null,
+	},
+	steelgem: {
+		inherit: true,
+		isNonstandard: null,
+	},
+	flyinggem: {
+		inherit: true,
+		isNonstandard: null,
+	},
+	normalgem: {
+		inherit: true,
+		isNonstandard: null,
+	},
+	icegem: {
+		inherit: true,
+		isNonstandard: null,
+	},
+	groundgem: {
+		inherit: true,
+		isNonstandard: null,
+	},
+	grassgem: {
+		inherit: true,
+		isNonstandard: null,
+	},
+	ghostgem: {
+		inherit: true,
+		isNonstandard: null,
+	},
+	fightinggem: {
+		inherit: true,
+		isNonstandard: null,
+	},
+	electricgem: {
+		inherit: true,
+		isNonstandard: null,
+	},
+	darkgem: {
+		inherit: true,
+		isNonstandard: null,
+	},
+	dragongem: {
+		inherit: true,
+		isNonstandard: null,
+	},
+	buggem: {
+		inherit: true,
+		isNonstandard: null,
+	}
 	butterfrinite: {
         name: "Butterfrinite",
         spritenum: 626,
