@@ -2,6 +2,10 @@ export const Scripts: {[k: string]: ModdedBattleScriptsData} = {
 init() {
 //-NEW MOVES START
 
+this.modData('Learnsets', 'drifblim').learnset.hurricane = ['8L1'];
+this.modData('Learnsets', 'drifblim').learnset.poltergeist = ['8L1'];
+this.modData('Learnsets', 'drifblim').learnset.flamethrower = ['8L1'];
+this.modData('Learnsets', 'drifblim').learnset.aeroblast = ['8L1'];
 
 
 
