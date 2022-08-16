@@ -1058,6 +1058,10 @@ this.modData('Learnsets', 'arcanine').learnset.ragingfury = ['8L1'];
 this.modData('Learnsets', 'arcaninehisui').learnset.dragondance = ['8L1'];
 this.modData('Learnsets', 'arcaninehisui').learnset.dragonrush = ['8L1'];
 this.modData('Learnsets', 'arcaninehisui').learnset.ragingfury = ['8L1'];
+this.modData('Learnsets', 'arcaninehisui').learnset.stoneedge = ['8L1'];
+this.modData('Learnsets', 'arcaninehisui').learnset.accelerock = ['8L1'];
+this.modData('Learnsets', 'arcaninehisui').learnset.rockslide = ['8L1'];
+this.modData('Learnsets', 'arcaninehisui').learnset.meteorbeam = ['8L1'];
 
 this.modData('Learnsets', 'snorlax').learnset.woodhammer = ['8L1'];
 
@@ -1121,6 +1125,10 @@ this.modData('Learnsets', 'eeveestarter').learnset.storedpower = ['8L1'];
 this.modData('Learnsets', 'basculegion').learnset.poltergeist = ['8L1'];
 this.modData('Learnsets', 'basculegion').learnset.shadowsneak = ['8L1'];
 this.modData('Learnsets', 'basculegion').learnset.wavecrash = ['8L1'];
+this.modData('Learnsets', 'basculegion').learnset.dragondance = ['8L1'];
+this.modData('Learnsets', 'basculegion').learnset.outrage = ['8L1'];
+this.modData('Learnsets', 'basculegion').learnset.scaleshot = ['8L1'];
+this.modData('Learnsets', 'basculegion').learnset.closecombat = ['8L1'];
 
 this.modData('Learnsets', 'zoroarkhisui').learnset.bittermalice = ['8L1'];
 

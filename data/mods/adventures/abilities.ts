@@ -1767,6 +1767,30 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		rating: 1,
 		num: 764
 	},
+	justified: {
+		onTryHitPriority: 1,
+		onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Dark') {
+				if (!this.boost({spa: 1})) {
+				}
+				if (!this.boost({atk: 1})) {
+					this.add('-immune', target, '[from] ability: Justified');
+				}
+				return null;
+			}
+		},
+		onAllyTryHitSide(target, source, move) {
+			if (source === this.effectState.target || !target.isAlly(source)) return;
+			if (move.type === 'Dark') {
+				this.boost({atk: 1}, this.effectState.target);
+				this.boost({spa: 1}, this.effectState.target);
+			}
+		},
+		isBreakable: true,
+		name: "Justified",
+		rating: 3,
+		num: 154,
+	},
 	turboblaze: {
 		desc: "This Pokemon's Speed and Special Attack are boosted by 1.25x during its first turn.",
 		shortDesc: "This Pokemon's Spe and SpA are boosted by 1.25x during its first turn.",
