@@ -512,6 +512,7 @@ this.modData('Learnsets', 'leafeon').learnset.passbaton = ['8L1'];
 
 this.modData('Learnsets', 'glaceon').learnset.mysticalfire = ['8L1'];
 this.modData('Learnsets', 'glaceon').learnset.aurorabeam = ['8L1'];
+this.modData('Learnsets', 'glaceon').learnset.nastyplot = ['8L1'];
 this.modData('Learnsets', 'glaceon').learnset.passbaton = ['8L1'];
 
 this.modData('Learnsets', 'umbreon').learnset.mysticalfire = ['8L1'];
@@ -530,6 +531,7 @@ this.modData('Learnsets', 'trapinch').learnset.leechlife = ['8L1'];
 
 this.modData('Learnsets', 'drifblim').learnset.hurricane = ['8L1'];
 this.modData('Learnsets', 'drifblim').learnset.roost = ['8L1'];
+this.modData('Learnsets', 'drifblim').learnset.nastyplot = ['8L1'];
 
 this.modData('Learnsets', 'kyuremblack').learnset.tailglow = ['8L1'];
 
