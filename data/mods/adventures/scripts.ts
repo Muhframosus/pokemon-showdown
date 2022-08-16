@@ -1125,6 +1125,8 @@ this.modData('Learnsets', 'carnivine').learnset.snaptrap = ['8L1'];
 
 this.modData('Learnsets', 'eeveestarter').learnset.storedpower = ['8L1'];
 
+this.modData('Learnsets', 'klefki').learnset.fairyfool = ['8L1'];
+
 this.modData('Learnsets', 'basculegion').learnset.poltergeist = ['8L1'];
 this.modData('Learnsets', 'basculegion').learnset.shadowsneak = ['8L1'];
 this.modData('Learnsets', 'basculegion').learnset.wavecrash = ['8L1'];
@@ -1136,9 +1138,13 @@ this.modData('Learnsets', 'basculegion').learnset.closecombat = ['8L1'];
 this.modData('Learnsets', 'sneasler').learnset.closecombat = ['8L1'];
 this.modData('Learnsets', 'sneasler').learnset.direclaw = ['8L1'];
 
+this.modData('Learnsets', 'wyrdeer').learnset.psyshieldbash = ['8L1'];
+
 this.modData('Learnsets', 'zoroarkhisui').learnset.bittermalice = ['8L1'];
 
 this.modData('Learnsets', 'lilliganthisui').learnset.victorydance = ['8L1'];
+this.modData('Learnsets', 'lilliganthisui').learnset.closecombat = ['8L1'];
+this.modData('Learnsets', 'lilliganthisui').learnset.drainpunch = ['8L1'];
 
 this.modData('Learnsets', 'braviaryhisui').learnset.esperwing = ['8L1'];
 

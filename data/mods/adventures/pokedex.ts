@@ -750,6 +750,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		abilities: {0: "Stench", 1: "Aftermath", H: "Keen Eye"},
 	},
 	klefki: {
+		inherit: true,
 		baseStats: {hp: 57, atk: 80, def: 91, spa: 80, spd: 87, spe: 75},
 		abilities: {0: "Prankster", 1: "Levitate", H: "Magician"},
 	},
