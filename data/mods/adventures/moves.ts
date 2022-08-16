@@ -182,13 +182,13 @@ export const Moves: {[moveid: string]: MoveData} = {
 		},
 	},
 	highhorsepower: {
-		desc: "20% chance to increase the user's Speed by 1 stage.",
-		shortDesc: "20% chance to increase the user's Spe by 1 .",
+		desc: "50% chance to increase the user's Speed by 1 stage.",
+		shortDesc: "50% chance to increase the user's Spe by 1 .",
 		inherit: true,
 		basePower: 90,
 		accuracy: 90,
 		secondary: {
-			chance: 20,
+			chance: 50,
 			self: {
 				boosts: {
 					spe: 1,
@@ -198,6 +198,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 	},
 	wildcharge: {
 		basePower: 120,
+		recoil: [33, 100],
 		inherit: true,
 	},
 	volttackle: {
@@ -207,6 +208,79 @@ export const Moves: {[moveid: string]: MoveData} = {
 			status: 'par',
 		},
 		inherit: true,
+	},
+	wavecrash: {
+		num: 38,
+		desc: "33% recoil damage with a 50% chance to increase Spe 1 stage.",
+		shortDesc: "33% recoil damage with a 50% chance to increase Spe 1 stage.",
+		accuracy: 100,
+		basePower: 90,
+		category: "Physical",
+		name: "Wave Crash",
+		pp: 15,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		onModifyMove(move, pokemon) {
+			if (pokemon.getStat('spa', false, true) > pokemon.getStat('atk', false, true)) move.category = 'Special';
+			},
+		recoil: [33, 100],
+		secondary: {
+			chance: 50,
+			self: {
+				boosts: {
+					spe: 1,
+				},
+			},
+		}
+		target: "normal",
+		type: "Water",
+		contestType: "Tough",
+	},
+	headlongrush: {
+		num: 370,
+		accuracy: 100,
+		basePower: 120,
+		desc: "Lowers the user's Def and SpD by 1 stage.",
+		shortDesc: "Lowers the user's defenses.",
+		category: "Physical",
+		name: "Headlong Rush",
+		pp: 5,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		self: {
+			boosts: {
+				def: -1,
+				spd: -1,
+			},
+		},
+		secondary: null,
+		target: "normal",
+		type: "Ground",
+		contestType: "Tough",
+	},
+	ragingfury: {
+		num: 200,
+		accuracy: 100,
+		basePower: 120,
+		category: "Physical",
+		name: "Raging Fury",
+		desc: "Fire-type Outrage.",
+		shortDesc: "Fire-type Outrage.",
+		pp: 10,
+		priority: 0,
+		flags: {contact: 1, protect: 1, mirror: 1},
+		self: {
+			volatileStatus: 'lockedmove',
+		},
+		onAfterMove(pokemon) {
+			if (pokemon.volatiles['lockedmove'] && pokemon.volatiles['lockedmove'].duration === 1) {
+				pokemon.removeVolatile('lockedmove');
+			}
+		},
+		secondary: null,
+		target: "randomNormal",
+		type: "Fire",
+		contestType: "Cool",
 	},
 	explosion: {
 		desc: "Hits adjacent Pokemon. User faints. Always results in a critical hit.",
@@ -826,8 +900,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 	},
 	geargrind: {
 		inherit: true,
-		basePower: 75,
-		accuracy: 100,
+		basePower: 60,
+		accuracy: 85,
 	},
 	shadowpunch: {
 		inherit: true,
@@ -1807,7 +1881,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		basePower: 0,
 		category: "Status",
 		name: "Attract",
-		pp: 15,
+		pp: 5,
 		priority: 0,
 		flags: {protect: 1, reflectable: 1, mirror: 1, bypasssub: 1},
 		volatileStatus: 'attract',

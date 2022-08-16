@@ -125,6 +125,16 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		baseStats: {hp: 70, atk: 152, def: 65, spa: 80, spd: 55, spe: 98},
 	},
+	basculegion: {
+		inherit: true,
+		baseStats: {hp: 120, atk: 112, def: 65, spa: 80, spd: 75, spe: 78},
+		abilities: {0: "Rattled", 1: "Adaptability", H: "Mold Breaker"},
+	},
+	basculegionf: {
+		inherit: true,
+		baseStats: {hp: 120, atk: 80, def: 65, spa: 112, spd: 75, spe: 78},
+		abilities: {0: "Rattled", 1: "Adaptability", H: "Mold Breaker"},
+	},
 	barraskewda: {
 		inherit: true,
 		baseStats: {hp: 61, atk: 123, def: 60, spa: 90, spd: 50, spe: 136},
