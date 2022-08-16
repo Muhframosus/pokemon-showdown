@@ -214,24 +214,17 @@ export const Moves: {[moveid: string]: MoveData} = {
 		desc: "33% recoil damage with a 50% chance to increase Spe 1 stage.",
 		shortDesc: "33% recoil damage with a 50% chance to increase Spe 1 stage.",
 		accuracy: 100,
-		basePower: 90,
+		basePower: 75,
 		category: "Physical",
 		name: "Wave Crash",
 		pp: 15,
-		priority: 0,
+		priority: 1,
 		flags: {contact: 1, protect: 1, mirror: 1},
 		onModifyMove(move, pokemon) {
 			if (pokemon.getStat('spa', false, true) > pokemon.getStat('atk', false, true)) move.category = 'Special';
 			},
 		recoil: [33, 100],
-		secondary: {
-			chance: 50,
-			self: {
-				boosts: {
-					spe: 1,
-				},
-			},
-		},
+		secondary: null,
 		target: "normal",
 		type: "Water",
 		contestType: "Tough",
