@@ -231,7 +231,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 					spe: 1,
 				},
 			},
-		}
+		},
 		target: "normal",
 		type: "Water",
 		contestType: "Tough",
