@@ -405,7 +405,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			return move.basePower;
 		},
 		category: "Special",
-		name: "Infernal Parade",
+		name: "Bitter Malice",
 		desc: "Hex with a 30% paralyze chance.",
 		shortDesc: "Hex with a 30% paralyze chance.",
 		pp: 15,
