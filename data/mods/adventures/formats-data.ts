@@ -6126,4 +6126,56 @@ export const FormatsData: {[k: string]: SpeciesFormatsData} = {
 		tier: "Uber",
 		doublesTier: "DUber",
 	},
+	basculegion: {
+		tier: "OU",
+	},
+	wyrdeer: {
+		tier: "OU",
+	},
+	kleavor: {
+		tier: "OU",
+	},
+	arcaninehisui: {
+		tier: "OU",
+	},
+	braviaryhisui: {
+		tier: "OU",
+	},
+	zoroarkhisui: {
+		tier: "OU",
+	},
+	electrodehisui: {
+		tier: "OU",
+	},
+	ursaluna: {
+		tier: "OU",
+	},
+	sneasler: {
+		tier: "OU",
+	},
+	goodrahisui: {
+		tier: "OU",
+	},
+	overqwil: {
+		tier: "OU",
+	},
+	qwilfishhisui: {
+		tier: "OU",
+	},
+	liliganthisui: {
+		tier: "OU",
+	},
+	samurotthisui: {
+		tier: "OU",
+	},
+	typhlosionhisui: {
+		tier: "OU",
+	},
+	decidueyehisui: {
+		tier: "OU",
+	},
+	avalugghisui: {
+		tier: "OU",
+	},
+	
 };
