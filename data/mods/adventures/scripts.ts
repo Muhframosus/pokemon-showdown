@@ -1130,6 +1130,9 @@ this.modData('Learnsets', 'basculegion').learnset.outrage = ['8L1'];
 this.modData('Learnsets', 'basculegion').learnset.scaleshot = ['8L1'];
 this.modData('Learnsets', 'basculegion').learnset.closecombat = ['8L1'];
 
+this.modData('Learnsets', 'sneasler').learnset.closecombat = ['8L1'];
+this.modData('Learnsets', 'sneasler').learnset.direclaw = ['8L1'];
+
 this.modData('Learnsets', 'zoroarkhisui').learnset.bittermalice = ['8L1'];
 
 this.modData('Learnsets', 'ursaluna').learnset.headlongrush = ['8L1'];

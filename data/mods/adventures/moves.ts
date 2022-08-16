@@ -229,6 +229,33 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Water",
 		contestType: "Tough",
 	},
+	direclaw: {
+		num: 161,
+		accuracy: 100,
+		basePower: 60,
+		critratio: 3,
+		category: "Physical",
+		name: "Dire Claw",
+		pp: 10,
+		priority: 0,
+		flags: {protect: 1, mirror: 1},
+		secondary: {
+			chance: 20,
+			onHit(target, source) {
+				const result = this.random(3);
+				if (result === 0) {
+					target.trySetStatus('psn', source);
+				} else if (result === 1) {
+					target.trySetStatus('par', source);
+				} else {
+					target.trySetStatus('slp', source);
+				}
+			},
+		},
+		target: "normal",
+		type: "Poison",
+		contestType: "Beautiful",
+	},
 	headlongrush: {
 		num: 370,
 		accuracy: 100,
