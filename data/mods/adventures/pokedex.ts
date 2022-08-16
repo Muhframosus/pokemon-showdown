@@ -135,6 +135,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 120, atk: 80, def: 65, spa: 112, spd: 75, spe: 78},
 		abilities: {0: "Rattled", 1: "Adaptability", H: "Mold Breaker"},
 	},
+	kleavor: {
+		inherit: true,
+		baseStats: {hp: 70, atk: 135, def: 95, spa: 45, spd: 70, spe: 85},
+		abilities: {0: "Swarm", 1: "Technician", H: "Steadfast"},
+	},
 	barraskewda: {
 		inherit: true,
 		baseStats: {hp: 61, atk: 123, def: 60, spa: 90, spd: 50, spe: 136},
@@ -1794,12 +1799,12 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		types: ["Dragon", "Poison"],
 		baseStats: {hp: 90, atk: 100, def: 150, spa: 110, spd: 70, spe: 80},
 		abilities: {0: "Sap Sipper", 1: "Hydration", H: "Gooey"},
-		heightm: 2,
-		weightkg: 150.5,
-		color: "Purple",
-		prevo: "Sliggoo",
-		evoLevel: 50,
-		eggGroups: ["Dragon"],
+	},
+	goodrahisui: {
+		inherit: true,
+		types: ["Steel", "Dragon"],
+		baseStats: {hp: 80, atk: 100, def: 100, spa: 110, spd: 150, spe: 60},
+		abilities: {0: "Sap Sipper", 1: "Overcoat", H: "Gooey"},
 	},
 	kingler: {
 		inherit: true,

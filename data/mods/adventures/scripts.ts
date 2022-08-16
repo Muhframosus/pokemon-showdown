@@ -289,6 +289,10 @@ this.modData('Learnsets', 'kabutops').learnset.accelerock = ['8L1'];
 this.modData('Learnsets', 'qwilfish').learnset.spikecannon = ['8L1'];
 this.modData('Learnsets', 'qwilfish').learnset.gunkshot = ['8L1'];
 
+this.modData('Learnsets', 'qwilfishhisui').learnset.barbbarrage = ['8L1'];
+
+this.modData('Learnsets', 'overqwil').learnset.barbbarrage = ['8L1'];
+
 this.modData('Learnsets', 'malamar').learnset.octolock = ['8L1'];
 this.modData('Learnsets', 'malamar').learnset.beatup = ['8L1'];
 this.modData('Learnsets', 'malamar').learnset.trick = ['8L1'];
@@ -386,6 +390,7 @@ this.modData('Learnsets', 'cresselia').learnset.teleport = ['8L1'];
 this.modData('Learnsets', 'cresselia').learnset.dazzlinggleam = ['8L1'];
 this.modData('Learnsets', 'cresselia').learnset.mistyexplosion = ['8L1'];
 this.modData('Learnsets', 'cresselia').learnset.mysticalfire = ['8L1'];
+this.modData('Learnsets', 'cresselia').learnset.lunarblessing = ['8L1'];
 
 this.modData('Learnsets', 'crobat').learnset.firstimpression = ['8L1'];
 this.modData('Learnsets', 'crobat').learnset.gunkshot = ['8L1'];
@@ -1087,8 +1092,6 @@ this.modData('Learnsets', 'gallade').learnset.noretreat = ['8L1'];
 this.modData('Learnsets', 'skuntank').learnset.slackoff = ['8L1'];
 this.modData('Learnsets', 'skuntank').learnset.toxicspikes = ['8L1'];
 
-this.modData('Learnsets', 'klefki').learnset.fairyfool = ['8L1'];
-
 this.modData('Learnsets', 'mewtwo').learnset.closecombat = ['8L1'];
 
 this.modData('Learnsets', 'solgaleo').learnset.swordsdance = ['8L1'];
@@ -1134,6 +1137,26 @@ this.modData('Learnsets', 'sneasler').learnset.closecombat = ['8L1'];
 this.modData('Learnsets', 'sneasler').learnset.direclaw = ['8L1'];
 
 this.modData('Learnsets', 'zoroarkhisui').learnset.bittermalice = ['8L1'];
+
+this.modData('Learnsets', 'lilliganthisui').learnset.victorydance = ['8L1'];
+
+this.modData('Learnsets', 'braviaryhisui').learnset.esperwing = ['8L1'];
+
+this.modData('Learnsets', 'electrodehisui').learnset.chloroblast = ['8L1'];
+
+this.modData('Learnsets', 'decidueyehisui').learnset.triplearrows = ['8L1'];
+
+this.modData('Learnsets', 'avalugghisui').learnset.mountaingale = ['8L1'];
+
+this.modData('Learnsets', 'samurotthisui').learnset.ceaselessedge = ['8L1'];
+
+this.modData('Learnsets', 'typhlosionhisui').learnset.infernalparade = ['8L1'];
+
+this.modData('Learnsets', 'kleavor').learnset.stoneedge = ['8L1'];
+this.modData('Learnsets', 'kleavor').learnset.rockslide = ['8L1'];
+this.modData('Learnsets', 'kleavor').learnset.stealthrock = ['8L1'];
+this.modData('Learnsets', 'kleavor').learnset.stoneaxe = ['8L1'];
+this.modData('Learnsets', 'kleavor').learnset.accelerock = ['8L1'];
 
 this.modData('Learnsets', 'ursaluna').learnset.headlongrush = ['8L1'];
 

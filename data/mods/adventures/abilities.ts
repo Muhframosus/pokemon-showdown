@@ -884,13 +884,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 				ability: this.dex.abilities.get('poisontouch'),
 			});
 		},
-		onDamagingHit(damage, target, source, move) {
-			if (move.flags['contact']) {
-				if (this.randomChance(3, 10)) {
-					source.trySetStatus('tox', target);
-				}
-			}
-		},
 		name: "Poison Touch",
 		rating: 2,
 		num: 143,
