@@ -541,6 +541,13 @@ this.modData('Learnsets', 'reshiram').learnset.tailglow = ['8L1'];
 
 this.modData('Learnsets', 'zekrom').learnset.tailglow = ['8L1'];
 
+this.modData('Learnsets', 'tentacruel').learnset.strengthsap = ['8L1'];
+this.modData('Learnsets', 'tentacruel').learnset.gunkshot = ['8L1'];
+this.modData('Learnsets', 'tentacruel').learnset.liquidation = ['8L1'];
+this.modData('Learnsets', 'tentacruel').learnset.spikes = ['8L1'];
+this.modData('Learnsets', 'tentacruel').learnset.taunt = ['8L1'];
+this.modData('Learnsets', 'tentacruel').learnset.powerwhip = ['8L1'];
+
 this.modData('Learnsets', 'haxorus').learnset.ironhead = ['8L1'];
 this.modData('Learnsets', 'haxorus').learnset.irondefense = ['8L1'];
 this.modData('Learnsets', 'haxorus').learnset.steelroller = ['8L1'];
