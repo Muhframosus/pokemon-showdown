@@ -512,10 +512,14 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 65, atk: 75, def: 160, spa: 35, spd: 45, spe: 70},
 		abilities: {0: "Rock Head", 1: "Sturdy", H: "Dry Skin"},
 	},
+	tentacruel: {
+		baseStats: {hp: 80, atk: 70, def: 65, spa: 80, spd: 120, spe: 100},
+		abilities: {0: "Clear Body", 1: "Liquid Ooze", H: "Merciless"},
+	},
 	rhydon: {
 		inherit: true,
 		baseStats: {hp: 105, atk: 130, def: 120, spa: 45, spd: 45, spe: 40},
-		abilities: {0: "Lightning Rod", 1: "Huge Power", H: "Reckless"},
+		abilities: {0: "Lightning Rod", 1: "Dry Skin", H: "Sand Force"},
 	},
 	rhyperior: {
 		inherit: true,
@@ -1565,7 +1569,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	conkeldurr: {
 		inherit: true,
-		baseStats: {hp: 105, atk: 140, def: 95, spa: 55, spd: 75, spe: 65},
+		baseStats: {hp: 105, atk: 140, def: 115, spa: 55, spd: 75, spe: 65},
 	},
 	vikavolt: {
 		inherit: true,
@@ -1735,7 +1739,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	necrozma: {
 		inherit: true,
-		baseStats: {hp: 97, atk: 137, def: 101, spa: 137, spd: 89, spe: 79},
+		baseStats: {hp: 97, atk: 107, def: 101, spa: 127, spd: 89, spe: 79},
 	},
 	clawitzer: {
 		inherit: true,

@@ -1393,26 +1393,28 @@ export const Moves: {[moveid: string]: MoveData} = {
 		accuracy: 75,
 	},
 	wakeupslap: {
-		num: 358,
+		desc: "If a foe is sleeping, hits it at 2x power, even if they switch.",
+		shortDesc: "If a foe is sleeping, hits it at 2x power, even if they switch.",
+		num: -19,
 		accuracy: 100,
-		basePower: 70,
+		basePower: 40,
 		basePowerCallback(pokemon, target, move) {
-			if (target.status === 'slp' || target.hasAbility('comatose')) return move.basePower * 2;
+			// You can't get here unless the pursuit succeeds
+			if (target.beingCalledBack || target.switchFlag) {
+				this.debug('Pursuit damage boost');
+				return move.basePower * 2;
+			}
 			return move.basePower;
 		},
 		category: "Physical",
 		isNonstandard: "Past",
 		name: "Wake-Up Slap",
-		pp: 10,
+		pp: 20,
 		priority: 0,
 		flags: {contact: 1, protect: 1, mirror: 1},
-		onHit(target) {
-			if (target.status === 'slp') target.cureStatus();
-		},
-		secondary: null,
 		beforeTurnCallback(pokemon) {
 			for (const side of this.sides) {
-				if (side.hasAlly(pokemon)) continue;
+				if (side === pokemon.side) continue;
 				side.addSideCondition('pursuit', pokemon);
 				const data = side.getSideConditionData('pursuit');
 				if (!data.sources) {
@@ -1430,13 +1432,13 @@ export const Moves: {[moveid: string]: MoveData} = {
 		condition: {
 			duration: 1,
 			onBeforeSwitchOut(pokemon) {
-				this.debug('Pursuit start');
+				this.debug('Wake-Up Slap start');
 				let alreadyAdded = false;
 				pokemon.removeVolatile('destinybond');
-				for (const source of this.effectState.sources) {
+				for (const source of this.effectData.sources) {
 					if (!this.queue.cancelMove(source) || !source.hp) continue;
 					if (!alreadyAdded) {
-						this.add('-activate', pokemon, 'move: Pursuit');
+						this.add('-activate', pokemon, 'move: Wake-Up Slap');
 						alreadyAdded = true;
 					}
 					// Run through each action in queue to check if the Pursuit user is supposed to Mega Evolve this turn.
@@ -1444,19 +1446,20 @@ export const Moves: {[moveid: string]: MoveData} = {
 					if (source.canMegaEvo || source.canUltraBurst) {
 						for (const [actionIndex, action] of this.queue.entries()) {
 							if (action.pokemon === source && action.choice === 'megaEvo') {
-								this.actions.runMegaEvo(source);
+								this.runMegaEvo(source);
 								this.queue.list.splice(actionIndex, 1);
 								break;
 							}
 						}
 					}
-					this.actions.runMove('pursuit', source, source.getLocOf(pokemon));
+					this.runMove('pursuit', source, this.getTargetLoc(pokemon, source));
 				}
 			},
 		},
+		secondary: null,
 		target: "normal",
 		type: "Normal",
-		contestType: "Tough",
+		contestType: "Clever",
 	},
 	aquarevolver: {
 		desc: "100% chance to decrease the opponent's Special Defense by 1 stage. Affected by Mega Launcher",
@@ -1730,7 +1733,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Dark",
 	},
 	quell: {
-		num: 228,
+		desc: "If a foe is switching out, hits it at 2x power",
+		shortDesc: "If a foe is switching out, hits it at 2x power.",
+		num: -19,
 		accuracy: 100,
 		basePower: 40,
 		basePowerCallback(pokemon, target, move) {
@@ -1749,7 +1754,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		flags: {contact: 1, protect: 1, mirror: 1},
 		beforeTurnCallback(pokemon) {
 			for (const side of this.sides) {
-				if (side.hasAlly(pokemon)) continue;
+				if (side === pokemon.side) continue;
 				side.addSideCondition('pursuit', pokemon);
 				const data = side.getSideConditionData('pursuit');
 				if (!data.sources) {
@@ -1767,13 +1772,13 @@ export const Moves: {[moveid: string]: MoveData} = {
 		condition: {
 			duration: 1,
 			onBeforeSwitchOut(pokemon) {
-				this.debug('Pursuit start');
+				this.debug('Quell start');
 				let alreadyAdded = false;
 				pokemon.removeVolatile('destinybond');
-				for (const source of this.effectState.sources) {
+				for (const source of this.effectData.sources) {
 					if (!this.queue.cancelMove(source) || !source.hp) continue;
 					if (!alreadyAdded) {
-						this.add('-activate', pokemon, 'move: Pursuit');
+						this.add('-activate', pokemon, 'move: Quell');
 						alreadyAdded = true;
 					}
 					// Run through each action in queue to check if the Pursuit user is supposed to Mega Evolve this turn.
@@ -1781,13 +1786,13 @@ export const Moves: {[moveid: string]: MoveData} = {
 					if (source.canMegaEvo || source.canUltraBurst) {
 						for (const [actionIndex, action] of this.queue.entries()) {
 							if (action.pokemon === source && action.choice === 'megaEvo') {
-								this.actions.runMegaEvo(source);
+								this.runMegaEvo(source);
 								this.queue.list.splice(actionIndex, 1);
 								break;
 							}
 						}
 					}
-					this.actions.runMove('pursuit', source, source.getLocOf(pokemon));
+					this.runMove('pursuit', source, this.getTargetLoc(pokemon, source));
 				}
 			},
 		},
