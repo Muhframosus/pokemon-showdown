@@ -1148,6 +1148,10 @@ this.modData('Learnsets', 'lilliganthisui').learnset.drainpunch = ['8L1'];
 
 this.modData('Learnsets', 'braviaryhisui').learnset.esperwing = ['8L1'];
 
+this.modData('Learnsets', 'goodrahisui').learnset.ironhead = ['8L1'];
+this.modData('Learnsets', 'goodrahisui').learnset.flashcannon = ['8L1'];
+this.modData('Learnsets', 'goodrahisui').learnset.steelbeam = ['8L1'];
+
 this.modData('Learnsets', 'electrodehisui').learnset.chloroblast = ['8L1'];
 
 this.modData('Learnsets', 'decidueyehisui').learnset.triplearrows = ['8L1'];
