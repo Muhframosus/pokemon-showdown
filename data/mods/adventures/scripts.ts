@@ -1112,6 +1112,10 @@ this.modData('Learnsets', 'eeveestarter').learnset.storedpower = ['8L1'];
 
 this.modData('Learnsets', 'basculegion').learnset.storedpower = ['8L1'];
 
+this.modData('Learnsets', 'zoroarkhisui').learnset.storedpower = ['8L1'];
+
+this.modData('Learnsets', 'ursaluna').learnset.storedpower = ['8L1'];
+
 this.modData('Learnsets', 'grapploct').learnset.glare = ['8L1'];
 
 this.modData('Learnsets', 'forretress').learnset.topsyturvy = ['8L1'];
