@@ -1131,7 +1131,6 @@ this.modData('Learnsets', 'klefki').learnset.fairyfool = ['8L1'];
 this.modData('Learnsets', 'basculegion').learnset.poltergeist = ['8L1'];
 this.modData('Learnsets', 'basculegion').learnset.shadowsneak = ['8L1'];
 this.modData('Learnsets', 'basculegion').learnset.wavecrash = ['8L1'];
-this.modData('Learnsets', 'basculegion').learnset.dragondance = ['8L1'];
 this.modData('Learnsets', 'basculegion').learnset.outrage = ['8L1'];
 this.modData('Learnsets', 'basculegion').learnset.scaleshot = ['8L1'];
 this.modData('Learnsets', 'basculegion').learnset.closecombat = ['8L1'];
