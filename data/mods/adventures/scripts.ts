@@ -658,6 +658,7 @@ this.modData('Learnsets', 'krookodile').learnset.dragondance = ['8L1'];
 this.modData('Learnsets', 'lapras').learnset.flipturn = ['8L1'];
 this.modData('Learnsets', 'lapras').learnset.aquaring = ['8L1'];
 this.modData('Learnsets', 'lapras').learnset.dragonrage = ['8L1'];
+this.modData('Learnsets', 'lapras').learnset.zapcannon = ['8L1'];
 
 this.modData('Learnsets', 'linoone').learnset.nightslash = ['8L1'];
 this.modData('Learnsets', 'linoone').learnset.knockoff = ['8L1'];
