@@ -1132,6 +1132,9 @@ this.modData('Learnsets', 'mismagius').learnset.futuresight = ['8L1'];
 this.modData('Learnsets', 'eeveestarter').learnset.storedpower = ['8L1'];
 
 this.modData('Learnsets', 'klefki').learnset.fairyfool = ['8L1'];
+this.modData('Learnsets', 'klefki').learnset.partingshot = ['8L1'];
+this.modData('Learnsets', 'klefki').learnset.topsyturvy = ['8L1'];
+this.modData('Learnsets', 'klefki').learnset.moonlight = ['8L1'];
 
 this.modData('Learnsets', 'corsola').learnset.hornleech = ['8L1'];
 this.modData('Learnsets', 'corsola').learnset.gigadrain = ['8L1'];
