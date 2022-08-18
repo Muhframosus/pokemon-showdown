@@ -1133,6 +1133,13 @@ this.modData('Learnsets', 'eeveestarter').learnset.storedpower = ['8L1'];
 
 this.modData('Learnsets', 'klefki').learnset.fairyfool = ['8L1'];
 
+this.modData('Learnsets', 'corsola').learnset.hornleech = ['8L1'];
+this.modData('Learnsets', 'corsola').learnset.gigadrain = ['8L1'];
+this.modData('Learnsets', 'corsola').learnset.synthesis = ['8L1'];
+this.modData('Learnsets', 'corsola').learnset.spikyshield = ['8L1'];
+this.modData('Learnsets', 'corsola').learnset.strengthsap = ['8L1'];
+this.modData('Learnsets', 'corsola').learnset.flipturn = ['8L1'];
+
 this.modData('Learnsets', 'runerigus').learnset.spectralthief = ['8L1'];
 this.modData('Learnsets', 'runerigus').learnset.shoreup = ['8L1'];
 
