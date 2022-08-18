@@ -622,7 +622,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	marowak: {
 		inherit: true,
-		baseStats: {hp: 75, atk: 110, def: 110, spa: 80, spd: 80, spe: 70},
+		baseStats: {hp: 75, atk: 100, def: 110, spa: 80, spd: 80, spe: 70},
 		abilities: {0: "Cursed Body", 1: "Defiant", H: "Battle Armor"},
 	},
 	marowakalola: {

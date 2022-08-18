@@ -1124,9 +1124,17 @@ this.modData('Learnsets', 'carnivine').learnset.thunderfang = ['8L1'];
 this.modData('Learnsets', 'carnivine').learnset.poisonfang = ['8L1'];
 this.modData('Learnsets', 'carnivine').learnset.snaptrap = ['8L1'];
 
+this.modData('Learnsets', 'mismagius').learnset.moonblast = ['8L1'];
+this.modData('Learnsets', 'mismagius').learnset.moonlight = ['8L1'];
+this.modData('Learnsets', 'mismagius').learnset.eeriespell = ['8L1'];
+this.modData('Learnsets', 'mismagius').learnset.futuresight = ['8L1'];
+
 this.modData('Learnsets', 'eeveestarter').learnset.storedpower = ['8L1'];
 
 this.modData('Learnsets', 'klefki').learnset.fairyfool = ['8L1'];
+
+this.modData('Learnsets', 'runerigus').learnset.spectralthief = ['8L1'];
+this.modData('Learnsets', 'runerigus').learnset.shoreup = ['8L1'];
 
 this.modData('Learnsets', 'basculegion').learnset.poltergeist = ['8L1'];
 this.modData('Learnsets', 'basculegion').learnset.shadowsneak = ['8L1'];
