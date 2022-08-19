@@ -1440,7 +1440,34 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		rating: 3,
 		num: 177,
 	},
-	
+	gulpmissile: {
+		onDamagingHit(damage, target, source, move) {
+			if (!source.hp || !source.isActive || target.transformed || target.isSemiInvulnerable()) return;
+			if (['cramorantgulping', 'cramorantgorging'].includes(target.species.id)) {
+				this.damage(source.baseMaxhp / 4, source, target);
+				if (target.species.id === 'cramorantgulping') {
+					this.boost({def: -1}, source, target, null, true);
+				} else {
+					source.trySetStatus('par', target, move);
+				}
+				target.formeChange('cramorant', move);
+			}
+		},
+		// The Dive part of this mechanic is implemented in Dive's `onTryMove` in moves.ts
+		onSourceTryPrimaryHit(target, source, effect) {
+			if (
+				effect && source.hasAbility('gulpmissile') &&
+				source.species.name === 'Cramorant' && !source.transformed
+			) {
+				const forme = source.hp <= source.maxhp / 2 ? 'cramorantgorging' : 'cramorantgulping';
+				source.formeChange(forme, effect);
+			}
+		},
+		isPermanent: true,
+		name: "Gulp Missile",
+		rating: 2.5,
+		num: 241,
+	},
 	windup: {
 		onSourceTryPrimaryHit(target, source, effect) {
 			if (effect.id === 'rollout' || 'iceball') {
@@ -1452,7 +1479,6 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 	 rating: 3,
 	 num: 177,
 	},
-	
 	powerspot: {
 		desc: "This Pokemon and its allies have the power of their moves multiplied by 1.3x.",
 		shortdesc: "This Pokemon and its allies have the power of their moves multiplied by 1.3x.",

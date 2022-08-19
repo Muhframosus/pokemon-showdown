@@ -528,6 +528,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		abilities: {0: "Rock Head", 1: "Sturdy", H: "Dry Skin"},
 	},
 	tentacruel: {
+		inherit: true,
 		baseStats: {hp: 80, atk: 70, def: 65, spa: 80, spd: 120, spe: 100},
 		abilities: {0: "Clear Body", 1: "Liquid Ooze", H: "Merciless"},
 	},
@@ -621,7 +622,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	marowak: {
 		inherit: true,
-		baseStats: {hp: 75, atk: 110, def: 110, spa: 80, spd: 80, spe: 70},
+		baseStats: {hp: 75, atk: 100, def: 110, spa: 80, spd: 80, spe: 70},
 		abilities: {0: "Cursed Body", 1: "Defiant", H: "Battle Armor"},
 	},
 	marowakalola: {
@@ -780,6 +781,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	diancie: {
 		inherit: true,
 		abilities: {0: "Magic Bounce"},
+		prevo: "Carbink",
 	},
 	dianciemega: {
 		inherit: true,
@@ -1817,10 +1819,37 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 90, atk: 80, def: 100, spa: 80, spd: 105, spe: 70},
 		abilities: {0: "Thick Fat", 1: "Hydration", H: "Ice Body"},
 	},
+	carbink: {
+		inherit: true,
+		evos: ["Diancie"],
+	},
+	luvdisc: {
+		inherit: true,
+		evos: ["Alomomola"],
+	},
+	alomomola: {
+		inherit: true,
+		types: ["Water"],
+		baseStats: {hp: 165, atk: 75, def: 80, spa: 40, spd: 45, spe: 65},
+		abilities: {0: "Healer", 1: "Hydration", H: "Regenerator"},
+		prevo: "Luvdisc",
+	},
+	phione: {
+		inherit: true,
+		evos: ["Manaphy"],
+	},
+	manaphy: {
+		inherit: true,
+		types: ["Water"],
+		baseStats: {hp: 100, atk: 100, def: 100, spa: 100, spd: 100, spe: 100},
+		abilities: {0: "Hydration"},
+		prevo: "Phione",
+	},
 	corsola: {
-		types: ["Water", "Rock"],
-		baseStats: {hp: 65, atk: 55, def: 95, spa: 65, spd: 95, spe: 35},
+		types: ["Water", "Grass"],
+		baseStats: {hp: 85, atk: 35, def: 95, spa: 65, spd: 95, spe: 35},
 		abilities: {0: "Hustle", 1: "Natural Cure", H: "Regenerator"},
+		evos: ["Cursola"],
         inherit: true,
 	},
 	corsolagalar: {

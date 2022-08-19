@@ -658,6 +658,7 @@ this.modData('Learnsets', 'krookodile').learnset.dragondance = ['8L1'];
 this.modData('Learnsets', 'lapras').learnset.flipturn = ['8L1'];
 this.modData('Learnsets', 'lapras').learnset.aquaring = ['8L1'];
 this.modData('Learnsets', 'lapras').learnset.dragonrage = ['8L1'];
+this.modData('Learnsets', 'lapras').learnset.zapcannon = ['8L1'];
 
 this.modData('Learnsets', 'linoone').learnset.nightslash = ['8L1'];
 this.modData('Learnsets', 'linoone').learnset.knockoff = ['8L1'];
@@ -1123,14 +1124,31 @@ this.modData('Learnsets', 'carnivine').learnset.thunderfang = ['8L1'];
 this.modData('Learnsets', 'carnivine').learnset.poisonfang = ['8L1'];
 this.modData('Learnsets', 'carnivine').learnset.snaptrap = ['8L1'];
 
+this.modData('Learnsets', 'mismagius').learnset.moonblast = ['8L1'];
+this.modData('Learnsets', 'mismagius').learnset.moonlight = ['8L1'];
+this.modData('Learnsets', 'mismagius').learnset.eeriespell = ['8L1'];
+this.modData('Learnsets', 'mismagius').learnset.futuresight = ['8L1'];
+
 this.modData('Learnsets', 'eeveestarter').learnset.storedpower = ['8L1'];
 
 this.modData('Learnsets', 'klefki').learnset.fairyfool = ['8L1'];
+this.modData('Learnsets', 'klefki').learnset.partingshot = ['8L1'];
+this.modData('Learnsets', 'klefki').learnset.topsyturvy = ['8L1'];
+this.modData('Learnsets', 'klefki').learnset.moonlight = ['8L1'];
+
+this.modData('Learnsets', 'corsola').learnset.hornleech = ['8L1'];
+this.modData('Learnsets', 'corsola').learnset.gigadrain = ['8L1'];
+this.modData('Learnsets', 'corsola').learnset.synthesis = ['8L1'];
+this.modData('Learnsets', 'corsola').learnset.spikyshield = ['8L1'];
+this.modData('Learnsets', 'corsola').learnset.strengthsap = ['8L1'];
+this.modData('Learnsets', 'corsola').learnset.flipturn = ['8L1'];
+
+this.modData('Learnsets', 'runerigus').learnset.spectralthief = ['8L1'];
+this.modData('Learnsets', 'runerigus').learnset.shoreup = ['8L1'];
 
 this.modData('Learnsets', 'basculegion').learnset.poltergeist = ['8L1'];
 this.modData('Learnsets', 'basculegion').learnset.shadowsneak = ['8L1'];
 this.modData('Learnsets', 'basculegion').learnset.wavecrash = ['8L1'];
-this.modData('Learnsets', 'basculegion').learnset.dragondance = ['8L1'];
 this.modData('Learnsets', 'basculegion').learnset.outrage = ['8L1'];
 this.modData('Learnsets', 'basculegion').learnset.scaleshot = ['8L1'];
 this.modData('Learnsets', 'basculegion').learnset.closecombat = ['8L1'];
