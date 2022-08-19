@@ -752,10 +752,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 				atk: -1,
 			}
 		}
-	},
-	technoblast : {
-		inherit: true,
-		basePower: 150,
+	
 	},
 	present: {
 		desc: "80, 160, 240 power, or heals target 1/4 max HP.",
@@ -786,7 +783,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 	},
 	bonemerang: {
 		inherit: true,
-		basePower: 60,
+		basePower: 50,
 	},
 	shadowbone: {
 		desc: "100% chance to lower the target's Defense by 1 stage.",

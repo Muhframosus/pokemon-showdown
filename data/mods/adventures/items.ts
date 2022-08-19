@@ -44,18 +44,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 		itemUser: ["Farfetch\u2019d", "Sirfetch\u2019d"],
 		num: 259,
 		gen: 8,
-	},
-	scopelens: {
-		name: "Scope Lens",
-		spritenum: 429,
-		fling: {
-			basePower: 30,
-		},
-		onModifyCritRatio(critRatio) {
-			return critRatio + 2;
-		},
-		num: 232,
-		gen: 2,
+	
 	},
 	stick: {
 		name: "Stick",
@@ -98,18 +87,7 @@ export const Items: {[k: string]: ModdedItemData} = {
 		num: 256,
 		gen: 2,
 		isNonstandard: "Past",
-	},
-	razorclaw: {
-		name: "Razor Claw",
-		spritenum: 382,
-		fling: {
-			basePower: 80,
-		},
-		onModifyCritRatio(critRatio) {
-			return critRatio + 2;
-		},
-		num: 326,
-		gen: 4,
+	
 	},
 	quickherb: {
 		name: "Quick Herb",
