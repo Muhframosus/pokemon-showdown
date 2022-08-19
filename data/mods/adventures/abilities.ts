@@ -964,18 +964,7 @@ export const Abilities: {[k: string]: ModdedAbilityData} = {
 		name: "Forewarn",
 		rating: 0.5,
 		num: 108,
-	},
-	neuroforce: {
-		desc: "This Pokemon's attacks that are super effective against the target do 1.4x damage.",
-		shortDesc: "Super effective hits by this Pokemon do 1.4x damage.",
-		onModifyDamage(damage, source, target, move) {
-			if (move && target.getMoveHitData(move).typeMod > 0) {
-				return this.chainModify([0x1666, 0x1000]);
-			}
-		},
-		name: "Neuroforce",
-		rating: 2.5,
-		num: 233,
+
 	},
 	stellarstriker: {
 		desc: "This Pokemon's damaging moves become multi-hit moves that hit four times. The extra hits have its damage halved. Does not affect multi-hit moves or moves that have multiple targets.",
