@@ -29,6 +29,7 @@ this.modData('Learnsets', 'incineroar').learnset.nightslash = ['8L1'];
 this.modData('Learnsets', 'chesnaught').learnset.bodypress = ['8L1'];
 
 this.modData('Learnsets', 'goodra').learnset.stickyweb = ['8L1'];
+this.modData('Learnsets', 'goodra').learnset.recover = ['8L1'];
 
 this.modData('Learnsets', 'guzzlord').learnset.trickroom = ['8L1'];
 this.modData('Learnsets', 'guzzlord').learnset.gunkshot = ['8L1'];
@@ -272,6 +273,8 @@ this.modData('Learnsets', 'kingler').learnset.poisonjab = ['8L1'];
 this.modData('Learnsets', 'audino').learnset.milkdrink = ['8L1'];
 this.modData('Learnsets', 'audino').learnset.charm = ['8L1'];
 this.modData('Learnsets', 'audino').learnset.lovelykiss = ['8L1'];
+this.modData('Learnsets', 'audino').learnset.moonblast = ['8L1'];
+this.modData('Learnsets', 'audino').learnset.teleport = ['8L1'];
 
 this.modData('Learnsets', 'nidoqueen').learnset.lovelykiss = ['8L1'];
 this.modData('Learnsets', 'nidoking').learnset.lovelykiss = ['8L1'];
@@ -1169,6 +1172,7 @@ this.modData('Learnsets', 'braviaryhisui').learnset.esperwing = ['8L1'];
 this.modData('Learnsets', 'goodrahisui').learnset.ironhead = ['8L1'];
 this.modData('Learnsets', 'goodrahisui').learnset.flashcannon = ['8L1'];
 this.modData('Learnsets', 'goodrahisui').learnset.steelbeam = ['8L1'];
+this.modData('Learnsets', 'goodrahisui').learnset.recover = ['8L1'];
 
 this.modData('Learnsets', 'electrodehisui').learnset.chloroblast = ['8L1'];
 

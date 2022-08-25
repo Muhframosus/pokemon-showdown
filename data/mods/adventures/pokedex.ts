@@ -9,7 +9,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	centiskorch: {
 		inherit: true,
 		baseStats: {hp: 125, atk: 125, def: 85, spa: 70, spd: 85, spe: 65},
-		abilities: {0: "Flash Fire", H: "Flame Body", 1: "Arena Trap"},	
+		abilities: {0: "Flash Fire", H: "Flame Body", 1: "Oblivious"},	
 	},
 	trevenant: {
 		inherit: true,
@@ -1524,8 +1524,8 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	chandelure: {
 		inherit: true,
-		baseStats: {hp: 50, atk: 55, def: 60, spa: 125, spd: 60, spe: 70},
-		abilities: {0: "Flash Fire", 1: "Infiltrator", H: "Shadow Tag"},
+		baseStats: {hp: 75, atk: 55, def: 90, spa: 145, spd: 90, spe: 90},
+		abilities: {0: "Flash Fire", 1: "Infiltrator", H: "Levitate"},
 	},
 	decidueye: {
 		inherit: true,
@@ -1799,8 +1799,8 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	},
 	goodra: {
 		inherit: true,
-		types: ["Dragon", "Poison"],
-		baseStats: {hp: 90, atk: 100, def: 150, spa: 110, spd: 70, spe: 80},
+		types: ["Dragon", "Water"],
+		baseStats: {hp: 90, atk: 100, def: 70, spa: 110, spd: 150, spe: 80},
 		abilities: {0: "Sap Sipper", 1: "Hydration", H: "Gooey"},
 	},
 	goodrahisui: {
